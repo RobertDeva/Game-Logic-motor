@@ -1570,3 +1570,18 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - La respuesta del interlocutor dependerá de sus intereses, personalidad, objetivos, recursos, confianza, relaciones, información y margen real de decisión.
 - La negociación, la investigación de necesidades y la economía dinámica deberán estar conectadas: cambios en la región podrán modificar lo que necesita la comunidad y, por tanto, las oportunidades y argumentos comerciales disponibles.
 - Los métodos concretos de persuasión, tipos de información, fiabilidad, factores de aceptación, límites de negociación, regateo, contratos y resolución de desacuerdos quedan pendientes de definición.
+
+
+## Rutas comerciales autónomas y circulación de mercancías
+
+- Comerciantes, asentamientos y comunidades podrán establecer y mantener rutas comerciales autónomas entre lugares conectados por medios de transporte plausibles.
+- Las rutas permitirán el transporte de mercancías, recursos y suministros según la producción, excedentes, necesidades, demanda, acuerdos y capacidad logística de los participantes.
+- El funcionamiento de las rutas dependerá de factores como distancia, terreno, infraestructura, medios de transporte, disponibilidad de personal, seguridad, clima, estaciones y relaciones entre comunidades.
+- Las rutas podrán ser terrestres, fluviales, marítimas u otras que el mundo y sus medios de transporte permitan.
+- Los comerciantes y comunidades podrán modificar, ampliar, reducir, suspender o abandonar rutas según sus circunstancias, recursos, riesgos y oportunidades.
+- Guerras, emboscadas, bloqueos, catástrofes, cambios políticos, escasez y otros acontecimientos podrán retrasar, encarecer, desviar o interrumpir el transporte.
+- El jugador podrá observar indicios de la circulación de mercancías y descubrir oportunidades mediante conversaciones, mercados, viajeros, comerciantes y otros medios plausibles.
+- El jugador podrá participar en redes existentes o desarrollar sus propias rutas y acuerdos comerciales, sujeto a los requisitos y capacidades correspondientes.
+- La simulación de rutas deberá continuar durante la ausencia del jugador con niveles de detalle adecuados y conservar continuidad de mercancías, viajes, pérdidas, retrasos y cambios de destino.
+- Los NPC solo conocerán el estado de rutas y cargamentos mediante información que hayan percibido o recibido; no tendrán conocimiento omnisciente.
+- Los modelos de transporte, capacidad, costes, seguridad, propiedad de mercancías, pérdidas, seguros, tiempos, escalas de simulación y gestión de rutas quedan pendientes de definición.
