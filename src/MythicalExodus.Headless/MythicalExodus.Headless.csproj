@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>MythicalExodus.Headless</AssemblyName>
+    <RootNamespace>MythicalExodus.Headless</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../MythicalExodus.Application/MythicalExodus.Application.csproj" />
+    <ProjectReference Include="../MythicalExodus.Infrastructure/MythicalExodus.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
