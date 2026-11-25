@@ -1051,10 +1051,10 @@ La economía comercial utiliza la misma curva de almas de la progresión como re
 Se define el valor económico base:
 
 \[
-B(r)=C(r)
+B(r)=C(r-2)
 \]
 
-donde \(C(r)\) es el coste de progresión de la curva 24.2 evaluado en el nivel objetivo equivalente \(r\). El precio de referencia de una categoría es:
+donde \(C(n)\) es la función de coste de la sección 24.2, basada en puntos comprados desde el estado inicial. Como \(r\) representa el nivel objetivo equivalente del artículo, se evalúa \(C(r-2)\): el primer nivel objetivo posible es 2 y corresponde a \(C(0)\). El precio de referencia de una categoría es:
 
 \[
 P_{base}=round(B(r)\cdot m_{categoría})
