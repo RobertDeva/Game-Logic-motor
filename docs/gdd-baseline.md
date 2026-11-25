@@ -991,3 +991,20 @@ El jugador tendrá un límite de carga relacionado con el peso de los objetos qu
 - Quedan pendientes el límite base, posibles modificadores, umbrales de carga, penalizaciones adicionales y la relación exacta con la estadística Agilidad.
 
 El objetivo es que las decisiones de equipo e inventario tengan consecuencias tácticas reales: llevar más peso o equipamiento pesado podrá ofrecer ventajas defensivas u otras utilidades, pero tendrá un coste en movilidad.
+
+
+### Categorías de carga y efectos progresivos sobre el movimiento
+
+La carga del jugador se organizará en categorías diferenciadas: ligera, media, pesada y sobrecargada. Cada categoría aplicará efectos progresivos sobre el rendimiento físico.
+
+- La categoría se determinará a partir de la relación entre la carga transportada y la capacidad de carga efectiva del personaje.
+- La carga ligera tendrá las menores restricciones de movilidad.
+- La carga media aplicará penalizaciones moderadas.
+- La carga pesada impondrá restricciones más significativas sobre el movimiento y las acciones físicas.
+- La sobrecarga representará superar el límite de carga permitido y podrá imponer restricciones severas, definidas por el diseño.
+- Las categorías podrán afectar a la velocidad de movimiento, esquiva, salto, agilidad efectiva y recuperación de postura. Cada efecto deberá especificarse explícitamente; no se asumirá que todas las categorías afectan por igual a todas las acciones.
+- La relación entre carga, estadística Agilidad y capacidad de carga deberá definirse mediante reglas y fórmulas deterministas.
+- El sistema deberá permitir configurar umbrales y penalizaciones sin acoplarlos al motor de presentación.
+- Los umbrales cuantitativos, las fórmulas, los modificadores por clase/equipamiento y las restricciones exactas de la sobrecarga quedan pendientes de diseño.
+
+El objetivo es que el peso tenga consecuencias tácticas graduales y legibles, de modo que el jugador pueda elegir entre movilidad y capacidad de protección o transporte.
