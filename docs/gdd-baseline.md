@@ -813,3 +813,18 @@ Las acciones del jugador y de las facciones podrán alterar las poblaciones natu
 - Las condiciones cuantitativas de sobreexplotación, umbrales de desaparición, modelos de población, viabilidad de recolonización y costes de recuperación quedan pendientes de diseño.
 
 El objetivo es que la explotación de la naturaleza tenga consecuencias reales y comprensibles, pero también que el mundo disponga de mecanismos plausibles de recuperación cuando las condiciones lo permitan. La recuperación ecológica no borrará automáticamente las consecuencias ni garantizará que toda especie pueda regresar.
+
+
+## Interacciones depredador-presa y simulación ecológica según proximidad
+
+Las interacciones ecológicas visibles y de mayor detalle, como la caza, la competencia directa entre depredadores y los cambios inmediatos de conducta ante la escasez de presas, podrán desarrollarse cuando el jugador se encuentre cerca del ecosistema y pueda observarlas.
+
+- En la proximidad del jugador, los depredadores podrán rastrear, perseguir y cazar presas; las presas podrán huir, esconderse, agruparse o adoptar otras respuestas propias de su especie.
+- Si la disponibilidad de presas disminuye, los depredadores podrán modificar su conducta: buscar otras presas compatibles, ampliar sus zonas de búsqueda, competir con otros depredadores o desplazarse hacia otro hábitat.
+- La escasez de alimento podrá afectar también a la condición, reproducción y supervivencia de los animales, de acuerdo con las reglas ecológicas de cada especie.
+- Estas conductas deberán responder a necesidades y señales del entorno, no activarse como escenas arbitrarias únicamente para el jugador.
+- Cuando el jugador esté lejos, el ecosistema podrá actualizarse mediante una simulación abstracta de menor detalle, resolviendo cambios de población, disponibilidad de recursos, migraciones y consecuencias ecológicas sin procesar cada persecución o interacción individual.
+- La transición entre simulación detallada y abstracta deberá conservar continuidad: acercarse a una región no deberá reiniciar poblaciones ni producir resultados incompatibles con los cambios ya resueltos durante la ausencia del jugador.
+- La frecuencia, el detalle y los criterios de activación de cada nivel de simulación deberán equilibrar credibilidad, rendimiento y consistencia. Los umbrales de proximidad y las reglas cuantitativas quedan pendientes de diseño técnico.
+
+El objetivo es reservar las interacciones individuales y observables para los ecosistemas próximos al jugador, mientras el resto del mundo continúa evolucionando mediante una representación simplificada y coherente.
