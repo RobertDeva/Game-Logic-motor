@@ -116,12 +116,12 @@ La segunda página define las estadísticas de esta manera (transcripción del t
 - Fuerza: aumenta el daño físico.
 - Agilidad: mejora la velocidad de escalada y movimiento.
 - Resistencia: aumenta la resistencia a todos los tipos de daño (el final de la línea queda fuera de la zona legible de la fotografía).
-- Voluntad: disminuye la duración de efectos de estado y aumenta «d…»; el resto de la frase está cortado y no se puede recuperar con certeza.
+- Voluntad: disminuye la duración de los efectos de estado y aumenta el daño de todo tipo.
 - Ruptura: aumenta el índice de daño crítico y mejora la evasión (lectura de la línea manuscrita; conviene confirmarla con el autor).
 - Destreza: mejora el daño de Artes de Combate.
 - Armonía: aumenta el daño especial.
 
-Estas descripciones son intenciones de diseño, no fórmulas matemáticas. En particular, el efecto adicional de Voluntad debe confirmarse antes de definir su responsabilidad exacta.
+Estas descripciones son intenciones de diseño, no fórmulas matemáticas. La función de Voluntad ya está aclarada por el creador: reduce la duración de los efectos de estado y aumenta todo tipo de daño.
 
 ### Tabla de valores iniciales por clase
 
@@ -142,8 +142,17 @@ Los valores se transcriben como aparecen en la tabla. No se asume todavía el ra
 
 ### Diagrama de energías
 
-La tercera página representa Aura, Maná y Prana como energías básicas y muestra tres recuadros de energías especiales/superiores: Energía Natural, Poder Astral y Energía Abisal. Hay múltiples flechas entre los nodos. La fotografía permite identificar los nombres, pero no establecer con suficiente certeza el significado de cada dirección ni reconstruir una matriz completa de ventajas y debilidades. Las relaciones se mantienen pendientes de una transcripción validada por el creador.
+La tercera página representa Aura, Maná y Prana como energías básicas y muestra tres recuadros de energías especiales/superiores: Energía Natural, Poder Astral y Energía Abisal. Hay múltiples flechas entre los nodos. Las flechas representan relaciones direccionales de fuerza/debilidad entre energías; sus puntas son significativas y deben respetarse al transcribir el diagrama. No deben tratarse como simples conexiones de fusión. Para convertir el dibujo en una matriz de combate hace falta registrar cada flecha dirigida y confirmar si la punta señala la energía que tiene ventaja o aquella frente a la que es débil. No se inferirá esa convención semántica sin confirmación.
 
 ### Consecuencia para la implementación
 
 La tabla anterior sí proporciona una primera referencia concreta para construir configuraciones iniciales de las tres clases, siempre que el creador confirme que los números son los valores iniciales previstos. Las descripciones sirven para definir responsabilidades candidatas de cada estadística. Las fórmulas, límites, escalados, efecto incompleto de Voluntad y progresión de armas siguen sin estar especificados.
+
+
+### Aclaración del creador sobre Voluntad y las flechas
+
+El creador confirmó expresamente que Voluntad:
+- Reduce la duración de todos los efectos de estado que afecten al personaje.
+- Aumenta el daño de todo tipo, no solamente el daño especial.
+
+También aclaró que las puntas de las flechas del diagrama codifican las relaciones de fuerza y debilidad entre energías. Por tanto, la lectura debe conservar la dirección de cada flecha; no es correcto interpretar las líneas como relaciones sin dirección. Antes de implementar la matriz, se documentará qué extremo representa la energía con ventaja y cuál la energía vulnerable.
