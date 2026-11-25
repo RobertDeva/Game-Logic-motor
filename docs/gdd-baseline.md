@@ -1427,3 +1427,15 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - El jugador podrá especializarse de manera distinta en cada disciplina, según las capacitaciones completadas y la práctica realizada.
 - El nivel de dominio de cada disciplina podrá influir en las técnicas disponibles, la ejecución del proceso de fabricación y la calidad alcanzable de sus productos.
 - Las disciplinas concretas, sus niveles, criterios de progreso, técnicas y efectos cuantitativos quedan pendientes de definición.
+
+
+## Jerarquía de conocimiento de maestros artesanos y métodos propios
+
+- Los maestros artesanos tendrán distintos grados de conocimiento y especialización.
+- No todos los maestros conocerán las mismas técnicas, recetas o procedimientos; cada uno podrá enseñar conocimientos que otros no poseen.
+- El acceso a técnicas avanzadas dependerá del conocimiento del maestro y de los requisitos de aprendizaje que se definan para cada técnica.
+- Al alcanzar un nivel determinado de maestría en una disciplina, el jugador podrá desarrollar un método artesanal propio.
+- La creación del método propio permitirá combinar técnicas y conocimientos que el jugador haya aprendido de distintos maestros y fuentes válidas.
+- La combinación estará limitada a conocimientos realmente adquiridos por el jugador; no permitirá incorporar técnicas desconocidas.
+- El método propio podrá reflejar la experimentación y especialización del jugador, y su funcionamiento deberá respetar las reglas de fabricación, materiales, herramientas y disciplina correspondiente.
+- El umbral de maestría, las reglas de compatibilidad entre técnicas, el proceso de experimentación, los riesgos, la validación y los efectos concretos de los métodos propios quedan pendientes de definición.
