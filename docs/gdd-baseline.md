@@ -643,3 +643,22 @@ Los NPC podrán desarrollar y mantener relaciones entre sí independientemente d
 - Las relaciones románticas podrán existir como una categoría de vínculo, pero sus condiciones, alcance narrativo y posibles consecuencias deberán definirse por separado antes de implementar comportamientos concretos.
 
 El objetivo es que las comunidades tengan una estructura social dinámica: sus habitantes pueden formar vínculos, entrar en conflicto, cooperar y cambiar con el tiempo incluso cuando el jugador no interviene. Estas relaciones podrán producir acontecimientos y consecuencias que el jugador descubra posteriormente, sin que el mundo social gire exclusivamente alrededor de él.
+
+
+## Consecuencias intergeneracionales y memoria histórica de las comunidades
+
+Los acontecimientos importantes podrán dejar consecuencias que se transmitan entre generaciones. La historia de una comunidad no se limitará a quienes vivieron directamente un suceso: podrá influir en la identidad, las relaciones, las instituciones y las decisiones de quienes nazcan o crezcan después.
+
+- Las guerras, persecuciones, masacres, desplazamientos, traiciones, pactos, sacrificios y actos de ayuda podrán dejar recuerdos colectivos y consecuencias duraderas en las comunidades afectadas.
+- Las generaciones posteriores podrán conocer esos acontecimientos mediante relatos familiares, educación, tradiciones, monumentos, documentos, instituciones, rumores y otras formas plausibles de transmisión.
+- La memoria histórica podrá influir en la confianza, el temor, el resentimiento, la gratitud, los prejuicios, las alianzas y la disposición a cooperar con otras comunidades o facciones.
+- Los descendientes de personas que ayudaron, protegieron o perjudicaron a una comunidad podrán recibir vínculos, reputaciones, privilegios, obligaciones o desconfianza heredados, siempre que exista una vía social o institucional que justifique esa continuidad.
+- Las consecuencias no serán necesariamente idénticas para todos los miembros de una generación. La educación, las experiencias personales, la cultura, la posición social y la información disponible podrán producir interpretaciones y respuestas diferentes.
+- La memoria colectiva podrá cambiar con el tiempo. Los relatos pueden conservarse, olvidarse, reinterpretarse, disputarse o manipularse; no se presupone que todas las versiones históricas sean completas o exactas.
+- Las instituciones y facciones podrán mantener políticas, celebraciones, prohibiciones, reclamaciones o conflictos originados en acontecimientos pasados, si cuentan con continuidad organizativa y conocimiento de esos hechos.
+- La transmisión intergeneracional no concede recuerdos personales a quienes no vivieron los acontecimientos: los descendientes conocerán versiones transmitidas y podrán interpretarlas, cuestionarlas o rechazarlas.
+- Las consecuencias heredadas podrán atenuarse, reforzarse o transformarse mediante nuevos acontecimientos, decisiones individuales, reconciliaciones, cambios políticos y relaciones entre comunidades.
+- La persistencia histórica debe respetar la cronología y la causalidad. No se atribuirán consecuencias a generaciones, familias o territorios sin una cadena plausible de transmisión.
+- La profundidad temporal, el modelo de generaciones, la persistencia entre etapas de la partida y las reglas de transmisión, olvido y transformación quedan pendientes de diseño.
+
+El objetivo es que Mythical Exodus tenga una historia viva: las acciones del jugador y los acontecimientos del mundo pueden convertirse en parte de la memoria de las comunidades y afectar a personas que nunca estuvieron presentes cuando ocurrieron. El pasado debe influir en el presente sin determinarlo por completo.
