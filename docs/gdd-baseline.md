@@ -927,3 +927,22 @@ El motor incluirá un subsistema específico para la comunicación entre el juga
 - El catálogo de órdenes, señales, condiciones de percepción, progresión de comprensión y reglas de interpretación queda pendiente de especificación.
 
 Este subsistema busca que la cooperación se desarrolle como una relación aprendida entre el jugador y cada criatura, en lugar de asumir que todas comprenden automáticamente un conjunto universal de órdenes.
+
+
+### Especialización, mejora y equipamiento personalizado de criaturas compañeras
+
+Las criaturas compañeras podrán desempeñar funciones especializadas y mejorar sus capacidades. También podrán equiparse con elementos personalizados compatibles con su especie y características individuales.
+
+- Las funciones posibles podrán incluir combate, exploración, rastreo, detección de amenazas, transporte y apoyo, entre otras que el diseño establezca.
+- Las funciones disponibles dependerán de la especie, anatomía, sentidos, capacidades naturales, temperamento y características individuales. No todas las criaturas podrán desempeñar todas las funciones.
+- Una criatura podrá destacar en una o varias funciones y desarrollar sus capacidades mediante experiencia y actividades relevantes, de acuerdo con su potencial.
+- Las mejoras podrán reforzar capacidades existentes o desarrollar habilidades compatibles con la criatura. No deberán eliminar sus limitaciones naturales ni hacer que todas las especies terminen siendo intercambiables.
+- El jugador podrá equipar a sus compañeras con elementos personalizados. Cada elemento deberá ser compatible con la anatomía, tamaño, especie y capacidades de la criatura.
+- El equipamiento podrá modificar capacidades, ofrecer protección o habilitar funciones concretas cuando el tipo de elemento lo permita. Sus efectos, requisitos, restricciones y posibles inconvenientes deberán estar definidos explícitamente.
+- El equipamiento no deberá conceder capacidades físicamente imposibles para la criatura ni permitir que una especie incompatible desempeñe cualquier función por medio de objetos.
+- La disponibilidad de espacios, categorías, materiales, fabricación, adquisición, mejora, mantenimiento y pérdida del equipamiento queda pendiente de diseño.
+- El sistema deberá distinguir las capacidades naturales de la criatura de las aportadas o modificadas por mejoras y equipamiento, para que sus efectos puedan calcularse y retirarse correctamente al cambiar o quitar elementos.
+- La especialización y el equipamiento deberán integrarse con el subsistema de comunicación: las órdenes disponibles y las respuestas posibles dependerán de lo que la criatura pueda realmente hacer.
+- El núcleo lógico gestionará reglas, compatibilidad, atributos y efectos del equipamiento sin depender de modelos visuales, animaciones o sistemas específicos de un motor gráfico.
+
+El objetivo es que cada compañera pueda desarrollar un papel propio y una configuración personalizada, sin perder su identidad biológica ni las diferencias entre especies.
