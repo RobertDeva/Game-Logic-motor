@@ -1191,3 +1191,19 @@ Las criaturas compañeras podrán desarrollar vínculos grupales y coordinar esp
 - Las reglas de cohesión, liderazgo emergente, reparto de funciones, coordinación en combate y exploración, resolución de desacuerdos y límites de autonomía quedan pendientes de diseño.
 
 El objetivo es que el grupo pueda desarrollar una dinámica propia y actuar de forma coordinada y creíble, sin convertirse en una formación rígida controlada por órdenes constantes ni perder la individualidad de sus integrantes.
+
+
+### Mediación del jugador en conflictos entre criaturas compañeras
+
+Los conflictos y las relaciones negativas entre criaturas compañeras no provocarán por sí solos que una criatura abandone voluntariamente el grupo. En su lugar, el jugador dispondrá de mecanismos para mediar en los desacuerdos y favorecer la mejora de las relaciones.
+
+- El jugador podrá intervenir cuando detecte tensiones, rivalidades, rechazo u otros conflictos entre compañeras.
+- La mediación podrá incluir interacciones o acciones destinadas a reducir tensiones, fomentar confianza, facilitar cooperación y mejorar la convivencia.
+- Las opciones disponibles y su eficacia dependerán de la naturaleza del conflicto, las personalidades, temperamentos, vínculos previos, experiencias y circunstancias de las criaturas implicadas.
+- La intervención no garantizará una reconciliación inmediata ni obligará a las criaturas a desarrollar amistad o afecto; los cambios deberán ser graduales y coherentes con sus características y experiencias.
+- Algunas diferencias o incompatibilidades podrán ser persistentes, por lo que el jugador quizá deba mantener esfuerzos de mediación o aceptar una convivencia cordial pero distante.
+- La mediación podrá influir en la cohesión y coordinación grupal, pero no eliminará la individualidad ni las relaciones asimétricas de las criaturas.
+- Los conflictos y sus posibles consecuencias deberán ser legibles para el jugador, que necesitará oportunidades razonables para comprender la situación e intervenir.
+- Los métodos concretos de mediación, requisitos, costes, frecuencia, límites y efectos sobre cada tipo de relación quedan pendientes de diseño.
+
+El objetivo es dar al jugador un papel activo en el bienestar y la cohesión del grupo, permitiéndole ayudar a resolver conflictos sin convertir las relaciones en valores que puedan modificarse instantáneamente o a voluntad.
