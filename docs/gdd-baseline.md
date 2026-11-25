@@ -1798,3 +1798,40 @@ La especificación matemática continúa en desarrollo. Se han documentado y com
 
 Se ha establecido una primera especificación matemática versionada para las ocho estadísticas en [Sistema de escalado de atributos y modelo matemático del combate](combat-mathematical-model.md#22-sistema-de-escalado-de-atributos--especificación-v10). Define curvas normalizadas diferenciadas, efectos por estadística, límites iniciales, composición de modificadores y validaciones. Sus parámetros de balance se someterán a simulación antes de considerarse calibrados definitivamente.
 
+## Progresión del personaje, almas y dificultad dinámica del mundo
+
+### Nivel y atributos
+
+- El personaje dispone de ocho atributos: Vitalidad, Fuerza, Agilidad, Resistencia, Voluntad, Ruptura, Destreza y Armonía.
+- Cada atributo tiene un valor inicial propio y un máximo de 99.
+- El nivel del personaje no tiene un máximo de 99. Se calcula sumando los incrementos permanentes de los ocho atributos respecto a sus valores iniciales.
+- El nivel máximo teórico es la suma de las diferencias entre 99 y el valor inicial de cada uno de los ocho atributos.
+- Cada punto de nivel corresponde a un incremento de atributo. Los valores iniciales definitivos determinarán el nivel máximo numérico.
+- Dos personajes con el mismo nivel pueden tener distribuciones de atributos distintas y, por tanto, capacidades de combate diferentes.
+
+### Almas y fuentes de obtención
+
+- Las almas funcionan como moneda general y como recurso utilizado para subir los atributos del personaje.
+- El jugador puede acumular almas y decidir si las utiliza para progresar o para adquirir bienes, equipamiento, servicios y otras oportunidades económicas.
+- El coste de subir atributos aumenta progresivamente y se definirá mediante curvas o tablas configurables, todavía pendientes de calibración.
+- Las almas se obtienen mediante combate, exploración, logros, prestación de servicios y comercio.
+- La recolección de materias primas y la creación, transformación o fabricación de productos no generan almas directamente.
+- La recolección y la fabricación producen recursos, materiales y bienes que pueden venderse posteriormente o utilizarse para prestar servicios remunerados.
+- La riqueza puede acelerar la subida de atributos porque permite financiar más mejoras. No concede niveles ni puntos de atributo automáticamente: el jugador debe invertir las almas.
+- Los costes, precios, remuneraciones, márgenes y mecanismos contra ciclos comerciales artificiales deberán equilibrarse como parte de la economía general.
+
+### Progresión dinámica de enemigos y zonas
+
+- Los niveles de los enemigos progresarán junto con el jugador, con independencia de si este ha obtenido sus almas mediante combate, comercio, exploración, logros o servicios.
+- El escalado no será idéntico en todas las zonas. Cada zona tendrá su propio rango de progresión, ritmo de escalado y límites.
+- Las zonas iniciales tendrán un crecimiento más contenido y límites inferiores; las zonas avanzadas podrán acompañar una progresión mayor y conservar una dificultad superior.
+- Los rangos de nivel de las zonas podrán solaparse para permitir rutas alternativas.
+- Cada categoría de enemigo tendrá su propio perfil y límites. Enemigos comunes, fuertes, élites y jefes no compartirán necesariamente la misma curva.
+- El nivel dinámico no multiplicará automáticamente todas las estadísticas por igual. Vitalidad, daño, Postura, defensas, resistencias y comportamiento podrán evolucionar mediante parámetros independientes.
+- El escalado considerará el nivel total y la distribución de atributos del jugador, además de las capacidades relevantes de su equipamiento y Artes. El nivel total por sí solo no representa todo su poder.
+- La riqueza no será un parámetro directo del escalado enemigo. Solo influirá indirectamente cuando se convierta en atributos mediante la inversión de almas.
+- El escalado no deberá borrar la sensación de progreso: al regresar a una zona anterior, el jugador debe poder notar su superioridad cuando haya superado su referencia de dificultad.
+- Entrar prematuramente en una zona avanzada debe seguir representando un desafío considerable.
+- Las cifras, rangos, curvas y límites se definirán al diseñar las regiones y se calibrarán mediante simulaciones de encuentros.
+
+La especificación matemática complementaria se encuentra en la sección 24 de [Modelo matemático del combate](combat-mathematical-model.md#24-progresión-del-personaje-economía-de-almas-y-escalado-dinámico-de-enemigos).
