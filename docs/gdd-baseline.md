@@ -828,3 +828,23 @@ Las interacciones ecológicas visibles y de mayor detalle, como la caza, la comp
 - La frecuencia, el detalle y los criterios de activación de cada nivel de simulación deberán equilibrar credibilidad, rendimiento y consistencia. Los umbrales de proximidad y las reglas cuantitativas quedan pendientes de diseño técnico.
 
 El objetivo es reservar las interacciones individuales y observables para los ecosistemas próximos al jugador, mientras el resto del mundo continúa evolucionando mediante una representación simplificada y coherente.
+
+
+## Domesticación y vínculos con criaturas
+
+El jugador podrá establecer vínculos con determinadas criaturas y, cuando su naturaleza, inteligencia, comportamiento y capacidades lo permitan, domesticarlas o cooperar con ellas.
+
+- La domesticación no estará disponible para todas las especies. Cada criatura o especie tendrá características y condiciones propias que determinarán si puede establecer un vínculo con el jugador.
+- El vínculo podrá desarrollarse progresivamente mediante interacciones, confianza, cuidado, alimentación, ayuda y otras conductas coherentes con la criatura. No se asumirá que una criatura se vuelve dócil de forma instantánea.
+- Las respuestas de cada criatura dependerán de su personalidad, instintos, experiencias, estado, necesidades y relación con el jugador. Algunas podrán ser cautelosas, independientes, difíciles de domesticar o incapaces de aceptar compañía.
+- Las criaturas vinculadas podrán desempeñar funciones distintas según sus capacidades: acompañar al jugador, ayudar en determinadas tareas, participar en combate o servir como monturas cuando su anatomía y comportamiento lo permitan.
+- Las funciones disponibles serán específicas de cada criatura. No todas podrán combatir, transportar al jugador o realizar las mismas tareas.
+- El vínculo no eliminará las necesidades ni el comportamiento natural de la criatura. Alimentación, descanso, seguridad, salud, miedo y condiciones ambientales podrán influir en su disposición y rendimiento.
+- Las criaturas podrán reaccionar ante peligros, enemigos, clima y entorno de acuerdo con sus instintos y entrenamiento. No deberán obedecer órdenes imposibles o contrarias a sus capacidades.
+- El jugador deberá poder emitir órdenes o indicaciones compatibles con las capacidades de la criatura. El repertorio de órdenes, su interfaz y sus límites quedan pendientes de diseño.
+- El vínculo podrá fortalecerse, debilitarse o romperse según las acciones del jugador, el trato recibido, las experiencias compartidas y otros acontecimientos relevantes.
+- La muerte, desaparición, separación o pérdida de confianza de una criatura vinculada tendrá consecuencias coherentes con el vínculo establecido. Las reglas concretas de lesión, recuperación, muerte permanente y reencuentro quedan pendientes.
+- La domesticación y el uso de criaturas deberán integrarse con los ecosistemas y las poblaciones naturales. La captura o extracción de ejemplares no podrá ignorar límites ecológicos ni generar criaturas arbitrariamente.
+- La simulación deberá respetar la continuidad del vínculo y de la criatura tanto cerca como lejos del jugador, utilizando niveles de detalle adecuados sin reiniciar sus estados o experiencias.
+
+El objetivo es que la relación con la fauna sea una posibilidad sistémica y no una mecánica universal impuesta a todas las especies. Cada criatura conservará una identidad y unas capacidades propias, y la cooperación surgirá de la compatibilidad y del vínculo desarrollado.
