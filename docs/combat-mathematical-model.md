@@ -705,3 +705,189 @@ No se seleccionará una curva por parecerse más a un Souls. Se elegirá por res
 - Elden Ring Wiki, Weapon Scaling: curvas y valores de escalado por estadística: https://eldenring.wiki.gg/wiki/Scaling
 - Elden Ring Infusion Calculator: reconstrucción de AR a partir de daño base, escalado, curvas y mejoras: https://github.com/kideuler/Elden-Ring-Calculator
 - Dark Souls III Wiki, Scaling: correcciones de escalado y puntos de rendimientos decrecientes: https://darksouls3.wikidot.com/scaling
+
+## 22. Sistema de escalado de atributos — especificación v1.0
+
+Esta sección establece el primer perfil matemático completo y coherente para las ocho estadísticas. Es la referencia canónica para los prototipos de escalado. Los valores aquí indicados son parámetros iniciales de Mythical Exodus, no cifras importadas de Soulslike. Se versionan para poder calibrarlos con simulaciones sin cambiar la estructura matemática.
+
+### 22.1 Dominio y normalización
+
+Todas las estadísticas tienen dominio entero [1,99]. El valor 1 representa el mínimo funcional y 99 el máximo previsto. Cada curva devuelve una contribución normalizada entre 0 y 1:
+
+- 0 en estadística 1;
+- 1 en estadística 99;
+- crecimiento monótono;
+- rendimientos marginales definidos por perfil;
+- sin saltos en los puntos de cambio.
+
+Se divide el dominio en cuatro tramos: 1–25, 26–50, 51–75 y 76–99. Para un valor s:
+
+\[
+n_1=clamp(s-1,0,24),\quad
+n_2=clamp(s-25,0,25)
+\]
+\[
+n_3=clamp(s-50,0,25),\quad
+n_4=clamp(s-75,0,24)
+\]
+
+Cada estadística tiene cuatro pesos marginales (w1,w2,w3,w4). Su curva es:
+
+\[
+G(s)=\frac{w_1n_1+w_2n_2+w_3n_3+w_4n_4}
+{24w_1+25w_2+25w_3+24w_4}
+\]
+
+El peso de un tramo expresa cuánto vale un punto adicional dentro de ese tramo, no una bonificación instantánea al alcanzar el umbral. Por ello, cruzar 25, 50 o 75 no produce saltos.
+
+### 22.2 Perfiles iniciales por estadística
+
+| Estadística | w1 (1–25) | w2 (26–50) | w3 (51–75) | w4 (76–99) | Intención |
+|---|---:|---:|---:|---:|---|
+| Vitalidad | 1.25 | 1.00 | 0.55 | 0.25 | Beneficio temprano alto; la supervivencia sigue creciendo, pero cada punto tardío aporta menos. |
+| Fuerza | 0.70 | 1.10 | 0.80 | 0.35 | Escalado ofensivo más valioso en la zona media, con rendimientos decrecientes al especializarse mucho. |
+| Agilidad | 1.10 | 0.85 | 0.45 | 0.20 | La movilidad básica mejora pronto; la inversión extrema no debe romper tiempos ni animaciones. |
+| Resistencia | 1.20 | 0.90 | 0.45 | 0.20 | Protección y tolerancia útiles desde temprano, con límites para evitar invulnerabilidad. |
+| Voluntad | 0.65 | 0.95 | 0.85 | 0.45 | Progresión sostenida en zona media; su efecto universal sobre daño exige moderación. |
+| Ruptura | 0.55 | 0.95 | 0.75 | 0.35 | Crecimiento crítico gradual, evitando que la probabilidad se dispare al principio o al final. |
+| Destreza | 0.75 | 1.10 | 0.75 | 0.30 | Especialización en Artes de Combate, con zona media fuerte. |
+| Armonía | 0.65 | 0.95 | 0.90 | 0.40 | Escalado especial sostenido, con rendimientos decrecientes en valores extremos. |
+
+Valores normalizados resultantes en puntos de control:
+
+| Estadística | G(1) | G(25) | G(50) | G(75) | G(99) |
+|---|---:|---:|---:|---:|---:|
+| Vitalidad | 0.000 | 0.401 | 0.736 | 0.920 | 1.000 |
+| Fuerza | 0.000 | 0.231 | 0.609 | 0.884 | 1.000 |
+| Agilidad | 0.000 | 0.414 | 0.748 | 0.925 | 1.000 |
+| Resistencia | 0.000 | 0.428 | 0.762 | 0.929 | 1.000 |
+| Voluntad | 0.000 | 0.218 | 0.551 | 0.849 | 1.000 |
+| Ruptura | 0.000 | 0.206 | 0.576 | 0.869 | 1.000 |
+| Destreza | 0.000 | 0.252 | 0.637 | 0.899 | 1.000 |
+| Armonía | 0.000 | 0.218 | 0.551 | 0.866 | 1.000 |
+
+Los pesos son parámetros versionados. Cambiar un peso modifica la curva completa, pero no la semántica de la estadística ni el contenido que la utiliza.
+
+### 22.3 Conversión de curva en efecto jugable
+
+La curva normalizada no es por sí misma daño, defensa ni puntos de Vitalidad. Cada subsistema transforma G(s) mediante parámetros con unidades explícitas.
+
+**Vitalidad — capacidad máxima**
+
+\[
+HP_{max}=HP_{clase}+HP_{bonus,99}\cdot G_{vit}(Vitalidad)
+\]
+
+Perfil inicial recomendado: HP_bonus,99 = 0.50 × HP_clase. A 99, la estadística puede aportar hasta un 50 % adicional sobre la base de clase; el valor concreto se conserva como parámetro de balance. Vitalidad no añade daño ni Postura.
+
+**Fuerza — daño físico de armas y acciones compatibles**
+
+\[
+AR_k=B_k\left(1+\sum_i C_{k,i}G_i(s_i)\right)
+\]
+
+Fuerza solo participa cuando el arma, movimiento o componente declara su coeficiente. El contenido puede combinar Fuerza con otra estadística. La suma de coeficientes de escalado de un componente no podrá superar inicialmente 0.75; así, el escalado de atributos no puede añadir más de un 75 % de la potencia base antes de los modificadores globales. Se permiten valores inferiores o cero.
+
+**Agilidad — movilidad, no daño automático**
+
+\[
+M_{movilidad}=1+0.12\cdot G_{agi}(Agilidad)
+\]
+
+\[
+T_{recuperación}=T_{base}\left(1-0.10\cdot G_{agi}(Agilidad)\right)
+\]
+
+Estos modificadores solo se aplican a parámetros de desplazamiento y recuperación que declaren explícitamente escalado con Agilidad. No aceleran automáticamente ataques, animaciones, ventanas de desvío perfecto, invulnerabilidad de esquiva ni cadencia de armas. Cada acción conserva sus límites temporales y de animación.
+
+**Resistencia — mitigación por tipo**
+
+\[
+R_{estadística,k}=R_{max,k}\cdot G_{res}(Resistencia)
+\]
+
+Perfil inicial: R_max,k no supera 0.20 (20 puntos porcentuales) por tipo de daño. Un coeficiente de afinidad defensiva por tipo puede reducir ese máximo, nunca aumentarlo sin una regla de contenido explícita. La resistencia total sigue limitada por el máximo global de mitigación del sistema; la inmunidad continúa siendo una regla separada.
+
+**Voluntad — daño universal y duración de estados negativos**
+
+\[
+M_{vol}=1+0.15\cdot G_{vol}(Voluntad)
+\]
+
+\[
+T_{neg}=T_{base}\cdot\max(0.75,1-0.25\cdot G_{vol}(Voluntad))
+\]
+
+Voluntad aumenta todos los tipos de daño hasta un 15 % en el perfil inicial y reduce hasta un 25 % la duración de estados negativos recibidos. El multiplicador de daño se aplica una sola vez por componente y no aumenta automáticamente la presión de Postura. La reducción de duración no afecta estados beneficiosos.
+
+**Ruptura — probabilidad crítica**
+
+\[
+p_{crit}=clamp(p_{base}+0.12\cdot G_{rup}(Ruptura)+p_{otros},p_{min},p_{max})
+\]
+
+La contribución propia de Ruptura tiene un máximo inicial de 12 puntos porcentuales. El límite absoluto recomendado de probabilidad crítica es 35 %, salvo acciones cuyo diseño declare una regla excepcional. Ruptura no aumenta automáticamente el multiplicador de daño crítico. Su posible influencia sobre evasión queda fuera de esta versión hasta validar su alcance funcional; no se debe implementar por inferencia.
+
+**Destreza — Artes de Combate**
+
+Destreza participa en el escalado de daño de Artes de Combate mediante el mismo modelo por componente:
+
+\[
+AR_{arte,k}=B_k\left(1+C_{dex,k}G_{dex}(Destreza)+\sum_{j\ne dex}C_{k,j}G_j(s_j)\right)
+\]
+
+El coeficiente pertenece al Arte y puede ser cero. Destreza no aumenta automáticamente el daño de ataques ordinarios ni el coste/recuperación de energía.
+
+**Armonía — daño especial y energético**
+
+\[
+AR_{especial,k}=B_k\left(1+C_{arm,k}G_{arm}(Armonía)+\sum_{j\ne arm}C_{k,j}G_j(s_j)\right)
+\]
+
+Armonía participa en componentes especiales o energéticos que la declaren. Las afinidades energéticas confirmadas se aplican en su etapa propia y una sola vez; no se incorporan dentro de la curva de Armonía.
+
+### 22.4 Reglas de composición y prevención de doble escalado
+
+1. Las curvas solo convierten estadísticas en contribuciones normalizadas.
+2. Los coeficientes de arma/Arte determinan qué estadísticas participan y en qué proporción.
+3. Voluntad se aplica como modificador global de daño separado; no debe incluirse simultáneamente en la suma de coeficientes del componente.
+4. El multiplicador del movimiento se aplica una sola vez.
+5. Afinidad energética se consulta una sola vez por componente compatible.
+6. La presión de Postura tiene su propio valor base, coeficientes y mitigación; no hereda el daño final salvo que una acción lo configure explícitamente.
+7. La defensa no modifica el valor de ataque mostrado; solo la resolución contra el objetivo.
+8. Los valores intermedios conservan precisión decimal y se redondean al aplicar el resultado al estado persistente.
+
+### 22.5 Reglas de validación de contenido
+
+El cargador de datos rechazará:
+- estadísticas fuera del intervalo [1,99];
+- pesos de curva negativos o no finitos;
+- curvas que no sean monótonas;
+- coeficientes de escalado negativos o no finitos;
+- suma de coeficientes superior al presupuesto configurado;
+- resistencias fuera de sus límites;
+- probabilidades fuera de [0,1] o límites críticos incoherentes;
+- modificadores que declaren el mismo efecto en más de una etapa;
+- acciones que pretendan escalar con una estadística sin declarar su canal y coeficiente.
+
+No se corregirán silenciosamente los datos inválidos durante el combate.
+
+### 22.6 Pruebas y criterios de aceptación
+
+Las pruebas automáticas deben recorrer las 99 entradas posibles de cada curva y comprobar:
+- G(1)=0 y G(99)=1;
+- 0 ≤ G(s) ≤ 1;
+- G(s+1) ≥ G(s);
+- continuidad en los puntos 25, 50 y 75;
+- la contribución marginal corresponde al peso del tramo;
+- ningún punto de estadística reduce el efecto correspondiente;
+- los topes de HP, movilidad, recuperación, resistencia, daño universal y crítico se respetan;
+- Voluntad se aplica una sola vez a daño y nunca aumenta presión de Postura por defecto;
+- Agilidad no altera ataques ni ventanas de desvío sin declaración explícita;
+- las construcciones especializadas e híbridas se comparan con el mismo presupuesto total de puntos;
+- armas y Artes sin coeficiente para una estadística no reciben escalado accidental de ella.
+
+### 22.7 Estado de aprobación
+
+Esta versión fija una arquitectura y un primer perfil numérico coherente para iniciar prototipos. Los pesos de las curvas y los topes de efecto son parámetros iniciales de balance, no verdades inmutables. La estructura, los dominios, la separación de responsabilidades, la ausencia de doble aplicación y los criterios de validación sí se consideran reglas del sistema. La calibración final deberá basarse en simulaciones de encuentros completos y pruebas de regresión.
+
