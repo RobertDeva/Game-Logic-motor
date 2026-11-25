@@ -587,3 +587,22 @@ Las facciones podrán mantener un nivel de alerta que evolucione según las acci
 - El nivel de alerta de una facción debe distinguirse de la memoria individual de los enemigos y de los informes compartidos: estos sistemas pueden alimentarlo, pero no son equivalentes.
 
 El objetivo es que las acciones del jugador tengan consecuencias estratégicas a escala de facción y que el mundo responda de manera coherente, sin convertir cada territorio en un estado de hostilidad universal e invariable.
+
+
+## Reacción de la vida cotidiana y los territorios ante los acontecimientos
+
+El mundo de Mythical Exodus debe reaccionar a los acontecimientos de forma persistente y coherente. Las consecuencias de las acciones del jugador no se limitarán al combate ni a las fuerzas armadas de una facción: también podrán modificar la vida cotidiana de los territorios y de sus habitantes.
+
+- La situación de seguridad de una región puede afectar a sus actividades cotidianas. Ante amenazas conocidas, algunos comerciantes pueden cerrar temporalmente, reducir sus horarios o trasladarse; los habitantes pueden evitar ciertas zonas, permanecer en sus hogares o abandonar lugares peligrosos.
+- Las autoridades y facciones pueden establecer controles, inspeccionar viajeros, restringir accesos, reforzar puestos de vigilancia, imponer medidas de protección o cerrar determinadas rutas cuando dispongan de motivos y recursos para hacerlo.
+- Las rutas comerciales, el abastecimiento, los servicios y la actividad económica pueden verse afectados por patrullas, emboscadas, conflictos, bloqueos, destrucción de infraestructuras y otros acontecimientos del mundo.
+- Los habitantes y NPC podrán reaccionar de manera diferente según su personalidad, ocupación, lealtades, recursos, información disponible y exposición directa a los acontecimientos. No habrá una reacción uniforme de toda la población.
+- La información se propagará de manera plausible. Los habitantes, comerciantes y autoridades solo podrán reaccionar a sucesos que hayan presenciado o conocido mediante rumores, testigos, mensajeros u otros medios establecidos en el mundo. Los rumores pueden ser incompletos, incorrectos o tardíos.
+- Las consecuencias podrán variar entre regiones de una misma facción. Un territorio cercano al conflicto puede vivir bajo vigilancia o peligro, mientras que otro que no haya recibido noticias ni sufrido sus efectos puede mantener una vida cotidiana normal.
+- Los cambios no serán necesariamente permanentes. Cuando las causas desaparezcan y las condiciones lo permitan, una región podrá recuperar gradualmente sus actividades, aunque daños, pérdidas, desplazamientos o desconfianza puedan prolongar sus consecuencias.
+- Las decisiones y acciones del jugador podrán mejorar o empeorar las condiciones de una comunidad, afectar su seguridad y alterar sus oportunidades económicas y sociales. No se presupone que toda consecuencia sea negativa ni que el jugador controle directamente cada reacción.
+- La respuesta del mundo debe surgir de acontecimientos, información, recursos y reglas coherentes, no de cambios arbitrarios destinados a castigar al jugador.
+
+Este sistema complementa la alerta de facciones: la alerta representa la percepción y preparación de una organización, mientras que la reacción territorial representa cómo los acontecimientos y las respuestas de sus habitantes, autoridades y servicios transforman la vida cotidiana. Ambos sistemas podrán influirse mutuamente, pero no son equivalentes.
+
+El objetivo es construir un mundo reactivo y persistente, en el que las acciones del jugador y los acontecimientos entre facciones tengan consecuencias visibles y funcionales más allá del encuentro inmediato. El nivel de detalle de la simulación social, los estados regionales, los canales de información, las escalas temporales y las reglas de recuperación quedan pendientes de diseño.
