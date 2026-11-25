@@ -979,13 +979,13 @@ Sea \(n\) el número de puntos de progresión comprados desde el estado inicial.
 \[
 C(n)=
 \begin{cases}
-\operatorname{round}(0.0068x^3-0.06x^2+17.1x+639), & 2\le x\le12\\
+T_{DS3}(x), & 2\le x\le12\\
 \operatorname{round}(0.02x^3+3.06x^2+105.6x-895), & x\ge13
 \end{cases}
 \qquad x=n+2
 \]
 
-La función devuelve almas enteras. El coste se calcula usando el nivel objetivo, no el nivel que se abandona. Para evitar ambigüedad, \(n=0\) representa el personaje en su estado inicial; comprar el primer punto cuesta \(C(0)\), equivalente al tramo de nivel 1 a 2 de Dark Souls III.
+La función devuelve almas enteras. \(T_{DS3}\) es la tabla exacta de costes iniciales de Dark Souls III para los niveles objetivo 2–12: 673, 689, 706, 723, 740, 757, 775, 793, 811, 829 y 847. Se utiliza la tabla en ese tramo porque la aproximación polinómica publicada no reproduce todos esos enteros exactamente. Desde el nivel objetivo 13 se utiliza la expresión cúbica redondeada al entero más cercano. El coste se calcula usando el nivel objetivo, no el nivel que se abandona. Para evitar ambigüedad, \(n=0\) representa el personaje en su estado inicial; comprar el primer punto cuesta \(C(0)=673\), equivalente al tramo de nivel 1 a 2 de Dark Souls III.
 
 **Valores ilustrativos de la curva de referencia** (coste de comprar el punto correspondiente, redondeado al alma más cercana):
 
