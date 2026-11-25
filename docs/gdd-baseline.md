@@ -1492,3 +1492,15 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - Los objetos fabricados mediante una receta original podrán mostrar su nombre o denominación artesanal como parte de su identidad.
 - El registro del objeto podrá conservar la receta utilizada y su versión, permitiendo reconocer su procedencia artesanal.
 - Los criterios de denominación, cambios de nombre, visibilidad en interfaces y tratamiento de copias o fabricaciones por otros artesanos quedan pendientes de definición.
+
+
+## Reconocimiento, aprendizaje e influencia de las creaciones artesanales del jugador
+
+- Las creaciones originales del jugador podrán llegar a ser conocidas por otros artesanos y maestros cuando exista un medio plausible para descubrirlas: observar los objetos, examinar una pieza, recibir una receta o información, o conocer su reputación.
+- La reacción de cada artesano dependerá de sus conocimientos, personalidad, intereses, relaciones con el jugador, reputación de la creación y circunstancias.
+- Otros artesanos podrán admirar o reconocer la calidad y originalidad de una creación, interesarse por su método, intentar aprenderlo cuando dispongan de información y medios suficientes, o desarrollar variantes propias.
+- Conocer o examinar un objeto terminado no concederá automáticamente el conocimiento completo de su receta o procedimiento de fabricación.
+- La imitación y el aprendizaje requerirán información suficiente, capacidades y medios compatibles; los resultados podrán ser parciales o imperfectos.
+- Las variantes desarrolladas por otros artesanos deberán conservar su propia identidad y procedencia, sin confundirse con la receta original del jugador.
+- La reputación y difusión de una creación podrán influir en su reconocimiento, pero no garantizarán que todos los artesanos la conozcan.
+- Los medios de difusión, grados de información, condiciones de aprendizaje, reconocimiento, imitación y consecuencias económicas o sociales quedan pendientes de definición.
