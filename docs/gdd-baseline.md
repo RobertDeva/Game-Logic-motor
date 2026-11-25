@@ -1703,3 +1703,11 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - El mismo principio de descubrimiento y registro se aplicará a los minerales y depósitos: el jugador podrá observarlos y experimentar para aprender a reconocer sus características, patrones y debilidades explotables durante la extracción.
 - La información descubierta sobre criaturas y minerales se conservará como conocimiento consultable y podrá mejorar la eficacia y calidad de las actividades relacionadas.
 - La estructura de la enciclopedia, las categorías de conocimiento, los métodos de investigación y sus efectos concretos quedan pendientes de definición.
+
+
+### Instructores para actividades y profesiones
+
+- Todas las actividades y profesiones del juego podrán contar con instructores que enseñen y transmitan conocimientos y técnicas al jugador.
+- Los instructores serán una vía de aprendizaje complementaria a la observación, la experimentación y el descubrimiento autónomo.
+- Su enseñanza podrá ayudar al jugador a aprender procedimientos, técnicas y conocimientos propios de la actividad o profesión correspondiente.
+- La disponibilidad de instructores, sus requisitos, especialidades, métodos de enseñanza y el alcance de los conocimientos que podrán transmitir quedan pendientes de definición.
