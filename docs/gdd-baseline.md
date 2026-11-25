@@ -138,7 +138,7 @@ La tercera página contiene una tabla con columnas «EM», «G» y «S». Por el
 | Destreza | 6 | 4 | 5 |
 | Armonía | 6 | 4 | 5 |
 
-Los valores se transcriben como aparecen en la tabla. No se asume todavía el rango permitido, el coste de subir cada estadística ni si estos números son atributos iniciales, ponderaciones o puntos de distribución. Antes de implementarlos como balance definitivo se confirmarán su significado y las abreviaturas.
+Confirmación del creador: estos números son las estadísticas básicas/iniciales de cada clase. Se utilizarán como valores de partida al crear un personaje de esa clase. Todavía quedan por definir el rango permitido, los límites y el coste de mejorar cada estadística.
 
 ### Diagrama de energías
 
@@ -146,7 +146,7 @@ La tercera página representa Aura, Maná y Prana como energías básicas y mues
 
 ### Consecuencia para la implementación
 
-La tabla anterior sí proporciona una primera referencia concreta para construir configuraciones iniciales de las tres clases, siempre que el creador confirme que los números son los valores iniciales previstos. Las descripciones sirven para definir responsabilidades candidatas de cada estadística. Las fórmulas, límites, escalados, efecto incompleto de Voluntad y progresión de armas siguen sin estar especificados.
+La tabla anterior proporciona los valores iniciales confirmados para construir las configuraciones de las tres clases. Las descripciones sirven para definir responsabilidades candidatas de cada estadística. Las fórmulas, límites, escalados, efecto incompleto de Voluntad y progresión de armas siguen sin estar especificados.
 
 
 ### Aclaración del creador sobre Voluntad y las flechas
@@ -159,3 +159,8 @@ También aclaró que las puntas de las flechas del diagrama codifican las relaci
 
 
 Confirmación adicional del creador: en el diagrama de afinidades, la punta de cada flecha indica el lado que tiene ventaja. La relación se registrará como «origen tiene ventaja sobre destino» cuando la flecha vaya del origen al destino (A → B).
+
+
+### Confirmación del creador sobre las estadísticas iniciales
+
+Los valores de las columnas EM/G/S son los atributos básicos iniciales de Espadachín Mágico, Guerrero y Segador, respectivamente. La configuración inicial de cada personaje se construirá a partir de la columna correspondiente a su clase.
