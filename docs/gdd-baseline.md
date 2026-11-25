@@ -1052,3 +1052,18 @@ Las penalizaciones y restricciones derivadas del peso se actualizarán dinámica
 - El recálculo deberá ser determinista y evitar estados obsoletos cuando se intercambien, equipen, desequipen o consuman objetos.
 
 El objetivo es que la carga sea una condición dinámica: el jugador podrá recuperar movilidad reorganizando su inventario y equipamiento en cualquier momento en que las reglas de interacción lo permitan.
+
+
+### Almacenamiento compartido en cofres de zonas de descanso
+
+El jugador podrá depositar objetos en cofres vinculados a las zonas de descanso y acceder al mismo almacenamiento desde otras zonas de descanso habilitadas.
+
+- Los cofres de las zonas de descanso estarán conectados a un almacenamiento compartido, de modo que los objetos depositados en uno puedan recuperarse desde otro.
+- Depositar objetos los retirará de la carga transportada por el jugador; recuperarlos los añadirá y actualizará su peso y categoría de carga.
+- El almacenamiento conservará la identidad, cantidad, estado y propiedades de los objetos depositados.
+- El acceso al almacenamiento estará sujeto a las reglas de interacción de las zonas de descanso; no se asumirá acceso remoto desde cualquier lugar.
+- Las operaciones de depósito y retirada deberán validar espacio disponible, compatibilidad y cualquier restricción que se defina para los objetos.
+- El límite de capacidad del almacenamiento, si existe, y las reglas de organización, filtros y acceso quedan pendientes de especificación.
+- El sistema deberá evitar duplicaciones o pérdidas de objetos durante transferencias y mantener consistencia entre inventario del jugador y almacenamiento.
+
+El objetivo es permitir que el jugador prepare su equipamiento y gestione sus recursos entre expediciones sin cargar permanentemente con todos los objetos que ha obtenido.
