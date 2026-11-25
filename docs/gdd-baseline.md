@@ -293,3 +293,12 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Después de esa ventana, el jefe pasa a ser invulnerable mientras ejecuta la transición de fase.
 - La duración exacta de la ventana de vulnerabilidad y de la transición invulnerable queda pendiente de especificación.
 - Esta transición no restaura ninguna vitalidad perdida. Al completarse, se aplican el nuevo comportamiento de fase y la reducción del 60 % de la postura acumulada, conservando el 40 %.
+
+### Confirmación del creador: cantidad de barras de vitalidad de los jefes y ataques de transición
+
+- Todos los jefes tendrán entre 3 y 5 barras de vitalidad. La cantidad concreta se define individualmente para cada jefe dentro de ese rango.
+- Esta regla específica de jefes establece un rango distinto al máximo general de tres barras indicado para otros enemigos resistentes a Muertebendita; no debe aplicarse ese límite general a los jefes.
+- Durante las transiciones de fase, los jefes no realizarán ataques de cambio de fase en todas las fases.
+- Únicamente en las últimas fases de un jefe podrá ejecutarse un ataque especial asociado al cambio de fase.
+- La fase o fases exactas en las que cada jefe puede realizar ese ataque, así como sus características y consecuencias, se definirán individualmente.
+- Se mantiene la secuencia confirmada: breve ventana inicial de vulnerabilidad y, después, invulnerabilidad durante la transición. El ataque especial, cuando corresponda en las últimas fases, forma parte de la transición invulnerable.
