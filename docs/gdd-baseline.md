@@ -1782,3 +1782,12 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - Los criterios exactos de investigación, duración de búsqueda, degradación de rastros y condiciones para abandonar la búsqueda quedan pendientes de especificación.
 
 Esta decisión cierra por ahora la profundización del sistema ecológico y de comportamiento de criaturas.
+
+
+## Especificación matemática del combate
+
+Se establece un documento técnico separado para desarrollar las fórmulas del sistema de combate sin sobrecargar la línea base funcional: [Modelo matemático del combate](combat-mathematical-model.md).
+
+Este modelo organiza las reglas de estadísticas, potencia ofensiva, daño por componentes, defensa, afinidades, Vitalidad, Postura, desvíos, estados alterados, Artes de Combate, energías, equipamiento, durabilidad, curación, resolución determinista y pruebas matemáticas. Las reglas funcionales ya confirmadas en este GDD prevalecen sobre cualquier fórmula propuesta.
+
+La primera versión define la arquitectura matemática y las ecuaciones generales, pero mantiene pendientes de calibración los valores numéricos, las curvas y los datos que requieren confirmación. En particular, la matriz de afinidades debe transcribirse desde el diagrama original respetando la dirección de sus flechas; no se inventarán relaciones ni multiplicadores.
