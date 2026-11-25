@@ -734,3 +734,22 @@ El clima podrá cambiar durante la partida y no estará limitado a una condició
 - El núcleo lógico representará estados, transiciones, propiedades y consecuencias meteorológicas de forma determinista y desacoplada de la representación visual y de la simulación física.
 
 Los patrones climáticos concretos, sus probabilidades, intensidades, duración, alcance regional y reglas de interacción se definirán posteriormente. El objetivo es que el clima sea un sistema dinámico del mundo y una fuente coherente de cambios ambientales y tácticos, no un simple efecto visual.
+
+
+## Fenómenos meteorológicos extremos y recuperación territorial
+
+El mundo podrá experimentar fenómenos meteorológicos extremos, excepcionales y de intensidad variable, capaces de afectar temporalmente a regiones y comunidades.
+
+- Entre los fenómenos posibles se incluyen huracanes, inundaciones, sequías, ventiscas, tormentas eléctricas intensas, olas de calor o frío y otros desastres meteorológicos apropiados para cada territorio.
+- La aparición, intensidad, duración y alcance de estos fenómenos dependerán de las condiciones geográficas, climáticas y estacionales de cada región. No todos los territorios estarán expuestos a todos los fenómenos.
+- Sus consecuencias podrán incluir daños en construcciones e infraestructuras, rutas temporalmente bloqueadas, pérdida o deterioro de recursos, alteraciones de ecosistemas, desplazamiento de criaturas y cambios en las actividades de las comunidades.
+- Las afecciones provocadas por estos fenómenos serán temporales. No se diseñarán como transformaciones irreversibles del territorio.
+- Después de cada fenómeno deberá existir un proceso de recuperación progresiva. Según el daño y el territorio, este podrá incluir drenaje de inundaciones, retirada de nieve y escombros, reparación de infraestructuras, recuperación de rutas, regeneración de vegetación y fauna, restablecimiento de actividades y recuperación de recursos.
+- La recuperación no será necesariamente instantánea ni uniforme: su velocidad dependerá de la gravedad del fenómeno, las características naturales de la región, los recursos disponibles y la capacidad de sus habitantes o facciones para responder.
+- Las comunidades y facciones podrán participar en la recuperación mediante trabajo, organización, recursos y decisiones. Su capacidad de respuesta podrá variar y producir ritmos de recuperación distintos entre regiones.
+- Durante la recuperación podrán persistir efectos secundarios temporales, como servicios limitados, escasez, rutas parcialmente transitables o cambios en las rutinas de NPC. Estos efectos deberán disminuir conforme se cumplan las condiciones de recuperación.
+- El sistema deberá garantizar que las consecuencias temporales tengan condiciones de finalización y no queden bloqueadas indefinidamente por estados imposibles o dependencias circulares.
+- Los fenómenos extremos y su recuperación podrán avanzar sin la presencia del jugador, mediante simulación temporal de distintos niveles de detalle, manteniendo coherencia y determinismo.
+- El núcleo lógico gestionará los estados, daños, etapas y condiciones de recuperación; la representación visual y la simulación física de los fenómenos corresponderán a las capas especializadas.
+
+El objetivo es que los fenómenos extremos produzcan consecuencias relevantes y oportunidades de juego, pero que el territorio pueda recuperarse con el tiempo. No deberán convertirse en cambios permanentes e irreversibles del mundo.
