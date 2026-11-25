@@ -475,3 +475,62 @@ Se crearán escenarios de prueba reproducibles para:
 Se medirán tiempo medio para derrotar, número de intercambios, daño por ventana de oportunidad, presión de Postura por acción, frecuencia de críticos, eficacia marginal de cada punto de estadística y diferencias entre configuraciones. El objetivo no es igualar todas las armas o clases, sino asegurar que cada opción tenga una identidad útil, contrajuego y coste de oportunidad.
 
 Los valores de balance solo se aprobarán cuando las simulaciones y pruebas de regresión demuestren que no existen estrategias dominantes accidentales, progresiones explosivas ni combinaciones que invaliden las defensas o el sistema de Postura.
+
+
+## 20. Estudio comparativo de referencias Soulslike
+
+**Propósito:** utilizar sistemas publicados y análisis técnicos de Dark Souls, Dark Souls III, Elden Ring, Sekiro y Bloodborne como referencias de diseño y contraste. No se importan automáticamente sus cifras, curvas, reglas ni limitaciones. Las reglas confirmadas de Mythical Exodus y sus seis afinidades energéticas siguen siendo la autoridad funcional.
+
+### 20.1 Hallazgos relevantes
+
+#### Dark Souls / Dark Souls III
+
+Los análisis técnicos de la serie describen un proceso por componentes: se calcula el poder de ataque correspondiente, se aplica el multiplicador propio del movimiento antes de la defensa, se resuelve la defensa del tipo correspondiente, se aplican otros modificadores y finalmente se suman los componentes. El multiplicador de movimiento puede hacer que dos ataques de la misma arma tengan resultados muy distintos. La curva de defensa es no lineal y depende de la relación entre ataque y defensa, en lugar de limitarse siempre a una resta plana.
+
+**Aplicación a Mythical Exodus:** conservar potencia base y escalado del arma separados del coeficiente del movimiento; evaluar una curva de defensa no lineal como alternativa o complemento a la defensa plana actualmente propuesta. La decisión final deberá compararse en simulaciones, especialmente para armas rápidas de bajo daño por impacto y armas lentas de gran impacto.
+
+#### Elden Ring
+
+El análisis de parámetros y el calculador técnico consultado separan el ataque de cada tipo de daño, las curvas de escalado de atributos, el multiplicador de movimiento, la defensa y la negación porcentual. La defensa se aplica antes de la negación. Los tipos de daño se resuelven por separado. El modelo también distingue el valor de ataque mostrado de la eficacia real contra un enemigo: influyen el movimiento utilizado, las defensas, las negaciones y las ventanas de ataque disponibles.
+
+El calculador consultado simula múltiples combates y compara tiempo de derrota, no solo Attack Rating. Sus tiempos de apertura y comportamiento de jefes se declaran estimaciones de modelado, no datos internos oficiales.
+
+**Aplicación a Mythical Exodus:** usar curvas de escalado independientes por estadística y por componente cuando corresponda; conservar la secuencia ataque → defensa → reducción porcentual; evaluar el balance por rendimiento real en encuentros simulados, no por una cifra agregada de daño o DPS aislada.
+
+#### Sekiro: Shadows Die Twice
+
+La guía de mecánicas publicada por Activision confirma que los ataques bloqueados también aumentan la Postura del objetivo; los ataques que conectan sin bloqueo pueden dañar tanto Vitalidad como Postura. Los desvíos contribuyen a romper la Postura del atacante y la Vitalidad del enemigo influye en su velocidad de recuperación. Al romper la Postura se abre una oportunidad temporal de Deathblow; enemigos más poderosos pueden requerir varias ejecuciones.
+
+**Aplicación a Mythical Exodus:** respalda el tratamiento independiente pero coordinado de Vitalidad y Postura, la recuperación de Postura condicionada por Vitalidad y la importancia de ventanas de ejecución. Mythical Exodus conserva sus propias reglas de Muertebendita, barras y transiciones de jefe, que no se sustituyen por las de Sekiro.
+
+#### Bloodborne
+
+El análisis técnico consultado distingue tipos y subtipos de daño, y establece que el tipo efectivo depende del ataque individual, no únicamente del arma. Los ataques pueden contener varios componentes; cada componente utiliza su propia defensa y modificadores. La potencia de ataque se forma a partir del daño base y las contribuciones de atributos, y después el multiplicador del ataque transforma esa potencia antes de resolver la defensa. El análisis también diferencia el valor de ataque mostrado del daño real aplicado.
+
+**Aplicación a Mythical Exodus:** el tipo de daño debe pertenecer al movimiento/componente y no inferirse exclusivamente del arma equipada. Los ataques híbridos deben resolver cada componente por separado antes de sumar el daño efectivo.
+
+### 20.2 Principios de diseño adoptados para continuar el modelo
+
+1. **Separar arma, atributo y movimiento:** el arma aporta parámetros base y coeficientes de escalado; la acción concreta aporta sus multiplicadores y componentes.
+2. **Resolver cada componente por separado:** daño físico, elemental y energético consulta las defensas, resistencias y afinidades aplicables a ese componente.
+3. **Separar defensa y negación porcentual:** se mantendrán como etapas distinguibles. Se comparará una defensa no lineal basada en la relación ataque/defensa con la resta plana propuesta en la sección 6 antes de fijar la fórmula definitiva.
+4. **No confundir Attack Rating con daño real:** el balance debe considerar movimiento, defensas, estados, ventanas, frecuencia de impactos y oportunidades reales de atacar.
+5. **Evaluar encuentros completos:** las simulaciones medirán tiempo de derrota, daño efectivo por oportunidad, presión de Postura, consumo de recursos, estados aplicados y exposición al contraataque.
+6. **Mantener Vitalidad y Postura diferenciadas:** una acción podrá afectar a ambas, pero cada canal tendrá potencia, mitigación y consecuencias propias.
+7. **Separar acumulación de estados del daño directo:** cada estado tendrá su propia regla de acumulación y resistencia; no se asumirá que su acumulación escala igual que el daño del movimiento.
+8. **Preservar las reglas propias del proyecto:** los valores ×1.50, ×0.75, ×1.25 y ×1.00 de afinidades energéticas, las reglas de Muertebendita y las reglas de barras/fases de jefes de Mythical Exodus prevalecen sobre cualquier referencia externa.
+
+### 20.3 Calidad y límites de las referencias
+
+- La guía de Sekiro de Activision es una fuente editorial del distribuidor para las relaciones funcionales descritas, pero no publica todas las fórmulas internas.
+- Las fórmulas detalladas de Dark Souls y Bloodborne proceden de documentación técnica comunitaria y pruebas/reconstrucciones; son útiles como referencia, no como especificación oficial del código fuente.
+- El calculador de Elden Ring es una implementación comunitaria basada en datos del juego y simulaciones. Distingue explícitamente datos extraídos, reglas reconstruidas y estimaciones de comportamiento de jefes.
+- Las cifras concretas de esos juegos no se trasladarán a Mythical Exodus sin análisis dimensional, pruebas de progresión y simulaciones propias.
+
+### 20.4 Fuentes consultadas
+
+- Dark Souls Wiki, “Damage Calculation”: https://darksouls.wikidot.com/damage-calculation
+- Bloodborne Wiki, “Damage Calculation” y “A Hunter's Guide to Damage”: https://www.bloodborne-wiki.com/2015/10/damage-calculation.html
+- Activision Support, “Sekiro: Shadows Die Twice Game Mechanics”: https://support.activision.com/fi/sekiro/articles/sekiro-shadows-die-twice-game-mechanics
+- Elden Ring Infusion Calculator, documentación del modelo y fórmulas: https://github.com/kideuler/Elden-Ring-Calculator
+- Elden Ring Wiki, “Motion Value”: https://eldenring.wiki.gg/wiki/Motion_Value
