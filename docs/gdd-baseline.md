@@ -1820,6 +1820,12 @@ Se ha establecido una primera especificación matemática versionada para las oc
 - La recolección de materias primas y la creación, transformación o fabricación de productos no generan almas directamente.
 - La recolección y la fabricación producen recursos, materiales y bienes que pueden venderse posteriormente o utilizarse para prestar servicios remunerados.
 - La riqueza puede acelerar la subida de atributos porque permite financiar más mejoras. No concede niveles ni puntos de atributo automáticamente: el jugador debe invertir las almas.
+- Los precios de enseñanzas de maestros, armas, equipamiento, consumibles y materias primas se calcularán mediante una escala económica común derivada de la curva de progresión, multiplicada por factores propios de categoría y nivel económico de referencia del artículo.
+- El nivel económico de referencia depende de la etapa del mundo, calidad, complejidad, rareza y contexto del bien o servicio; el precio no aumenta por el nivel actual ni por la riqueza que lleve el comprador.
+- Las enseñanzas tendrán categorías de coste crecientes y requisitos de conocimiento, práctica, reputación o descubrimiento cuando corresponda. Pagar no sustituye la preparación ni convierte automáticamente todo conocimiento en una compra.
+- Los consumibles se valorarán por unidad y deberán representar un gasto recurrente perceptible; los materiales comprables tendrán precios vinculados a su rareza, calidad y disponibilidad.
+- Comprar, fabricar, reparar, mantener, transportar y revender bienes deberá competir por la misma reserva de almas que la progresión de atributos. Los ciclos de fabricación y comercio no podrán generar beneficio neto garantizado sin costes, riesgo o condiciones de mercado.
+- Los multiplicadores iniciales y ejemplos de precios están documentados en la sección 24.5 del [modelo matemático del combate](combat-mathematical-model.md#245-modelo-de-precios-de-bienes-enseñanza-y-consumibles). Son una línea base para simulaciones y no un balance económico definitivo.
 - Los costes, precios, remuneraciones, márgenes y mecanismos contra ciclos comerciales artificiales deberán equilibrarse como parte de la economía general.
 
 ### Progresión dinámica de enemigos y zonas
