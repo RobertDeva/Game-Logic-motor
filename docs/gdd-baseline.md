@@ -279,3 +279,9 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Por tanto, el jefe conserva el 40 % de la postura acumulada antes de la transición. No se restaura la postura hasta el 60 % de su capacidad máxima.
 - Ejemplo ilustrativo: si el jefe tenía acumulado un 80 % de postura, tras la transición conservará un 32 % de postura acumulada (el 40 % de 80 %).
 - Esta regla se aplica a todos los jefes que cambian de fase al perder una barra de vitalidad.
+
+### Confirmación del creador: pérdida definitiva de barras de vitalidad de los jefes
+
+- Cuando un jefe pierde una barra completa de vitalidad, esa barra queda perdida definitivamente.
+- El cambio de fase no restaura ni devuelve vitalidad de la barra consumida.
+- La transición de fase solamente aplica los cambios de comportamiento establecidos y la reducción del 60 % de la postura acumulada; no concede recuperación de vitalidad.
