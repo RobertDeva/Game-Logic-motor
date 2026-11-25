@@ -1097,3 +1097,19 @@ Cuando una criatura compañera muera definitivamente, los objetos que llevaba en
 - La persistencia del cadáver, el deterioro o desaparición de objetos, los peligros que puedan impedir la recuperación y las condiciones especiales de pérdida quedan pendientes de especificación.
 
 El objetivo es que la muerte permanente tenga consecuencias y que las pertenencias de la compañera no desaparezcan arbitrariamente, ofreciendo al jugador la posibilidad de recuperarlas si logra llegar hasta ellas.
+
+
+### Persistencia de cadáveres y ritos de sepultura y luto para criaturas compañeras
+
+El cadáver de una criatura compañera que haya muerto definitivamente permanecerá en el lugar de su muerte incluso cuando el jugador abandone la zona y regrese más adelante. Además de recuperar sus pertenencias, el jugador podrá realizar interacciones de sepultura y luto.
+
+- El cadáver y su estado deberán persistir al abandonar la zona, cambiar de región o regresar posteriormente, de acuerdo con las reglas generales de persistencia del mundo.
+- Los objetos que la criatura llevaba seguirán asociados al cadáver y podrán recuperarse mediante una interacción válida, respetando los límites y restricciones del inventario de destino.
+- El jugador podrá interactuar con el cadáver para realizar una sepultura como acto deliberado de despedida y reconocimiento de la criatura.
+- También existirá una interacción de luto que permita al jugador expresar duelo por la pérdida de su compañera.
+- La sepultura y el luto serán interacciones diferenciadas: una se refiere al tratamiento del cuerpo y la otra al acto de duelo. Podrán formar parte de un mismo proceso de despedida, sin asumir que una sustituye automáticamente a la otra.
+- La muerte seguirá siendo permanente. Ninguna de estas interacciones permitirá resucitar a la criatura ni restaurar el vínculo.
+- La relación entre recuperación de pertenencias y sepultura deberá respetar la continuidad de los objetos: no se perderán ni duplicarán por realizar el rito. El orden de las interacciones y el acceso posterior a los objetos deberán definirse explícitamente.
+- Las formas de sepultura, requisitos, duración, posibles recursos necesarios, respuestas de otros personajes, consecuencias narrativas y mecánicas del luto, así como la persistencia de tumbas o memoriales, quedan pendientes de diseño.
+
+El objetivo es que la pérdida de una compañera tenga presencia duradera en el mundo y pueda recibir un tratamiento significativo, sin reducir su muerte a la desaparición de una entidad o a una simple transferencia de inventario.
