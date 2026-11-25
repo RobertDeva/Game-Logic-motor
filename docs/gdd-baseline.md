@@ -1731,3 +1731,13 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - Las estaciones, el clima, el terreno y las condiciones del ecosistema influirán en la distribución, abundancia y disponibilidad de especies y recursos.
 - Las intervenciones del jugador, como la caza y la recolección, podrán alterar el equilibrio ecológico y tener consecuencias sobre la disponibilidad futura de recursos.
 - Los modelos ecológicos concretos, sus escalas temporales, reglas de reproducción, migración, regeneración y recuperación quedan pendientes de diseño.
+
+
+## Territorios, guaridas y relaciones ecológicas de las criaturas
+
+- Los animales y monstruos podrán disponer de territorios y áreas de actividad propias.
+- Las especies podrán establecer guaridas, con funciones que dependerán de su naturaleza y comportamiento.
+- Las criaturas participarán en cadenas alimenticias y mantendrán relaciones de depredación y alimentación con otras especies y recursos del entorno.
+- Distintas especies podrán competir por alimento, territorio y otros recursos.
+- La presencia, expansión, migración o desaparición de una especie podrá afectar a las poblaciones y comportamientos de otras, contribuyendo a la dinámica de cada ecosistema.
+- Las reglas particulares de territorialidad, guaridas, alimentación, reproducción y competencia quedan pendientes de especificación.
