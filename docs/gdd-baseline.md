@@ -1711,3 +1711,13 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - Los instructores serán una vía de aprendizaje complementaria a la observación, la experimentación y el descubrimiento autónomo.
 - Su enseñanza podrá ayudar al jugador a aprender procedimientos, técnicas y conocimientos propios de la actividad o profesión correspondiente.
 - La disponibilidad de instructores, sus requisitos, especialidades, métodos de enseñanza y el alcance de los conocimientos que podrán transmitir quedan pendientes de definición.
+
+
+## Instructores y conocimiento de recursos naturales
+
+- Todas las actividades y profesiones podrán contar con instructores.
+- Los instructores tendrán distintos niveles de maestría y especialización. Los maestros de mayor nivel podrán enseñar técnicas y conocimientos avanzados que no estarán disponibles con instructores menos especializados.
+- El aprendizaje guiado por instructores complementará el aprendizaje autónomo mediante observación, experimentación, práctica y descubrimiento.
+- El sistema de conocimiento y obtención de recursos naturales no se limitará a minerales y componentes de criaturas: incluirá también plantas, hongos y otros recursos naturales.
+- Estos recursos podrán investigarse mediante observación y experimentación, registrando los descubrimientos en la enciclopedia y aplicando ese conocimiento a su identificación y recolección interactiva.
+- Los detalles de rangos de instructores, requisitos de enseñanza, progresión y procedimientos particulares de recolección quedan pendientes de definición.
