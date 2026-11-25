@@ -1694,3 +1694,12 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - El sistema de obtención y extracción de materiales tendrá su propio nivel de progresión, siguiendo el modelo de progresión establecido para la fabricación.
 - Esta progresión representará el desarrollo de la capacidad del jugador para reconocer anatomías, seleccionar técnicas y extraer componentes con mayor eficacia y calidad.
 - Los detalles de niveles, experiencia, desbloqueos, especializaciones y fórmulas de progresión deberán mantener coherencia con el sistema de fabricación y quedan pendientes de especificación.
+
+
+### Registro de conocimientos sobre criaturas y minerales
+
+- El conocimiento sobre la anatomía y los componentes de cada especie se descubrirá mediante observación y experimentación, y quedará registrado en una enciclopedia de criaturas.
+- Ese conocimiento servirá para reconocer puntos anatómicos, vulnerabilidades y métodos adecuados de extracción de subproductos.
+- El mismo principio de descubrimiento y registro se aplicará a los minerales y depósitos: el jugador podrá observarlos y experimentar para aprender a reconocer sus características, patrones y debilidades explotables durante la extracción.
+- La información descubierta sobre criaturas y minerales se conservará como conocimiento consultable y podrá mejorar la eficacia y calidad de las actividades relacionadas.
+- La estructura de la enciclopedia, las categorías de conocimiento, los métodos de investigación y sus efectos concretos quedan pendientes de definición.
