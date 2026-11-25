@@ -662,3 +662,22 @@ Los acontecimientos importantes podrán dejar consecuencias que se transmitan en
 - La profundidad temporal, el modelo de generaciones, la persistencia entre etapas de la partida y las reglas de transmisión, olvido y transformación quedan pendientes de diseño.
 
 El objetivo es que Mythical Exodus tenga una historia viva: las acciones del jugador y los acontecimientos del mundo pueden convertirse en parte de la memoria de las comunidades y afectar a personas que nunca estuvieron presentes cuando ocurrieron. El pasado debe influir en el presente sin determinarlo por completo.
+
+
+## Acontecimientos históricos autónomos con impacto narrativo controlado
+
+El mundo podrá generar acontecimientos relevantes sin intervención directa del jugador, de modo que las facciones, comunidades y territorios no permanezcan estáticos. Sin embargo, estos acontecimientos deberán producirse con moderación y bajo límites narrativos claros para no desviar, romper o volver incoherente el desarrollo principal de la historia.
+
+- Podrán ocurrir acontecimientos como conflictos entre facciones, rebeliones, disputas sucesorias, cambios de poder, epidemias, crisis económicas, descubrimientos o desastres, siempre que sean plausibles dentro del contexto del mundo.
+- La frecuencia, escala, duración y alcance de estos acontecimientos estarán controlados. No se generarán crisis importantes de manera constante ni se acumularán múltiples sucesos de gran impacto sin justificación.
+- La mayoría de los acontecimientos autónomos deberán tener alcance local o regional. Los sucesos capaces de alterar profundamente el equilibrio general del mundo serán excepcionales y requerirán condiciones narrativas y sistémicas suficientes.
+- Los acontecimientos deberán respetar la cronología, las capacidades de las facciones, sus recursos, relaciones, conflictos previos y la información que realmente poseen.
+- La historia principal y sus hitos imprescindibles tendrán prioridad. La simulación autónoma no podrá eliminar arbitrariamente personajes, lugares, objetos, encuentros o condiciones necesarios para que la trama principal siga siendo coherente y completable.
+- Los acontecimientos autónomos podrán enriquecer el contexto, modificar circunstancias secundarias y abrir o cerrar oportunidades, pero no deberán sustituir por accidente decisiones narrativas centrales ni imponer desenlaces principales que el diseño reserva al jugador.
+- Cuando un acontecimiento pueda afectar a una misión, personaje o lugar importante, deberá respetar las dependencias narrativas definidas. Podrá modificar su contexto o disponibilidad si el diseño lo permite, pero no invalidar requisitos esenciales sin una alternativa intencionalmente diseñada.
+- La intervención del jugador podrá prevenir, acelerar, modificar o aprovechar ciertos acontecimientos si dispone de medios plausibles. No todos los sucesos tendrán que ser evitables ni todos requerirán participación del jugador.
+- Los acontecimientos podrán producir consecuencias persistentes en territorios, facciones, relaciones, economía y memoria histórica, de acuerdo con los sistemas ya definidos, pero su impacto deberá ser proporcional a su escala.
+- El sistema distinguirá entre sucesos cotidianos, incidentes locales, acontecimientos regionales y eventos excepcionales de alcance amplio. Los criterios de clasificación, frecuencia, probabilidad, límites simultáneos y reglas de resolución quedan pendientes de diseño.
+- La autonomía del mundo no debe convertirse en aleatoriedad sin sentido: cada acontecimiento debe tener causas identificables, condiciones de posibilidad y consecuencias coherentes. Se priorizarán la consistencia narrativa y la agencia del jugador frente a la generación indiscriminada de eventos.
+
+El objetivo es que el mundo continúe evolucionando por sí mismo y pueda sorprender al jugador, pero sin competir descontroladamente con la historia principal. La simulación autónoma debe dar profundidad y credibilidad al relato, no apropiarse de su dirección.
