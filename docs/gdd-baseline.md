@@ -1340,3 +1340,29 @@ Cuando una criatura compañera vuelva a encontrarse con el jugador después de u
 - Los criterios de reconocimiento, repertorio de reacciones, duración, intensidad y consecuencias sobre el vínculo quedan pendientes de diseño.
 
 El objetivo es que los reencuentros reflejen la historia vivida durante la separación y el estado actual de la relación, en lugar de tratar a la compañera como si nada hubiera ocurrido.
+
+
+### Sistema de equipamiento del jugador: piezas individuales y conjuntos completos
+
+El sistema de equipamiento permitirá tanto equipar piezas de armadura de forma independiente como utilizar conjuntos completos.
+
+- El equipamiento podrá organizarse en ranuras para piezas individuales, como casco, torso, guantes, piernas y accesorios, según las categorías que se definan.
+- El jugador podrá combinar piezas de distintos conjuntos para construir configuraciones personalizadas.
+- También existirán conjuntos completos concebidos como una combinación coherente de piezas, que podrán equiparse como tal sin eliminar la posibilidad de sustituir componentes individualmente.
+- Las piezas conservarán sus propias características, requisitos, peso, protección, estadísticas y propiedades especiales, según corresponda.
+- Podrán existir bonificaciones o efectos asociados a llevar varias piezas de un mismo conjunto o el conjunto completo; sus condiciones y magnitudes quedan pendientes de diseño.
+- Las reglas de ranuras, compatibilidad, límites de accesorios, bonificaciones por conjunto y restricciones por clase quedan pendientes de especificación.
+
+### Creación, adquisición y aprendizaje de recetas de artesanía
+
+El sistema de artesanía permitirá crear recetas y obtenerlas o aprenderlas mediante maestros artesanos.
+
+- El jugador podrá crear recetas de fabricación o modificación de equipamiento y otros objetos contemplados por el sistema de artesanía, utilizando las herramientas y mecanismos que se definan.
+- Las recetas también podrán obtenerse o aprenderse de maestros artesanos, que actuarán como fuentes especializadas de conocimiento y técnicas.
+- Los maestros artesanos podrán enseñar recetas según sus conocimientos y especialidades; no se asumirá que todos conocen o enseñan las mismas recetas.
+- Una receta podrá definir los materiales, cantidades, herramientas, instalaciones, requisitos y procedimiento necesarios para fabricar o modificar un objeto.
+- El aprendizaje de una receta y la disponibilidad de los recursos necesarios para ejecutarla serán condiciones diferenciadas: conocer una receta no garantiza disponer de materiales, herramientas o instalaciones.
+- La creación de recetas deberá respetar las reglas de materiales, técnicas y capacidades del sistema, evitando fabricar objetos sin requisitos coherentes.
+- Los métodos para crear, descubrir, comprar, recibir o aprender recetas, así como los requisitos, costes, especializaciones de maestros y validación de recetas personalizadas quedan pendientes de diseño.
+
+El objetivo es combinar libertad de personalización con un sistema de artesanía basado en conocimiento, especialización y acceso progresivo a técnicas.
