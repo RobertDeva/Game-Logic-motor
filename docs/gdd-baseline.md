@@ -1038,3 +1038,17 @@ Cuando el jugador supere su capacidad máxima de carga y entre en la categoría 
 - Los requisitos de carga y las restricciones exactas de cada acción acrobática quedan pendientes de especificación y balance.
 
 El objetivo es que superar la capacidad de carga tenga consecuencias relevantes también para la exploración y la movilidad, y no únicamente para la velocidad de desplazamiento durante el combate.
+
+
+### Recuperación dinámica de movilidad al reducir la carga
+
+Las penalizaciones y restricciones derivadas del peso se actualizarán dinámicamente cuando cambie la carga del jugador.
+
+- Al retirar, guardar, transferir o consumir objetos, el sistema recalculará la carga efectiva del jugador.
+- Cuando la carga descienda a una categoría inferior, se actualizarán las penalizaciones correspondientes y podrán recuperarse las acciones que vuelvan a cumplir sus requisitos.
+- Al dejar de estar sobrecargado, las restricciones específicas de esa categoría desaparecerán sin exigir descanso, uso de una zona de descanso ni activación de un mecanismo especial.
+- La recuperación de movilidad será consecuencia directa del nuevo estado de carga y deberá reflejarse de forma coherente en la validación de acciones.
+- Los efectos independientes de la carga —por ejemplo, heridas, estados alterados o condiciones ambientales— seguirán aplicándose aunque el jugador reduzca su peso.
+- El recálculo deberá ser determinista y evitar estados obsoletos cuando se intercambien, equipen, desequipen o consuman objetos.
+
+El objetivo es que la carga sea una condición dinámica: el jugador podrá recuperar movilidad reorganizando su inventario y equipamiento en cualquier momento en que las reglas de interacción lo permitan.
