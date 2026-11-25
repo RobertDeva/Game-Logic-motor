@@ -624,3 +624,22 @@ Los NPC, especialmente los personajes importantes, podrán tener rutinas y activ
 - No se presupone que cada NPC necesite una simulación completa y continua en todo momento. El núcleo lógico deberá representar estados, rutinas, decisiones y consecuencias de forma determinista y comprobable; la presentación y animación de sus actividades corresponderán a capas externas.
 
 El objetivo es que los NPC sean habitantes de un mundo que continúa evolucionando, y no simples elementos que aparecen para atender al jugador. Sus vidas y decisiones podrán generar acontecimientos y consecuencias que el jugador descubrirá al regresar, incluso si no estuvo presente cuando ocurrieron.
+
+
+## Relaciones autónomas y cambiantes entre NPC
+
+Los NPC podrán desarrollar y mantener relaciones entre sí independientemente de la presencia o intervención del jugador. Las relaciones forman parte de la evolución social del mundo y podrán influir en decisiones, rutinas, cooperación, conflictos y acontecimientos.
+
+- Las relaciones podrán incluir amistad, confianza, rivalidad, enemistad, lealtad, alianzas, vínculos familiares, relaciones románticas y otras categorías que el diseño narrativo establezca.
+- Cada relación podrá tener características propias y no tendrá que ser necesariamente simétrica: dos NPC pueden interpretar o valorar su vínculo de manera diferente.
+- Las relaciones podrán evolucionar, fortalecerse, deteriorarse, romperse o transformarse a partir de experiencias compartidas, acciones, promesas, traiciones, conflictos, ayuda recibida, intereses y acontecimientos relevantes.
+- Los NPC podrán iniciar, mantener o terminar vínculos por iniciativa propia, según su personalidad, objetivos, valores, circunstancias y oportunidades.
+- Los vínculos podrán influir en el comportamiento: ayudar o proteger a alguien, cooperar, compartir información, evitarse, competir, enfrentarse, reconciliarse o asumir riesgos por otra persona.
+- Las relaciones podrán afectar las rutinas y actividades autónomas de los NPC, así como su pertenencia a grupos, alianzas y redes sociales.
+- Los acontecimientos que afecten a un NPC podrán repercutir en sus relaciones. La muerte, desaparición, huida, traición o cambio de bando de un personaje puede alterar las decisiones y vínculos de quienes lo conocían.
+- La información sobre acciones y acontecimientos se basará en lo que cada NPC haya presenciado o conocido mediante medios plausibles. No todos conocerán automáticamente las acciones de los demás, y los rumores pueden ser incompletos o erróneos.
+- Las relaciones no deben reducirse a una única puntuación universal cuando existan dimensiones distintas relevantes para el comportamiento. La representación interna, los atributos, umbrales y reglas concretas quedan pendientes de diseño.
+- La evolución de relaciones debe ser coherente con la personalidad y memoria de cada NPC; no se producirán cambios arbitrarios únicamente para dirigir al jugador hacia un resultado narrativo.
+- Las relaciones románticas podrán existir como una categoría de vínculo, pero sus condiciones, alcance narrativo y posibles consecuencias deberán definirse por separado antes de implementar comportamientos concretos.
+
+El objetivo es que las comunidades tengan una estructura social dinámica: sus habitantes pueden formar vínculos, entrar en conflicto, cooperar y cambiar con el tiempo incluso cuando el jugador no interviene. Estas relaciones podrán producir acontecimientos y consecuencias que el jugador descubra posteriormente, sin que el mundo social gire exclusivamente alrededor de él.
