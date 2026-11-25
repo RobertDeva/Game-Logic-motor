@@ -1676,3 +1676,12 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - La precisión y perfección de la ejecución influirán en la calidad del material obtenido: una ejecución mejor realizada podrá producir materiales de mayor calidad.
 - Los materiales también podrán adquirirse mediante compra; la obtención directa y la compra serán vías complementarias.
 - Los patrones concretos, las herramientas, las acciones disponibles, la evaluación de la ejecución, los grados de calidad y sus efectos cuantitativos quedan pendientes de definición.
+
+
+### Obtención interactiva de subproductos animales y monstruosos
+
+- La obtención de subproductos de animales y monstruos contará con interacciones propias, no se resolverá necesariamente mediante una recolección automática.
+- El jugador deberá identificar cómo despiezar al ejemplar o extraer cada componente para conservar la mayor calidad posible.
+- La técnica y precisión de la extracción influirán en la calidad y el estado de los materiales obtenidos; una ejecución más perfecta podrá conservar mejor sus propiedades.
+- Los procedimientos podrán variar según la criatura y el componente que se quiera obtener.
+- Las técnicas concretas, herramientas, patrones, riesgos de pérdida o daño y reglas cuantitativas quedan pendientes de definición.
