@@ -285,3 +285,11 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Cuando un jefe pierde una barra completa de vitalidad, esa barra queda perdida definitivamente.
 - El cambio de fase no restaura ni devuelve vitalidad de la barra consumida.
 - La transición de fase solamente aplica los cambios de comportamiento establecidos y la reducción del 60 % de la postura acumulada; no concede recuperación de vitalidad.
+
+### Confirmación del creador: vulnerabilidad e invulnerabilidad durante la transición de fase de los jefes
+
+- Al perder una barra completa de vitalidad, el jefe inicia el proceso de cambio de fase.
+- Antes de entrar en la transición, existe una breve ventana durante la cual el jefe sigue siendo vulnerable y puede recibir daño.
+- Después de esa ventana, el jefe pasa a ser invulnerable mientras ejecuta la transición de fase.
+- La duración exacta de la ventana de vulnerabilidad y de la transición invulnerable queda pendiente de especificación.
+- Esta transición no restaura ninguna vitalidad perdida. Al completarse, se aplican el nuevo comportamiento de fase y la reducción del 60 % de la postura acumulada, conservando el 40 %.
