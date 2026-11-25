@@ -848,3 +848,20 @@ El jugador podrá establecer vínculos con determinadas criaturas y, cuando su n
 - La simulación deberá respetar la continuidad del vínculo y de la criatura tanto cerca como lejos del jugador, utilizando niveles de detalle adecuados sin reiniciar sus estados o experiencias.
 
 El objetivo es que la relación con la fauna sea una posibilidad sistémica y no una mecánica universal impuesta a todas las especies. Cada criatura conservará una identidad y unas capacidades propias, y la cooperación surgirá de la compatibilidad y del vínculo desarrollado.
+
+
+## Progresión de criaturas compañeras y límite de domesticación
+
+Las criaturas que desarrollen un vínculo con el jugador podrán adquirir experiencia, mejorar capacidades y desarrollar habilidades propias. El crecimiento será individual y estará condicionado por su especie, características y experiencias.
+
+- Cada criatura podrá disponer de capacidades y habilidades compatibles con su especie, anatomía, temperamento y potencial individual. No todas tendrán acceso al mismo repertorio.
+- La experiencia obtenida mediante actividades, exploración, entrenamiento, cooperación y enfrentamientos podrá contribuir al desarrollo de la criatura cuando esas experiencias sean relevantes para sus capacidades.
+- La progresión podrá mejorar habilidades existentes o permitir el desarrollo de nuevas capacidades, siempre dentro de los límites naturales y de diseño de cada criatura.
+- Las experiencias compartidas con el jugador podrán influir en la confianza, cooperación, disciplina y respuesta a determinadas órdenes, sin convertir a la criatura en una unidad idéntica a las demás.
+- El crecimiento no será automático ni uniforme: las características individuales, el uso de habilidades y las circunstancias podrán producir compañeros diferentes incluso dentro de una misma especie.
+- La cantidad de criaturas que el jugador podrá mantener domesticadas y vinculadas activamente será muy limitada. El límite exacto queda pendiente de definición y deberá ser una regla explícita del sistema, no una capacidad ilimitada ampliable sin restricciones.
+- El límite busca dar importancia a cada vínculo y evitar que el jugador acumule grandes grupos de criaturas como recursos intercambiables. La selección y el cuidado de cada compañera deberán implicar decisiones significativas.
+- Las reglas para criaturas adicionales —por ejemplo, si podrán existir vínculos no activos, liberar o sustituir una criatura, o establecer vínculos nuevos tras perder una anterior— quedan pendientes de diseño y no se presuponen.
+- La progresión y el límite de domesticación deberán integrarse con la continuidad ecológica y con la simulación de criaturas cerca y lejos del jugador.
+
+El objetivo es que cada criatura compañera pueda desarrollar una identidad y capacidades propias, mientras que el número reducido de vínculos disponibles favorezca relaciones significativas en lugar de coleccionar acompañantes.
