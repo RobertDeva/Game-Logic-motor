@@ -1622,3 +1622,12 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - La integración también podrá generar costes, dependencias, conflictos de intereses, dificultades de coordinación y riesgos compartidos; no será automáticamente beneficiosa.
 - Se podrán definir estructuras con divisiones, sucursales, responsables y administradores delegados para gestionar operaciones de distintos sectores.
 - Las condiciones legales, económicas, políticas y sociales para fusionar organizaciones, así como sus estructuras, gobernanza, contabilidad, sinergias y riesgos, quedan pendientes de definición.
+
+
+## Organizaciones familiares y continuidad dinástica
+
+Las compañías, talleres, gremios y demás organizaciones fundadas o adquiridas por el jugador podrán evolucionar hasta convertirse en organizaciones familiares o dinásticas. Sus propiedades, negocios, conocimientos, técnicas, reputación y responsabilidades podrán transmitirse a herederos y sucesores, incluso a través de varias generaciones.
+
+La continuidad no será automática ni garantizará que la organización conserve su prosperidad o influencia. La sucesión dependerá de las personas disponibles, sus capacidades, preparación, relaciones, intereses, legitimidad y aceptación por parte de los miembros de la organización y del entorno social o político. Las decisiones de sucesión, los conflictos entre herederos, la conservación o transformación de la identidad de la organización y sus consecuencias concretas quedan sujetos a un diseño posterior.
+
+Esta decisión cierra por ahora la profundización del sistema de profesiones, oficios y organizaciones empresariales. Se retomará únicamente si resulta necesario para definir otros sistemas o si el usuario decide volver sobre el tema.
