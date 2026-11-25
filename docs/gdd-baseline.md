@@ -1158,3 +1158,20 @@ El mundo registrará acontecimientos significativos vividos por el jugador junto
 - Los criterios de relevancia, capacidad y organización del registro, personalización de epitafios, selección de recuerdos y persistencia entre partidas quedan pendientes de diseño.
 
 El objetivo es que cada compañera tenga una historia individual reconocible y que los memoriales puedan recordar experiencias auténticas de la aventura compartida.
+
+
+### Relaciones autónomas entre criaturas compañeras
+
+Las criaturas compañeras podrán desarrollar relaciones entre sí a partir de sus encuentros, convivencia y experiencias compartidas.
+
+- Las relaciones podrán incluir amistad, confianza, afecto, rivalidad, temor, rechazo, hostilidad u otros vínculos coherentes con la naturaleza y personalidad de cada criatura.
+- Los vínculos podrán ser asimétricos: una criatura podrá sentir confianza o afecto por otra sin que la otra corresponda de la misma manera.
+- La evolución de las relaciones dependerá de experiencias observables, interacciones, cooperación, competencia, conflictos, ayuda recibida y circunstancias de convivencia.
+- La especie, temperamento, personalidad, inteligencia, experiencias previas y estado de cada criatura influirán en cómo establece y expresa vínculos.
+- Las relaciones podrán afectar a la cooperación, proximidad, comunicación, apoyo, competencia por recursos, tolerancia, conflictos y respuestas ante peligros.
+- Las criaturas no estarán obligadas a llevarse bien por pertenecer al grupo del jugador; podrán surgir tensiones o incompatibilidades persistentes.
+- La separación, ausencia, lesión o muerte de una criatura podrá afectar a las relaciones de las demás cuando exista un vínculo y conocimiento del acontecimiento.
+- Cada criatura solo reaccionará a hechos que haya percibido o conocido mediante un medio plausible; no tendrá conocimiento omnisciente de lo ocurrido a otras.
+- Las reglas de interacción, intensidad y evolución de vínculos, memoria, resolución de conflictos y efectos concretos quedan pendientes de diseño.
+
+El objetivo es que el grupo de compañeras desarrolle una dinámica social propia, con vínculos y tensiones que emerjan de sus características y experiencias, en lugar de comportarse como unidades indiferenciadas que obedecen únicamente al jugador.
