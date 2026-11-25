@@ -1274,3 +1274,19 @@ Mientras estén temporalmente separadas del jugador, las criaturas compañeras p
 - Los métodos de comunicación de experiencias, selección de acontecimientos relevantes, progresión obtenida, resolución de encuentros y límites de simulación quedan pendientes de diseño.
 
 Estas experiencias permitirán que las compañeras tengan una vida y evolución propias, en lugar de permanecer como entidades suspendidas mientras el jugador está lejos.
+
+
+### Comunicación a distancia entre el jugador y criaturas compañeras
+
+Cuando estén separadas, las criaturas compañeras podrán intentar comunicarse con el jugador mediante señales o canales compatibles con su especie y las circunstancias.
+
+- Los medios podrán incluir llamadas, sonidos, gestos, señales visuales, rastros u otras formas de comunicación que la criatura pueda producir y el jugador pueda percibir e interpretar.
+- La disponibilidad y eficacia de cada medio dependerán de la especie, anatomía, sentidos, inteligencia, aprendizaje, experiencia y vínculo de la criatura.
+- La distancia, el terreno, los obstáculos, el clima, el ruido, la visibilidad y otras condiciones podrán limitar o impedir la comunicación.
+- La comunicación podrá servir para indicar ubicación aproximada, advertir de peligros, solicitar ayuda, señalar descubrimientos o transmitir otras necesidades y acontecimientos que la criatura pueda expresar.
+- Las señales no transmitirán información ilimitada ni garantizarán que el jugador las comprenda correctamente; podrán ser ambiguas, incompletas o no llegar a su destino.
+- El jugador también podrá intentar comunicarse con una compañera separada mediante canales que ella pueda percibir y comprender.
+- Ninguna de las partes tendrá conocimiento automático de la ubicación, estado o experiencias de la otra: la información deberá transmitirse por un medio plausible.
+- Los repertorios de señales, alcance, interpretación, fiabilidad, aprendizaje y respuestas concretas quedan pendientes de diseño.
+
+El objetivo es mantener una posibilidad de contacto significativa durante las separaciones sin eliminar las limitaciones naturales de percepción, distancia y comunicación.
