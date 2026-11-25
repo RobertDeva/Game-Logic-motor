@@ -144,3 +144,12 @@ Before treating any time-to-level estimate as representative of a full first pla
 Then combine the combat totals with net professional-service income and net trade profit, without double-counting sales or production. Report the resulting hours to levels 100 and 225, and show how much of the reduction comes from bosses versus ordinary encounters.
 
 Do not invent a universal boss reward or bonus multiplier in the absence of the boss roster, threat tiers, encounter placement, and the exact special-boss bonus conditions. The current hourly income assumptions are planning inputs, not measured rates. Replace them only after the encounter/reward catalog is available and the full-route simulation has been run.
+
+
+## 10. Provisional 60-boss campaign model
+
+A separate parametric catalog now models 60 first-run boss encounters: 49 normal bosses, 10 special bosses, and one final boss. It uses experimental content multipliers ×1, ×2.5, and ×5 respectively, while retaining the existing boss reward formula and keeping overkill, special-condition, and one-time rewards separate.
+
+The catalog provides sensitivity totals at several economic reference levels, but it does not yet establish the actual campaign boss income because each encounter still needs its own economic reference (r_i), placement, and special reward conditions. Consequently, the previous 40–60 hour estimate to level 100 and approximately 306-hour estimate to level 225 remain provisional and must not be shortened by an assumed boss-income amount until the 60 encounter records are populated.
+
+See [boss reward catalog simulation](boss-reward-catalog-simulation.md) for the formulas, sensitivity table, accounting rules, and missing data required for the full-route recalculation.
