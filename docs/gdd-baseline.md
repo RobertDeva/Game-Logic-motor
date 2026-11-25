@@ -1324,3 +1324,19 @@ Una compañera podrá experimentar cambios significativos durante una separació
 - Los criterios de progresión, persistencia de lesiones y cicatrices, evolución de personalidad, adquisición de vínculos y comunicación de cambios quedan pendientes de diseño.
 
 El objetivo es que las compañeras tengan una trayectoria propia durante la ausencia del jugador y que un reencuentro tardío pueda revelar una evolución auténtica, con consecuencias tanto positivas como negativas.
+
+
+### Reacciones emocionales de las compañeras ante reencuentros tras separaciones prolongadas
+
+Cuando una criatura compañera vuelva a encontrarse con el jugador después de una separación prolongada, podrá reaccionar emocionalmente al reencuentro de acuerdo con su identidad, vínculo y experiencias durante la ausencia.
+
+- Las reacciones podrán incluir alegría, alivio, afecto, cautela, miedo, desconfianza, distanciamiento, confusión u otras respuestas coherentes con la criatura.
+- La reacción dependerá de la confianza y relación previas con el jugador, la duración y circunstancias de la separación, las experiencias vividas, los cambios personales y el estado físico y emocional actual.
+- Una separación difícil o experiencias negativas podrán modificar la forma en que la criatura recibe al jugador; el reencuentro no restaurará automáticamente la confianza ni eliminará conflictos.
+- Las criaturas que hayan mantenido un vínculo fuerte podrán mostrar reconocimiento y apego, pero la intensidad y expresión variarán según especie, personalidad, temperamento y capacidades.
+- La criatura podrá reconocer al jugador mediante sentidos y memoria compatibles con su naturaleza; no se supondrá reconocimiento infalible en cualquier circunstancia.
+- Las respuestas podrán influir en la proximidad, comunicación, cooperación, disposición a seguir órdenes y evolución posterior del vínculo.
+- Las reacciones deberán expresarse mediante comportamientos y señales que el jugador pueda percibir e interpretar, sin exigir una manifestación explícita en todos los casos.
+- Los criterios de reconocimiento, repertorio de reacciones, duración, intensidad y consecuencias sobre el vínculo quedan pendientes de diseño.
+
+El objetivo es que los reencuentros reflejen la historia vivida durante la separación y el estado actual de la relación, en lugar de tratar a la compañera como si nada hubiera ocurrido.
