@@ -482,3 +482,17 @@ Las interacciones podrán propagarse en cadena entre varios combatientes, objeto
 - El alcance, la intensidad, la atenuación, el número máximo de saltos y las reglas concretas de propagación quedan pendientes de especificación y balance.
 
 Estas reacciones en cadena deben surgir de la combinación de reglas generales del mundo, permitiendo situaciones tácticas emergentes sin depender de secuencias guionizadas para cada caso.
+
+
+## Daño e interacciones entre enemigos
+
+Los enemigos pueden dañarse y afectarse entre sí mediante ataques, habilidades, estados y efectos ambientales, incluso cuando el jugador no interviene directamente.
+
+- Los ataques de un enemigo pueden alcanzar a otros enemigos si estos se encuentran dentro del área o trayectoria afectada y las reglas del ataque lo permiten.
+- Las explosiones, descargas, peligros ambientales y reacciones en cadena pueden afectar a aliados y adversarios por igual, según sus propiedades, resistencias, inmunidades y reglas específicas.
+- Los jefes también pueden afectar accidentalmente a sus subordinados u otros enemigos presentes en el encuentro.
+- No se presupone que todos los ataques dañen a cualquier entidad: cada acción puede definir reglas de selección de objetivos, facciones, excepciones o inmunidades.
+- Las consecuencias deben resolverse mediante el mismo sistema general de propiedades e interacciones, con resultados deterministas y sin privilegios arbitrarios por tratarse de aliados.
+- La posibilidad de que ciertos enemigos eviten deliberadamente el fuego amigo, coordinen posiciones o aprovechen tácticamente el daño entre combatientes dependerá de su inteligencia y comportamiento, y queda pendiente de diseño.
+
+El combate debe permitir consecuencias emergentes entre todos los participantes, no limitar las interacciones dañinas a las acciones del jugador contra los enemigos.
