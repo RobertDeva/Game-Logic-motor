@@ -325,3 +325,13 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Cada nueva fase podrá cambiar los patrones y el comportamiento base del jefe, pero sus respuestas defensivas seguirán aprovechando lo aprendido en fases anteriores.
 - Esta persistencia busca mantener una dificultad elevada mediante ajustes adaptativos graduales, sin exigir cambios drásticos de comportamiento entre fases.
 - La forma de almacenar, ponderar, olvidar o actualizar observaciones durante el combate queda pendiente de diseño; no se presupone que el jefe recuerde cada acción individual indefinidamente.
+
+### Confirmación del creador: adaptación mutua y engaño táctico durante los combates contra jefes
+
+- Los jefes podrán reconocer cambios deliberados en la estrategia del jugador y ajustar sus respuestas defensivas en consecuencia.
+- El jugador podrá explotar la adaptación del jefe mediante fintas, cambios de ritmo, variaciones de ataques y otras decisiones tácticas para provocar o aprovechar respuestas defensivas previsibles.
+- La IA deberá basar sus ajustes en patrones y acciones observables durante el combate; no tendrá acceso a intenciones privadas ni a entradas futuras del jugador.
+- La adaptación será dinámica y bidireccional: el jefe aprende de las estrategias observadas y el jugador puede aprender a anticipar, provocar y superar las respuestas del jefe.
+- El objetivo de diseño es que el jugador tenga que evolucionar su estrategia a lo largo del enfrentamiento, sin que exista una única secuencia óptima que resuelva todo el combate.
+- No se exige que el jefe identifique con certeza la intención del jugador; la detección de cambios y fintas se implementará como inferencia basada en comportamiento observable.
+- Las señales utilizadas, umbrales de detección, tiempos de adaptación y herramientas concretas de engaño quedan pendientes de diseño.
