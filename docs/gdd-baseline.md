@@ -1504,3 +1504,14 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - Las variantes desarrolladas por otros artesanos deberán conservar su propia identidad y procedencia, sin confundirse con la receta original del jugador.
 - La reputación y difusión de una creación podrán influir en su reconocimiento, pero no garantizarán que todos los artesanos la conozcan.
 - Los medios de difusión, grados de información, condiciones de aprendizaje, reconocimiento, imitación y consecuencias económicas o sociales quedan pendientes de definición.
+
+
+## Reputación artesanal regional y actividades no centradas en el combate
+
+- El jugador podrá desarrollar una reputación artesanal que se difunda entre regiones y facciones mediante creaciones conocidas, demostraciones, intercambios, encargos, recomendaciones y otros medios plausibles.
+- La reputación no será necesariamente uniforme: el reconocimiento podrá variar entre regiones, comunidades, gremios, facciones y círculos de artesanos según la información que haya llegado a cada uno.
+- Maestros y artesanos podrán buscar al jugador para aprender de sus métodos, solicitar enseñanzas, proponer colaboraciones o intercambiar conocimientos cuando sus intereses, capacidades y relaciones lo justifiquen.
+- Podrán surgir desafíos y competiciones de fabricación que permitan demostrar habilidad, comparar técnicas y obtener reconocimiento.
+- Estas oportunidades podrán ampliar las actividades del jugador más allá del combate y la exploración, incorporando aprendizaje, creación, enseñanza, colaboración, competencia e intercambio artesanal.
+- Las invitaciones, propuestas y desafíos dependerán de que los personajes conozcan la reputación del jugador por medios plausibles; no serán universales ni aparecerán automáticamente en todas partes.
+- Los efectos concretos de la reputación, su difusión, las condiciones de acceso a colaboraciones, enseñanza y competiciones, así como sus recompensas y consecuencias, quedan pendientes de definición.
