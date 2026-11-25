@@ -317,3 +317,11 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Las respuestas defensivas adaptativas podrán incluir cambios en la selección o frecuencia de bloqueos, desvíos perfectos, esquivas, contraataques y otras respuestas que estén dentro del repertorio configurado para ese jefe.
 - La adaptación no otorgará inmunidad permanente frente a una estrategia ni modificará arbitrariamente las estadísticas del jefe para contrarrestar al jugador.
 - Cada jefe tendrá una capacidad y un grado de adaptación definidos por su diseño individual. La intensidad, velocidad, memoria y condiciones para modificar sus respuestas quedan pendientes de especificación.
+
+### Confirmación del creador: persistencia de la memoria adaptativa de los jefes entre fases
+
+- Los jefes conservarán durante todo el enfrentamiento la memoria de los patrones y estrategias del jugador que hayan aprendido.
+- La memoria adaptativa no se reiniciará al perder una barra de vitalidad ni al comenzar una nueva fase.
+- Cada nueva fase podrá cambiar los patrones y el comportamiento base del jefe, pero sus respuestas defensivas seguirán aprovechando lo aprendido en fases anteriores.
+- Esta persistencia busca mantener una dificultad elevada mediante ajustes adaptativos graduales, sin exigir cambios drásticos de comportamiento entre fases.
+- La forma de almacenar, ponderar, olvidar o actualizar observaciones durante el combate queda pendiente de diseño; no se presupone que el jefe recuerde cada acción individual indefinidamente.
