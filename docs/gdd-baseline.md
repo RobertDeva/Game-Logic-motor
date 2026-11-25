@@ -207,3 +207,13 @@ No se han fijado todavía los costes exactos de Almas por nivel ni los requisito
 - El medidor de experiencia de Artes se alimenta al derrotar enemigos y es independiente de las Almas utilizadas para subir atributos en zonas de descanso.
 
 Quedan pendientes los valores de experiencia concedidos por enemigo, el umbral inicial, la fórmula de incremento del umbral y los efectos concretos de cada nivel de dominio.
+
+### Confirmaciones del creador: recuperación de postura y Muertebendita
+
+- Los enemigos recuperan postura automáticamente cuando dejan de recibir presión del jugador.
+- La velocidad de recuperación de postura disminuye a medida que baja la vitalidad del enemigo.
+- La ruptura de la postura enemiga habilita una Muertebendita.
+- Agotar por completo la vitalidad de un enemigo también lo deja vulnerable a una Muertebendita, aunque su postura no haya sido rota. Por tanto, la ruptura de postura y el agotamiento de vitalidad son condiciones independientes que pueden habilitar la ejecución.
+- Los enemigos resistentes a Muertebendita conservan varias barras de vitalidad y una única barra de postura. Cada Muertebendita consume una barra completa de vitalidad y la postura se reinicia después de cada ejecución.
+
+Los valores numéricos de recuperación, la relación matemática entre vitalidad y recuperación, y las ventanas de oportunidad de la ejecución siguen pendientes de especificación.
