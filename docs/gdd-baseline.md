@@ -1223,3 +1223,19 @@ Dentro del grupo podrá surgir de forma natural una criatura que asuma un papel 
 - Los criterios de reconocimiento, influencia, sucesión, liderazgo situacional y efectos concretos sobre el comportamiento grupal quedan pendientes de diseño.
 
 El objetivo es permitir jerarquías sociales flexibles y emergentes entre las compañeras, sin imponer un líder permanente ni convertir al resto en subordinadas sin voluntad propia.
+
+
+### Reconocimiento del jugador como líder del grupo y autonomía de las compañeras
+
+Las criaturas compañeras podrán reconocer al jugador como figura principal de liderazgo del grupo y, al mismo tiempo, conservar iniciativa y autonomía para actuar cuando él no intervenga.
+
+- El reconocimiento del jugador como líder dependerá del vínculo, confianza, experiencias compartidas, trato recibido y características individuales de cada criatura.
+- Ese reconocimiento no será idéntico ni necesariamente tendrá la misma intensidad para todas las compañeras.
+- Las criaturas podrán seguir tomando iniciativas, coordinándose entre sí y respondiendo a circunstancias inmediatas sin esperar una orden para cada acción.
+- La autonomía estará limitada por sus capacidades, comprensión, personalidad, necesidades, estado, relaciones y percepción de la situación.
+- Las órdenes del jugador tendrán influencia según el vínculo y la capacidad de comprensión de cada criatura, pero no anularán automáticamente sus instintos, límites o criterio individual.
+- El liderazgo emergente entre compañeras podrá coexistir con el reconocimiento del jugador como líder principal; una criatura podrá asumir coordinación situacional cuando resulte apropiado.
+- La confianza y el reconocimiento podrán fortalecerse o deteriorarse según las experiencias y decisiones del jugador, sin convertirse en obediencia absoluta.
+- Los criterios concretos de reconocimiento, niveles de confianza, iniciativa, prioridades entre órdenes y autonomía quedan pendientes de diseño.
+
+El objetivo es que el jugador sea el referente principal del grupo sin convertir a las compañeras en unidades pasivas: podrán confiar en él y seguir su liderazgo, pero también pensar, reaccionar y actuar por iniciativa propia.
