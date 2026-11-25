@@ -1207,3 +1207,19 @@ Los conflictos y las relaciones negativas entre criaturas compañeras no provoca
 - Los métodos concretos de mediación, requisitos, costes, frecuencia, límites y efectos sobre cada tipo de relación quedan pendientes de diseño.
 
 El objetivo es dar al jugador un papel activo en el bienestar y la cohesión del grupo, permitiéndole ayudar a resolver conflictos sin convertir las relaciones en valores que puedan modificarse instantáneamente o a voluntad.
+
+
+### Liderazgo emergente entre criaturas compañeras
+
+Dentro del grupo podrá surgir de forma natural una criatura que asuma un papel de liderazgo o coordinación, sin que el jugador tenga que designarla obligatoriamente.
+
+- El liderazgo emergerá de una combinación de personalidad, temperamento, experiencia, capacidades, iniciativa, confianza y relaciones con las demás criaturas.
+- El liderazgo podrá ser reconocido por algunas compañeras y no por otras; no será necesariamente universal ni estará basado en una jerarquía rígida.
+- Una criatura con liderazgo podrá influir en la coordinación, cohesión, respuesta ante amenazas, desplazamientos y reparto espontáneo de tareas compatibles.
+- El liderazgo no concederá control absoluto sobre las demás ni garantizará obediencia. Cada criatura conservará su individualidad, necesidades, capacidades, vínculos y criterio de respuesta.
+- Podrán existir liderazgos situacionales o compartidos: distintas criaturas podrán tomar la iniciativa en contextos donde sus capacidades o experiencias resulten relevantes.
+- Los conflictos, cambios de relación, ausencias, lesiones, experiencias y acontecimientos podrán modificar quién ejerce influencia o coordinación dentro del grupo.
+- El jugador conservará la posibilidad de intervenir mediante órdenes y mediación, respetando los límites de comprensión y autonomía de cada criatura.
+- Los criterios de reconocimiento, influencia, sucesión, liderazgo situacional y efectos concretos sobre el comportamiento grupal quedan pendientes de diseño.
+
+El objetivo es permitir jerarquías sociales flexibles y emergentes entre las compañeras, sin imponer un líder permanente ni convertir al resto en subordinadas sin voluntad propia.
