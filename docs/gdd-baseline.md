@@ -1461,3 +1461,14 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - Las recetas o métodos descubiertos mediante experimentación deberán cumplir los criterios de validación que se definan antes de registrarse como reproducibles.
 - La fabricación real seguirá consumiendo los recursos correspondientes y utilizando el sistema de ejecución rítmica y evaluación de calidad.
 - El alcance de la simulación, la información que revela, sus límites de conocimiento, los criterios de validación y la relación entre resultados simulados y fabricación real quedan pendientes de definición.
+
+
+## Descubrimiento asistido y creación de recetas inéditas
+
+- Durante la experimentación virtual, el sistema podrá identificar combinaciones prometedoras de materiales, técnicas, herramientas y parámetros, y ofrecer pistas graduales al jugador.
+- Las pistas orientarán la investigación sin revelar automáticamente la receta completa ni eliminar la necesidad de experimentar y comprender el proceso.
+- El subsistema permitirá crear recetas genuinamente nuevas, que no formen parte del catálogo tradicional existente.
+- Las recetas inéditas podrán surgir de la experimentación y combinación válida de conocimientos, técnicas y componentes, respetando las reglas de la disciplina artesanal.
+- El sistema deberá distinguir entre recetas ya conocidas, variantes de recetas existentes y descubrimientos realmente nuevos.
+- Una receta inédita deberá validarse antes de registrarse como reproducible y utilizarse en fabricación real.
+- Las pistas, criterios de novedad, validación, límites de combinaciones y protección frente a resultados incoherentes quedan pendientes de definición.
