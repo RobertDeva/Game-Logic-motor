@@ -699,3 +699,20 @@ Mythical Exodus contará con un sistema temporal propio para representar el paso
 - La arquitectura deberá representar el tiempo del mundo de forma independiente del reloj real, de la tasa de fotogramas y del motor gráfico. La unidad temporal, precisión, persistencia, pausas y reglas de actualización quedan pendientes de diseño técnico.
 
 El objetivo es que el mundo tenga un ritmo propio y que el momento en que el jugador actúe o llegue a un lugar pueda tener consecuencias jugables y narrativas, sin introducir presión temporal injustificada ni comprometer la coherencia de la historia.
+
+
+## Comportamiento de enemigos y criaturas según el ciclo día/noche
+
+El ciclo día/noche podrá modificar de forma significativa la actividad y el comportamiento de enemigos y criaturas del mundo.
+
+- Algunas especies o grupos podrán tener patrones diurnos, nocturnos o crepusculares. Su actividad, presencia y zonas de aparición dependerán de su naturaleza, hábitat y circunstancias.
+- Depredadores y otras criaturas podrán salir a cazar, alimentarse, descansar, refugiarse o regresar a sus guaridas en momentos determinados.
+- Algunos enemigos podrán establecer, abandonar o reorganizar campamentos según la hora, sus rutinas, objetivos y condiciones del territorio.
+- Las patrullas podrán cambiar sus recorridos, horarios, composición, frecuencia y nivel de vigilancia durante el día y la noche.
+- Determinados enemigos o criaturas podrán aparecer, retirarse o desplazarse a otras zonas según el ciclo temporal, sin que ello implique que desaparezcan arbitrariamente si el jugador está cerca.
+- El comportamiento nocturno no será necesariamente más hostil o peligroso en todos los casos: cada especie, facción y grupo tendrá patrones configurables coherentes con su identidad y contexto.
+- La iluminación y visibilidad podrán influir en la detección, vigilancia, sigilo y percepción de los combatientes cuando esas reglas estén definidas. El cálculo físico y la representación visual corresponden a las capas especializadas; el núcleo lógico resolverá sus consecuencias jugables a partir de datos y condiciones explícitas.
+- Los cambios de actividad deberán respetar la continuidad del mundo, las capacidades de cada entidad y la información que posea. No se permitirá que enemigos se teletransporten o conozcan la posición del jugador sin una causa o mecanismo válido.
+- Las rutinas y transiciones podrán resolverse mediante distintos niveles de simulación, manteniendo resultados coherentes tanto si el jugador presencia los cambios como si ocurren fuera de su presencia.
+
+La finalidad es que el ciclo temporal transforme la ecología, la actividad de las facciones y las oportunidades tácticas del mundo, en lugar de limitarse a un cambio visual de iluminación.
