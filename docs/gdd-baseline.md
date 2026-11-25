@@ -1847,3 +1847,17 @@ Se ha establecido una primera especificación matemática versionada para las oc
 - Las cifras, rangos, curvas y límites se definirán al diseñar las regiones y se calibrarán mediante simulaciones de encuentros.
 
 La especificación matemática complementaria se encuentra en la sección 24 de [Modelo matemático del combate](combat-mathematical-model.md#24-progresión-del-personaje-economía-de-almas-y-escalado-dinámico-de-enemigos).
+
+
+## Profesiones ejercidas por el jugador, fabricación y abastecimiento
+
+- El jugador puede ejercer personalmente cualquier profesión o actividad productiva para la que haya adquirido los conocimientos, la práctica y las capacidades necesarias, y disponga de herramientas, instalaciones y materiales adecuados. Los NPC también pueden ejercer esas profesiones y ofrecer bienes, enseñanza y servicios.
+- La regla se aplica de forma general a las profesiones —por ejemplo, herrería/armería, alquimia, herboristería, minería, curtido, carpintería y joyería— y no exclusivamente a la fabricación de armas. Las capacidades y requisitos concretos se definirán por profesión y operación.
+- Las armas pueden reforzarse desde +0 hasta +10, tomando Dark Souls como referencia conceptual. Los costes, materiales y aumentos por nivel de refuerzo serán propios de Mythical Exodus y quedan pendientes de simulación.
+- Fabricar un arma nueva y reforzar un arma existente son rutas complementarias. La calidad del arma fabricada puede mejorar mediante materiales superiores, técnica, conocimientos, herramientas e instalaciones. Un arma excepcional fabricada no será automáticamente equivalente a un arma común reforzada a +10.
+- Los materiales para fabricar, reforzar y reparar pueden obtenerse mediante recolección, extracción, caza/despiece, exploración, procesamiento o compra. La calidad, rareza, disponibilidad regional, oferta y demanda, dificultad de obtención y transporte influyen en su valor.
+- La cadena económica contabilizará materiales, procesamiento, herramientas, instalaciones, trabajo profesional, mantenimiento y transporte. Recolectar, procesar y fabricar no conceden almas directamente; las almas se obtienen mediante ventas o servicios remunerados, evitando contabilizar dos veces el mismo producto o crear ciclos de beneficio garantizado.
+- El jugador puede fabricar, mejorar y reparar sus propias armas y armaduras si cumple los requisitos; contratar a un NPC es una alternativa, no una obligación.
+- La alquimia permite fabricar pociones curativas mediante recetas, conocimientos e ingredientes. El personaje tiene una capacidad limitada de cargas curativas. Cada uso consume una carga y almacenar más pociones no aumenta esa capacidad.
+- Las cargas curativas solo se reponen al descansar en un punto de subida de nivel. La reposición consume pociones previamente fabricadas o adquiridas del inventario, hasta llenar la capacidad disponible. Si la reserva no alcanza, la reposición es parcial. No hay recuperación automática, creación gratuita de pociones ni reposición en otros lugares.
+- La capacidad máxima de cargas, la eficacia curativa, las recetas, los ingredientes, los requisitos profesionales, los costes de refuerzo +1 a +10 y sus valores económicos permanecen pendientes de especificación y balance. La inspiración de Sekiro y The Witcher orienta la filosofía del sistema, no obliga a copiar sus cifras.
