@@ -263,3 +263,12 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - El sistema de combate tendrá una interacción bidireccional de postura: tanto el jugador como los enemigos podrán defenderse mediante desvíos perfectos y afectar la postura del oponente.
 - La capacidad, frecuencia, ventana temporal y consecuencias de los desvíos enemigos podrán configurarse según el enemigo y su repertorio de combate.
 - Los valores numéricos y las reglas específicas para cada tipo de enemigo quedan pendientes de diseño.
+
+### Confirmación del creador: evolución de comportamiento de los jefes por barras de vitalidad
+
+- Todos los jefes, no solamente los jefes especiales, cambiarán su comportamiento cada vez que pierdan una barra completa de vitalidad.
+- Cada transición de barra representa un cambio de fase o estado de combate del jefe.
+- El cambio podrá reflejarse en patrones y combinaciones de ataque, agresividad, ritmo de combate, repertorio y respuestas defensivas.
+- El cambio de comportamiento no implica necesariamente aumentar daño, velocidad o estadísticas; la transición debe expresarse principalmente mediante comportamiento y patrones nuevos o modificados.
+- La configuración concreta de cada fase será individual por jefe. No se establece que todos deban cambiar de la misma manera ni incorporar el mismo número o tipo de ataques.
+- Las reglas de transición, los patrones específicos y cualquier cambio numérico asociado quedan pendientes de diseño.
