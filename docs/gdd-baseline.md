@@ -1770,3 +1770,15 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - Las condiciones ambientales y el entorno —como el viento, el terreno y la vegetación— podrán influir en la percepción y en la eficacia del sigilo.
 - Los sentidos y capacidades sensoriales concretos podrán variar según la especie.
 - Las reglas cuantitativas de detección, ocultación, rastros y propagación de sonidos y olores quedan pendientes de especificación.
+
+
+## Investigación, rastreo y búsqueda de criaturas
+
+- Cuando una criatura detecte un indicio sospechoso, podrá investigar su origen en lugar de reaccionar siempre con una persecución inmediata.
+- Las criaturas podrán seguir rastros del jugador cuando sus capacidades sensoriales y las condiciones del entorno lo permitan.
+- Si pierden el contacto directo, podrán dirigirse a la última ubicación conocida del jugador e investigar la zona en busca de nuevas pistas.
+- La búsqueda podrá terminar cuando la criatura pierda la pista y no consiga encontrar indicios que permitan continuar.
+- La investigación, el rastreo y la persistencia de la búsqueda deberán respetar los sentidos, capacidades, conocimientos y comportamiento propios de cada especie.
+- Los criterios exactos de investigación, duración de búsqueda, degradación de rastros y condiciones para abandonar la búsqueda quedan pendientes de especificación.
+
+Esta decisión cierra por ahora la profundización del sistema ecológico y de comportamiento de criaturas.
