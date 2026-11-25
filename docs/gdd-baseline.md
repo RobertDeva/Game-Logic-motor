@@ -1008,3 +1008,18 @@ La carga del jugador se organizará en categorías diferenciadas: ligera, media,
 - Los umbrales cuantitativos, las fórmulas, los modificadores por clase/equipamiento y las restricciones exactas de la sobrecarga quedan pendientes de diseño.
 
 El objetivo es que el peso tenga consecuencias tácticas graduales y legibles, de modo que el jugador pueda elegir entre movilidad y capacidad de protección o transporte.
+
+
+### Capacidad de carga natural según la clase
+
+La capacidad de carga del jugador tendrá una base diferenciada según su clase, reflejando sus características y estilo de combate.
+
+- Cada clase tendrá un valor o modificador propio de capacidad de carga natural.
+- El Guerrero estará orientado a soportar cargas mayores que las otras clases.
+- El Espadachín Mágico y el Segador tendrán capacidades de carga naturales diferenciadas y coherentes con sus respectivos perfiles, sin asumir que sean idénticas entre sí.
+- La estadística Agilidad y otros modificadores que se definan podrán influir en la capacidad de carga efectiva.
+- El equipamiento, las habilidades y los efectos temporales podrán modificar la capacidad de carga cuando sus reglas lo permitan.
+- La clase elegida seguirá siendo permanente durante la partida; estas diferencias no implican que el jugador pueda cambiar de clase.
+- Los valores base, las diferencias exactas entre clases y la fórmula de combinación con estadísticas y modificadores quedan pendientes de balance y especificación.
+
+La intención es que la gestión del peso refuerce la identidad de cada clase y sus decisiones de equipamiento, sin impedir que cualquier clase pueda adaptar su configuración dentro de sus límites.
