@@ -1366,3 +1366,29 @@ El sistema de artesanía permitirá crear recetas y obtenerlas o aprenderlas med
 - Los métodos para crear, descubrir, comprar, recibir o aprender recetas, así como los requisitos, costes, especializaciones de maestros y validación de recetas personalizadas quedan pendientes de diseño.
 
 El objetivo es combinar libertad de personalización con un sistema de artesanía basado en conocimiento, especialización y acceso progresivo a técnicas.
+
+
+### Bonificaciones progresivas por piezas de conjuntos de equipamiento
+
+Los conjuntos de equipamiento podrán conceder bonificaciones progresivas según la cantidad de piezas compatibles que lleve equipadas el jugador.
+
+- Un conjunto podrá conceder una o más bonificaciones al alcanzar determinados umbrales de piezas equipadas.
+- Completar el conjunto podrá desbloquear una bonificación adicional o especial.
+- El jugador podrá combinar piezas de distintos conjuntos; cada conjunto evaluará por separado cuántas de sus piezas válidas están equipadas.
+- Las bonificaciones, umbrales, compatibilidades y reglas para piezas sustituidas o mejoradas serán configurables y quedan pendientes de especificación.
+
+### Artesanía interactiva mediante un sistema de ritmo y calidad de ejecución
+
+La fabricación de objetos utilizará una interacción basada en ritmo para que el jugador participe activamente en el proceso y la creación no sea una operación completamente automática.
+
+- Durante la fabricación, el jugador deberá ejecutar acciones o entradas sincronizadas con señales rítmicas del proceso.
+- La secuencia y el tipo de interacción podrán variar según la receta, el objeto, el material, la técnica y la etapa de fabricación.
+- La precisión con la que el jugador siga el ritmo influirá en la calidad del objeto resultante.
+- Una ejecución especialmente precisa y consistente podrá producir objetos de mayor calidad y mejorar sus estadísticas respecto al resultado básico de esa receta.
+- La calidad obtenida deberá depender del desempeño real durante el minijuego y de los límites establecidos por la receta, los materiales, las herramientas y las técnicas disponibles; no permitirá superar arbitrariamente las posibilidades físicas o técnicas del proceso.
+- El resultado de la fabricación será determinista a partir de la receta, los recursos, las condiciones de elaboración y el desempeño registrado, de modo que pueda probarse en el motor lógico.
+- El núcleo lógico definirá estados, ventanas de ritmo, entradas válidas, evaluación de precisión y cálculo de calidad. La presentación visual, sonora y la lectura física de las entradas corresponderán a capas externas.
+- El sistema deberá permitir distintos niveles de complejidad y exigencia según la receta y la técnica, sin asumir que todos los objetos requieren la misma secuencia.
+- Las categorías de calidad, las ventanas de precisión, la tolerancia al error, el número de etapas, las estadísticas afectadas y los límites de mejora quedan pendientes de diseño.
+
+La intención es que la habilidad del jugador durante la fabricación tenga consecuencias tangibles en el equipo creado y que el proceso transmita la sensación de estar trabajando realmente el objeto.
