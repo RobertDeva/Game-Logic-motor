@@ -145,3 +145,50 @@ Este tiempo representa únicamente el combate efectivo contra los jefes. No incl
 Para el cálculo de progresión, las recompensas de los jefes deben asignarse al momento en que se derrota cada encuentro. No se debe convertir todo el total de almas de jefes en una tasa horaria uniforme ni sumarlo a los ingresos de enemigos normales sin respetar el tiempo y el orden de la ruta. La simulación de campaña debe añadir estos 3–7 h de combate efectivo a los tiempos de los demás encuentros y actividades, y acreditar cada recompensa una sola vez tras la derrota correspondiente.
 
 El supuesto de duración debe validarse posteriormente con pruebas de combate representativas (jefe normal, especial y final), incluyendo diferentes clases, configuraciones de equipo y habilidad del jugador. Si la duración media real difiere, se recalculará el total de horas sin alterar automáticamente las recompensas.
+
+
+## 10. Rentabilidad temporal y contraste con la curva acelerada
+
+Para comparar recompensas y duración se utiliza el supuesto de 3–7 minutos por encuentro, con 5 minutos como referencia central. Si los 60 encuentros duran lo mismo dentro de cada escenario, el tiempo total de combate efectivo es 3, 5 o 7 horas.
+
+La tasa horaria siguiente es una **normalización matemática del total de recompensas de los 60 jefes**, no una promesa de que el jugador recibirá todas esas almas uniformemente durante una hora. En la ruta real las recompensas llegan en momentos discretos y cada jefe tiene su propio nivel económico.
+
+| Referencia económica común | Total de los 60 | Almas/h a 3 h | Almas/h a 5 h | Almas/h a 7 h |
+|---:|---:|---:|---:|---:|
+| 25 | 120.713 | 40.238 | 24.143 | 17.245 |
+| 50 | 477.645 | 159.215 | 95.529 | 68.235 |
+| 75 | 1.098.512 | 366.171 | 219.702 | 156.930 |
+| 100 | 2.050.038 | 683.346 | 410.008 | 292.863 |
+| 150 | 5.211.473 | 1.737.158 | 1.042.295 | 744.496 |
+| 200 | 10.495.296 | 3.498.432 | 2.099.059 | 1.499.328 |
+| 225 | 14.099.689 | 4.699.896 | 2.819.938 | 2.014.241 |
+
+### 10.1 Comparación con la progresión del personaje
+
+La curva acelerada candidata estima un coste acumulado de **1.138.689 almas** para llegar al nivel 100. Como comprobación de tensión económica:
+
+- Si los 60 jefes tuvieran todos referencia económica 50, sus recompensas base sumarían unas 477.645 almas, aproximadamente el 42 % del coste acumulado hasta nivel 100.
+- Si todos tuvieran referencia 75, sumarían unas 1.098.512 almas, aproximadamente el 96 % de ese coste.
+- Si todos tuvieran referencia 100, sumarían unas 2.050.038 almas, aproximadamente el 180 % de ese coste.
+
+Estos escenarios **no describen la distribución real de la campaña**. Sirven para detectar que asignar referencias altas a todos los jefes podría hacer que los jefes, por sí solos, financiaran casi toda o más de toda la progresión hasta nivel 100, antes de contar enemigos normales, enemigos especiales no jefes, servicios, comercio, exploración y logros.
+
+Por tanto, no se debe asignar (r=75) o (r=100) indiscriminadamente a los 60 jefes. Cada (r_i) debe derivarse de su región, orden de aparición, amenaza efectiva y curva de dificultad. También hay que comprobar que la fórmula de recompensas (B(r)) y la curva acelerada de coste de nivel estén calibradas entre sí; no son la misma función y el cambio de una no actualiza automáticamente la otra.
+
+### 10.2 Rentabilidad por categoría
+
+La recompensa/minuto de cada jefe se calcula como su recompensa individual dividida por la duración real del encuentro. Bajo la hipótesis de una misma referencia económica para todos, el jefe especial produce 2,5 veces la recompensa base del jefe normal y el final 5 veces. Si la duración también fuera igual, sus almas por minuto guardarían esa misma proporción. Pero aún no se ha establecido que las tres categorías duren lo mismo: los 3–7 minutos son por ahora un intervalo común provisional, no un calendario diferenciado por categoría.
+
+La prueba de balance deberá comparar:
+- recompensa base por minuto;
+- recompensa total por minuto, incluyendo bonificaciones realmente obtenibles;
+- duración efectiva y número de intentos;
+- coste de consumibles, reparaciones y preparación;
+- porcentaje de jugadores que derrotan cada jefe en la ruta principal;
+- oportunidad de obtener esas almas frente a actividades alternativas.
+
+### 10.3 Conclusión provisional
+
+El tiempo de combate total de los 60 jefes se sitúa entre 3 y 7 horas, con 5 horas como referencia central. El modelo actual de recompensas puede representar una fracción pequeña o una cantidad excesiva de la progresión hasta nivel 100, dependiendo de las referencias económicas asignadas.
+
+No se reduce todavía la estimación de 40–60 horas al nivel 100 ni la estimación aproximada de 306 horas al nivel 225. Para recalcularlas correctamente falta completar la asignación de (r_i) de los 60 jefes y sus bonificaciones, y después integrar el calendario de encuentros con las recompensas de enemigos no jefes, ingresos profesionales y comercio neto. La tasa horaria no debe confundirse con la duración total de campaña.
