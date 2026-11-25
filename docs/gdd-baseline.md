@@ -1175,3 +1175,19 @@ Las criaturas compañeras podrán desarrollar relaciones entre sí a partir de s
 - Las reglas de interacción, intensidad y evolución de vínculos, memoria, resolución de conflictos y efectos concretos quedan pendientes de diseño.
 
 El objetivo es que el grupo de compañeras desarrolle una dinámica social propia, con vínculos y tensiones que emerjan de sus características y experiencias, en lugar de comportarse como unidades indiferenciadas que obedecen únicamente al jugador.
+
+
+### Vínculos grupales y coordinación autónoma entre criaturas compañeras
+
+Las criaturas compañeras podrán desarrollar vínculos grupales y coordinar espontáneamente determinadas conductas sin necesitar una orden directa del jugador para cada acción.
+
+- La cohesión y las dinámicas grupales surgirán de las relaciones individuales, experiencias compartidas, tiempo de convivencia, confianza, compatibilidad y circunstancias.
+- Las criaturas podrán cooperar, acompañarse, protegerse, apoyarse, mantenerse próximas, repartirse tareas compatibles o responder conjuntamente ante amenazas cuando sus capacidades y relaciones lo permitan.
+- También podrán aparecer tensiones, exclusiones, competencia o desacuerdos dentro del grupo; la pertenencia al mismo no garantiza armonía ni cooperación universal.
+- La coordinación dependerá de la inteligencia, especie, temperamento, capacidades, experiencia, estado físico y emocional, vínculos y percepción de cada individuo.
+- Las conductas autónomas deberán respetar las capacidades reales de cada criatura, sus necesidades, el entorno y los riesgos que perciba.
+- La coordinación no implicará obediencia automática a otras criaturas ni conocimiento compartido de información que no hayan percibido o recibido.
+- Las órdenes del jugador podrán influir en la conducta grupal cuando las criaturas las comprendan, pero no eliminarán sus vínculos, criterios individuales ni reacciones propias.
+- Las reglas de cohesión, liderazgo emergente, reparto de funciones, coordinación en combate y exploración, resolución de desacuerdos y límites de autonomía quedan pendientes de diseño.
+
+El objetivo es que el grupo pueda desarrollar una dinámica propia y actuar de forma coordinada y creíble, sin convertirse en una formación rígida controlada por órdenes constantes ni perder la individualidad de sus integrantes.
