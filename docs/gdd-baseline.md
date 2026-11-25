@@ -1790,4 +1790,6 @@ Se establece un documento técnico separado para desarrollar las fórmulas del s
 
 Este modelo organiza las reglas de estadísticas, potencia ofensiva, daño por componentes, defensa, afinidades, Vitalidad, Postura, desvíos, estados alterados, Artes de Combate, energías, equipamiento, durabilidad, curación, resolución determinista y pruebas matemáticas. Las reglas funcionales ya confirmadas en este GDD prevalecen sobre cualquier fórmula propuesta.
 
-La primera versión define la arquitectura matemática y las ecuaciones generales, pero mantiene pendientes de calibración los valores numéricos, las curvas y los datos que requieren confirmación. En particular, la matriz de afinidades debe transcribirse desde el diagrama original respetando la dirección de sus flechas; no se inventarán relaciones ni multiplicadores.
+La matriz dirigida de afinidades ya fue transcrita desde el diagrama original. Los multiplicadores iniciales confirmados son ×1.50 cuando existe ventaja, ×0.75 cuando existe desventaja, ×1.25 en ambos sentidos para los pares recíprocos y ×1.00 cuando no hay relación dibujada. El modelo matemático incluye además un estudio comparativo de Dark Souls, Dark Souls III, Elden Ring, Sekiro y Bloodborne como referencias técnicas, sin importar automáticamente sus reglas ni cifras.
+
+La especificación matemática continúa en desarrollo: las curvas de estadísticas, parámetros de defensa, presión y recuperación de Postura, ventanas temporales, estados y coeficientes de equipo requieren definición, simulación y calibración propias.
