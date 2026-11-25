@@ -963,8 +963,10 @@ Las almas constituyen la moneda general y, simultáneamente, el recurso que se e
 El coste de la siguiente mejora depende exclusivamente del nivel general actual del personaje. No depende del atributo elegido ni de su valor individual:
 
 \[
-Coste_{siguiente}=C(Nivel_{actual}+1)
+Coste_{siguiente}=C(Nivel_{actual}-1)
 \]
+
+La función (C(n)) recibe el número de puntos comprados desde el estado inicial, no el nivel objetivo. Como el personaje comienza en nivel 1, un personaje de nivel (L) ha comprado (L-1) puntos; por eso el coste de su siguiente mejora es (C(L-1)), cuyo nivel objetivo equivalente es (L+1).
 
 Todos los atributos cuestan exactamente lo mismo cuando se compran desde un mismo nivel general. Tras comprar un punto, el nivel general aumenta en uno y el siguiente punto cuesta más según la curva. La elección del atributo determina la construcción del personaje, pero nunca modifica el precio.
 
@@ -1126,6 +1128,68 @@ Valores ilustrativos antes del bono por exceso de daño y de modificadores espec
 | 200 | 9.079 | 22.697 | 54.473 | 136.181 |
 
 Los valores se redondean al alma más cercana. La tabla es una base para simulación, no una promesa de recompensa universal por nivel. El nivel económico del enemigo y su categoría deben corresponder al contenido real de la zona y a su peligrosidad.
+
+#### 24.3.4 Auditoría de equilibrio inicial de recompensas
+
+Se realizó una prueba analítica de consistencia entre la curva de progresión y las recompensas por derrota. Esta auditoría no sustituye una simulación de juego: todavía no existen tasas cuantificadas de ingresos por servicios, comercio, exploración y logros, ni tiempos de combate, costes de reparación o consumo medio por expedición. Por tanto, permite evaluar la coherencia interna del modelo de combate y detectar explotaciones, pero no declarar cerrada toda la economía.
+
+**A. Recompensa relativa al siguiente punto de progresión**
+
+Para comparar magnitudes equivalentes, un personaje de nivel (L) ha comprado (L-1) puntos y paga (C(L-1)) por alcanzar el nivel (L+1). Un enemigo cuyo nivel económico de referencia (r=L+1) utiliza esa misma unidad económica mediante (B(r)=C(r-2)).
+
+Con (M_{contenido}=1), las recompensas actuales representan:
+
+| Categoría | Recompensa base como proporción de (B(r)) | Derrotas equivalentes para financiar un punto |
+|---|---:|---:|
+| Común | 3 % | 33,33 |
+| Fuerte | 7,5 % | 13,33 |
+| Élite | 18 % | 5,56 |
+| Jefe | 45 % | 2,22 |
+
+Si cada derrota alcanzase el bono máximo de exceso de daño, los valores serían 4,5 %, 11,25 %, 27 % y 67,5 %, respectivamente. Eso equivale a 22,22 enemigos comunes, 8,89 fuertes, 3,70 élites o 1,48 jefes para financiar un punto. El bono no convierte una derrota individual en una fuente ilimitada: su techo absoluto es el 50 % de la recompensa base.
+
+**Resultado:** la progresión de recompensas acompaña la curva de costes cuando el enemigo pertenece a un tramo de mundo cuyo nivel económico progresa junto al personaje. No aparece una divergencia matemática que haga que las recompensas pierdan valor en todas las zonas a medida que sube el nivel. Los valores actuales se conservan como línea base provisional; esta prueba no justifica subirlos o reducirlos por sí sola.
+
+**B. Prueba de obsolescencia de zonas antiguas**
+
+La recompensa se mantiene ligada al nivel económico del enemigo y no al nivel del jugador. Por tanto, un enemigo de una zona antigua cuyo escalado haya alcanzado su límite deja de financiar una fracción constante del siguiente punto de atributo.
+
+Ejemplo ilustrativo: para un personaje de nivel 100, el coste de la siguiente mejora es (C(99)), equivalente al objetivo 101 y con un coste de 61.592 almas. Un enemigo común de referencia económica 50 concede 436 almas: serían aproximadamente 142 derrotas para financiar ese punto. Uno de referencia 13 concede 31 almas: serían aproximadamente 1.987 derrotas.
+
+**Resultado:** la fórmula desincentiva el farmeo prolongado en zonas superadas sin imponer una penalización especial al jugador. Esto es coherente con la decisión de que cada zona tenga un límite y ritmo de escalado propios. Debe evitarse, no obstante, que el escalado dinámico eleve todas las zonas al nivel del jugador, porque eso anularía la obsolescencia natural y erosionaría la sensación de progreso.
+
+**C. Presión de precios sobre la misma reserva de almas**
+
+Los multiplicadores económicos actuales implican, al mismo nivel de referencia:
+- una enseñanza básica cuesta 1,5 veces el coste de un punto de atributo;
+- una enseñanza de maestría cuesta 12 veces ese coste;
+- un arma excepcional cuesta 10 veces ese coste;
+- un consumible común cuesta el 1,5 % de ese coste, equivalente a media recompensa base de un enemigo común (3 %).
+
+Estos precios son deliberadamente significativos: fuerzan una elección entre progresión, preparación, equipamiento y consumibles. No pueden declararse sostenibles ni insostenibles sin conocer el ingreso neto por hora de cada actividad y el gasto medio de mantenimiento. Se mantienen sin cambios hasta disponer de esas mediciones. En particular, las remuneraciones por servicios y los márgenes comerciales deberán someterse a la misma comparación para que una profesión no genere ingresos desproporcionados respecto al combate.
+
+**D. Corrección necesaria del cálculo de exceso de daño**
+
+Se detectó una incompatibilidad entre la regla general de aplicación de daño y la definición del bono. El daño realmente descontado de la barra no puede superar la Vitalidad que le quedaba al enemigo; si (D_f) utilizara esa cantidad limitada, nunca podría superar la Vitalidad máxima total y el umbral (q>1,5) sería inalcanzable.
+
+Por tanto, para este bono se define (D_f) como el **daño potencial final del evento, después de defensas, resistencias, mitigaciones y modificadores aplicables, pero antes de limitarlo a la Vitalidad restante del objetivo**. Esta magnitud se utiliza exclusivamente para medir el exceso de daño. La Vitalidad efectivamente descontada sigue limitada a la Vitalidad disponible y continúa siendo la magnitud correcta para efectos que dependan del daño realmente recibido.
+
+En ataques que se resuelvan como una única acción de múltiples impactos, se sumará el daño potencial postmitigación de todos sus impactos antes del límite de Vitalidad restante. Para daño periódico, se utilizará el daño potencial postmitigación del último tick que cause la derrota. Se conserva la referencia (V_{max}) como la suma de todas las barras máximas del enemigo.
+
+**E. Pruebas de aceptación que deberán automatizarse**
+
+1. Un enemigo común de referencia (r), sin modificadores, concede aproximadamente el 3 % de (B(r)); las otras categorías respetan sus multiplicadores.
+2. El resultado no depende del nivel ni de la riqueza del jugador, sino del nivel económico y datos explícitos del enemigo/encuentro.
+3. Un enemigo de zona antigua con referencia fija no aumenta su recompensa porque el jugador suba de nivel.
+4. Un evento final cuyo daño potencial postmitigación sea igual o inferior a (1,5V_{max}) no activa bono.
+5. Un evento final de (2V_{max}) produce un bono aproximado del 16,7 %; uno de (2,5V_{max}), del 33,3 %; uno de (3V_{max}) o más, del 50 %.
+6. El exceso se calcula antes del límite por Vitalidad restante, pero después de defensas y mitigaciones.
+7. Las barras múltiples se cuentan una sola vez en (V_{max}), y las transiciones de fase, ejecuciones y Muertebendita intermedias no pagan recompensas duplicadas.
+8. Ataques de área, reflejos, invocaciones, daño periódico y encuentros repetibles no deben permitir duplicar pagos ni atribuir el mismo evento final a más de una derrota.
+9. Las pruebas de economía completa deben medir, por actividad y por hora efectiva, almas brutas, gastos, ingreso neto, puntos de atributo financiables y tiempo de acceso a enseñanzas/equipamiento. Deben cubrir jugador centrado en combate, jugador centrado en profesiones/comercio y rutas mixtas.
+
+**Dictamen provisional:** no se modifica ahora α ni los multiplicadores de amenaza. La relación interna entre recompensas y coste de progresión es coherente, y la obsolescencia de zonas antiguas funciona como control natural. La economía total sigue sin poder certificarse porque faltan remuneraciones y gastos cuantificados de actividades no combatientes. La corrección del daño potencial pre-límite y de la notación del coste de la siguiente mejora sí es necesaria y se incorpora como corrección técnica, no como cambio de balance.
+
 
 ### 24.4 Relación entre riqueza y progresión
 
