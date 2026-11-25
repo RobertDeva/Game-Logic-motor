@@ -1023,3 +1023,18 @@ La capacidad de carga del jugador tendrá una base diferenciada según su clase,
 - Los valores base, las diferencias exactas entre clases y la fórmula de combinación con estadísticas y modificadores quedan pendientes de balance y especificación.
 
 La intención es que la gestión del peso refuerce la identidad de cada clase y sus decisiones de equipamiento, sin impedir que cualquier clase pueda adaptar su configuración dentro de sus límites.
+
+
+### Restricciones de movilidad acrobática por sobrecarga
+
+Cuando el jugador supere su capacidad máxima de carga y entre en la categoría de sobrecarga, determinadas acciones de movilidad acrobática podrán quedar restringidas o resultar imposibles.
+
+- La sobrecarga podrá impedir acciones que exijan una relación elevada entre fuerza, impulso, equilibrio y movilidad, como correr por paredes, realizar saltos de gran distancia o utilizar el gancho.
+- Las restricciones se definirán por acción y por sus requisitos; no se asumirá que todas las acciones acrobáticas se bloquean automáticamente.
+- El sistema podrá considerar la carga efectiva, la Agilidad, las capacidades del personaje, el equipamiento y las condiciones del entorno para determinar si una acción es viable.
+- Las acciones que sigan siendo posibles podrán recibir penalizaciones o restricciones adicionales según las reglas correspondientes.
+- El jugador deberá recibir información clara sobre qué acciones están limitadas por la sobrecarga y por qué.
+- Las restricciones deberán aplicarse de forma coherente y determinista tanto al validar acciones como al resolver sus resultados.
+- Los requisitos de carga y las restricciones exactas de cada acción acrobática quedan pendientes de especificación y balance.
+
+El objetivo es que superar la capacidad de carga tenga consecuencias relevantes también para la exploración y la movilidad, y no únicamente para la velocidad de desplazamiento durante el combate.
