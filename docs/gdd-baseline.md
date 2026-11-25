@@ -450,3 +450,19 @@ Las interacciones ambientales se resolverán mediante un sistema general de prop
 - La arquitectura técnica concreta, el formato de definición de reglas y el conjunto inicial de propiedades quedan pendientes de diseño e implementación.
 
 Este sistema debe ser independiente del motor gráfico y de la simulación física concreta. El núcleo lógico define estados, condiciones y consecuencias; las capas externas se encargan de representar visualmente los efectos y, cuando corresponda, simular su física.
+
+
+## Aplicación del sistema de propiedades e interacciones a los combatientes
+
+El sistema general de propiedades e interacciones también podrá aplicarse al jugador y a los enemigos, incluidos los jefes. Así, las reglas ambientales y las interacciones entre combatientes compartirán un modelo coherente y extensible.
+
+- Los combatientes podrán tener propiedades y condiciones relevantes para las interacciones, como estar mojados, congelados, ardiendo, electrificados o tener vulnerabilidades específicas.
+- Los ataques, habilidades, estados y efectos del entorno podrán consultar esas propiedades y aplicar consecuencias definidas por reglas compatibles.
+- Por ejemplo, un combatiente mojado puede conducir electricidad si las reglas del efecto lo establecen; una criatura inflamable puede reaccionar al fuego; y el hielo puede modificar su vulnerabilidad ante determinados ataques.
+- Las interacciones deben poder afectar, según corresponda, a vitalidad, postura, movilidad, acciones disponibles y otros estados de combate.
+- Las reglas se aplicarán de forma coherente al jugador y a los enemigos, salvo que una diferencia esté justificada explícitamente por una característica o inmunidad propia.
+- Las propiedades, resistencias, vulnerabilidades e inmunidades concretas serán configurables por entidad y no se asumirán universales.
+- El sistema debe mantener resolución determinista, control de prioridades y duración, y protección contra ciclos o activaciones infinitas.
+- La representación visual y la simulación física seguirán separadas del núcleo lógico, que determina las condiciones y consecuencias del juego.
+
+El objetivo es unificar las interacciones de escenario, objetos y combatientes en un mismo marco de reglas, evitando sistemas aislados y comportamientos contradictorios.
