@@ -772,3 +772,24 @@ El mundo podrá experimentar desastres naturales de origen geológico, con efect
 - El núcleo lógico gestionará estados, consecuencias y etapas de recuperación; la representación visual y la simulación física de los fenómenos corresponderán a las capas especializadas.
 
 El objetivo es que los desastres geológicos sean acontecimientos relevantes y coherentes con la naturaleza de cada región, capaces de alterar temporalmente la vida y las oportunidades del mundo, pero siempre sujetos a un proceso de recuperación.
+
+
+## Ciclos ecológicos de flora y fauna
+
+Los ecosistemas de Mythical Exodus evolucionarán a lo largo del tiempo. La flora y la fauna tendrán ciclos naturales propios y sus poblaciones podrán cambiar según las condiciones del territorio, sin permanecer estáticas ni depender exclusivamente de la presencia del jugador.
+
+- Las especies animales podrán reproducirse, alimentarse, descansar, competir, desplazarse y migrar según su naturaleza, ciclo vital, hábitat y disponibilidad de recursos.
+- Las poblaciones podrán aumentar o disminuir por reproducción, mortalidad, depredación, enfermedades, escasez de alimento, cambios ambientales y otros factores ecológicos definidos.
+- La flora podrá crecer, florecer, producir frutos o semillas, dispersarse, marchitarse y regenerarse de acuerdo con la especie, la estación, el clima, el suelo y la disponibilidad de agua y nutrientes.
+- Las estaciones y las condiciones meteorológicas influirán en los ciclos de reproducción, migración, alimentación, crecimiento y actividad de las especies cuando resulte coherente con su biología.
+- Los fenómenos meteorológicos extremos y los desastres geológicos podrán afectar temporalmente a hábitats, recursos y poblaciones. Sus consecuencias ecológicas deberán integrarse con los procesos de recuperación territorial ya establecidos.
+- Las relaciones entre especies, como depredación, competencia, simbiosis y dependencia alimentaria, podrán modelarse cuando sean relevantes para el ecosistema y estén definidas mediante reglas explícitas.
+- La disponibilidad de alimento, agua, refugio y espacio habitable deberá limitar el crecimiento de las poblaciones. No se permitirán expansiones ilimitadas ni generación espontánea de recursos o criaturas.
+- Las migraciones y desplazamientos deberán respetar hábitats adecuados, rutas plausibles, barreras territoriales y condiciones ambientales. Las especies no aparecerán o desaparecerán arbitrariamente para simular cambios de población.
+- La actividad de la fauna y el estado de la flora podrán influir en la exploración, los recursos recolectables, la presencia de depredadores y las oportunidades del jugador, sin convertir cada cambio ecológico en una obligación de intervención.
+- Las acciones del jugador, las comunidades y las facciones podrán afectar a los ecosistemas mediante caza, recolección, destrucción de hábitats, protección, restauración y otras actividades plausibles.
+- Los ecosistemas podrán recuperarse después de perturbaciones temporales mediante reproducción, recolonización, regeneración vegetal y restauración de hábitats. Los ritmos dependerán de la especie, la región, la magnitud del daño y las condiciones disponibles.
+- La simulación podrá utilizar distintos niveles de detalle según la relevancia y proximidad de cada ecosistema. Los resultados deberán conservar coherencia temporal y determinismo aunque se resuelvan periodos fuera de la presencia del jugador.
+- El sistema deberá evitar ciclos de simulación infinitos, crecimiento descontrolado de poblaciones y cálculos innecesarios. Las reglas, límites ecológicos, escalas temporales y criterios de actualización quedan pendientes de diseño técnico y numérico.
+
+El objetivo es que la naturaleza de Mythical Exodus se comporte como un conjunto de ecosistemas vivos e interdependientes, capaz de cambiar y recuperarse con el tiempo. La simulación deberá aportar credibilidad y consecuencias sistémicas sin exigir que cada organismo se procese continuamente ni desplazar la prioridad de la historia principal.
