@@ -1631,3 +1631,12 @@ Las compañías, talleres, gremios y demás organizaciones fundadas o adquiridas
 La continuidad no será automática ni garantizará que la organización conserve su prosperidad o influencia. La sucesión dependerá de las personas disponibles, sus capacidades, preparación, relaciones, intereses, legitimidad y aceptación por parte de los miembros de la organización y del entorno social o político. Las decisiones de sucesión, los conflictos entre herederos, la conservación o transformación de la identidad de la organización y sus consecuencias concretas quedan sujetos a un diseño posterior.
 
 Esta decisión cierra por ahora la profundización del sistema de profesiones, oficios y organizaciones empresariales. Se retomará únicamente si resulta necesario para definir otros sistemas o si el usuario decide volver sobre el tema.
+
+
+## Durabilidad, deterioro y reparación del equipamiento
+
+- Las piezas de equipamiento estarán sujetas a durabilidad y podrán deteriorarse durante el uso.
+- El desgaste podrá producirse por impactos, ataques recibidos, uso continuado y exposición a condiciones ambientales, según la naturaleza y los materiales de cada pieza.
+- El ritmo y la forma del deterioro podrán variar entre armas, armaduras, accesorios y otros equipos; no se asumirá que todos los objetos se desgastan de manera idéntica.
+- El equipamiento deteriorado podrá requerir reparación para recuperar su condición funcional.
+- Las reglas concretas de durabilidad, umbrales de deterioro, efectos sobre estadísticas y rendimiento, materiales y costes de reparación, herramientas necesarias, reparadores disponibles y posibles límites de reparación quedan pendientes de definición.
