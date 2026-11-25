@@ -1685,3 +1685,12 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - La técnica y precisión de la extracción influirán en la calidad y el estado de los materiales obtenidos; una ejecución más perfecta podrá conservar mejor sus propiedades.
 - Los procedimientos podrán variar según la criatura y el componente que se quiera obtener.
 - Las técnicas concretas, herramientas, patrones, riesgos de pérdida o daño y reglas cuantitativas quedan pendientes de definición.
+
+
+### Anatomía de criaturas y progresión de extracción
+
+- Las criaturas tendrán puntos anatómicos y componentes identificables que podrán estudiarse y aprovecharse para obtener materiales específicos.
+- El conocimiento de la anatomía de cada criatura será útil tanto durante el combate, para reconocer posibles puntos vulnerables, como durante el despiece y la extracción de componentes.
+- El sistema de obtención y extracción de materiales tendrá su propio nivel de progresión, siguiendo el modelo de progresión establecido para la fabricación.
+- Esta progresión representará el desarrollo de la capacidad del jugador para reconocer anatomías, seleccionar técnicas y extraer componentes con mayor eficacia y calidad.
+- Los detalles de niveles, experiencia, desbloqueos, especializaciones y fórmulas de progresión deberán mantener coherencia con el sistema de fabricación y quedan pendientes de especificación.
