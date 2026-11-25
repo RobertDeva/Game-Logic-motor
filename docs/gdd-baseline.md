@@ -556,3 +556,19 @@ Determinados enemigos que sobrevivan a un encuentro y huyan podrán conservar re
 - El alcance temporal, almacenamiento, selección de recuerdos, actualización, olvido y persistencia entre sesiones quedan pendientes de diseño técnico.
 
 La memoria entre encuentros complementa la adaptación táctica durante un combate: permite que las acciones del jugador tengan consecuencias en futuros enfrentamientos con supervivientes, sin conceder a los enemigos información que no podrían conocer.
+
+
+## Transmisión de información sobre el jugador entre enemigos de una misma facción
+
+Los enemigos supervivientes podrán transmitir a otros miembros de su facción información relevante que hayan observado sobre el jugador. Esta información puede influir en la preparación y el comportamiento de futuros encuentros.
+
+- Un enemigo que escape o disponga de un medio plausible de comunicación puede advertir a aliados o guarniciones de su facción.
+- La información transmitida puede incluir armas, habilidades, tácticas recurrentes y otros comportamientos que el emisor haya observado directamente.
+- La transmisión requiere un medio y una oportunidad plausibles; no se comparte información automáticamente entre enemigos aislados o sin comunicación.
+- Los receptores solo conocerán lo que efectivamente se les haya comunicado. La información puede ser incompleta, imprecisa, estar desactualizada o ser interpretada de manera distinta.
+- La facción puede utilizar esos informes para prepararse, modificar formaciones, seleccionar tácticas o ajustar la vigilancia, según sus recursos, inteligencia y organización.
+- La información no concede conocimiento omnisciente sobre la ubicación, estado, equipo actual ni futuras acciones del jugador.
+- La capacidad de transmitir, recibir, conservar y utilizar informes dependerá de la estructura, tecnología, inteligencia y medios de comunicación de cada facción.
+- Las condiciones de comunicación, alcance, fiabilidad, caducidad y consecuencias concretas quedan pendientes de diseño.
+
+La memoria individual de los supervivientes y la transmisión de información entre miembros de una facción son sistemas relacionados pero distintos: un enemigo puede recordar una experiencia sin haber podido comunicarla, y una facción solo puede prepararse con la información que realmente haya recibido. El objetivo es que las acciones del jugador puedan tener consecuencias en encuentros posteriores y mantengan una tensión constante, sin recurrir a conocimiento injustificado por parte de los enemigos.
