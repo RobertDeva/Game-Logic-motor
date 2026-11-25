@@ -1239,3 +1239,20 @@ Las criaturas compañeras podrán reconocer al jugador como figura principal de 
 - Los criterios concretos de reconocimiento, niveles de confianza, iniciativa, prioridades entre órdenes y autonomía quedan pendientes de diseño.
 
 El objetivo es que el jugador sea el referente principal del grupo sin convertir a las compañeras en unidades pasivas: podrán confiar en él y seguir su liderazgo, pero también pensar, reaccionar y actuar por iniciativa propia.
+
+
+### Separación temporal autónoma y reencuentro de criaturas compañeras
+
+Las criaturas compañeras podrán separarse temporalmente del jugador por iniciativa propia cuando sus necesidades, comportamiento, capacidades o circunstancias lo justifiquen, y podrán reunirse con él posteriormente mediante desplazamientos y medios plausibles.
+
+- Los motivos de separación podrán incluir explorar, cazar, buscar alimento o agua, descansar, refugiarse, atender necesidades propias, investigar estímulos o responder a circunstancias del entorno.
+- La decisión dependerá de la especie, personalidad, temperamento, instintos, necesidades, estado físico o emocional, experiencias, vínculo con el jugador y situación del grupo.
+- La separación no equivaldrá automáticamente a abandonar el grupo ni a romper el vínculo.
+- Las criaturas deberán actuar dentro de sus capacidades y conocimientos; no podrán localizar al jugador mediante conocimiento omnisciente ni teletransportarse.
+- El reencuentro requerirá medios plausibles, como seguir rastros, orientarse mediante referencias conocidas, responder a señales comprendidas o desplazarse hacia un lugar conocido, según las capacidades de cada criatura.
+- Distancia, terreno, clima, peligros, obstáculos, estado de la criatura y cambios del mundo podrán dificultar o impedir temporalmente el reencuentro.
+- Durante la separación, las criaturas seguirán expuestas a necesidades, amenazas, relaciones y acontecimientos del mundo, con un nivel de simulación adecuado a la distancia.
+- El jugador deberá poder comprender, mediante señales o información disponible, cuándo una compañera se separa y cuáles son las circunstancias observables, sin recibir información que no pueda conocer.
+- Las reglas para duración, distancia, frecuencia, seguimiento, señales, puntos de reunión, riesgos, recuperación del contacto y casos en que una criatura no pueda regresar quedan pendientes de diseño.
+
+La separación debe reforzar la autonomía y naturalidad de las compañeras, sin convertirse en desapariciones arbitrarias ni garantizar un reencuentro inmediato.
