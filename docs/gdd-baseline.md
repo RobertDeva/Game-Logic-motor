@@ -496,3 +496,18 @@ Los enemigos pueden dañarse y afectarse entre sí mediante ataques, habilidades
 - La posibilidad de que ciertos enemigos eviten deliberadamente el fuego amigo, coordinen posiciones o aprovechen tácticamente el daño entre combatientes dependerá de su inteligencia y comportamiento, y queda pendiente de diseño.
 
 El combate debe permitir consecuencias emergentes entre todos los participantes, no limitar las interacciones dañinas a las acciones del jugador contra los enemigos.
+
+
+## Coordinación táctica entre enemigos
+
+Determinados enemigos podrán coordinar sus acciones durante el combate para crear presión conjunta y aprovechar las oportunidades que generen sus aliados.
+
+- Un enemigo puede presionar al jugador mientras otro intenta rodearlo, flanquearlo o cerrar sus rutas de escape.
+- Un arquero u otro atacante a distancia puede aprovechar la distracción o la posición creada por un aliado para atacar.
+- Algunos grupos podrán ejecutar ataques combinados, relevos de presión, emboscadas u otras maniobras compatibles con sus capacidades.
+- La coordinación dependerá de la inteligencia, entrenamiento, naturaleza, vínculos y capacidades de cada enemigo o grupo. No todos los enemigos actuarán coordinadamente.
+- Las maniobras deben respetar el espacio, la posición, los tiempos de acción y las posibilidades reales de cada participante; no deben producir ataques inevitables ni teletransportaciones o sincronizaciones arbitrarias.
+- Los enemigos podrán verse afectados por las mismas reglas de colisión, daño entre aliados e interacciones ambientales ya establecidas.
+- Las formas de comunicación, el alcance de coordinación, la selección de roles, la adaptación cuando un aliado cae y las maniobras concretas quedan pendientes de diseño.
+
+La coordinación debe surgir del comportamiento y las capacidades de los grupos, haciendo que algunos encuentros requieran gestionar amenazas simultáneas y no simplemente derrotar enemigos aislados.
