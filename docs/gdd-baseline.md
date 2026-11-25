@@ -865,3 +865,18 @@ Las criaturas que desarrollen un vínculo con el jugador podrán adquirir experi
 - La progresión y el límite de domesticación deberán integrarse con la continuidad ecológica y con la simulación de criaturas cerca y lejos del jugador.
 
 El objetivo es que cada criatura compañera pueda desarrollar una identidad y capacidades propias, mientras que el número reducido de vínculos disponibles favorezca relaciones significativas en lugar de coleccionar acompañantes.
+
+
+### Restricción de especies compatibles con domesticación y compañerismo
+
+La domesticación y el compañerismo estarán restringidos a un conjunto reducido de especies. Que una criatura sea inteligente, dócil, interactúe con el jugador o pueda ser alimentada no significa que sea domesticable ni apta para convertirse en compañera.
+
+- Solo determinadas especies, definidas explícitamente por el diseño del mundo, podrán establecer vínculos de domesticación y compañerismo con el jugador.
+- La compatibilidad será una característica propia de cada especie y podrá depender de su biología, comportamiento, inteligencia, estructura social, temperamento y necesidades.
+- Dentro de una especie compatible, no todos los individuos tendrán necesariamente la misma disposición o posibilidad de establecer un vínculo; podrán existir condiciones individuales adicionales.
+- La lista de especies compatibles deberá ser deliberadamente pequeña en comparación con la diversidad total de criaturas del mundo.
+- Las especies no compatibles conservarán sus comportamientos naturales y podrán interactuar con el jugador de otras maneras, pero no podrán convertirse en compañeras domesticadas por el simple hecho de acumular interacciones.
+- Esta restricción es independiente del límite de cantidad: el sistema limitará tanto cuántas criaturas puede mantener vinculadas el jugador como qué especies pueden llegar a ser compañeras.
+- La compatibilidad de una especie no garantiza que su domesticación sea sencilla ni que pueda desempeñar cualquier función. Las condiciones del vínculo y las funciones posibles seguirán dependiendo de sus capacidades y características.
+
+La intención es que las criaturas compañeras sean excepcionales dentro de la fauna del mundo: el jugador no podrá domesticar indiscriminadamente a cualquier especie ni convertir la domesticación en un sistema universal.
