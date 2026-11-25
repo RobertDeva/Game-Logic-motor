@@ -960,15 +960,66 @@ Dos personajes con el mismo nivel pueden tener distribuciones distintas; por ell
 
 Las almas constituyen la moneda general y, simultáneamente, el recurso que se entrega para incrementar atributos. El jugador decide cuándo reservarlas para subir atributos y cuándo gastarlas en bienes, equipamiento, servicios u otras oportunidades económicas.
 
-El coste de la siguiente mejora se calcula por atributo y por valor actual:
+El coste de la siguiente mejora depende exclusivamente del nivel general actual del personaje. No depende del atributo elegido ni de su valor individual:
 
 \[
-Coste_{siguiente}(i)=C_i(A_i)
+Coste_{siguiente}=C(Nivel_{actual}+1)
 \]
 
-La función de coste deberá crecer de forma progresiva y configurable. No se fija aquí una tabla ni una fórmula numérica definitiva: debe calibrarse junto con las fuentes de ingresos, los precios y la duración esperada de la progresión. El coste puede variar por atributo si las pruebas justifican diferencias, pero no debe introducir diferencias ocultas entre personajes de la misma configuración.
+Todos los atributos cuestan exactamente lo mismo cuando se compran desde un mismo nivel general. Tras comprar un punto, el nivel general aumenta en uno y el siguiente punto cuesta más según la curva. La elección del atributo determina la construcción del personaje, pero nunca modifica el precio.
 
 Las almas acumuladas no conceden niveles automáticamente. Solo se produce un incremento cuando el jugador decide invertirlas y la operación se completa.
+
+### 24.2.1 Curva de coste de referencia
+
+Se adopta como **curva matemática de referencia inicial** el comportamiento de progresión de Dark Souls III, adaptado al nivel de Mythical Exodus. La referencia resulta apropiada porque el coste depende del nivel global y aumenta de forma no lineal, alcanzando millones de almas en niveles elevados. No se importan clases iniciales, atributos, límites ni reglas de otros juegos.
+
+Sea \(n\) el número de puntos de progresión comprados desde el estado inicial. El coste del siguiente punto utiliza el nivel objetivo equivalente \(x=n+2\), de modo que el primer punto corresponde al coste de alcanzar el nivel 2 de la tabla de referencia:
+
+\[
+C(n)=
+\begin{cases}
+\operatorname{round}(0.0068x^3-0.06x^2+17.1x+639), & 2\le x\le12\\
+\operatorname{round}(0.02x^3+3.06x^2+105.6x-895), & x\ge13
+\end{cases}
+\qquad x=n+2
+\]
+
+La función devuelve almas enteras. El coste se calcula usando el nivel objetivo, no el nivel que se abandona. Para evitar ambigüedad, \(n=0\) representa el personaje en su estado inicial; comprar el primer punto cuesta \(C(0)\), equivalente al tramo de nivel 1 a 2 de Dark Souls III.
+
+**Valores ilustrativos de la curva de referencia** (coste de comprar el punto correspondiente, redondeado al alma más cercana):
+
+| Nivel objetivo equivalente | Coste |
+|---:|---:|
+| 2 | 673 |
+| 3 | 690 |
+| 12 | 847 |
+| 13 | 1.039 |
+| 25 | 3.970 |
+| 50 | 14.535 |
+| 75 | 32.675 |
+| 100 | 60.265 |
+| 150 | 151.295 |
+| 200 | 302.625 |
+| 300 | 846.185 |
+| 400 | 1.810.945 |
+| 500 | 3.316.905 |
+| 600 | 5.484.065 |
+| 700 | 8.432.425 |
+| 750 | 10.237.055 |
+
+La tabla expresa niveles objetivo equivalentes de la curva, no niveles iniciales de clase de Mythical Exodus. La correspondencia definitiva se aplicará al contador de puntos adquiridos desde el estado inicial; no se sumará un nivel base ficticio al nivel funcional del personaje.
+
+Esta adopción es una **línea base de balance**, no una afirmación de que la economía completa ya esté calibrada. Antes de cerrar sus parámetros se deben simular ingresos acumulados y costes de vida, equipo, reparación, materiales, servicios y comercio. La curva puede recibir un multiplicador global o una transformación versionada si las pruebas demuestran que el ritmo económico del mundo requiere otra escala, pero no se permitirán multiplicadores distintos por atributo.
+
+### 24.2.2 Invariantes de progresión
+
+1. Dos personajes con el mismo nivel general y la misma cantidad de almas pagan el mismo coste por el siguiente punto, sin importar su distribución de atributos.
+2. Comprar cualquier atributo aumenta el nivel general exactamente en un punto.
+3. El precio siguiente se calcula desde el nuevo nivel general.
+4. Ninguna profesión, clase, atributo o especialización modifica directamente el coste de subir de nivel.
+5. Las fuentes de ingreso pueden diferir por actividad, pero todas alimentan la misma moneda y el mismo coste de progresión.
+6. Los costes de bienes, servicios, mantenimiento y comercio compiten por la misma reserva de almas; la progresión no debe asumir que el jugador dedica todos sus ingresos a subir atributos.
 
 ### 24.3 Fuentes válidas de obtención de almas
 
