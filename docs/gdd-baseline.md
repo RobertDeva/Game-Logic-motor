@@ -1256,3 +1256,21 @@ Las criaturas compañeras podrán separarse temporalmente del jugador por inicia
 - Las reglas para duración, distancia, frecuencia, seguimiento, señales, puntos de reunión, riesgos, recuperación del contacto y casos en que una criatura no pueda regresar quedan pendientes de diseño.
 
 La separación debe reforzar la autonomía y naturalidad de las compañeras, sin convertirse en desapariciones arbitrarias ni garantizar un reencuentro inmediato.
+
+
+### Experiencias autónomas durante la separación de criaturas compañeras
+
+Mientras estén temporalmente separadas del jugador, las criaturas compañeras podrán vivir acontecimientos propios que influyan en su estado, comportamiento, relaciones y desarrollo posterior.
+
+- Según sus capacidades, necesidades, personalidad, especie y circunstancias, podrán encontrar recursos, descubrir lugares, rastrear presas, explorar rutas o identificar amenazas.
+- Podrán sufrir heridas, agotamiento, hambre, miedo u otros efectos, así como enfrentarse a peligros y encuentros con criaturas o personajes.
+- Podrán establecer, fortalecer, deteriorar o modificar relaciones con otras criaturas y NPC cuando existan interacciones y oportunidades plausibles.
+- Las experiencias podrán aportar aprendizaje y experiencia, modificar confianza, cautela, preferencias, temores, habilidades o conductas, siempre dentro de los sistemas de progresión y personalidad que correspondan.
+- Los resultados dependerán de lo que la criatura pueda percibir, comprender y hacer; no se garantizará el éxito ni se le atribuirán conocimientos o capacidades que no posea.
+- Los acontecimientos relevantes quedarán asociados a la identidad de la criatura y podrán incorporarse a su historial de experiencias compartidas o propias cuando corresponda.
+- Al reencontrarse, sus condiciones y experiencias podrán reflejarse en su comportamiento y en la información que pueda comunicar mediante señales o canales que el jugador comprenda.
+- La simulación durante la ausencia del jugador utilizará niveles de detalle apropiados, preservando continuidad y resultados relevantes sin exigir simular cada acción con máximo detalle.
+- La separación no deberá producir recompensas, lesiones, pérdidas o cambios arbitrarios: los resultados deben derivarse de riesgos, capacidades, recursos, tiempo y circunstancias.
+- Los métodos de comunicación de experiencias, selección de acontecimientos relevantes, progresión obtenida, resolución de encuentros y límites de simulación quedan pendientes de diseño.
+
+Estas experiencias permitirán que las compañeras tengan una vida y evolución propias, en lugar de permanecer como entidades suspendidas mientras el jugador está lejos.
