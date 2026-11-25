@@ -1657,3 +1657,12 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - La aparición y gravedad de estos daños estarán vinculadas al estado de deterioro y a las circunstancias que los provoquen; no serán consecuencias habituales del desgaste normal mientras el equipo conserve una durabilidad adecuada.
 - Estos daños especiales podrán agravar la pérdida de rendimiento y requerir reparaciones apropiadas a la naturaleza del daño.
 - Los umbrales, probabilidades, tipos de daño por categoría de equipo y procedimientos específicos para restaurar cada pieza quedan pendientes de definición.
+
+
+### Materiales del equipamiento y componentes de origen biológico
+
+- Las armas, armaduras y demás piezas de equipamiento podrán fabricarse con distintos materiales, cada uno con propiedades propias que influyen en características como peso, resistencia, durabilidad y afinidad mágica.
+- Los materiales no se limitarán a metales: también podrán incluir subproductos obtenidos de monstruos y animales, utilizables como materiales o componentes de fabricación cuando sus propiedades lo permitan.
+- Los subproductos podrán aportar características particulares derivadas de su origen y naturaleza, diferenciando los equipos fabricados con ellos de los elaborados con materiales convencionales.
+- La combinación de materiales y componentes podrá influir en las propiedades finales del equipo.
+- El catálogo de materiales, sus propiedades cuantitativas, compatibilidades, métodos de obtención y combinaciones concretas queda pendiente de definición.
