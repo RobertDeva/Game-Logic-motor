@@ -1804,8 +1804,8 @@ Se ha establecido una primera especificación matemática versionada para las oc
 
 - El personaje dispone de ocho atributos: Vitalidad, Fuerza, Agilidad, Resistencia, Voluntad, Ruptura, Destreza y Armonía.
 - Cada atributo tiene un valor inicial propio y un máximo de 99.
-- El nivel del personaje no tiene un máximo de 99. Se calcula sumando los incrementos permanentes de los ocho atributos respecto a sus valores iniciales.
-- El nivel máximo teórico es la suma de las diferencias entre 99 y el valor inicial de cada uno de los ocho atributos.
+- El personaje comienza en nivel 1. Su nivel no tiene un máximo de 99 y se calcula como 1 más la suma de los incrementos permanentes de los ocho atributos respecto a sus valores iniciales.
+- El nivel máximo teórico es 1 más la suma de las diferencias entre 99 y el valor inicial de cada uno de los ocho atributos.
 - Cada punto de nivel corresponde a un incremento de atributo. Los valores iniciales definitivos determinarán el nivel máximo numérico.
 - Dos personajes con el mismo nivel pueden tener distribuciones de atributos distintas y, por tanto, capacidades de combate diferentes.
 
