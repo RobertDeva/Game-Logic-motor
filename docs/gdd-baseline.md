@@ -511,3 +511,18 @@ Determinados enemigos podrán coordinar sus acciones durante el combate para cre
 - Las formas de comunicación, el alcance de coordinación, la selección de roles, la adaptación cuando un aliado cae y las maniobras concretas quedan pendientes de diseño.
 
 La coordinación debe surgir del comportamiento y las capacidades de los grupos, haciendo que algunos encuentros requieran gestionar amenazas simultáneas y no simplemente derrotar enemigos aislados.
+
+
+## Cambio de comportamiento al perder compañeros
+
+Los enemigos pueden modificar su comportamiento cuando sus aliados son derrotados, se retiran o dejan de estar disponibles para coordinarse. La reacción dependerá de su personalidad, inteligencia, naturaleza, vínculos y situación de combate.
+
+- Algunos enemigos pueden huir, retroceder o intentar evitar el enfrentamiento cuando se quedan solos o pierden a un aliado importante.
+- Otros pueden volverse más agresivos, intentar vengar a sus compañeros o asumir mayores riesgos.
+- Enemigos tácticos pueden cambiar de formación, abandonar maniobras coordinadas, adoptar nuevos roles o priorizar objetivos distintos cuando pierden apoyo.
+- Algunos pueden mantener su comportamiento original si su entrenamiento, disciplina, naturaleza o motivaciones lo justifican.
+- Las reacciones deben basarse en hechos observables y en el contexto disponible para el enemigo; no deben conocer información privada del jugador ni anticipar acciones futuras.
+- La pérdida de aliados no debe activar una reacción universal: cada arquetipo o individuo puede definir sus propias respuestas y condiciones.
+- Los umbrales, tiempos de reacción y transiciones entre comportamientos quedan pendientes de diseño y balance.
+
+La composición del grupo debe importar durante todo el encuentro: derrotar, separar o hacer huir a determinados enemigos puede cambiar la dinámica y las opciones tácticas de los supervivientes.
