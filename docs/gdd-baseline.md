@@ -1599,3 +1599,26 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - Cada disciplina conservará su progresión independiente y sus requisitos de aprendizaje, práctica y maestría. Poder desarrollar todas no implica dominarlas simultáneamente ni eliminar los límites de tiempo, recursos, conocimientos y esfuerzo.
 - La capacidad de dirigir varias organizaciones a la vez dependerá de los sistemas de personal, delegación, recursos, administración y circunstancias que se definan; no se asumirá gestión perfecta o ilimitada.
 - Los modelos de administración, delegación, costes, contratación, autonomía, capacidad operativa, informes, riesgos y escalabilidad quedan pendientes de definición.
+
+
+## Personalidad, desarrollo y autonomía del personal de las organizaciones
+
+- Los empleados de talleres, gremios, compañías y demás organizaciones podrán tener personalidad, habilidades, necesidades, relaciones y ambiciones propias.
+- Sus capacidades y experiencias influirán en el desempeño de las tareas que se les asignen y en su desarrollo profesional.
+- Los empleados podrán aprender, mejorar habilidades, adquirir experiencia y asumir responsabilidades mayores mediante práctica, formación y oportunidades reales.
+- Según su personalidad, conocimientos, iniciativa, lealtad, relaciones y circunstancias, podrán tomar decisiones dentro de sus responsabilidades, proponer mejoras, resolver problemas o cometer errores.
+- Algunos empleados podrán llegar a convertirse en administradores, encargados o responsables de confianza si cuentan con capacidades y experiencia adecuadas y el jugador les delega autoridad.
+- La autonomía estará limitada por el cargo, las instrucciones, los conocimientos, los recursos y la información disponibles; los empleados no tendrán conocimiento omnisciente ni autoridad que no se les haya concedido.
+- Las necesidades, conflictos, ambiciones, satisfacción, confianza y relaciones del personal podrán afectar contratación, retención, cooperación, productividad y estabilidad de la organización.
+- Los criterios de selección, salarios, formación, evaluación, ascensos, delegación, conflictos laborales, renuncias y posibles deslealtades quedan pendientes de definición.
+
+## Integración y fusión de compañías de distintos sectores
+
+- Si el jugador posee o controla organizaciones de distintos sectores, podrá integrarlas o fusionarlas para formar una estructura empresarial común cuando se cumplan los requisitos correspondientes.
+- La integración podrá conectar actividades complementarias, compartir recursos e infraestructura, coordinar personal, logística, almacenamiento, producción, distribución y administración.
+- La fusión no hará que las disciplinas pierdan sus reglas, necesidades ni operaciones específicas: cada sector conservará sus procesos especializados dentro de la organización integrada.
+- La estructura resultante podrá aprovechar sinergias entre sectores, por ejemplo, producción artesanal, abastecimiento comercial, preparación de alimentos, pesca y servicios de tratamiento de heridas, cuando existan relaciones operativas plausibles.
+- La fusión podrá requerir acuerdos, recursos, instalaciones, capacidad administrativa, compatibilidad organizativa y aceptación de las partes involucradas, según la situación.
+- La integración también podrá generar costes, dependencias, conflictos de intereses, dificultades de coordinación y riesgos compartidos; no será automáticamente beneficiosa.
+- Se podrán definir estructuras con divisiones, sucursales, responsables y administradores delegados para gestionar operaciones de distintos sectores.
+- Las condiciones legales, económicas, políticas y sociales para fusionar organizaciones, así como sus estructuras, gobernanza, contabilidad, sinergias y riesgos, quedan pendientes de definición.
