@@ -196,3 +196,14 @@ Queda pendiente definir cómo se obtienen los puntos de experiencia/Almas necesa
 - La mejora de Artes de Combate toma como referencia el sistema de Sekiro. Cada Arte de Combate tiene su propio nivel de dominio y puede mejorarse individualmente.
 
 No se han fijado todavía los costes exactos de Almas por nivel ni los requisitos, recursos o efectos concretos de cada nivel de dominio de un Arte. No se asumirán automáticamente los árboles, puntos de habilidad ni costes del videojuego de referencia: Sekiro es una inspiración para el enfoque, mientras que las reglas finales serán propias de Mythical Exodus.
+
+
+### Confirmación del creador: acumulación de puntos de Artes de Combate
+
+- Los puntos obtenidos al llenar el medidor de progresión de Artes de Combate pueden guardarse y acumularse; el jugador no está obligado a gastarlos inmediatamente.
+- Cada punto acumulado puede gastarse posteriormente para desbloquear un Arte de Combate nuevo o aumentar el nivel de dominio de un Arte ya desbloqueado.
+- Obtener un punto reinicia el medidor de progreso parcial a cero y aumenta el umbral requerido para obtener el siguiente punto, independientemente de que el jugador haya gastado o no los puntos acumulados.
+- Al morir, se pierde el progreso parcial del medidor, pero no los puntos de Artes ya obtenidos y conservados.
+- El medidor de experiencia de Artes se alimenta al derrotar enemigos y es independiente de las Almas utilizadas para subir atributos en zonas de descanso.
+
+Quedan pendientes los valores de experiencia concedidos por enemigo, el umbral inicial, la fórmula de incremento del umbral y los efectos concretos de cada nivel de dominio.
