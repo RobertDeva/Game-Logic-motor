@@ -946,3 +946,20 @@ Las criaturas compañeras podrán desempeñar funciones especializadas y mejorar
 - El núcleo lógico gestionará reglas, compatibilidad, atributos y efectos del equipamiento sin depender de modelos visuales, animaciones o sistemas específicos de un motor gráfico.
 
 El objetivo es que cada compañera pueda desarrollar un papel propio y una configuración personalizada, sin perder su identidad biológica ni las diferencias entre especies.
+
+
+### Inventario propio y capacidad de carga de criaturas compañeras
+
+Cada criatura compañera podrá disponer de un inventario propio y limitado para transportar determinados objetos y recursos durante la aventura.
+
+- La capacidad de carga será limitada y dependerá de las características de la criatura, como especie, anatomía, tamaño y capacidades individuales.
+- Los objetos transportables deberán ser compatibles con la criatura y con la forma en que puede sujetarlos, almacenarlos o llevarlos.
+- Algunas criaturas podrán recoger o transportar determinados recursos cuando sus sentidos, anatomía y comportamiento lo permitan; esta capacidad no será universal.
+- El inventario podrá tener restricciones por tipo, tamaño, peso, volumen o cantidad de objetos, según las reglas que se definan para cada criatura.
+- El peso y la carga transportada podrán afectar al desplazamiento, la resistencia, la movilidad u otras capacidades cuando corresponda.
+- El inventario de la criatura será independiente del inventario del jugador. El intercambio de objetos requerirá una interacción o acción válida y compatible con las capacidades de ambos.
+- La criatura no recogerá, utilizará ni entregará objetos de manera arbitraria: sus acciones dependerán de las órdenes que comprenda, su autonomía, sus necesidades y las circunstancias.
+- Los objetos transportados deberán conservar su identidad, cantidad, estado y propiedades durante la simulación, incluso cuando la criatura se encuentre lejos del jugador.
+- La capacidad exacta, los límites de carga, las categorías de objetos, las reglas de recogida e intercambio y las posibles consecuencias de perder o separar a la criatura quedan pendientes de especificación.
+
+El objetivo es permitir que las compañeras contribuyan a la exploración y gestión de recursos sin convertirse en almacenes ilimitados ni eliminar las decisiones de inventario del jugador.
