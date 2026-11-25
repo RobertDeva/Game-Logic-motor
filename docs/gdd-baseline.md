@@ -1649,3 +1649,11 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - La reparación se integrará con las disciplinas de herrería y armería ya contempladas en el sistema de profesiones, en lugar de constituir un sistema profesional independiente.
 - La capacidad de reparar, la calidad del resultado y los recursos o herramientas necesarios dependerán de los conocimientos y capacidades pertinentes, así como del tipo de pieza y de su estado.
 - Los umbrales, fórmulas, efectos específicos por categoría de equipo, costes, materiales y límites de reparación quedan pendientes de definición.
+
+
+### Aclaración: daños estructurales en estados críticos de durabilidad
+
+- Las armas y piezas de armadura podrán sufrir daños estructurales o funcionales especiales —como fracturas, deformaciones o pérdida de componentes— cuando su durabilidad se aproxime a su límite mínimo.
+- La aparición y gravedad de estos daños estarán vinculadas al estado de deterioro y a las circunstancias que los provoquen; no serán consecuencias habituales del desgaste normal mientras el equipo conserve una durabilidad adecuada.
+- Estos daños especiales podrán agravar la pérdida de rendimiento y requerir reparaciones apropiadas a la naturaleza del daño.
+- Los umbrales, probabilidades, tipos de daño por categoría de equipo y procedimientos específicos para restaurar cada pieza quedan pendientes de definición.
