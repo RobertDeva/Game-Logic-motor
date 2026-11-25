@@ -1483,3 +1483,12 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - Las variantes y revisiones deberán conservar su relación con la receta de origen, permitiendo reconocer su evolución y recuperar versiones anteriores cuando corresponda.
 - La experimentación virtual permitirá investigar mejoras sin consumir materiales; la fabricación real seguirá requiriendo los recursos y condiciones correspondientes.
 - Los grados de descubrimiento, criterios de perfeccionamiento, control de versiones, límites de mejora y efectos concretos quedan pendientes de definición.
+
+
+## Identidad y denominación de recetas originales
+
+- El jugador podrá asignar nombres propios a las recetas originales que descubra y valide.
+- El nombre quedará asociado a la identidad de la receta y a sus versiones derivadas, conservando la relación con la receta de origen.
+- Los objetos fabricados mediante una receta original podrán mostrar su nombre o denominación artesanal como parte de su identidad.
+- El registro del objeto podrá conservar la receta utilizada y su versión, permitiendo reconocer su procedencia artesanal.
+- Los criterios de denominación, cambios de nombre, visibilidad en interfaces y tratamiento de copias o fabricaciones por otros artesanos quedan pendientes de definición.
