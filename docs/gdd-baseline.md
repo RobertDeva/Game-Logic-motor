@@ -1817,6 +1817,9 @@ Se ha establecido una primera especificación matemática versionada para las oc
 - Cada punto comprado aumenta el nivel general en uno y encarece la siguiente mejora según una curva no lineal de referencia inspirada en Dark Souls III, con costes que alcanzan millones de almas en niveles elevados.
 - La curva matemática inicial, su fórmula, tabla de valores e invariantes están documentados en la sección 24.2 del [modelo matemático del combate](combat-mathematical-model.md#242-almas-recurso-económico-y-coste-de-progresión). Sus parámetros se validarán junto con los ingresos y gastos de la economía completa.
 - Las almas se obtienen mediante combate, exploración, logros, prestación de servicios y comercio.
+- Cada enemigo derrotado concede una recompensa base calculada mediante la curva económica compartida, su nivel económico de referencia y su categoría de amenaza (común, fuerte, élite o jefe).
+- El golpe o evento final puede conceder un bono limitado cuando su daño efectivo supera ampliamente la Vitalidad máxima total del enemigo. El umbral inicial es 1,5 veces esa Vitalidad y el bono máximo es el 50 % de la recompensa base al alcanzar 3 veces la Vitalidad máxima.
+- La recompensa por derrota se concede una sola vez tras la derrota definitiva; no se duplica por barras, fases, ejecuciones o Muertebendita intermedias. El modelo matemático detalla la fórmula, multiplicadores, ejemplos y controles contra explotación en las secciones 24.3.1–24.3.3.
 - La recolección de materias primas y la creación, transformación o fabricación de productos no generan almas directamente.
 - La recolección y la fabricación producen recursos, materiales y bienes que pueden venderse posteriormente o utilizarse para prestar servicios remunerados.
 - La riqueza puede acelerar la subida de atributos porque permite financiar más mejoras. No concede niveles ni puntos de atributo automáticamente: el jugador debe invertir las almas.
