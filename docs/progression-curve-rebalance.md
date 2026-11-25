@@ -119,3 +119,28 @@ Healing charges still refill only at level-up/rest points by consuming previousl
 Adopt this as the next candidate curve for controlled playtesting. It meets the requested level-100 time target under an explicit, plausible-to-test net income range, places level 225 at approximately 306 active hours under the illustrative hybrid scenario, and preserves almost all of the original maximum-level cost.
 
 Do not call it final balance until playtest telemetry confirms the assumed net income rates, campaign length and equipment costs.
+
+## 9. Clarification: combat-income scope and boss rewards
+
+The active-time estimates above must be interpreted as a **provisional baseline for income from normal and special non-boss enemies only**, if those were the encounter classes included in the assumed combat-income rate. They do not yet include the souls awarded by bosses or any special-boss bonuses. Therefore, the 40–60 hour estimate to level 100 and the approximately 306-hour estimate to level 225 are not complete combat-economy forecasts until boss rewards are added to the model.
+
+The combat-income model must track these sources separately:
+
+1. **Normal enemies:** ordinary kill rewards, including any valid overkill bonus.
+2. **Special enemies (non-boss):** their own base reward and applicable overkill bonus.
+3. **Bosses:** a distinct base reward per boss, calibrated to threat, encounter length, number of phases/bars, and campaign/cycle placement.
+4. **Special-boss bonuses:** separately itemized rewards for the relevant special-boss conditions or achievements. These must not be silently folded into the base reward or counted twice.
+5. **Other rewards:** first-defeat, optional objectives, exploration discoveries, quests, or one-time encounter rewards, each recorded independently where applicable.
+
+Boss and one-time encounter rewards must be granted according to explicit completion rules and protected against farming exploits. A multi-phase boss must not pay its full defeat reward once per phase or per Vitality bar. A definitive defeat pays the base boss reward once; any additional bonus is paid only when its specific condition is satisfied. Overkill is calculated under the already documented final-event rule and must not be duplicated as a second generic boss bonus.
+
+### Required recalculation
+
+Before treating any time-to-level estimate as representative of a full first playthrough, run at least two clearly labeled cases:
+
+- **Baseline case:** normal and special non-boss enemy rewards only.
+- **Full combat case:** baseline rewards plus the actual boss base rewards and all applicable special-boss bonuses, counted once under their unlock conditions.
+
+Then combine the combat totals with net professional-service income and net trade profit, without double-counting sales or production. Report the resulting hours to levels 100 and 225, and show how much of the reduction comes from bosses versus ordinary encounters.
+
+Do not invent a universal boss reward or bonus multiplier in the absence of the boss roster, threat tiers, encounter placement, and the exact special-boss bonus conditions. The current hourly income assumptions are planning inputs, not measured rates. Replace them only after the encounter/reward catalog is available and the full-route simulation has been run.
