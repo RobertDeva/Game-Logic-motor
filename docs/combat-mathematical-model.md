@@ -1036,6 +1036,97 @@ El sistema debe impedir que una misma operación genere almas simultáneamente c
 
 El balance económico deberá contemplar costes de materiales, herramientas, transporte, mantenimiento, tarifas, oferta, demanda, calidad y otros gastos pertinentes. Las operaciones de compra y venta no deben crear riqueza neta artificial mediante ciclos repetibles sin riesgo, coste o límite económico.
 
+#### 24.3.1 Recompensas por derrotar enemigos
+
+Cada enemigo concede almas al ser derrotado. La recompensa se calcula a partir de su nivel económico de referencia, categoría de amenaza y modificadores explícitos de dificultad. No depende del nivel actual ni de la riqueza del jugador.
+
+Se reutiliza la unidad económica definida en 24.5:
+
+\[
+B(r)=C(r-2)
+\]
+
+La recompensa base de un enemigo es:
+
+\[
+R_{base}=round(B(r)\cdot \alpha \cdot M_{amenaza}\cdot M_{contenido})
+\]
+
+Donde:
+- \(r\) es el nivel económico de referencia del enemigo, coherente con su zona y su nivel de combate;
+- \(\alpha=0.03\) es la proporción inicial de la curva asignada a un enemigo común;
+- \(M_{amenaza}\) refleja la categoría del enemigo;
+- \(M_{contenido}\) permite ajustes explícitos por variantes especiales, encuentros o condiciones de contenido, con límites y justificación.
+
+Multiplicadores iniciales por categoría:
+
+| Categoría de enemigo | Multiplicador \(M_{amenaza}\) |
+|---|---:|
+| Común | ×1 |
+| Fuerte | ×2,5 |
+| Élite | ×6 |
+| Jefe | ×15 |
+
+Por tanto, antes de otros modificadores, las recompensas equivalen aproximadamente al 3 %, 7,5 %, 18 % y 45 % del coste de progresión de referencia, respectivamente. Los jefes suelen ser encuentros únicos o de disponibilidad limitada; no deben convertirse en una fuente repetible de almas sin límite.
+
+La categoría por sí sola no basta: dos enemigos de la misma categoría y nivel pueden justificar recompensas diferentes si su peligro efectivo, capacidades, resistencias, comportamiento, número de participantes o condiciones del encuentro difieren. Esos ajustes deben ser datos explícitos del diseño del enemigo o del encuentro, no una evaluación oportunista del rendimiento del jugador.
+
+#### 24.3.2 Bono por exceso de daño en el golpe final
+
+Un enemigo puede conceder un bono adicional cuando el evento de daño que lo derrota inflige un daño extraordinariamente superior a su **Vitalidad máxima total**, no simplemente superior a la Vitalidad que le quedaba.
+
+Se define:
+
+\[
+q=\frac{D_f}{V_{max}}
+\]
+
+Donde:
+- \(D_f\) es el daño efectivo del evento final que provoca la derrota, después de defensas, resistencias y mitigaciones;
+- \(V_{max}\) es la capacidad máxima total de Vitalidad del enemigo. En enemigos con varias barras, corresponde a la suma de la capacidad máxima de todas ellas.
+
+El multiplicador de bono inicial es:
+
+\[
+M_{exceso}=
+\begin{cases}
+0, & q\leq1.5\\
+0.5\cdot\min\left(\frac{q-1.5}{1.5},1\right), & q>1.5
+\end{cases}
+\]
+
+Y la recompensa total:
+
+\[
+R_{total}=R_{base}+round(R_{base}\cdot M_{exceso})
+\]
+
+Comportamiento de referencia:
+- Si el evento final inflige hasta 1,5 veces la Vitalidad máxima total, no hay bono.
+- A 2 veces la Vitalidad máxima total, el bono es aproximadamente el 16,7 % de la recompensa base.
+- A 2,5 veces, el bono es aproximadamente el 33,3 %.
+- A 3 veces o más, se alcanza el bono máximo del 50 %.
+
+El cálculo utiliza el daño efectivo, no el daño nominal anterior a las defensas. En ataques de múltiples impactos resueltos como una misma acción final, se suma el daño efectivo de esa acción. Un efecto periódico que cause la derrota se evalúa con el daño efectivo de su último evento. El exceso de daño de ataques anteriores no se acumula para fabricar artificialmente el bono.
+
+El bono se concede una sola vez por enemigo y únicamente cuando se confirma su derrota definitiva. No se paga por cada barra de Vitalidad, fase, ejecución o Muertebendita intermedia. En enemigos con varias barras, la referencia \(V_{max}\) incluye todas las barras desde el inicio del encuentro; derrotar una fase no genera por sí solo una recompensa de muerte. Las reglas especiales de enemigos resistentes a Muertebendita y jefes siguen vigentes.
+
+El bono premia un golpe final extraordinario, pero está limitado al 50 % de la recompensa base. No debe ser una estrategia más rentable que derrotar enemigos apropiados para la progresión del jugador. Se probará especialmente contra daño explosivo, ataques de área, daño reflejado, efectos periódicos, enemigos invocados y encuentros repetibles para impedir duplicación o explotación.
+
+#### 24.3.3 Ejemplos de recompensas base
+
+Valores ilustrativos antes del bono por exceso de daño y de modificadores específicos del encuentro:
+
+| Nivel económico \(r\) | Enemigo común ×1 | Fuerte ×2,5 | Élite ×6 | Jefe ×15 |
+|---:|---:|---:|---:|---:|
+| 2 | 20 | 51 | 121 | 303 |
+| 13 | 31 | 78 | 187 | 468 |
+| 50 | 436 | 1.090 | 2.616 | 6.541 |
+| 100 | 1.808 | 5.424 | 10.848 | 27.119 |
+| 200 | 9.079 | 22.697 | 54.473 | 136.181 |
+
+Los valores se redondean al alma más cercana. La tabla es una base para simulación, no una promesa de recompensa universal por nivel. El nivel económico del enemigo y su categoría deben corresponder al contenido real de la zona y a su peligrosidad.
+
 ### 24.4 Relación entre riqueza y progresión
 
 Como las almas sirven para comerciar y subir atributos, la riqueza sí puede acelerar la progresión de combate. Un personaje que obtiene ingresos elevados mediante servicios o comercio podrá financiar mejoras de atributos con mayor rapidez que otro que no lo haga.
