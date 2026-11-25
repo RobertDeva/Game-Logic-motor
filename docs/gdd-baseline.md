@@ -1439,3 +1439,13 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - La combinación estará limitada a conocimientos realmente adquiridos por el jugador; no permitirá incorporar técnicas desconocidas.
 - El método propio podrá reflejar la experimentación y especialización del jugador, y su funcionamiento deberá respetar las reglas de fabricación, materiales, herramientas y disciplina correspondiente.
 - El umbral de maestría, las reglas de compatibilidad entre técnicas, el proceso de experimentación, los riesgos, la validación y los efectos concretos de los métodos propios quedan pendientes de definición.
+
+
+## Recetas originales y objetos únicos mediante métodos artesanales propios
+
+- Los métodos artesanales originales del jugador podrán dar lugar a objetos únicos que no se obtienen mediante las recetas tradicionales conocidas.
+- Estos objetos podrán presentar propiedades, estadísticas o combinaciones de características originales, siempre dentro de las reglas y límites del sistema de fabricación.
+- Cuando el jugador descubra y valide una receta mediante experimentación, podrá registrarla para reproducirla posteriormente.
+- El registro conservará los conocimientos necesarios para repetir el procedimiento, incluidos los materiales, técnicas y condiciones que formen parte de la receta descubierta.
+- La posibilidad de reproducir una receta no elimina los requisitos de disciplina, dominio, herramientas, instalaciones o recursos que correspondan.
+- Los criterios para considerar válida una receta, los límites de sus propiedades, la reproducibilidad exacta y las condiciones para compartir o transmitir recetas quedan pendientes de definición.
