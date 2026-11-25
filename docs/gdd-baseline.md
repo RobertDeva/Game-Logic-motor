@@ -335,3 +335,17 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - El objetivo de diseño es que el jugador tenga que evolucionar su estrategia a lo largo del enfrentamiento, sin que exista una única secuencia óptima que resuelva todo el combate.
 - No se exige que el jefe identifique con certeza la intención del jugador; la detección de cambios y fintas se implementará como inferencia basada en comportamiento observable.
 - Las señales utilizadas, umbrales de detección, tiempos de adaptación y herramientas concretas de engaño quedan pendientes de diseño.
+
+
+## Adaptación de agresividad ante el juego defensivo del jugador
+
+Los jefes pueden aumentar su presión ofensiva cuando detectan que el jugador mantiene una estrategia excesivamente pasiva o defensiva. El objetivo es impedir que el combate se convierta en una espera unilateral en la que el jefe funcione como un objetivo pasivo.
+
+- La IA puede reconocer conductas defensivas repetidas u otras señales observables de pasividad.
+- Como respuesta, puede incrementar su agresividad y presión ofensiva, ajustar la frecuencia de sus ataques o seleccionar respuestas más adecuadas para forzar al jugador a actuar.
+- Este ajuste forma parte de la adaptación táctica del jefe y debe respetar sus capacidades, repertorio y personalidad individuales.
+- El jefe no puede leer inputs futuros, conocer intenciones privadas ni modificar arbitrariamente sus estadísticas para obtener ventaja.
+- El aumento de agresividad no debe equivaler a ataques inevitables ni eliminar las oportunidades legítimas de respuesta del jugador.
+- Los umbrales que determinan cuándo se considera pasivo al jugador, la intensidad del aumento y su duración quedan pendientes de balance y diseño.
+
+La intención de diseño es que el jugador tenga que participar activamente en el intercambio, alternando defensa, presión, ataque y engaño, en lugar de poder neutralizar el combate limitándose a esperar.
