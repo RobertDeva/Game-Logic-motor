@@ -541,3 +541,18 @@ Determinados enemigos pueden mostrar instinto de supervivencia y reaccionar cuan
 - Las condiciones de activación, señales, tiempos, interrupciones y consecuencias de la huida, rendición y solicitud de refuerzos quedan pendientes de diseño.
 
 Estas conductas amplían las posibles respuestas de los enemigos sin convertir la negociación en una mecánica del juego.
+
+
+## Memoria de encuentros anteriores por parte de enemigos supervivientes
+
+Determinados enemigos que sobrevivan a un encuentro y huyan podrán conservar recuerdos relevantes de su enfrentamiento con el jugador. Si vuelven a encontrarse, podrán reconocerlo y modificar su comportamiento en función de esa experiencia.
+
+- El reconocimiento y la memoria dependerán de las capacidades, inteligencia, naturaleza y características individuales del enemigo.
+- Un enemigo puede reaccionar con temor, cautela, hostilidad, preparación táctica o confianza excesiva, según lo que haya vivido y cómo lo interprete.
+- Puede recordar información relevante que haya observado, como tácticas recurrentes del jugador, el uso de determinadas armas o habilidades y el resultado de su encuentro anterior.
+- La memoria no implica conocimiento omnisciente: el enemigo solo puede recordar hechos que pudo percibir y conservar.
+- La información recordada podrá influir en decisiones y estrategias posteriores, pero no garantiza que el enemigo conozca el estado actual del jugador ni sus capacidades presentes.
+- No todos los enemigos tendrán memoria persistente entre encuentros; su capacidad y fidelidad dependerán de su diseño.
+- El alcance temporal, almacenamiento, selección de recuerdos, actualización, olvido y persistencia entre sesiones quedan pendientes de diseño técnico.
+
+La memoria entre encuentros complementa la adaptación táctica durante un combate: permite que las acciones del jugador tengan consecuencias en futuros enfrentamientos con supervivientes, sin conceder a los enemigos información que no podrían conocer.
