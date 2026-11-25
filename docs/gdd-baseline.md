@@ -302,3 +302,10 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Únicamente en las últimas fases de un jefe podrá ejecutarse un ataque especial asociado al cambio de fase.
 - La fase o fases exactas en las que cada jefe puede realizar ese ataque, así como sus características y consecuencias, se definirán individualmente.
 - Se mantiene la secuencia confirmada: breve ventana inicial de vulnerabilidad y, después, invulnerabilidad durante la transición. El ataque especial, cuando corresponda en las últimas fases, forma parte de la transición invulnerable.
+
+### Confirmación del creador: ataques especiales de cambio de fase compartidos y únicos
+
+- El diseño de ataques especiales de cambio de fase combinará ataques compartidos entre determinados grupos de jefes con ataques exclusivos de cada jefe.
+- Los ataques compartidos podrán reutilizar una mecánica o patrón base entre jefes compatibles, sin exigir que sus ejecuciones sean idénticas.
+- Cada jefe podrá contar además con ataques de transición propios que reflejen su identidad y estilo de combate.
+- La selección de qué jefes comparten ataques y cuáles son sus ataques exclusivos se definirá individualmente durante el diseño de cada jefe.
