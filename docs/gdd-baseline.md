@@ -1515,3 +1515,23 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - Estas oportunidades podrán ampliar las actividades del jugador más allá del combate y la exploración, incorporando aprendizaje, creación, enseñanza, colaboración, competencia e intercambio artesanal.
 - Las invitaciones, propuestas y desafíos dependerán de que los personajes conozcan la reputación del jugador por medios plausibles; no serán universales ni aparecerán automáticamente en todas partes.
 - Los efectos concretos de la reputación, su difusión, las condiciones de acceso a colaboraciones, enseñanza y competiciones, así como sus recompensas y consecuencias, quedan pendientes de definición.
+
+
+## Fundación y legado de talleres y gremios artesanales
+
+- El jugador podrá fundar y desarrollar su propio taller o gremio artesanal.
+- Podrá incorporar aprendices y contratar artesanos, según los requisitos y posibilidades del mundo.
+- El taller o gremio podrá convertirse en un centro de producción, aprendizaje, experimentación, colaboración e intercambio de conocimientos.
+- Los métodos, recetas y técnicas desarrollados por el jugador podrán transmitirse dentro de la organización cuando existan condiciones de enseñanza y aprendizaje.
+- La organización podrá desarrollar una identidad y una tradición artesanal propias, cuya continuidad no dependerá exclusivamente de la presencia constante del jugador.
+- La evolución, autonomía, administración, costes, contratación, sucesión, transmisión de conocimientos y persistencia de la organización quedan pendientes de definición.
+
+## Subsistemas de actividades no centradas en el combate
+
+- Además de la artesanía, el juego contemplará subsistemas profundos para el comercio, la cocina, la pesca y el tratamiento de heridas.
+- Estos subsistemas deberán ofrecer actividades, conocimientos, progresión y decisiones propias, en lugar de reducirse a interacciones automáticas de compra, recolección, preparación o uso de objetos.
+- Cada subsistema podrá incluir aprendizaje, especialización, técnicas, recetas o procedimientos, experimentación cuando resulte apropiado, calidad de ejecución y resultados dependientes de las capacidades del jugador y de las condiciones.
+- Los subsistemas deberán integrarse con el mundo, sus personajes, comunidades, recursos, economía, calendario y circunstancias, manteniendo coherencia con sus reglas.
+- El comercio podrá contemplar actividades y relaciones económicas más amplias que la simple compra y venta; la cocina podrá contemplar preparación y desarrollo de recetas; la pesca podrá contemplar técnicas y condiciones de captura; y el tratamiento de heridas podrá contemplar conocimientos y procedimientos de atención y recuperación.
+- Cada subsistema tendrá reglas y progresión propias, sin asumir que dominar uno concede automáticamente dominio sobre los demás.
+- El alcance, las mecánicas concretas, los requisitos, los riesgos, las recompensas, la progresión y las relaciones entre estos subsistemas quedan pendientes de diseño.
