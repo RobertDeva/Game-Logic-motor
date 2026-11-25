@@ -249,3 +249,10 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - La ventana podrá mejorarse mediante estadísticas, habilidades o dominio del arma.
 - Las mejoras deberán respetar un límite de diseño para evitar que la ventana de desvío perfecto se vuelva excesivamente amplia.
 - Los valores base, el límite máximo, las contribuciones de cada estadística y los efectos concretos de habilidades o dominio quedan pendientes de especificación.
+
+### Confirmación del creador: efecto del desvío perfecto sobre la postura enemiga
+
+- Un desvío perfecto exitoso reducirá la postura del enemigo que ejecutó el ataque, siguiendo el principio de combate de Sekiro.
+- Este efecto se suma a la neutralización o mitigación del ataque recibido por el jugador.
+- La cantidad de postura enemiga reducida podrá configurarse según el arma del jugador y las características del ataque enemigo.
+- Los valores, escalados y posibles excepciones quedan pendientes de especificación.
