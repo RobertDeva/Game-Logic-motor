@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>MythicalExodus.Infrastructure</AssemblyName>
+    <RootNamespace>MythicalExodus.Infrastructure</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../MythicalExodus.Domain/MythicalExodus.Domain.csproj" />
+    <ProjectReference Include="../MythicalExodus.Application/MythicalExodus.Application.csproj" />
+  </ItemGroup>
+</Project>
