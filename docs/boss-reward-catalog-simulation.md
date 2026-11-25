@@ -124,3 +124,24 @@ No se debe convertir el total teórico de los 60 jefes en ingreso por hora divid
 La estructura de 60 jefes y la ponderación experimental ya permiten calcular recompensas de forma consistente cuando se conozcan sus referencias económicas. La simulación muestra la sensibilidad y el peso relativo de los 10 especiales y el jefe final, pero no autoriza todavía a afirmar cuántas horas se ahorrarán para alcanzar los niveles 100 o 225.
 
 **Decisión pendiente:** validar los multiplicadores ×2.5 y ×5 y completar las fichas de los 60 encuentros. Hasta entonces, todos los valores de este documento permanecen como escenario provisional de balance.
+
+
+## 9. Duración estimada de los encuentros y tiempo total de combate contra jefes
+
+Se establece como supuesto de diseño para esta simulación que cada pelea contra un jefe dura entre **3 y 7 minutos** de combate efectivo.
+
+Para los 60 encuentros únicos de la primera vuelta:
+
+| Escenario | Duración por jefe | Tiempo acumulado de los 60 |
+|---|---:|---:|
+| Mínimo | 3 min | 180 min = 3 h |
+| Referencia media | 5 min | 300 min = 5 h |
+| Máximo | 7 min | 420 min = 7 h |
+
+La media de 5 minutos es el punto central del intervalo, no una duración medida en pruebas de juego.
+
+Este tiempo representa únicamente el combate efectivo contra los jefes. No incluye desplazamiento hasta los encuentros, exploración, preparación, gestión de inventario, diálogos, intentos fallidos, reintentos ni descansos. Tampoco presupone que todos los jugadores derroten a los 60 jefes en su primera ruta.
+
+Para el cálculo de progresión, las recompensas de los jefes deben asignarse al momento en que se derrota cada encuentro. No se debe convertir todo el total de almas de jefes en una tasa horaria uniforme ni sumarlo a los ingresos de enemigos normales sin respetar el tiempo y el orden de la ruta. La simulación de campaña debe añadir estos 3–7 h de combate efectivo a los tiempos de los demás encuentros y actividades, y acreditar cada recompensa una sola vez tras la derrota correspondiente.
+
+El supuesto de duración debe validarse posteriormente con pruebas de combate representativas (jefe normal, especial y final), incluyendo diferentes clases, configuraciones de equipo y habilidad del jugador. Si la duración media real difiere, se recalculará el total de horas sin alterar automáticamente las recompensas.
