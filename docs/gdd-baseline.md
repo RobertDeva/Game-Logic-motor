@@ -420,3 +420,18 @@ Los jefes pueden ejecutar ataques y habilidades que modifiquen directamente las 
 - Duración, extensión, acumulación, interacción entre efectos y consecuencias específicas quedan pendientes de diseño y balance.
 
 Estas habilidades forman parte del repertorio de combate del jefe y hacen que la arena pueda cambiar activamente durante el enfrentamiento, en lugar de limitarse a recibir daños colaterales.
+
+
+## Combinación e interacción entre efectos ambientales
+
+Los efectos ambientales pueden interactuar y combinarse entre sí cuando sus propiedades y las reglas del escenario lo permitan. Estas interacciones pueden producir consecuencias tácticas emergentes que no necesitan estar diseñadas como una secuencia única y predeterminada.
+
+- El hielo puede modificar el comportamiento de una superficie y, al romperse, generar terreno peligroso o fragmentos.
+- El fuego puede interactuar con materiales inflamables y provocar combustión o explosiones si el escenario define esa propiedad.
+- Un derrumbe puede bloquear rutas, modificar coberturas y obligar a ambos combatientes a cambiar su posicionamiento.
+- Las interacciones pueden originarse tanto en acciones del jefe como del jugador y deben respetar las mismas reglas del mundo.
+- No todos los efectos tienen que combinarse: cada interacción debe estar definida explícitamente por propiedades, condiciones y consecuencias compatibles.
+- El sistema debe evitar combinaciones contradictorias, resultados duplicados no intencionados y cadenas infinitas de activaciones.
+- Orden de resolución, prioridades, duración, acumulación y reglas de propagación quedan pendientes de especificación técnica y balance.
+
+El objetivo es que el escenario genere oportunidades y riesgos emergentes mediante reglas consistentes, en vez de depender exclusivamente de eventos guionizados.
