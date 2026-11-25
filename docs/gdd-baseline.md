@@ -963,3 +963,31 @@ Cada criatura compañera podrá disponer de un inventario propio y limitado para
 - La capacidad exacta, los límites de carga, las categorías de objetos, las reglas de recogida e intercambio y las posibles consecuencias de perder o separar a la criatura quedan pendientes de especificación.
 
 El objetivo es permitir que las compañeras contribuyan a la exploración y gestión de recursos sin convertirse en almacenes ilimitados ni eliminar las decisiones de inventario del jugador.
+
+
+### Uso autónomo de objetos por criaturas compañeras
+
+Las criaturas compañeras podrán utilizar por iniciativa propia determinados objetos de su inventario cuando la situación, sus capacidades y su comprensión lo justifiquen.
+
+- El uso autónomo estará limitado a objetos que la criatura pueda manipular y utilizar de acuerdo con su anatomía, inteligencia, aprendizaje y experiencia.
+- Podrán utilizar objetos para atender necesidades o responder a circunstancias, por ejemplo tratar heridas, recuperarse o afrontar determinados peligros, siempre que el objeto sea apropiado y sepan utilizarlo.
+- La decisión dependerá de su estado, necesidades, percepción del peligro, conocimientos, personalidad y contexto. No se activará de forma arbitraria ni garantizará siempre la respuesta óptima.
+- La criatura deberá disponer del objeto y cumplir sus requisitos de uso; el sistema consumirá o modificará sus cantidades y estado según el efecto definido.
+- Algunos objetos podrán requerir una orden del jugador, asistencia externa o condiciones que impidan su uso autónomo.
+- Las reglas de selección de objetos, prioridades, aprendizaje, restricciones y efectos concretos quedan pendientes de especificación.
+
+El objetivo es que las compañeras puedan actuar con cierta autonomía y aprovechar los recursos que transportan, sin asumir que comprenden o pueden utilizar cualquier objeto.
+
+### Límite de carga y penalizaciones de peso del jugador
+
+El jugador tendrá un límite de carga relacionado con el peso de los objetos que lleva y del equipamiento que utiliza. La carga afectará a su rendimiento físico y a su movilidad, siguiendo el principio de gestión de peso habitual en los Soulslike.
+
+- El sistema deberá contabilizar el peso de los objetos transportados y del equipamiento del jugador mediante datos explícitos de cada elemento.
+- Existirá un límite de carga; sus valores y la fórmula para calcularlo quedan pendientes de definición.
+- La carga podrá afectar a la velocidad de movimiento y a la agilidad efectiva del jugador. La naturaleza y magnitud exactas de las penalizaciones dependerán de los umbrales y fórmulas que se diseñen.
+- El peso del equipamiento deberá considerarse en el cálculo, además del peso de los objetos transportados.
+- El sistema deberá distinguir claramente el peso total transportado de la carga equipada para permitir reglas y efectos diferenciados si se definen posteriormente.
+- Las reglas deberán ser deterministas y configurables, y el núcleo lógico calculará sus efectos sin depender de animaciones o de un motor gráfico.
+- Quedan pendientes el límite base, posibles modificadores, umbrales de carga, penalizaciones adicionales y la relación exacta con la estadística Agilidad.
+
+El objetivo es que las decisiones de equipo e inventario tengan consecuencias tácticas reales: llevar más peso o equipamiento pesado podrá ofrecer ventajas defensivas u otras utilidades, pero tendrá un coste en movilidad.
