@@ -1666,3 +1666,13 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - Los subproductos podrán aportar características particulares derivadas de su origen y naturaleza, diferenciando los equipos fabricados con ellos de los elaborados con materiales convencionales.
 - La combinación de materiales y componentes podrá influir en las propiedades finales del equipo.
 - El catálogo de materiales, sus propiedades cuantitativas, compatibilidades, métodos de obtención y combinaciones concretas queda pendiente de definición.
+
+
+### Calidad y obtención interactiva de materiales
+
+- Los materiales tendrán grados de calidad; materiales del mismo tipo y procedencia podrán presentar diferencias de calidad y propiedades.
+- La obtención de materiales incluirá interacciones jugables, en lugar de limitarse siempre a una recolección automática.
+- En la extracción de minerales, el jugador podrá seguir patrones y detectar o aprovechar debilidades presentes en los depósitos para extraerlos de manera más eficaz.
+- La precisión y perfección de la ejecución influirán en la calidad del material obtenido: una ejecución mejor realizada podrá producir materiales de mayor calidad.
+- Los materiales también podrán adquirirse mediante compra; la obtención directa y la compra serán vías complementarias.
+- Los patrones concretos, las herramientas, las acciones disponibles, la evaluación de la ejecución, los grados de calidad y sus efectos cuantitativos quedan pendientes de definición.
