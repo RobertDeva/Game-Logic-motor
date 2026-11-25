@@ -681,3 +681,21 @@ El mundo podrá generar acontecimientos relevantes sin intervención directa del
 - La autonomía del mundo no debe convertirse en aleatoriedad sin sentido: cada acontecimiento debe tener causas identificables, condiciones de posibilidad y consecuencias coherentes. Se priorizarán la consistencia narrativa y la agencia del jugador frente a la generación indiscriminada de eventos.
 
 El objetivo es que el mundo continúe evolucionando por sí mismo y pueda sorprender al jugador, pero sin competir descontroladamente con la historia principal. La simulación autónoma debe dar profundidad y credibilidad al relato, no apropiarse de su dirección.
+
+
+## Calendario y paso del tiempo del mundo
+
+Mythical Exodus contará con un sistema temporal propio para representar el paso del tiempo dentro del mundo y permitir que las actividades, condiciones y acontecimientos evolucionen de forma coherente.
+
+- El mundo podrá representar días y noches, ciclos de calendario y estaciones. La estructura exacta del calendario —duración de días, meses, estaciones y año— queda pendiente de definición.
+- El tiempo podrá influir en las rutinas y horarios de los NPC, la disponibilidad de comercios y servicios, la actividad de determinados enemigos, las condiciones ambientales y la ocurrencia de ciertos acontecimientos.
+- Algunos lugares, personajes, actividades, encuentros u oportunidades podrán estar disponibles únicamente en determinados momentos o condiciones temporales, siempre que el diseño lo establezca de forma legible para el jugador.
+- Las estaciones y ciclos podrán influir en el clima, la vegetación, las rutas, los recursos y otros aspectos del territorio cuando sean pertinentes para cada región.
+- Los acontecimientos autónomos, las relaciones, la alerta de facciones y las rutinas de NPC podrán utilizar el tiempo del mundo para programar, actualizar o resolver cambios, respetando sus reglas de causalidad y sus límites narrativos.
+- El tiempo debe avanzar de forma coherente y no depender exclusivamente de que el jugador observe una actividad. Las actividades y acontecimientos podrán progresar fuera de su presencia mediante la simulación temporal ya prevista.
+- El sistema deberá permitir distintos ritmos de actualización: no todas las entidades necesitan procesarse continuamente si sus estados y resultados pueden resolverse de forma determinista al avanzar el tiempo.
+- El avance temporal deberá ser controlable por las reglas del juego. Descansar, esperar, viajar, realizar actividades u otras acciones podrán consumir tiempo si así se define; no se asume todavía una duración concreta para ninguna actividad.
+- El calendario y sus efectos deberán integrarse con la narrativa principal para evitar que el paso del tiempo invalide arbitrariamente misiones, personajes o hitos imprescindibles. Los límites y excepciones narrativas deberán definirse explícitamente.
+- La arquitectura deberá representar el tiempo del mundo de forma independiente del reloj real, de la tasa de fotogramas y del motor gráfico. La unidad temporal, precisión, persistencia, pausas y reglas de actualización quedan pendientes de diseño técnico.
+
+El objetivo es que el mundo tenga un ritmo propio y que el momento en que el jugador actúe o llegue a un lugar pueda tener consecuencias jugables y narrativas, sin introducir presión temporal injustificada ni comprometer la coherencia de la historia.
