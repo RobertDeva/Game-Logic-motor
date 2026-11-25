@@ -1129,3 +1129,17 @@ Los NPC que hayan conocido a una criatura compañera podrán recordar su muerte 
 - Los detalles de persistencia, duración, transmisión de la noticia y consecuencias concretas quedan pendientes de diseño.
 
 El objetivo es que la muerte de una compañera pueda tener repercusiones sociales y emocionales coherentes, determinadas por los vínculos y conocimientos reales de los personajes.
+
+
+### Memoriales permanentes para criaturas compañeras fallecidas
+
+El jugador podrá crear memoriales permanentes para honrar a sus criaturas compañeras fallecidas, además de disponer de la interacción de sepultura.
+
+- El jugador podrá elegir entre ubicaciones válidas del mundo para establecer un memorial, sujeto a las reglas del lugar y a los recursos o requisitos que se definan.
+- El memorial será una entidad persistente del mundo y permanecerá en la ubicación elegida, incluso cuando el jugador abandone la región y regrese posteriormente.
+- Los memoriales serán distintos de las sepulturas: podrán complementar una tumba o servir como homenaje en otro lugar permitido, sin sustituir automáticamente el tratamiento del cadáver.
+- El memorial podrá estar asociado a la identidad y la historia de la criatura fallecida, conservando su vínculo con el jugador y los acontecimientos compartidos que se decida registrar.
+- Los NPC que conozcan la historia de la criatura podrán reconocer el memorial y reaccionar ante él de acuerdo con sus relaciones, conocimientos y circunstancias.
+- La creación, personalización, materiales, restricciones de ubicación, interacciones posteriores y posibles efectos narrativos o mecánicos quedan pendientes de diseño.
+
+El objetivo es permitir que el jugador elija cómo y dónde recordar a sus compañeras, dando continuidad física y narrativa a esas pérdidas en el mundo.
