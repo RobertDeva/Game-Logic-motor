@@ -1721,3 +1721,13 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - El sistema de conocimiento y obtención de recursos naturales no se limitará a minerales y componentes de criaturas: incluirá también plantas, hongos y otros recursos naturales.
 - Estos recursos podrán investigarse mediante observación y experimentación, registrando los descubrimientos en la enciclopedia y aplicando ese conocimiento a su identificación y recolección interactiva.
 - Los detalles de rangos de instructores, requisitos de enseñanza, progresión y procedimientos particulares de recolección quedan pendientes de definición.
+
+
+## Ecosistemas dinámicos y disponibilidad de recursos
+
+- Los ecosistemas del mundo serán dinámicos, no simples ubicaciones con poblaciones y recursos estáticos.
+- Las poblaciones de animales y monstruos podrán crecer o disminuir, y las especies podrán migrar o desaparecer localmente según las condiciones de su entorno.
+- Las plantas, hongos y otros recursos naturales podrán expandirse, escasear o desaparecer localmente.
+- Las estaciones, el clima, el terreno y las condiciones del ecosistema influirán en la distribución, abundancia y disponibilidad de especies y recursos.
+- Las intervenciones del jugador, como la caza y la recolección, podrán alterar el equilibrio ecológico y tener consecuencias sobre la disponibilidad futura de recursos.
+- Los modelos ecológicos concretos, sus escalas temporales, reglas de reproducción, migración, regeneración y recuperación quedan pendientes de diseño.
