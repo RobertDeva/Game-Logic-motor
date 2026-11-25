@@ -894,3 +894,18 @@ Las criaturas compañeras podrán morir definitivamente durante la aventura.
 - Las reglas de lesión, incapacitación, retirada, recuperación de heridas y condiciones que pueden conducir a la muerte quedan pendientes de definición. No se debe confundir una criatura incapacitada o herida con una criatura muerta.
 
 El objetivo es que cada vínculo tenga un riesgo real y que la protección de una compañera forme parte de las decisiones significativas del jugador.
+
+
+### Miedo, instinto de supervivencia y respuesta al peligro de las criaturas compañeras
+
+Las criaturas compañeras podrán experimentar miedo y reaccionar por instinto ante amenazas y situaciones que perciban como peligrosas.
+
+- Las respuestas podrán activarse ante enemigos claramente superiores, amenazas desconocidas, heridas graves, dolor, aislamiento, acorralamiento, peligros ambientales u otras circunstancias relevantes para la especie y el individuo.
+- Según su naturaleza, temperamento, experiencias, vínculo con el jugador y estado actual, una criatura podrá huir, buscar refugio, retroceder, esconderse, adoptar una postura defensiva, quedarse paralizada o intentar protegerse.
+- En determinadas circunstancias, el instinto de supervivencia podrá prevalecer temporalmente sobre una orden del jugador. La criatura no tendrá que obedecer órdenes que contradigan de forma extrema su percepción de peligro o sus capacidades.
+- La intensidad y duración de estas reacciones dependerán de la especie, características individuales, experiencias, heridas, confianza y contexto. No todas las criaturas reaccionarán igual.
+- El miedo no debe convertirse en desobediencia arbitraria o constante: las reacciones deberán tener causas coherentes y ser comprensibles a partir de la situación y del comportamiento observable.
+- El vínculo con el jugador y las experiencias compartidas podrán influir en la disposición a afrontar riesgos, pero no eliminarán necesariamente los instintos naturales ni garantizarán obediencia absoluta.
+- Las condiciones para recuperar la calma, volver a cooperar y aceptar órdenes después de una reacción de miedo quedan pendientes de definición.
+
+El objetivo es que las compañeras se comporten como criaturas con instintos y límites propios, no como herramientas que ejecutan órdenes de manera incondicional.
