@@ -909,3 +909,21 @@ Las criaturas compañeras podrán experimentar miedo y reaccionar por instinto a
 - Las condiciones para recuperar la calma, volver a cooperar y aceptar órdenes después de una reacción de miedo quedan pendientes de definición.
 
 El objetivo es que las compañeras se comporten como criaturas con instintos y límites propios, no como herramientas que ejecutan órdenes de manera incondicional.
+
+
+### Subsistema de comunicación entre el jugador y sus criaturas compañeras
+
+El motor incluirá un subsistema específico para la comunicación entre el jugador y las criaturas compañeras. Permitirá transmitir órdenes e intenciones mediante distintos canales, y modelará cómo cada criatura percibe e interpreta esas señales.
+
+- Los canales de comunicación podrán incluir órdenes, señales, gestos, llamadas y otras formas de comunicación apropiadas para el mundo y para las capacidades de cada especie.
+- Cada criatura tendrá un repertorio de señales que puede percibir y comprender, condicionado por su especie, sentidos, inteligencia, experiencias y características individuales.
+- La comprensión no será universal: una señal podrá ser reconocida por una criatura y resultar desconocida o ininteligible para otra.
+- La confianza, el vínculo y las experiencias compartidas podrán mejorar progresivamente la interpretación de señales y la cooperación.
+- La comunicación no garantizará obediencia. La criatura interpretará la señal según su comprensión, estado emocional, instintos, capacidades, necesidades y contexto.
+- Las órdenes deberán respetar las capacidades físicas y cognitivas de la criatura. No se podrán exigir acciones que no pueda realizar o comprender.
+- El subsistema deberá contemplar señales malinterpretadas, ignoradas o imposibles de percibir cuando las circunstancias lo justifiquen, por ejemplo debido a distancia, ruido, visibilidad, distracción o miedo.
+- La comunicación deberá funcionar de forma coherente con el comportamiento autónomo y el instinto de supervivencia de las criaturas, sin convertirlas en unidades controladas de manera absoluta.
+- El diseño deberá permitir ampliar el repertorio de señales y respuestas por especie y por criatura sin acoplar el núcleo lógico a animaciones, audio, dispositivos de entrada o un motor gráfico.
+- El catálogo de órdenes, señales, condiciones de percepción, progresión de comprensión y reglas de interpretación queda pendiente de especificación.
+
+Este subsistema busca que la cooperación se desarrolle como una relación aprendida entre el jugador y cada criatura, en lugar de asumir que todas comprenden automáticamente un conjunto universal de órdenes.
