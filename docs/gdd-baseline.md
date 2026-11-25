@@ -1407,3 +1407,14 @@ Los errores durante el minijuego de fabricación tendrán consecuencias de disti
 - Los umbrales de error, criterios de fallo crítico, posibilidad de recuperación, materiales que pueden perderse y proporciones de pérdida quedan pendientes de diseño.
 
 El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que un error menor no convierta automáticamente toda fabricación en un fracaso.
+
+
+## Progresión de disciplinas artesanales del jugador
+
+- El jugador podrá desarrollar habilidades artesanales propias, en lugar de depender exclusivamente de entregar materiales y recetas a artesanos NPC.
+- Las disciplinas artesanales se desbloquearán individualmente después de completar una misión de capacitación con un maestro especializado.
+- La capacitación será un requisito previo para acceder al desarrollo de la disciplina correspondiente; no bastará con encontrar materiales, comprar una receta o intentar fabricar.
+- Una vez desbloqueada, la disciplina podrá desarrollarse mediante la práctica y la participación en procesos de fabricación.
+- Las habilidades artesanales podrán relacionarse con el conocimiento de recetas, el dominio de técnicas y la precisión durante los minijuegos rítmicos de fabricación, influyendo en la calidad alcanzable del equipo.
+- Los maestros artesanos conservarán un papel relevante como instructores y como fuente de conocimientos o recetas especializadas.
+- La lista de disciplinas, requisitos y estructura de las misiones de capacitación, progresión, especializaciones, límites de calidad y relación exacta entre habilidad y minijuego quedan pendientes de definición.
