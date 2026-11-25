@@ -1418,3 +1418,12 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - Las habilidades artesanales podrán relacionarse con el conocimiento de recetas, el dominio de técnicas y la precisión durante los minijuegos rítmicos de fabricación, influyendo en la calidad alcanzable del equipo.
 - Los maestros artesanos conservarán un papel relevante como instructores y como fuente de conocimientos o recetas especializadas.
 - La lista de disciplinas, requisitos y estructura de las misiones de capacitación, progresión, especializaciones, límites de calidad y relación exacta entre habilidad y minijuego quedan pendientes de definición.
+
+
+## Progresión independiente de las disciplinas artesanales
+
+- Cada disciplina artesanal tendrá una progresión y un dominio independientes.
+- La experiencia, conocimientos, técnicas y mejoras obtenidos en una disciplina no desbloquearán ni aumentarán automáticamente las capacidades de otra.
+- El jugador podrá especializarse de manera distinta en cada disciplina, según las capacitaciones completadas y la práctica realizada.
+- El nivel de dominio de cada disciplina podrá influir en las técnicas disponibles, la ejecución del proceso de fabricación y la calidad alcanzable de sus productos.
+- Las disciplinas concretas, sus niveles, criterios de progreso, técnicas y efectos cuantitativos quedan pendientes de definición.
