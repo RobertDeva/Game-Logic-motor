@@ -242,3 +242,10 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - La mecánica se adaptará a Mythical Exodus: las animaciones, ejecución y efectos podrán diferenciarse según la clase y el arma equipada.
 - La respuesta será una acción contextual específica para contrarrestar estocadas, no un bloqueo o desvío genérico.
 - Los requisitos temporales, ventanas de entrada, efectos sobre la postura enemiga y diferencias concretas por clase/arma quedan pendientes de diseño.
+
+### Confirmación del creador: ventanas de desvío perfecto por arma
+
+- Cada arma tendrá su propia ventana base para ejecutar un desvío perfecto.
+- La ventana podrá mejorarse mediante estadísticas, habilidades o dominio del arma.
+- Las mejoras deberán respetar un límite de diseño para evitar que la ventana de desvío perfecto se vuelva excesivamente amplia.
+- Los valores base, el límite máximo, las contribuciones de cada estadística y los efectos concretos de habilidades o dominio quedan pendientes de especificación.
