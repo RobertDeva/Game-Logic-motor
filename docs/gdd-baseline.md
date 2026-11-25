@@ -256,3 +256,10 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Este efecto se suma a la neutralización o mitigación del ataque recibido por el jugador.
 - La cantidad de postura enemiga reducida podrá configurarse según el arma del jugador y las características del ataque enemigo.
 - Los valores, escalados y posibles excepciones quedan pendientes de especificación.
+
+### Confirmación del creador: desvíos perfectos de los enemigos
+
+- Los enemigos también podrán ejecutar desvíos perfectos contra los ataques del jugador.
+- El sistema de combate tendrá una interacción bidireccional de postura: tanto el jugador como los enemigos podrán defenderse mediante desvíos perfectos y afectar la postura del oponente.
+- La capacidad, frecuencia, ventana temporal y consecuencias de los desvíos enemigos podrán configurarse según el enemigo y su repertorio de combate.
+- Los valores numéricos y las reglas específicas para cada tipo de enemigo quedan pendientes de diseño.
