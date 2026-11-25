@@ -13,9 +13,9 @@ Este documento registra los sistemas que guiarán el desarrollo del motor. Es un
 Estadísticas base: Vitalidad, Fuerza, Agilidad, Resistencia, Voluntad, Ruptura, Destreza y Armonía.
 
 Clases iniciales y energías:
-- Guerrero: Aura; mandoble, espada y escudo, arco.
-- Espadachín Mágico: Maná; estoques y espadas largas.
-- Segador: Prana; katanas y guadañas.
+- Guerrero: Aura; armas propias: mandoble, espada y escudo. Arma secundaria compartida: arco.
+- Espadachín Mágico: Maná; armas propias: estoques y espadas largas. Arma secundaria compartida: arco.
+- Segador: Prana; armas propias: katanas y guadañas. Arma secundaria compartida: arco.
 
 Las estadísticas y configuraciones de contenido deberán ser data-driven.
 
@@ -23,7 +23,7 @@ Las estadísticas y configuraciones de contenido deberán ser data-driven.
 
 Energías básicas: Aura, Maná y Prana. Un personaje comienza con su energía base y puede aprender una segunda mediante instructores. Dominar dos energías permite desbloquear una energía superior, conservando el acceso a las básicas.
 
-Energías superiores nombradas en el GDD: Energía Natural, Poder Astral y Energía Abisal. Las combinaciones exactas y la matriz de ventajas/debilidades deben transcribirse y validarse a partir del diagrama original antes de implementarse.
+Las fusiones confirmadas son: Maná + Aura = Energía Natural; Maná + Prana = Poder Astral; Prana + Aura = Energía Abisal. Al dominar las dos energías básicas correspondientes se desbloquea la energía superior; el personaje conserva el acceso a las energías básicas.
 
 ## Combate
 
@@ -44,8 +44,11 @@ La simulación lógica modelará capacidades, estados, restricciones y resultado
 ## Progresión
 
 - Almas funcionan como moneda y experiencia.
-- Se gastan en zonas de descanso para mejorar estadísticas o energías.
-- Descansar reaparece enemigos.
+- Cada clase/personaje comienza en nivel 1.
+- Cada aumento de nivel concede exactamente un punto para aumentar en una unidad una estadística elegida.
+- Cada una de las ocho estadísticas tiene un límite máximo de 99.
+- Las mejoras se realizan en zonas de descanso; descansar reaparece enemigos.
+- La regla exacta para obtener/consumir Almas y convertirlas en niveles queda pendiente de especificación.
 - Al morir se pierden las almas no gastadas; pueden recuperarse en el lugar de la muerte, pero una segunda muerte antes de recuperarlas las elimina definitivamente.
 
 ## Economía y mundo
@@ -62,9 +65,10 @@ La derrota del Señor de las Tinieblas conduce a finales condicionados por varia
 
 ## Preguntas abiertas antes de implementar reglas
 
-- Fórmulas y límites de las ocho estadísticas.
+- Fórmulas de conversión de estadísticas a salud, daño, defensa, movilidad, críticos, evasión y demás resultados.
 - Tabla de escalado de armas y clases.
-- Combinaciones exactas de energías y matriz de afinidades.
+- Matriz completa de afinidades elementales/energéticas, transcrita flecha por flecha desde el diagrama.
+- Regla exacta para obtener Almas/experiencia y subir de nivel.
 - Unidades de tiempo y reglas de prioridad para Deflect.
 - Fórmulas de daño, postura, recuperación, stagger y ejecución.
 - Estados alterados, duración, acumulación y resistencias.
@@ -106,7 +110,7 @@ La segunda página muestra estas clases y armas:
 - Guerrero: mandoble, espada y escudo como armas de primer grupo.
 - Segador: katana y guadaña como armas de primer grupo.
 
-El esquema dibuja conexiones desde los grupos de armas de las clases hacia una anotación común «Armas 2º: Arco». La fotografía no permite determinar con seguridad si el arco es una segunda categoría desbloqueable para las tres clases, una progresión común o una relación distinta. Se registra como pregunta abierta; no se codificará hasta confirmarlo.
+El arco es el arma secundaria común a las tres clases, según confirmación del creador.
 
 ### Funciones descriptivas de las estadísticas
 
@@ -164,3 +168,18 @@ Confirmación adicional del creador: en el diagrama de afinidades, la punta de c
 ### Confirmación del creador sobre las estadísticas iniciales
 
 Los valores de las columnas EM/G/S son los atributos básicos iniciales de Espadachín Mágico, Guerrero y Segador, respectivamente. La configuración inicial de cada personaje se construirá a partir de la columna correspondiente a su clase.
+
+
+### Confirmaciones del creador: armas, niveles y fusiones
+
+- El arco es el arma secundaria compartida por todas las clases.
+- Cada personaje comienza en nivel 1.
+- Cada subida de nivel otorga un punto de atributo, que se asigna aumentando en una unidad una de las ocho estadísticas.
+- Cada estadística tiene un máximo individual de 99.
+- Las fusiones son:
+  - Maná + Aura → Energía Natural.
+  - Maná + Prana → Poder Astral.
+  - Prana + Aura → Energía Abisal.
+- El orden de aprendizaje de las dos energías no cambia la fusión indicada; las energías básicas se conservan al desbloquear la superior.
+
+Queda pendiente definir cómo se obtienen los puntos de experiencia/Almas necesarios para subir de nivel, y si existe alguna condición adicional para aprender la segunda energía o dominar la fusión.
