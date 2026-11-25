@@ -391,3 +391,17 @@ El jugador también puede aprovechar el entorno contra los jefes. Las oportunida
 - Qué elementos pueden activarse, dañarse, desplazarse o destruirse, y sus efectos concretos sobre vitalidad, postura, estados y fases del jefe quedan pendientes de especificación.
 
 La interacción ambiental es bidireccional: tanto el jugador como el jefe pueden explotar el escenario, y cada oportunidad debe respetar las reglas y posibilidades establecidas para ese encuentro.
+
+
+## Alteraciones persistentes del escenario durante el combate
+
+El escenario puede sufrir cambios que persistan durante el resto del enfrentamiento. Las alteraciones no se revierten automáticamente mientras continúa ese combate, salvo que una mecánica específica establezca lo contrario.
+
+- Elementos como columnas, puentes, coberturas y otros componentes pueden destruirse, derrumbarse o quedar inutilizados.
+- Algunas zonas pueden convertirse en áreas peligrosas o quedar modificadas de forma que cambien las rutas, el posicionamiento y las opciones tácticas.
+- Tanto las acciones del jefe como las del jugador pueden provocar alteraciones, siempre que las reglas del escenario y sus capacidades lo permitan.
+- Los cambios deben tener consecuencias coherentes y legibles para ambos combatientes; la simulación debe conservar el estado resultante del escenario durante el encuentro.
+- No se presupone que todos los elementos sean destructibles ni que todas las alteraciones sean permanentes fuera del combate actual.
+- La persistencia entre fases, la restauración al reiniciar el encuentro y la persistencia entre visitas o sesiones quedan pendientes de definición.
+
+El escenario evoluciona a medida que avanza el enfrentamiento y sus cambios acumulados forman parte del contexto táctico de las fases posteriores.
