@@ -1793,3 +1793,8 @@ Este modelo organiza las reglas de estadísticas, potencia ofensiva, daño por c
 La matriz dirigida de afinidades ya fue transcrita desde el diagrama original. Los multiplicadores iniciales confirmados son ×1.50 cuando existe ventaja, ×0.75 cuando existe desventaja, ×1.25 en ambos sentidos para los pares recíprocos y ×1.00 cuando no hay relación dibujada. El modelo matemático incluye además un estudio comparativo de Dark Souls, Dark Souls III, Elden Ring, Sekiro y Bloodborne como referencias técnicas, sin importar automáticamente sus reglas ni cifras.
 
 La especificación matemática continúa en desarrollo. Se han documentado y comparado curvas de escalado de atributos y dos modelos de defensa (resta plana y mitigación no lineal según la relación ataque/defensa), tomando Dark Souls y Elden Ring como referencias técnicas. El modelo no lineal queda como candidato para prototipos comparativos, no como fórmula definitiva. Las curvas propias de las ocho estadísticas, los parámetros de defensa, presión y recuperación de Postura, ventanas temporales, estados y coeficientes de equipo requieren simulación y calibración específicas de Mythical Exodus.
+
+### Sistema de escalado de atributos
+
+Se ha establecido una primera especificación matemática versionada para las ocho estadísticas en [Sistema de escalado de atributos y modelo matemático del combate](combat-mathematical-model.md#22-sistema-de-escalado-de-atributos--especificación-v10). Define curvas normalizadas diferenciadas, efectos por estadística, límites iniciales, composición de modificadores y validaciones. Sus parámetros de balance se someterán a simulación antes de considerarse calibrados definitivamente.
+
