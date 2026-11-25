@@ -12,6 +12,8 @@ Este documento registra los sistemas que guiarán el desarrollo del motor. Es un
 
 Estadísticas base: Vitalidad, Fuerza, Agilidad, Resistencia, Voluntad, Ruptura, Destreza y Armonía.
 
+Las clases son elecciones permanentes durante la partida; no existe cambio de clase.
+
 Clases iniciales y energías:
 - Guerrero: Aura; armas propias: mandoble, espada y escudo. Arma secundaria compartida: arco.
 - Espadachín Mágico: Maná; armas propias: estoques y espadas largas. Arma secundaria compartida: arco.
@@ -32,6 +34,7 @@ Las fusiones confirmadas son: Maná + Aura = Energía Natural; Maná + Prana = P
 - Romper la postura habilita una ejecución llamada Muertebendita (Deathblow).
 - Deflect perfecto: ventana temporal precisa; ejemplo provisional del GDD: 0,2 segundos. La ventana y la efectividad dependen del arma y la clase.
 - Artes de combate consumen energía y pueden dañar postura, aplicar estados o curar.
+- El sistema de mejora de Artes de Combate toma como referencia el de Sekiro, pero cada Arte tendrá su propio nivel de dominio mejorable de forma individual.
 
 Los valores numéricos de daño, recuperación, ventanas y costes quedan pendientes de especificación.
 
@@ -43,11 +46,11 @@ La simulación lógica modelará capacidades, estados, restricciones y resultado
 
 ## Progresión
 
-- Almas funcionan como moneda y experiencia.
-- Cada clase/personaje comienza en nivel 1.
+- Las Almas se utilizan para subir de nivel siguiendo el modelo general de los Soulslike: el jugador las gasta en zonas de descanso.
+- Cada personaje comienza en nivel 1.
 - Cada aumento de nivel concede exactamente un punto para aumentar en una unidad una estadística elegida.
-- Cada una de las ocho estadísticas tiene un límite máximo de 99.
-- Las mejoras se realizan en zonas de descanso; descansar reaparece enemigos.
+- Cada una de las ocho estadísticas tiene un límite máximo individual de 99.
+- Descansar en una zona de descanso reaparece enemigos.
 - La regla exacta para obtener/consumir Almas y convertirlas en niveles queda pendiente de especificación.
 - Al morir se pierden las almas no gastadas; pueden recuperarse en el lugar de la muerte, pero una segunda muerte antes de recuperarlas las elimina definitivamente.
 
@@ -68,7 +71,7 @@ La derrota del Señor de las Tinieblas conduce a finales condicionados por varia
 - Fórmulas de conversión de estadísticas a salud, daño, defensa, movilidad, críticos, evasión y demás resultados.
 - Tabla de escalado de armas y clases.
 - Matriz completa de afinidades elementales/energéticas, transcrita flecha por flecha desde el diagrama.
-- Regla exacta para obtener Almas/experiencia y subir de nivel.
+- Curva/coste de Almas necesario para cada subida de nivel.
 - Unidades de tiempo y reglas de prioridad para Deflect.
 - Fórmulas de daño, postura, recuperación, stagger y ejecución.
 - Estados alterados, duración, acumulación y resistencias.
@@ -183,3 +186,13 @@ Los valores de las columnas EM/G/S son los atributos básicos iniciales de Espad
 - El orden de aprendizaje de las dos energías no cambia la fusión indicada; las energías básicas se conservan al desbloquear la superior.
 
 Queda pendiente definir cómo se obtienen los puntos de experiencia/Almas necesarios para subir de nivel, y si existe alguna condición adicional para aprender la segunda energía o dominar la fusión.
+
+
+### Confirmaciones del creador: progresión, dominio y permanencia de clase
+
+- La subida de nivel sigue el modelo Soulslike: se gastan Almas en zonas de descanso para subir de nivel.
+- Cada nivel ganado concede un único punto de atributo, asignable a una estadística, con máximo individual de 99.
+- Las clases son permanentes durante la partida; el personaje no puede cambiar de clase.
+- La mejora de Artes de Combate toma como referencia el sistema de Sekiro. Cada Arte de Combate tiene su propio nivel de dominio y puede mejorarse individualmente.
+
+No se han fijado todavía los costes exactos de Almas por nivel ni los requisitos, recursos o efectos concretos de cada nivel de dominio de un Arte. No se asumirán automáticamente los árboles, puntos de habilidad ni costes del videojuego de referencia: Sekiro es una inspiración para el enfoque, mientras que las reglas finales serán propias de Mythical Exodus.
