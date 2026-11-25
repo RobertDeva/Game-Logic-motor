@@ -1150,6 +1150,24 @@ Si cada derrota alcanzase el bono máximo de exceso de daño, los valores sería
 
 **Resultado:** la progresión de recompensas acompaña la curva de costes cuando el enemigo pertenece a un tramo de mundo cuyo nivel económico progresa junto al personaje. No aparece una divergencia matemática que haga que las recompensas pierdan valor en todas las zonas a medida que sube el nivel. Los valores actuales se conservan como línea base provisional; esta prueba no justifica subirlos o reducirlos por sí sola.
 
+**Simulación discreta de progresión, niveles 1 a 100:** se recorrieron los 99 incrementos de nivel, suponiendo que cada enemigo derrotado tiene una referencia económica equivalente al siguiente nivel del personaje, que no hay gastos y que cada recompensa se redondea al alma más cercano. En cada nivel se calculó cuántas derrotas completas de una sola categoría serían necesarias para pagar el punto siguiente, redondeando hacia arriba:
+
+| Fuente exclusiva de almas | Derrotas totales para pasar de nivel 1 a 100 | Derrotas por mejora (rango observado) |
+|---|---:|---:|
+| Enemigos comunes, recompensa base | 3.363 | 33–34 |
+| Enemigos fuertes, recompensa base | 1.386 | 14 |
+| Élites, recompensa base | 594 | 6 |
+| Jefes, recompensa base | 297 | 3 |
+| Enemigos comunes, todos con bono máximo | 2.276 | 22–23 |
+| Enemigos fuertes, todos con bono máximo | 891 | 9 |
+| Élites, todos con bono máximo | 396 | 4 |
+| Jefes, todos con bono máximo | 198 | 2 |
+
+Esta comparación es deliberadamente aislada: no afirma que el jugador vaya a combatir exclusivamente una categoría ni que todos los enemigos puedan generar el bono máximo. Tampoco incluye almas gastadas en equipo, consumibles, reparación o servicios. Sí permite verificar que el redondeo no provoca saltos o bloqueos en la curva y que las categorías conservan el orden de recompensa previsto.
+
+Como escenario mixto ilustrativo, diez enemigos comunes, tres fuertes y una élite del mismo tramo generan aproximadamente el 70,5 % del coste de un punto antes de gastos y bonos. Esto muestra que la progresión no exige que el jugador dependa de una sola categoría de enemigo.
+
+
 **B. Prueba de obsolescencia de zonas antiguas**
 
 La recompensa se mantiene ligada al nivel económico del enemigo y no al nivel del jugador. Por tanto, un enemigo de una zona antigua cuyo escalado haya alcanzado su límite deja de financiar una fracción constante del siguiente punto de atributo.
