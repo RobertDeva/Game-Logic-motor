@@ -179,13 +179,38 @@ La cantidad efectiva aplicada es (HP-HP'). Esta diferencia es la que deben consu
 
 Las energías básicas son Aura, Maná y Prana; las fusiones confirmadas son Energía Natural, Poder Astral y Energía Abisal. El GDD establece que la dirección de cada flecha del diagrama de afinidades es significativa y que el origen de la flecha tiene ventaja sobre el destino.
 
-La matriz de relaciones debe transcribirse desde el diagrama original antes de asignar multiplicadores. Hasta disponer de esa transcripción:
-- no se inventan relaciones adicionales;
-- no se infiere que una relación sea recíproca;
-- no se asignan porcentajes de ventaja/desventaja;
-- ausencia de relación registrada significa neutralidad provisional, no una debilidad implícita.
+### 7.1 Transcripción del diagrama original
 
-Una vez transcrita, cada relación se representará como dato dirigido (Affinity(attacker, defender)), con modificadores separados para daño, postura y aplicación de estados. No se presupone que una ventaja de daño implique automáticamente ventaja en todos los demás canales.
+La imagen manuscrita establece seis nodos: Aura, Maná, Prana, Energía Natural, Energía Abisal y Poder Astral. Se conserva la convención del diagrama: **la flecha sale de la energía con ventaja y apunta hacia la energía que recibe la desventaja**.
+
+Relaciones dirigidas identificadas:
+
+| Origen (ventaja) | Destino (desventaja) | Representación en el dibujo |
+|---|---|---|
+| Energía Natural | Aura | Flecha horizontal hacia Aura |
+| Energía Abisal | Aura | Flecha horizontal hacia Aura |
+| Energía Natural | Maná | Flecha descendente |
+| Energía Abisal | Prana | Flecha descendente |
+| Energía Natural | Prana | Diagonal descendente hacia Prana |
+| Energía Abisal | Maná | Diagonal descendente hacia Maná |
+| Aura | Maná | Diagonal descendente hacia Maná |
+| Prana | Aura | Diagonal ascendente hacia Aura |
+| Maná | Prana | Flecha horizontal hacia Prana |
+| Poder Astral | Aura | Flecha vertical ascendente hacia Aura |
+| Poder Astral | Maná | Diagonal ascendente hacia Maná |
+| Poder Astral | Prana | Diagonal ascendente hacia Prana |
+
+El dibujo también contiene tres pares de arcos con flechas en ambos extremos. Por tanto, se registran como relaciones recíprocas explícitas:
+
+- Energía Natural ↔ Energía Abisal.
+- Energía Natural ↔ Poder Astral.
+- Energía Abisal ↔ Poder Astral.
+
+Estas tres relaciones recíprocas no se deducen de una sola flecha: el diagrama dibuja una flecha en cada sentido.
+
+La transcripción anterior registra únicamente las relaciones visibles. **No se completa la matriz por simetría ni por analogía**: una relación no enumerada permanece neutral provisionalmente. La reciprocidad se aplica exclusivamente a los tres pares representados mediante arcos bidireccionales.
+
+Una vez transcrita, cada relación se representa como dato dirigido (Affinity(attacker, defender)), con modificadores separados para daño, postura y aplicación de estados. No se presupone que una ventaja de daño implique automáticamente ventaja en todos los demás canales. La imagen determina la topología cualitativa de la matriz, no sus multiplicadores numéricos; estos quedan sujetos a calibración y pruebas.
 
 ## 8. Postura
 
@@ -410,7 +435,7 @@ Como mínimo, las pruebas automatizadas deberán cubrir:
 No se inventarán a partir de huecos documentales:
 - valores base y curvas exactas de HP, escalado, Voluntad, Resistencia, Ruptura y Destreza/Armonía;
 - puntos de rendimientos decrecientes y límites críticos;
-- matriz completa y multiplicadores de afinidades energéticas, que requieren transcribir el diagrama original;
+- multiplicadores numéricos de las afinidades energéticas; la topología dirigida ya está transcrita en la sección 7.1;
 - defensa y resistencia por tipo, incluyendo qué parte de Resistencia es universal;
 - parámetros de postura, recuperación, presión por ataque y umbrales;
 - unidad temporal, prioridad de eventos y ventanas de reacción;
