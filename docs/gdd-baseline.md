@@ -1290,3 +1290,19 @@ Cuando estén separadas, las criaturas compañeras podrán intentar comunicarse 
 - Los repertorios de señales, alcance, interpretación, fiabilidad, aprendizaje y respuestas concretas quedan pendientes de diseño.
 
 El objetivo es mantener una posibilidad de contacto significativa durante las separaciones sin eliminar las limitaciones naturales de percepción, distancia y comunicación.
+
+
+### Supervivencia autónoma de compañeras cuando pierden el contacto con el jugador
+
+Si una criatura compañera permanece separada y no logra reunirse con el jugador durante un periodo significativo, podrá adoptar conductas de supervivencia autónoma hasta que encuentre una oportunidad plausible de regresar.
+
+- Según su especie, capacidades, personalidad, necesidades y circunstancias, podrá buscar refugio, alimento y agua, evitar amenazas, descansar o desplazarse hacia lugares que considere seguros.
+- Algunas criaturas podrán permanecer temporalmente en un área segura o establecer allí un refugio o territorio provisional, siempre que su naturaleza y capacidades lo permitan.
+- La elección del lugar y las conductas de supervivencia dependerán de lo que la criatura conozca y perciba; no dispondrá de información omnisciente sobre el mundo ni sobre la ubicación del jugador.
+- Podrá modificar sus decisiones si cambian las condiciones, aparecen amenazas, escasean los recursos o recibe señales fiables del jugador.
+- Mantendrá sus necesidades, estados, relaciones y vulnerabilidades; sobrevivir por su cuenta no garantizará que permanezca ilesa ni que conserve todos sus recursos.
+- Cuando disponga de medios plausibles para retomar el contacto, podrá intentar regresar o responder a señales del jugador, teniendo en cuenta distancia, rutas, obstáculos y riesgos.
+- Estas conductas no equivaldrán por sí solas a abandonar voluntariamente el grupo ni a romper el vínculo con el jugador.
+- Los umbrales temporales, criterios para elegir refugio o territorio provisional, duración, riesgos y condiciones concretas de retorno quedan pendientes de diseño.
+
+El objetivo es que una separación prolongada no deje a la criatura suspendida ni la obligue a desaparecer arbitrariamente: deberá intentar sobrevivir de acuerdo con su naturaleza y las circunstancias del mundo.
