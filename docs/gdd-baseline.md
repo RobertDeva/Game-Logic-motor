@@ -793,3 +793,23 @@ Los ecosistemas de Mythical Exodus evolucionarán a lo largo del tiempo. La flor
 - El sistema deberá evitar ciclos de simulación infinitos, crecimiento descontrolado de poblaciones y cálculos innecesarios. Las reglas, límites ecológicos, escalas temporales y criterios de actualización quedan pendientes de diseño técnico y numérico.
 
 El objetivo es que la naturaleza de Mythical Exodus se comporte como un conjunto de ecosistemas vivos e interdependientes, capaz de cambiar y recuperarse con el tiempo. La simulación deberá aportar credibilidad y consecuencias sistémicas sin exigir que cada organismo se procese continuamente ni desplazar la prioridad de la historia principal.
+
+
+## Extinción local de especies y recuperación de poblaciones
+
+Las acciones del jugador y de las facciones podrán alterar las poblaciones naturales hasta provocar la desaparición local de determinadas especies cuando la explotación o degradación del entorno supere su capacidad de recuperación.
+
+- La caza, pesca, recolección, destrucción de hábitats y extracción de recursos podrán reducir poblaciones o afectar su reproducción y supervivencia.
+- Si la presión supera durante suficiente tiempo la capacidad de regeneración de una especie, su población podrá disminuir hasta desaparecer de una región. Esta extinción será local al territorio o ecosistema afectado, no necesariamente global.
+- La vulnerabilidad dependerá de características de cada especie, como tasa reproductiva, longevidad, movilidad, tamaño de población, hábitat y disponibilidad de recursos.
+- La desaparición de una especie podrá producir consecuencias ecológicas indirectas, como cambios en las relaciones depredador-presa, competencia, vegetación y disponibilidad de recursos para otras especies.
+- Las especies podrán recolonizar una región mediante migración natural desde poblaciones cercanas cuando existan rutas, hábitats y condiciones adecuadas.
+- Las comunidades o facciones podrán emprender medidas de recuperación ecológica, como proteger zonas, limitar la caza o recolección, restaurar hábitats, reintroducir ejemplares o favorecer la regeneración de recursos, si cuentan con conocimientos y medios plausibles.
+- La recuperación no será automática ni estará garantizada: dependerá de que persistan poblaciones de origen o existan medios viables de reintroducción, y de que las causas de la desaparición hayan sido corregidas.
+- Las medidas de recuperación podrán requerir tiempo y recursos y competir con otras necesidades de las comunidades. Sus resultados dependerán de su continuidad y eficacia.
+- El estado de las poblaciones y las causas conocidas de su declive podrán influir en las decisiones de NPC y facciones. La información disponible deberá corresponder a lo que hayan observado o aprendido.
+- El sistema distinguirá entre ausencia temporal, desaparición local y extinción global. No se asumirá que una especie desaparecida de una región se ha extinguido en todo el mundo.
+- La simulación deberá respetar límites ecológicos y temporales, evitar la generación arbitraria de ejemplares y mantener coherencia entre poblaciones, hábitats y recursos.
+- Las condiciones cuantitativas de sobreexplotación, umbrales de desaparición, modelos de población, viabilidad de recolonización y costes de recuperación quedan pendientes de diseño.
+
+El objetivo es que la explotación de la naturaleza tenga consecuencias reales y comprensibles, pero también que el mundo disponga de mecanismos plausibles de recuperación cuando las condiciones lo permitan. La recuperación ecológica no borrará automáticamente las consecuencias ni garantizará que toda especie pueda regresar.
