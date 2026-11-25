@@ -753,3 +753,22 @@ El mundo podrá experimentar fenómenos meteorológicos extremos, excepcionales 
 - El núcleo lógico gestionará los estados, daños, etapas y condiciones de recuperación; la representación visual y la simulación física de los fenómenos corresponderán a las capas especializadas.
 
 El objetivo es que los fenómenos extremos produzcan consecuencias relevantes y oportunidades de juego, pero que el territorio pueda recuperarse con el tiempo. No deberán convertirse en cambios permanentes e irreversibles del mundo.
+
+
+## Desastres geológicos y recuperación territorial
+
+El mundo podrá experimentar desastres naturales de origen geológico, con efectos temporales sobre el terreno, las infraestructuras, los ecosistemas y las comunidades.
+
+- Entre los fenómenos posibles se incluyen terremotos, erupciones volcánicas, deslizamientos de tierra, desprendimientos, hundimientos y otros procesos geológicos apropiados para cada región.
+- La posibilidad, frecuencia, intensidad y alcance de cada fenómeno dependerán de las características geológicas y geográficas del territorio. No todas las regiones estarán expuestas a los mismos riesgos.
+- Sus consecuencias podrán incluir daños en edificios e infraestructuras, derrumbes, rutas bloqueadas, cambios temporales en la accesibilidad, incendios secundarios, alteraciones de cursos de agua, caída de ceniza y desplazamiento de criaturas y habitantes.
+- Las afecciones territoriales y sociales causadas por estos desastres serán temporales y deberán contar con procesos de recuperación. No se utilizarán para imponer transformaciones permanentes e irreversibles del territorio.
+- La recuperación podrá incluir retirada de escombros y ceniza, estabilización de laderas, reparación de construcciones, reconstrucción de rutas e infraestructuras, recuperación de servicios y restauración progresiva de actividades comunitarias y ecosistemas.
+- La duración y el ritmo de recuperación dependerán de la gravedad del desastre, la naturaleza del daño, las condiciones del terreno, los recursos disponibles y la capacidad de respuesta de las comunidades y facciones.
+- Los efectos secundarios podrán persistir durante distintas etapas de recuperación, pero deberán existir condiciones explícitas para que cada afección temporal avance y finalice. El sistema evitará estados bloqueados y dependencias circulares.
+- Las comunidades, facciones y NPC podrán responder al desastre mediante evacuación, refugio, asistencia, reparación y reorganización de actividades, según sus capacidades y la información disponible.
+- Los desastres y la recuperación podrán progresar sin la presencia del jugador mediante simulación temporal de distintos niveles de detalle, manteniendo coherencia y determinismo.
+- Los desastres geológicos podrán interactuar con el clima y con el sistema de propiedades y reacciones ambientales cuando existan reglas explícitas. Por ejemplo, la lluvia podrá agravar ciertos deslizamientos o las cenizas podrán afectar temporalmente la visibilidad y las actividades.
+- El núcleo lógico gestionará estados, consecuencias y etapas de recuperación; la representación visual y la simulación física de los fenómenos corresponderán a las capas especializadas.
+
+El objetivo es que los desastres geológicos sean acontecimientos relevantes y coherentes con la naturaleza de cada región, capaces de alterar temporalmente la vida y las oportunidades del mundo, pero siempre sujetos a un proceso de recuperación.
