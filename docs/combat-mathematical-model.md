@@ -208,9 +208,24 @@ El dibujo también contiene tres pares de arcos con flechas en ambos extremos. P
 
 Estas tres relaciones recíprocas no se deducen de una sola flecha: el diagrama dibuja una flecha en cada sentido.
 
-La transcripción anterior registra únicamente las relaciones visibles. **No se completa la matriz por simetría ni por analogía**: una relación no enumerada permanece neutral provisionalmente. La reciprocidad se aplica exclusivamente a los tres pares representados mediante arcos bidireccionales.
+La transcripción anterior registra únicamente las relaciones visibles. **No se completa la matriz por simetría ni por analogía**: una relación no enumerada permanece neutral. La reciprocidad se aplica exclusivamente a los tres pares representados mediante arcos bidireccionales.
 
-Una vez transcrita, cada relación se representa como dato dirigido (Affinity(attacker, defender)), con modificadores separados para daño, postura y aplicación de estados. No se presupone que una ventaja de daño implique automáticamente ventaja en todos los demás canales. La imagen determina la topología cualitativa de la matriz, no sus multiplicadores numéricos; estos quedan sujetos a calibración y pruebas.
+### 7.2 Multiplicadores de afinidad confirmados
+
+Los multiplicadores funcionales definidos son:
+
+| Situación del enfrentamiento | Multiplicador de daño |
+|---|---:|
+| La energía atacante tiene ventaja sobre la energía defensora | ×1.50 |
+| La energía atacante tiene desventaja frente a la energía defensora | ×0.75 |
+| El par de energías tiene relación recíproca en el diagrama | ×1.25 en ambos sentidos |
+| No existe relación dibujada entre ambas energías | ×1.00 (neutral) |
+
+En los enfrentamientos recíprocos, el multiplicador ×1.25 sustituye a los multiplicadores ordinarios de ventaja y desventaja: se aplica en ambos sentidos, no ×1.50 en una dirección y ×0.75 en la contraria.
+
+La afinidad se consulta como dato dirigido (Affinity(attacker, defender)). El multiplicador de afinidad se aplica una sola vez al componente de daño compatible con la energía implicada, dentro de la resolución de daño. No se aplica automáticamente a presión de Postura, duración ni probabilidad de estados alterados; esos canales necesitarán reglas explícitas si deben verse afectados.
+
+La imagen determina la topología cualitativa de la matriz y estos valores determinan su escala inicial. Los multiplicadores quedan registrados como parámetros de balance centralizados y versionados, para que puedan calibrarse posteriormente sin alterar las relaciones definidas.
 
 ## 8. Postura
 
@@ -435,7 +450,7 @@ Como mínimo, las pruebas automatizadas deberán cubrir:
 No se inventarán a partir de huecos documentales:
 - valores base y curvas exactas de HP, escalado, Voluntad, Resistencia, Ruptura y Destreza/Armonía;
 - puntos de rendimientos decrecientes y límites críticos;
-- multiplicadores numéricos de las afinidades energéticas; la topología dirigida ya está transcrita en la sección 7.1;
+- calibración posterior de los multiplicadores de afinidad (valores iniciales confirmados: ×1.50, ×0.75 y ×1.25 para relaciones recíprocas);
 - defensa y resistencia por tipo, incluyendo qué parte de Resistencia es universal;
 - parámetros de postura, recuperación, presión por ataque y umbrales;
 - unidad temporal, prioridad de eventos y ventanas de reacción;
