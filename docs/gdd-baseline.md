@@ -1750,3 +1750,12 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - También podrán organizar expediciones para enfrentarse a monstruos especialmente peligrosos.
 - La actividad de las criaturas y las respuestas organizadas de los habitantes podrán afectar a la seguridad de las regiones.
 - Los criterios de respuesta, la frecuencia, la composición y los resultados de estas expediciones y cacerías quedan pendientes de diseño.
+
+
+## Ciclos de actividad y comportamiento temporal de las criaturas
+
+- Las criaturas tendrán ciclos de actividad propios que variarán según la especie y las condiciones de su entorno.
+- Estos ciclos podrán incluir períodos de caza, descanso, refugio, alimentación, reproducción y migración.
+- La hora del día, las estaciones, el clima, la disponibilidad de alimento y otros factores ambientales podrán influir en dichos ciclos.
+- Los ciclos de actividad afectarán a la presencia, los desplazamientos y las oportunidades de encontrar o interactuar con las criaturas.
+- Los horarios, duraciones, variaciones por especie y reglas concretas de estos ciclos quedan pendientes de especificación.
