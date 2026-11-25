@@ -377,3 +377,17 @@ Los jefes pueden aprovechar elementos del escenario para modificar el desarrollo
 - La disponibilidad de objetos, sus propiedades físicas relevantes, la destrucción del escenario y las reglas concretas de interacción quedan pendientes de especificación.
 
 El entorno forma parte del espacio táctico del combate: no es únicamente un decorado, sino un conjunto de oportunidades y restricciones que ambos combatientes pueden aprovechar cuando sus capacidades lo permiten.
+
+
+## Uso táctico del entorno por parte del jugador
+
+El jugador también puede aprovechar el entorno contra los jefes. Las oportunidades ambientales deben ser coherentes con las reglas del escenario y con las capacidades de los combatientes, manteniendo una relación justa entre las posibilidades de ambos.
+
+- El jugador puede activar o provocar mecanismos y peligros del escenario cuando existan medios jugables para hacerlo, como trampas, derrumbes u objetos que puedan impactar contra el jefe.
+- Puede utilizar el posicionamiento, los obstáculos y las características del terreno para obtener ventajas tácticas.
+- Las interacciones deben depender de elementos realmente presentes y habilitados en el escenario; no se presupone que todos los objetos sean manipulables o destructibles.
+- Los jefes pueden reaccionar a estas acciones según sus capacidades, comportamiento y adaptación táctica, sin conocer inputs futuros ni información privada del jugador.
+- Las oportunidades, riesgos, señales, consecuencias y posibles límites de cada interacción deben ser legibles y consistentes. El entorno no debe favorecer arbitrariamente a una de las partes.
+- Qué elementos pueden activarse, dañarse, desplazarse o destruirse, y sus efectos concretos sobre vitalidad, postura, estados y fases del jefe quedan pendientes de especificación.
+
+La interacción ambiental es bidireccional: tanto el jugador como el jefe pueden explotar el escenario, y cada oportunidad debe respetar las reglas y posibilidades establecidas para ese encuentro.
