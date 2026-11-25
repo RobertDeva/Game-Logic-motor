@@ -940,19 +940,19 @@ Esta sección integra las reglas funcionales de progresión y economía con el m
 
 El personaje posee ocho atributos: Vitalidad, Fuerza, Agilidad, Resistencia, Voluntad, Ruptura, Destreza y Armonía. Cada atributo tiene un valor inicial propio y un máximo de 99.
 
-El nivel no está limitado a 99. Se define como la suma de los incrementos permanentes obtenidos sobre los valores iniciales:
+El personaje comienza en nivel 1. El nivel no está limitado a 99 y se define como 1 más la suma de los incrementos permanentes obtenidos sobre los valores iniciales:
 
 \[
-Nivel_{personaje}=\sum_{i=1}^{8}(A_i-A_{i,inicial})
+Nivel_{personaje}=1+\sum_{i=1}^{8}(A_i-A_{i,inicial})
 \]
 
-El nivel máximo teórico es:
+El nivel máximo teórico, contando el nivel inicial 1, es:
 
 \[
-Nivel_{máximo}=\sum_{i=1}^{8}(99-A_{i,inicial})
+Nivel_{máximo}=1+\sum_{i=1}^{8}(99-A_{i,inicial})
 \]
 
-Esta definición presupone que cada incremento de un atributo cuesta un punto de nivel y que no existen puntos negativos respecto al estado inicial. Los valores iniciales concretos de los ocho atributos determinan el máximo numérico definitivo. El nivel representa puntos invertidos, no la suma bruta de los valores de atributo.
+Esta definición presupone que cada incremento de un atributo cuesta un punto de nivel y que no existen puntos negativos respecto al estado inicial. Los valores iniciales concretos de los ocho atributos determinan el máximo numérico definitivo. El nivel representa el nivel inicial 1 más los puntos invertidos, no la suma bruta de los valores de atributo.
 
 Dos personajes con el mismo nivel pueden tener distribuciones distintas; por ello, el nivel total nunca será una medida suficiente del poder de combate. El análisis de poder deberá considerar también los atributos individuales, el equipo, las Artes, los recursos, las resistencias y la configuración de combate.
 
