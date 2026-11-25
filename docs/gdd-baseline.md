@@ -1861,3 +1861,16 @@ La especificación matemática complementaria se encuentra en la sección 24 de 
 - La alquimia permite fabricar pociones curativas mediante recetas, conocimientos e ingredientes. El personaje tiene una capacidad limitada de cargas curativas. Cada uso consume una carga y almacenar más pociones no aumenta esa capacidad.
 - Las cargas curativas solo se reponen al descansar en un punto de subida de nivel. La reposición consume pociones previamente fabricadas o adquiridas del inventario, hasta llenar la capacidad disponible. Si la reserva no alcanza, la reposición es parcial. No hay recuperación automática, creación gratuita de pociones ni reposición en otros lugares.
 - La capacidad máxima de cargas, la eficacia curativa, las recetas, los ingredientes, los requisitos profesionales, los costes de refuerzo +1 a +10 y sus valores económicos permanecen pendientes de especificación y balance. La inspiración de Sekiro y The Witcher orienta la filosofía del sistema, no obliga a copiar sus cifras.
+
+
+## Simulación económica integrada: resultado provisional
+
+Se incorporó una prueba parametrizada que relaciona recompensas, compra de armas, refuerzo +0 a +10, materiales, trabajo de herrería y reposición de curación.
+
+- Hipótesis de prototipo: materiales de refuerzo acumulados 0,70 B(r); tarifa NPC acumulada 0,20 B(r); coste total del refuerzo con materiales comprados y NPC 0,90 B(r).
+- Comprar un arma común +0 cuesta 0,75 B(r); comprarla y llevarla a +10 por esa ruta cuesta 1,65 B(r), antes de mantenimiento y transporte.
+- Cinco pociones comunes cuestan 0,075 B(r) como escenario ilustrativo; se reponen exclusivamente en puntos de subida de nivel consumiendo pociones existentes.
+- Una composición de diez enemigos comunes, tres fuertes y una élite produce 0,705 B(r) bruto. La prueba no muestra insolvencia matemática inmediata ni justifica cambiar ahora la curva de almas o los multiplicadores de recompensas.
+- Los costes de refuerzo y el ejemplo de cinco cargas no son valores aprobados. Faltan ingresos por hora de profesiones y comercio, recetas, costes de herramientas/instalaciones, reparación, tasas de venta y duración de expediciones; por tanto, no se declara equilibrada toda la economía.
+
+El análisis, las tablas de sensibilidad, los supuestos y las limitaciones están en la sección 26 del [modelo matemático del combate](combat-mathematical-model.md#26-simulación-económica-integrada-armas-profesiones-y-curación).
