@@ -1392,3 +1392,18 @@ La fabricación de objetos utilizará una interacción basada en ritmo para que 
 - Las categorías de calidad, las ventanas de precisión, la tolerancia al error, el número de etapas, las estadísticas afectadas y los límites de mejora quedan pendientes de diseño.
 
 La intención es que la habilidad del jugador durante la fabricación tenga consecuencias tangibles en el equipo creado y que el proceso transmita la sensación de estar trabajando realmente el objeto.
+
+
+### Consecuencias graduadas de los errores durante la artesanía rítmica
+
+Los errores durante el minijuego de fabricación tendrán consecuencias de distinta gravedad según su frecuencia, precisión, etapa y severidad.
+
+- Los errores ordinarios reducirán la puntuación de ejecución y, por tanto, la calidad final o las mejoras estadísticas que podría recibir el objeto.
+- Los errores ordinarios no impedirán necesariamente completar la fabricación: el jugador podrá terminar el proceso y obtener el objeto, aunque con una calidad inferior.
+- Determinados errores graves o fallos críticos podrán arruinar la pieza durante el proceso, impidiendo obtener el objeto previsto.
+- Un fallo crítico podrá provocar la pérdida de algunos de los materiales utilizados. La pérdida no se asumirá automáticamente como total: la cantidad y los materiales afectados dependerán de la receta, la etapa y la naturaleza del fallo.
+- La evaluación deberá distinguir entre errores recuperables y fallos críticos mediante reglas explícitas, legibles y configurables.
+- La dificultad de la receta, los materiales, las herramientas, las técnicas y las etapas del proceso podrán influir en la tolerancia y las consecuencias de los errores.
+- Los umbrales de error, criterios de fallo crítico, posibilidad de recuperación, materiales que pueden perderse y proporciones de pérdida quedan pendientes de diseño.
+
+El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que un error menor no convierta automáticamente toda fabricación en un fracaso.
