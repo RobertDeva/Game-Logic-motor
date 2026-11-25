@@ -1585,3 +1585,17 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - La simulación de rutas deberá continuar durante la ausencia del jugador con niveles de detalle adecuados y conservar continuidad de mercancías, viajes, pérdidas, retrasos y cambios de destino.
 - Los NPC solo conocerán el estado de rutas y cargamentos mediante información que hayan percibido o recibido; no tendrán conocimiento omnisciente.
 - Los modelos de transporte, capacidad, costes, seguridad, propiedad de mercancías, pérdidas, seguros, tiempos, escalas de simulación y gestión de rutas quedan pendientes de definición.
+
+
+## Gestión empresarial y especialización múltiple del jugador
+
+- Cuando el jugador funde o dirija una compañía, taller, gremio u otra organización vinculada a sus actividades, deberá poder gestionarla de forma activa.
+- La gestión incluirá, según la naturaleza de cada organización, contratación y asignación de personal, adquisición de recursos, producción o prestación de servicios, almacenamiento, logística, finanzas, acuerdos, mantenimiento, expansión y respuesta a riesgos.
+- En el comercio, el jugador podrá contratar caravanas, barcos, transportistas y escoltas para mover sus mercancías. Los transportes estarán expuestos a riesgos coherentes con la ruta y las circunstancias, incluidos robos, ataques, pérdidas, retrasos, daños, bloqueos y cambios de recorrido.
+- La contratación de transporte y escoltas no garantizará el éxito del viaje; capacidades, costes, preparación, seguridad, información y acontecimientos influirán en el resultado.
+- La gestión y autonomía de las organizaciones deberán continuar durante la ausencia del jugador, dentro de las instrucciones, recursos, personal, capacidades y condiciones disponibles. No se presumirá éxito automático ni funcionamiento ilimitado.
+- Este principio de gestión se aplicará también a las demás actividades que puedan convertirse en negocios u organizaciones, adaptando las responsabilidades y operaciones a cada ámbito: talleres y gremios artesanales, comercio, cocina, pesca y servicios relacionados con el tratamiento de heridas.
+- El jugador podrá especializarse y desarrollar dominio en todas las disciplinas disponibles. No habrá una elección excluyente que le impida aprender o progresar en otras profesiones por haber avanzado en una.
+- Cada disciplina conservará su progresión independiente y sus requisitos de aprendizaje, práctica y maestría. Poder desarrollar todas no implica dominarlas simultáneamente ni eliminar los límites de tiempo, recursos, conocimientos y esfuerzo.
+- La capacidad de dirigir varias organizaciones a la vez dependerá de los sistemas de personal, delegación, recursos, administración y circunstancias que se definan; no se asumirá gestión perfecta o ilimitada.
+- Los modelos de administración, delegación, costes, contratación, autonomía, capacidad operativa, informes, riesgos y escalabilidad quedan pendientes de definición.
