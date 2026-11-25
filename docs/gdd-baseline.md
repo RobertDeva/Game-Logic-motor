@@ -1143,3 +1143,18 @@ El jugador podrá crear memoriales permanentes para honrar a sus criaturas compa
 - La creación, personalización, materiales, restricciones de ubicación, interacciones posteriores y posibles efectos narrativos o mecánicos quedan pendientes de diseño.
 
 El objetivo es permitir que el jugador elija cómo y dónde recordar a sus compañeras, dando continuidad física y narrativa a esas pérdidas en el mundo.
+
+
+### Registro de experiencias compartidas con criaturas compañeras
+
+El mundo registrará acontecimientos significativos vividos por el jugador junto a cada criatura compañera, de modo que su historia compartida pueda conservarse y reflejarse en recuerdos, epitafios y memoriales.
+
+- El registro estará asociado a la identidad individual de cada criatura, no únicamente a su especie o tipo.
+- Podrá incluir acontecimientos significativos como combates, exploraciones, rescates, supervivencia ante peligros, descubrimientos y otros momentos relevantes definidos por el juego.
+- Los acontecimientos registrados deberán derivarse de hechos que realmente hayan ocurrido durante la partida; no se inventarán recuerdos ni se atribuirán experiencias que la criatura no haya vivido o presenciado.
+- El sistema podrá conservar contexto relevante del acontecimiento, como participantes, lugar, circunstancias y resultado, según los datos disponibles.
+- Los recuerdos podrán utilizarse para generar o seleccionar epitafios, inscripciones, contenidos de memoriales y otras referencias narrativas a la historia compartida.
+- La selección y presentación de recuerdos deberá respetar la identidad de la criatura y la continuidad de los acontecimientos; no todos los sucesos tendrán que registrarse ni mostrarse.
+- Los criterios de relevancia, capacidad y organización del registro, personalización de epitafios, selección de recuerdos y persistencia entre partidas quedan pendientes de diseño.
+
+El objetivo es que cada compañera tenga una historia individual reconocible y que los memoriales puedan recordar experiencias auténticas de la aventura compartida.
