@@ -1449,3 +1449,15 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - El registro conservará los conocimientos necesarios para repetir el procedimiento, incluidos los materiales, técnicas y condiciones que formen parte de la receta descubierta.
 - La posibilidad de reproducir una receta no elimina los requisitos de disciplina, dominio, herramientas, instalaciones o recursos que correspondan.
 - Los criterios para considerar válida una receta, los límites de sus propiedades, la reproducibilidad exacta y las condiciones para compartir o transmitir recetas quedan pendientes de definición.
+
+
+## Experimentación virtual de recetas sin consumo de materiales
+
+- El subsistema de recetas incluirá un entorno de experimentación que permita al jugador simular procesos de fabricación antes de ejecutarlos realmente.
+- La experimentación virtual no consumirá materiales, componentes ni herramientas físicas, y no producirá objetos reales.
+- El jugador podrá probar combinaciones de materiales, técnicas, herramientas, parámetros y secuencias de fabricación dentro de las posibilidades conocidas o investigables de su disciplina.
+- La simulación permitirá evaluar resultados potenciales y explorar métodos originales sin el coste material de cada intento.
+- Los resultados de la simulación deberán distinguirse de los resultados garantizados de una fabricación real: las condiciones, recursos y ejecución efectiva podrán influir en el producto final.
+- Las recetas o métodos descubiertos mediante experimentación deberán cumplir los criterios de validación que se definan antes de registrarse como reproducibles.
+- La fabricación real seguirá consumiendo los recursos correspondientes y utilizando el sistema de ejecución rítmica y evaluación de calidad.
+- El alcance de la simulación, la información que revela, sus límites de conocimiento, los criterios de validación y la relación entre resultados simulados y fabricación real quedan pendientes de definición.
