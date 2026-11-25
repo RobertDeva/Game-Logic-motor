@@ -1113,3 +1113,19 @@ El cadáver de una criatura compañera que haya muerto definitivamente permanece
 - Las formas de sepultura, requisitos, duración, posibles recursos necesarios, respuestas de otros personajes, consecuencias narrativas y mecánicas del luto, así como la persistencia de tumbas o memoriales, quedan pendientes de diseño.
 
 El objetivo es que la pérdida de una compañera tenga presencia duradera en el mundo y pueda recibir un tratamiento significativo, sin reducir su muerte a la desaparición de una entidad o a una simple transferencia de inventario.
+
+
+### Memoria y reacciones de los NPC ante la muerte de una criatura compañera
+
+Los NPC que hayan conocido a una criatura compañera podrán recordar su muerte y reaccionar ante ella según la relación que mantenían con la criatura y la información de la que dispongan.
+
+- La reacción de cada NPC dependerá de su vínculo previo con la criatura, sus experiencias compartidas, personalidad, valores y circunstancias.
+- Las respuestas podrán incluir tristeza, duelo, respeto, compasión, indiferencia, alivio, hostilidad u otras reacciones coherentes con el personaje y la relación.
+- Los NPC no conocerán automáticamente la muerte: deberán haberla presenciado, descubrirla o recibir información por un medio plausible.
+- La información recibida podrá ser incompleta o imprecisa; las reacciones deberán basarse en lo que cada NPC realmente conoce o cree conocer.
+- La memoria de la muerte podrá influir en diálogos, comportamiento, relaciones con el jugador y participación en actos de despedida o memoriales, cuando corresponda.
+- No todos los NPC reaccionarán de la misma manera ni estarán obligados a mostrar una reacción visible.
+- La memoria y sus consecuencias deberán respetar la continuidad del mundo y no convertir a los NPC en observadores omniscientes.
+- Los detalles de persistencia, duración, transmisión de la noticia y consecuencias concretas quedan pendientes de diseño.
+
+El objetivo es que la muerte de una compañera pueda tener repercusiones sociales y emocionales coherentes, determinadas por los vínculos y conocimientos reales de los personajes.
