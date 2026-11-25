@@ -363,3 +363,17 @@ Los jefes pueden modificar su posición y distancia respecto al jugador para man
 - Frecuencia, distancias, condiciones de activación y oportunidades de castigo durante estas maniobras quedan pendientes de diseño y balance.
 
 El combate debe alternar de forma significativa presión, defensa, ataque y movimiento. Tanto el jugador como el jefe deben poder disputar el espacio y modificar el ritmo del enfrentamiento.
+
+
+## Uso táctico del entorno por parte de los jefes
+
+Los jefes pueden aprovechar elementos del escenario para modificar el desarrollo del combate, crear oportunidades y controlar el espacio. Esta capacidad depende del entorno disponible y de las características de cada jefe.
+
+- Un jefe puede lanzar escombros u otros objetos del escenario para obligar al jugador a apartarse, interrumpir su presión o crear distancia.
+- También puede aprovechar obstáculos, desniveles, coberturas, estrechamientos y otras características del terreno para favorecer su estilo de combate o condicionar el posicionamiento del jugador.
+- Las acciones deben estar justificadas por elementos realmente presentes e interactuables en el escenario; el jefe no puede crear objetos o modificar el terreno sin una mecánica que lo permita.
+- El uso del entorno debe ser coherente con la identidad, capacidades y repertorio del jefe. No todos los jefes utilizarán las mismas interacciones.
+- Estas acciones deben ofrecer señales observables y oportunidades de respuesta adecuadas al tipo de amenaza, sin convertirse en ataques arbitrarios o inevitables.
+- La disponibilidad de objetos, sus propiedades físicas relevantes, la destrucción del escenario y las reglas concretas de interacción quedan pendientes de especificación.
+
+El entorno forma parte del espacio táctico del combate: no es únicamente un decorado, sino un conjunto de oportunidades y restricciones que ambos combatientes pueden aprovechar cuando sus capacidades lo permiten.
