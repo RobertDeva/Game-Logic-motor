@@ -716,3 +716,21 @@ El ciclo día/noche podrá modificar de forma significativa la actividad y el co
 - Las rutinas y transiciones podrán resolverse mediante distintos niveles de simulación, manteniendo resultados coherentes tanto si el jugador presencia los cambios como si ocurren fuera de su presencia.
 
 La finalidad es que el ciclo temporal transforme la ecología, la actividad de las facciones y las oportunidades tácticas del mundo, en lugar de limitarse a un cambio visual de iluminación.
+
+
+## Clima dinámico y condiciones meteorológicas cambiantes
+
+El clima podrá cambiar durante la partida y no estará limitado a una condición fija por región. Cada territorio podrá experimentar variaciones meteorológicas coherentes con su geografía, estación, altitud, ecosistema y demás condiciones ambientales definidas.
+
+- Las condiciones podrán evolucionar entre estados como cielo despejado, nubosidad, lluvia, tormentas, niebla, nieve, viento y otros fenómenos apropiados para cada región.
+- La frecuencia, duración, intensidad y transiciones de los fenómenos serán configurables por región y estación. No todos los fenómenos estarán disponibles en todos los territorios.
+- El clima podrá afectar a la visibilidad, percepción, detección, sigilo, desplazamiento y comportamiento de criaturas y NPC cuando existan reglas explícitas que relacionen esas condiciones.
+- Las condiciones meteorológicas podrán modificar el estado del entorno: superficies mojadas o congeladas, acumulación de nieve, barro, vegetación, cursos de agua y otros elementos pertinentes.
+- El clima podrá interactuar con el sistema general de propiedades y reacciones ambientales. Por ejemplo, la lluvia podrá mojar superficies y combatientes; el frío podrá favorecer la congelación; el viento podrá modificar la propagación de fuego, humo u otros efectos cuando las reglas lo permitan.
+- Las condiciones meteorológicas podrán influir en el combate de forma recíproca y legible. Sus consecuencias deberán ser coherentes para jugador, enemigos y jefes, respetando resistencias, inmunidades y capacidades individuales.
+- Las criaturas y facciones podrán modificar sus rutinas, refugiarse, desplazarse o aprovechar determinadas condiciones meteorológicas según su naturaleza, recursos e inteligencia.
+- Los fenómenos peligrosos deberán ofrecer señales y oportunidades de respuesta apropiadas. No se utilizará el clima para imponer daño inevitable o penalizaciones arbitrarias al jugador.
+- El estado meteorológico podrá variar entre regiones y actualizarse aunque el jugador no esté presente. La simulación fuera de la zona activa podrá utilizar niveles de detalle reducidos sin perder coherencia temporal.
+- El núcleo lógico representará estados, transiciones, propiedades y consecuencias meteorológicas de forma determinista y desacoplada de la representación visual y de la simulación física.
+
+Los patrones climáticos concretos, sus probabilidades, intensidades, duración, alcance regional y reglas de interacción se definirán posteriormente. El objetivo es que el clima sea un sistema dinámico del mundo y una fuente coherente de cambios ambientales y tácticos, no un simple efecto visual.
