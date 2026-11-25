@@ -466,3 +466,19 @@ El sistema general de propiedades e interacciones también podrá aplicarse al j
 - La representación visual y la simulación física seguirán separadas del núcleo lógico, que determina las condiciones y consecuencias del juego.
 
 El objetivo es unificar las interacciones de escenario, objetos y combatientes en un mismo marco de reglas, evitando sistemas aislados y comportamientos contradictorios.
+
+
+## Reacciones en cadena entre combatientes y elementos del escenario
+
+Las interacciones podrán propagarse en cadena entre varios combatientes, objetos y elementos del escenario cuando las propiedades, condiciones y reglas definidas lo permitan.
+
+- Un efecto aplicado a un combatiente u objeto puede desencadenar nuevas interacciones con entidades cercanas o conectadas, si existe una regla explícita que permita esa propagación.
+- Por ejemplo, una descarga eléctrica puede propagarse desde un enemigo mojado hacia otro combatiente cercano y activar un mecanismo eléctrico del escenario, siempre que las condiciones de cada interacción se cumplan.
+- La propagación puede atravesar distintas clases de entidades: jugador, enemigos, jefes, objetos, superficies y mecanismos del escenario.
+- Cada paso de la cadena debe comprobar alcance, conectividad, propiedades, resistencias, inmunidades y demás condiciones relevantes.
+- Las reacciones deben resolverse de forma determinista, con orden y prioridades definidos, para que un mismo estado inicial y las mismas acciones produzcan el mismo resultado.
+- El sistema debe registrar qué interacciones ya se han procesado dentro de una misma cadena y establecer límites o condiciones de terminación para impedir ciclos, propagaciones infinitas y activaciones duplicadas no intencionadas.
+- La propagación no implica que todos los efectos se transmitan automáticamente ni que atraviesen cualquier entidad o material; cada ruta debe estar autorizada por reglas explícitas.
+- El alcance, la intensidad, la atenuación, el número máximo de saltos y las reglas concretas de propagación quedan pendientes de especificación y balance.
+
+Estas reacciones en cadena deben surgir de la combinación de reglas generales del mundo, permitiendo situaciones tácticas emergentes sin depender de secuencias guionizadas para cada caso.
