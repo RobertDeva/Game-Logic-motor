@@ -1759,3 +1759,14 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - La hora del día, las estaciones, el clima, la disponibilidad de alimento y otros factores ambientales podrán influir en dichos ciclos.
 - Los ciclos de actividad afectarán a la presencia, los desplazamientos y las oportunidades de encontrar o interactuar con las criaturas.
 - Los horarios, duraciones, variaciones por especie y reglas concretas de estos ciclos quedan pendientes de especificación.
+
+
+## Percepción sensorial de las criaturas y sigilo
+
+- Las criaturas podrán detectar y reaccionar ante la presencia del jugador mediante distintos sentidos, principalmente vista, oído y olfato.
+- La detección visual podrá depender del campo de visión de la criatura, la iluminación, la distancia y los obstáculos del entorno.
+- La detección auditiva podrá responder a pasos, combates, objetos y otros sonidos, teniendo en cuenta su intensidad y alcance.
+- La detección olfativa podrá permitir a ciertas criaturas reconocer olores y rastros dejados por el jugador.
+- Las condiciones ambientales y el entorno —como el viento, el terreno y la vegetación— podrán influir en la percepción y en la eficacia del sigilo.
+- Los sentidos y capacidades sensoriales concretos podrán variar según la especie.
+- Las reglas cuantitativas de detección, ocultación, rastros y propagación de sonidos y olores quedan pendientes de especificación.
