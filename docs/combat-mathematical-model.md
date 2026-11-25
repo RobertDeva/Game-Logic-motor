@@ -992,7 +992,7 @@ La función devuelve almas enteras. \(T_{DS3}\) es la tabla exacta de costes ini
 | Nivel objetivo equivalente | Coste |
 |---:|---:|
 | 2 | 673 |
-| 3 | 690 |
+| 3 | 689 |
 | 12 | 847 |
 | 13 | 1.039 |
 | 25 | 3.970 |
@@ -1044,7 +1044,126 @@ Esto es una consecuencia deliberada de la economía compartida, no un comportami
 
 La riqueza no aumenta directamente las estadísticas ni el nivel: proporciona capacidad de pago. La subida solo ocurre al invertir almas en una mejora de atributo.
 
-### 24.5 Rangos de progresión por zona
+### 24.5 Modelo de precios de bienes, enseñanza y consumibles
+
+La economía comercial utiliza la misma curva de almas de la progresión como referencia de escala, pero **no utiliza el nivel actual del comprador para inflar sus precios**. Cada bien o servicio tiene un nivel económico de referencia \(r\), determinado por la etapa del mundo, la complejidad de fabricación, la calidad y la progresión para la que fue diseñado.
+
+Se define el valor económico base:
+
+\[
+B(r)=C(r)
+\]
+
+donde \(C(r)\) es el coste de progresión de la curva 24.2 evaluado en el nivel objetivo equivalente \(r\). El precio de referencia de una categoría es:
+
+\[
+P_{base}=round(B(r)\cdot m_{categoría})
+\]
+
+El precio final puede incorporar modificadores explícitos de calidad, escasez, oferta/demanda, reputación comercial, impuestos, ubicación y estado del objeto:
+
+\[
+P_{final}=round(P_{base}\cdot M_{calidad}\cdot M_{mercado}\cdot M_{reputación}\cdot M_{ubicación})
+\]
+
+Los modificadores deberán tener límites configurables y registrarse por separado. Ningún modificador puede depender de la cantidad de almas que lleva el jugador ni de su nivel actual por sí solo. Un artículo conserva su referencia económica aunque lo compre un personaje de otra etapa; las diferencias regionales o de mercado deben proceder del mundo simulado, no de una penalización oculta al comprador.
+
+#### 24.5.1 Enseñanzas e instrucciones de maestros
+
+Multiplicadores iniciales de referencia para el precio de una enseñanza individual:
+
+| Categoría de enseñanza | Multiplicador |
+|---|---:|
+| Básica | ×1,5 |
+| Especializada | ×3 |
+| Avanzada | ×6 |
+| Maestría | ×12 |
+| Técnica excepcional o secreta | ×20–30, además de requisitos no monetarios |
+
+El precio corresponde a una enseñanza o desbloqueo concreto, no a todo el catálogo de un maestro. Si una técnica requiere varias sesiones, materiales, herramientas o pruebas prácticas, esos costes se detallan por separado y no se duplican dentro del precio de enseñanza.
+
+Pagar no garantiza automáticamente el aprendizaje. Cada enseñanza puede exigir requisitos como:
+- nivel de conocimiento o dominio previo;
+- práctica demostrada o evaluación;
+- atributo, capacidad o equipo mínimo cuando sea funcionalmente necesario;
+- reputación, confianza o acceso al maestro;
+- descubrimiento, misión, investigación o material especial.
+
+Los maestros no venden necesariamente todo su conocimiento. Su rango de maestría, especialización, ubicación y relación con el jugador determinan qué pueden enseñar. El aprendizaje autónomo mediante observación, experimentación y descubrimiento continúa siendo una vía válida; el precio de la enseñanza remunera la transmisión guiada y no debe bloquear artificialmente los conocimientos que el diseño permita descubrir por cuenta propia.
+
+#### 24.5.2 Armas y equipamiento
+
+Multiplicadores iniciales para el precio de compra de armas:
+
+| Categoría | Multiplicador |
+|---|---:|
+| Común y funcional | ×0,75 |
+| Buena calidad | ×2 |
+| Especializada | ×5 |
+| Excepcional | ×10 |
+| Única, legendaria o de importancia narrativa | ×20–40 o no comerciable |
+
+La categoría no se asigna únicamente por daño. Debe considerar materiales, calidad de fabricación, durabilidad, propiedades especiales, rareza, complejidad técnica y prestaciones. Una pieza excepcional no debe ser solo una versión numéricamente superior: su precio debe corresponder a propiedades y costes de obtención justificables.
+
+Las armas únicas o legendarias pueden requerir una misión, descubrimiento, fabricación especializada o derrota de un enemigo. Un precio alto no debe convertir automáticamente todo objeto único en una mercancía ordinaria. Las armaduras, escudos, accesorios y herramientas utilizarán el mismo principio, con perfiles de categoría propios y multiplicadores calibrados según su utilidad y coste de fabricación.
+
+#### 24.5.3 Consumibles
+
+Los consumibles se valoran por unidad y se clasifican por potencia, rareza, duración, facilidad de fabricación y efecto sobre el combate o la exploración:
+
+| Categoría | Multiplicador por unidad |
+|---|---:|
+| Común | ×0,015 |
+| Refinado | ×0,04 |
+| Avanzado | ×0,08 |
+| Raro | ×0,15 |
+
+Los consumibles de uso frecuente deben representar un gasto pequeño pero perceptible; los consumibles potentes o raros deben exigir una decisión económica real. Los precios de lotes podrán ofrecer una reducción limitada por costes logísticos menores, pero no descuentos que hagan rentable comprar grandes cantidades para revenderlas o que anulen el coste unitario.
+
+El balance deberá medir el gasto esperado por encuentro, expedición y hora de juego. La eficacia del consumible, la disponibilidad de ingredientes, el tiempo de fabricación y la posibilidad de obtenerlo mediante exploración también forman parte de su valor. No se debe equilibrar un consumible únicamente elevando su precio si su efecto rompe el combate.
+
+#### 24.5.4 Materias primas y componentes de fabricación
+
+Como referencia inicial, los materiales comprables pueden utilizar estos multiplicadores por unidad:
+
+| Categoría de material | Multiplicador |
+|---|---:|
+| Común | ×0,02 |
+| Poco común | ×0,05 |
+| Raro | ×0,12 |
+| Excepcional o específico de criatura | ×0,20–0,40, según disponibilidad |
+
+El precio real también depende de calidad, procedencia, cantidad disponible, estacionalidad, riesgo de transporte y demanda de la región. Los componentes de origen biológico, minerales y materiales especiales deben conservar diferencias de propiedades: dos materiales con el mismo nombre pero distinta calidad no tienen por qué compartir precio.
+
+Recolectar o fabricar no concede almas. Comprar materiales es un gasto; recolectarlos representa una inversión de tiempo, herramientas y riesgo. Fabricar un objeto no crea riqueza por sí mismo: las almas se obtienen cuando el producto se vende o cuando se cobra un servicio válido. La valoración de compra a comerciantes debe considerar costes y mercado para evitar bucles de fabricación y reventa con beneficio garantizado.
+
+#### 24.5.5 Ejemplos numéricos de referencia
+
+La tabla siguiente muestra precios antes de modificadores de mercado, reputación, ubicación o calidad adicional. \(r\) es el nivel económico objetivo del artículo, no el nivel actual del comprador.
+
+| Nivel económico \(r\) | \(B(r)\) | Enseñanza básica ×1,5 | Maestría ×12 | Arma común ×0,75 | Arma excepcional ×10 | Consumible común ×0,015 | Consumible raro ×0,15 |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 13 | 1.039 | 1.558 | 12.468 | 779 | 10.390 | 16 | 156 |
+| 50 | 14.535 | 21.802 | 174.420 | 10.901 | 145.350 | 218 | 2.180 |
+| 100 | 60.265 | 90.398 | 723.180 | 45.199 | 602.650 | 904 | 9.040 |
+| 200 | 302.625 | 453.938 | 3.631.500 | 226.969 | 3.026.250 | 4.539 | 45.394 |
+
+Los ejemplos demuestran cómo crece la escala económica. No implican que un jugador de nivel 50 deba comprar artículos de referencia 50, ni que todo artículo de una región tenga el mismo nivel económico. La ubicación y la progresión prevista del contenido determinan \(r\).
+
+#### 24.5.6 Reglas de equilibrio y protección contra la progresión trivial
+
+1. El precio se determina por el artículo, su categoría y su contexto económico; nunca por el saldo de almas del comprador.
+2. La curva de progresión sirve como unidad de escala común, pero los multiplicadores de cada categoría son distintos y versionados.
+3. Comprar una enseñanza, arma o consumible compite directamente con reservar almas para subir atributos.
+4. Los artículos de alto nivel económico no deben aparecer en mercados tempranos en cantidades ordinarias; su acceso depende de región, oferta, reputación, conocimiento y requisitos.
+5. Los bienes de mayor potencia deben implicar costes de adquisición, fabricación, mantenimiento, materiales o acceso acordes con su utilidad.
+6. Los consumibles deben ser asequibles para usos deliberados, no tan baratos como para eliminar la gestión de recursos.
+7. La fabricación y el comercio no deben crear ciclos de beneficio neto garantizado. Deben computarse materiales, herramientas, tiempo, transporte, tarifas, desgaste, riesgo y precio real de reventa.
+8. Los precios y recompensas deben probarse juntos. No basta con aumentar precios si las actividades económicas generan ingresos desproporcionados.
+9. El sistema no impondrá un límite artificial a la riqueza: la progresión rápida será posible si el jugador logra ingresos elevados, pero deberá elegir entre invertirlos en atributos, conocimientos, equipo, materiales, servicios y consumibles.
+10. Los multiplicadores aquí propuestos constituyen una línea base de simulación, no un balance final. Deben calibrarse con presupuestos de expedición, ritmos de ingreso, gasto de mantenimiento y curvas de progresión de cada región.
+
+### 24.6 Rangos de progresión por zona
 
 Cada zona define un perfil propio de dificultad y progresión, que incluye como mínimo:
 - rango de nivel de personaje previsto;
@@ -1058,7 +1177,7 @@ Los rangos de zonas pueden solaparse para permitir rutas alternativas y explorac
 
 Las zonas no escalan todas de la misma manera. Una región inicial puede acompañar parcialmente el crecimiento del jugador, pero tendrá un ritmo menor y un techo inferior al de una región avanzada. Una región avanzada tendrá referencias y límites superiores. Esta diferenciación debe permanecer perceptible incluso cuando el jugador regrese a regiones anteriores.
 
-### 24.6 Escalado dinámico de niveles de enemigos
+### 24.7 Escalado dinámico de niveles de enemigos
 
 Los enemigos progresan con el jugador, incluso cuando el jugador ha financiado sus atributos mediante actividades económicas en lugar de combate. El origen de las almas no afecta al cálculo: el sistema evalúa el nivel y las capacidades actuales del personaje, no el historial de cómo consiguió su riqueza.
 
@@ -1080,7 +1199,7 @@ Nivel_{mínimo},Nivel_{máximo}
 
 La función de zona determina cuánto y cómo acompaña el enemigo al jugador. Su pendiente, forma y límites son datos de configuración; no se presupone una proporción idéntica para todas las regiones. El nivel del enemigo es una referencia de progresión, no una instrucción para multiplicar todas sus estadísticas por un único factor.
 
-### 24.7 Escalado de capacidades y preservación de identidad
+### 24.8 Escalado de capacidades y preservación de identidad
 
 Las estadísticas efectivas de un enemigo se derivan de su arquetipo, atributos propios, nivel, equipo/capacidades, fase y perfil de zona. El nivel dinámico no debe borrar las diferencias de diseño entre enemigos.
 
@@ -1092,7 +1211,7 @@ Las estadísticas efectivas de un enemigo se derivan de su arquetipo, atributos 
 
 El cálculo de dificultad debe considerar la distribución de los ocho atributos del jugador, su equipamiento, Artes y capacidades relevantes. Dos personajes del mismo nivel pueden presentar perfiles de amenaza distintos. El sistema puede usar perfiles de combate para seleccionar parámetros de encuentro, pero no debe convertir el escalado en una respuesta perfecta que anule cualquier especialización o debilidad del enemigo.
 
-### 24.8 Reglas para que el escalado no elimine la sensación de progreso
+### 24.9 Reglas para que el escalado no elimine la sensación de progreso
 
 1. Los enemigos acompañan el crecimiento del jugador, pero no igualan automáticamente su poder.
 2. Cada zona tiene una curva y límites independientes.
@@ -1103,7 +1222,7 @@ El cálculo de dificultad debe considerar la distribución de los ocho atributos
 7. La riqueza no es una variable directa del escalado enemigo; solo influye indirectamente cuando se convierte en atributos mediante una mejora comprada.
 8. Los parámetros se validarán mediante pruebas de personajes con igual nivel y distribuciones distintas, personajes enriquecidos por comercio, progresión centrada en combate y regresos a zonas anteriores.
 
-### 24.9 Datos y pruebas requeridos
+### 24.10 Datos y pruebas requeridos
 
 Cada zona y arquetipo enemigo deberá exponer datos configurables, no constantes dispersas en el código. Como mínimo se probarán:
 - monotonicidad del escalado dentro del rango configurado;
