@@ -1082,3 +1082,18 @@ El inventario de cada criatura compañera será independiente tanto del inventar
 - La identidad, cantidad, estado y propiedades de cada objeto deberán conservarse durante las transferencias, evitando duplicaciones o pérdidas.
 
 El objetivo es mantener una gestión de recursos coherente: el jugador, cada criatura compañera y el almacenamiento de las zonas de descanso constituyen contenedores distintos, conectados únicamente mediante operaciones explícitas y válidas.
+
+
+### Conservación y recuperación del inventario tras la muerte de una criatura compañera
+
+Cuando una criatura compañera muera definitivamente, los objetos que llevaba en su inventario permanecerán asociados a su cadáver para que el jugador pueda recuperarlos mediante una interacción válida.
+
+- La muerte no transferirá automáticamente los objetos al inventario del jugador ni al almacenamiento compartido.
+- El cadáver conservará la identidad, cantidad, estado y propiedades de los objetos que transportaba en el momento de la muerte.
+- El jugador podrá recuperar esos objetos si alcanza el cadáver y las circunstancias permiten interactuar con él.
+- La recuperación respetará la capacidad, compatibilidad y restricciones del inventario de destino; no se permitirá recoger más de lo que pueda transportarse si las reglas de carga lo impiden.
+- Los objetos recuperados dejarán de estar asociados al cadáver y pasarán al inventario de destino sin duplicarse.
+- La criatura seguirá muerta de forma permanente: recuperar sus pertenencias no permitirá resucitarla ni restaurar el vínculo.
+- La persistencia del cadáver, el deterioro o desaparición de objetos, los peligros que puedan impedir la recuperación y las condiciones especiales de pérdida quedan pendientes de especificación.
+
+El objetivo es que la muerte permanente tenga consecuencias y que las pertenencias de la compañera no desaparezcan arbitrariamente, ofreciendo al jugador la posibilidad de recuperarlas si logra llegar hasta ellas.
