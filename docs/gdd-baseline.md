@@ -70,3 +70,80 @@ La derrota del Señor de las Tinieblas conduce a finales condicionados por varia
 - Estados alterados, duración, acumulación y resistencias.
 - Reglas exactas de movimiento, anclajes y costes.
 - Condiciones completas y precedencia de variables para los cuatro finales.
+
+
+## Referencia de los cuadernos originales (fotografías aportadas)
+
+Esta sección registra información legible en las tres páginas manuscritas aportadas por el creador. Se conserva separada de las decisiones posteriores del GDD para no borrar el origen ni convertir lecturas dudosas en reglas definitivas.
+
+### Lista de características anotadas
+
+En la primera página aparecen, además de la identificación del proyecto y el género manuscrito como «Soulslike - Hack/Slash», las siguientes características:
+
+- Desarrollo de personaje.
+- Historia con múltiples desenlaces.
+- Árboles de habilidades.
+- Mecánicas de combate simples y dinámicas.
+- Evolución de relaciones con los NPCs.
+- Mazmorras ocultas.
+- Puzles.
+- Sistema de equipamientos y armaduras.
+- Artes de combate secretas y con niveles de experiencia.
+- Sistema de nivelación de estadísticas en zonas de descanso con penalizaciones por muerte.
+- Equipamiento especial para la exploración del mapa.
+- Sistema de crafteo y recetario.
+- Maestro herrero y comerciantes especiales.
+- Instructores de Artes de Combate.
+- Sistema de reputación territorial.
+
+Estos puntos amplían el inventario de sistemas que debe contemplar el diseño. No implican que ya estén implementados.
+
+### Clases, armas y progresión de armas
+
+La segunda página muestra estas clases y armas:
+
+- Espadachín mágico: espada larga y estoque como armas de primer grupo.
+- Guerrero: mandoble, espada y escudo como armas de primer grupo.
+- Segador: katana y guadaña como armas de primer grupo.
+
+El esquema dibuja conexiones desde los grupos de armas de las clases hacia una anotación común «Armas 2º: Arco». La fotografía no permite determinar con seguridad si el arco es una segunda categoría desbloqueable para las tres clases, una progresión común o una relación distinta. Se registra como pregunta abierta; no se codificará hasta confirmarlo.
+
+### Funciones descriptivas de las estadísticas
+
+La segunda página define las estadísticas de esta manera (transcripción del texto legible):
+
+- Vitalidad: aumenta la salud máxima.
+- Fuerza: aumenta el daño físico.
+- Agilidad: mejora la velocidad de escalada y movimiento.
+- Resistencia: aumenta la resistencia a todos los tipos de daño (el final de la línea queda fuera de la zona legible de la fotografía).
+- Voluntad: disminuye la duración de efectos de estado y aumenta «d…»; el resto de la frase está cortado y no se puede recuperar con certeza.
+- Ruptura: aumenta el índice de daño crítico y mejora la evasión (lectura de la línea manuscrita; conviene confirmarla con el autor).
+- Destreza: mejora el daño de Artes de Combate.
+- Armonía: aumenta el daño especial.
+
+Estas descripciones son intenciones de diseño, no fórmulas matemáticas. En particular, el efecto adicional de Voluntad debe confirmarse antes de definir su responsabilidad exacta.
+
+### Tabla de valores iniciales por clase
+
+La tercera página contiene una tabla con columnas «EM», «G» y «S». Por el orden y los nombres de la página de clases, se interpretan provisionalmente como Espadachín Mágico, Guerrero y Segador, respectivamente.
+
+| Estadística | EM | G | S |
+|---|---:|---:|---:|
+| Vitalidad | 5 | 6 | 4 |
+| Fuerza | 6 | 6 | 4 |
+| Agilidad | 5 | 4 | 6 |
+| Resistencia | 4 | 6 | 4 |
+| Voluntad | 4 | 5 | 6 |
+| Ruptura | 5 | 5 | 6 |
+| Destreza | 6 | 4 | 5 |
+| Armonía | 6 | 4 | 5 |
+
+Los valores se transcriben como aparecen en la tabla. No se asume todavía el rango permitido, el coste de subir cada estadística ni si estos números son atributos iniciales, ponderaciones o puntos de distribución. Antes de implementarlos como balance definitivo se confirmarán su significado y las abreviaturas.
+
+### Diagrama de energías
+
+La tercera página representa Aura, Maná y Prana como energías básicas y muestra tres recuadros de energías especiales/superiores: Energía Natural, Poder Astral y Energía Abisal. Hay múltiples flechas entre los nodos. La fotografía permite identificar los nombres, pero no establecer con suficiente certeza el significado de cada dirección ni reconstruir una matriz completa de ventajas y debilidades. Las relaciones se mantienen pendientes de una transcripción validada por el creador.
+
+### Consecuencia para la implementación
+
+La tabla anterior sí proporciona una primera referencia concreta para construir configuraciones iniciales de las tres clases, siempre que el creador confirme que los números son los valores iniciales previstos. Las descripciones sirven para definir responsabilidades candidatas de cada estadística. Las fórmulas, límites, escalados, efecto incompleto de Voluntad y progresión de armas siguen sin estar especificados.
