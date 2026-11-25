@@ -349,3 +349,17 @@ Los jefes pueden aumentar su presión ofensiva cuando detectan que el jugador ma
 - Los umbrales que determinan cuándo se considera pasivo al jugador, la intensidad del aumento y su duración quedan pendientes de balance y diseño.
 
 La intención de diseño es que el jugador tenga que participar activamente en el intercambio, alternando defensa, presión, ataque y engaño, en lugar de poder neutralizar el combate limitándose a esperar.
+
+
+## Reposicionamiento táctico y control de distancia de los jefes
+
+Los jefes pueden modificar su posición y distancia respecto al jugador para mantener un combate dinámico y evitar que el jugador domine indefinidamente el intercambio cuerpo a cuerpo.
+
+- Según su estilo de combate, situación y lectura de las acciones observables del jugador, un jefe puede retirarse momentáneamente, reposicionarse o crear distancia.
+- El reposicionamiento puede servir para recuperar espacio, cambiar el ángulo de ataque, preparar una acción de su repertorio o interrumpir una presión cuerpo a cuerpo demasiado dominante.
+- Estas decisiones deben ser coherentes con la identidad, capacidades y contexto de cada jefe; no todos tienen que utilizar las mismas tácticas.
+- El movimiento no debe convertirse en una huida arbitraria ni en una forma de evitar indefinidamente el combate.
+- El jefe no puede leer inputs futuros ni conocer información privada del jugador.
+- Frecuencia, distancias, condiciones de activación y oportunidades de castigo durante estas maniobras quedan pendientes de diseño y balance.
+
+El combate debe alternar de forma significativa presión, defensa, ataque y movimiento. Tanto el jugador como el jefe deben poder disputar el espacio y modificar el ritmo del enfrentamiento.
