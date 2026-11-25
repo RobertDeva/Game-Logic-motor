@@ -235,3 +235,10 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Los enemigos normales únicamente utilizarán ataques normales, ataques pesados y estocadas.
 - Los demás tipos de enemigos podrán utilizar todas las categorías de ataque contempladas por el sistema, incluidas las categorías de barrido, agarre y ataques especiales imbloqueables.
 - Que un tipo de enemigo tenga acceso a todas las categorías no significa que cada enemigo deba utilizar obligatoriamente todas ellas; su repertorio concreto se define individualmente.
+
+### Confirmación del creador: contraataque de estocadas
+
+- Las estocadas tendrán una respuesta de contraataque específica, inspirada funcionalmente en el Mikiri de Sekiro.
+- La mecánica se adaptará a Mythical Exodus: las animaciones, ejecución y efectos podrán diferenciarse según la clase y el arma equipada.
+- La respuesta será una acción contextual específica para contrarrestar estocadas, no un bloqueo o desvío genérico.
+- Los requisitos temporales, ventanas de entrada, efectos sobre la postura enemiga y diferencias concretas por clase/arma quedan pendientes de diseño.
