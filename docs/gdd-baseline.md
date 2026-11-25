@@ -1555,3 +1555,18 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - **Integración con el mundo:** cada subsistema deberá considerar recursos, economía, calendario, clima, geografía, personajes, comunidades, facciones y acontecimientos pertinentes, sin otorgar conocimiento omnisciente a sus participantes.
 - **Reglas propias y límites:** cada disciplina conservará sus requisitos, recursos, riesgos, resultados y restricciones específicos. La arquitectura común no debe borrar sus diferencias ni forzar funciones que no tengan sentido para ella.
 - Los detalles de implementación, interfaces, parámetros, fórmulas, simulación, persistencia, equilibrio y mecánicas específicas de cada disciplina quedan pendientes de diseño.
+
+
+## Economía dinámica y negociación basada en persuasión e investigación local
+
+- El comercio tendrá una economía dinámica en la que precios, disponibilidad, demanda y oportunidades comerciales podrán variar según estaciones, conflictos, rutas comerciales, cosechas, catástrofes, recursos, decisiones de las comunidades y otros acontecimientos pertinentes.
+- Las condiciones económicas podrán diferir entre asentamientos y regiones; no existirá necesariamente un precio o nivel de demanda universal para cada mercancía.
+- La negociación con NPC utilizará un sistema de persuasión, no una simple selección automática de precio ni una prueba abstracta desconectada del contexto.
+- Para negociar eficazmente, el jugador deberá investigar las necesidades, prioridades, escasez, excedentes, problemas y circunstancias de la zona mediante conversaciones e interacciones con sus habitantes y otros NPC.
+- La información obtenida dependerá de quién la conoce, de lo que haya percibido o recibido y de su disposición a compartirla. Los NPC no tendrán conocimiento omnisciente de la situación económica.
+- Las conversaciones podrán aportar información parcial, indirecta, imprecisa o desactualizada; el jugador deberá contrastar indicios y comprender las circunstancias antes de utilizarlos en una negociación.
+- La persuasión deberá apoyarse en argumentos pertinentes a las necesidades e intereses conocidos del interlocutor y de la comunidad, así como en la credibilidad, reputación, relaciones y circunstancias de la negociación.
+- Conocer las necesidades locales podrá permitir al jugador presentar ofertas, intercambios o acuerdos más atractivos y justificar sus condiciones; no garantizará automáticamente que el NPC acepte.
+- La respuesta del interlocutor dependerá de sus intereses, personalidad, objetivos, recursos, confianza, relaciones, información y margen real de decisión.
+- La negociación, la investigación de necesidades y la economía dinámica deberán estar conectadas: cambios en la región podrán modificar lo que necesita la comunidad y, por tanto, las oportunidades y argumentos comerciales disponibles.
+- Los métodos concretos de persuasión, tipos de información, fiabilidad, factores de aceptación, límites de negociación, regateo, contratos y resolución de desacuerdos quedan pendientes de definición.
