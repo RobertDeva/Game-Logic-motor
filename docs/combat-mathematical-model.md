@@ -1410,3 +1410,56 @@ Cada zona y arquetipo enemigo deberá exponer datos configurables, no constantes
 - preservación de mecánicas particulares de élites y jefes.
 
 Los rangos, pendientes, límites, costes de mejora y precios quedan pendientes de calibración con datos del mundo y simulaciones. Las reglas de obtención de almas, cálculo de nivel, separación entre riqueza y atributos y escalado diferenciado por zona constituyen las reglas funcionales que deben respetar las futuras implementaciones.
+
+
+## 25. Profesiones, fabricación y progresión del equipamiento
+
+### 25.1 Principio general de las profesiones ejercidas por el jugador
+
+- Las profesiones y actividades productivas no son exclusivas de los NPC. El jugador puede ejercerlas personalmente cuando reúna los conocimientos, la práctica, las capacidades, las herramientas, las instalaciones y los materiales requeridos por cada operación.
+- Los NPC también pueden fabricar bienes y prestar servicios. Su competencia depende de sus conocimientos, especialización, herramientas e infraestructura.
+- La misma actividad fundamental puede ser realizada por un jugador o un NPC; las diferencias de resultado proceden de sus capacidades y condiciones reales, no de una prohibición arbitraria por ser jugador.
+- Los instructores, maestros, observación, experimentación, investigación y práctica son vías complementarias para adquirir conocimientos y técnicas profesionales.
+- El sistema se aplica a todas las profesiones, no solo a herrería: por ejemplo, armería, herrería, alquimia, herboristería, minería, curtido, carpintería y joyería. Esta lista es ilustrativa y no cierra el catálogo de profesiones.
+- Los requisitos, rangos, especializaciones, fórmulas de calidad y progresiones concretas de cada profesión permanecen pendientes de especificación individual.
+
+### 25.2 Fabricación y mejora de armas
+
+- Las armas pueden reforzarse progresivamente desde +0 hasta +10. La progresión toma como referencia conceptual el sistema de refuerzo de Dark Souls, sin asumir que sus costes, materiales o incrementos numéricos deban copiarse.
+- El refuerzo de un arma y la fabricación de un arma nueva son vías diferentes y complementarias.
+- El resultado inicial de un arma fabricada depende, entre otros factores, del diseño, los materiales utilizados, su calidad, la técnica y capacidad del artesano y las herramientas e instalaciones disponibles.
+- Los materiales de mayor calidad pueden permitir fabricar armas de mayor calidad, con mejores características o propiedades, siempre según reglas de contenido explícitas.
+- Un arma de alta calidad fabricada con materiales excepcionales no se considera automáticamente equivalente a un arma común reforzada a +10. Ambas rutas deben tener ventajas, límites, costes y oportunidades propias.
+- Las mejoras +1 a +10 requieren materiales de refuerzo y, cuando corresponda, servicios, herramientas, conocimientos y costes de trabajo. La receta y cantidad exacta de cada nivel quedan pendientes de balance.
+- La mejora no debe ser una sustitución obligatoria de la fabricación, ni la fabricación debe volver inútil el refuerzo. La comparación debe considerar rendimiento final, inversión, rareza, disponibilidad y propiedades.
+- La condición y durabilidad del arma siguen siendo sistemas separados del nivel de refuerzo: mejorar un arma no elimina automáticamente sus necesidades de mantenimiento o reparación.
+
+### 25.3 Cadena de recursos y economía de fabricación
+
+- Los recursos para fabricar, reforzar y reparar equipamiento pueden obtenerse mediante recolección, extracción, caza/despiece, exploración, procesamiento, comercio o compra a NPC.
+- La compra de materiales y su obtención directa son vías complementarias. El jugador puede especializarse en obtener recursos, comprarlos para producir o combinar ambas estrategias.
+- La calidad de los materiales obtenidos puede depender de la fuente, rareza, condiciones de extracción, conocimiento, herramienta y precisión de la técnica. En componentes de criaturas, el conocimiento anatómico y la calidad del despiece pueden influir en el resultado.
+- Los recursos pueden requerir procesamiento antes de ser utilizables: por ejemplo, fundición, refinamiento, tratamiento o preparación alquímica. Las etapas concretas dependen de cada receta.
+- Los precios de materiales deben considerar calidad, rareza, disponibilidad regional, oferta y demanda, dificultad de obtención, procesamiento y transporte.
+- Recolectar, procesar o fabricar no concede almas directamente. Las almas se obtienen al vender bienes, prestar servicios remunerados o realizar otras actividades ya reconocidas como fuentes válidas de almas.
+- La economía debe contabilizar por separado el coste de materiales, herramientas, instalaciones, trabajo/servicio, mantenimiento, transporte y precio de venta. No debe contar la misma producción como ingreso de almas antes de venderla ni crear beneficios garantizados mediante ciclos de compra, fabricación y reventa.
+- Los costes de cada nivel de refuerzo (+1 a +10), sus materiales y los coeficientes de calidad/precio quedan pendientes de simulación. No se fijan cifras definitivas en esta especificación.
+
+### 25.4 Capacidad profesional del jugador y servicios de NPC
+
+- El jugador puede fabricar, mejorar y reparar armas y armaduras si cumple los requisitos de la operación.
+- Puede realizar personalmente las actividades de otras profesiones que haya aprendido y para las que tenga capacidad suficiente.
+- Los NPC pueden ofrecer bienes, materiales, instrucción y servicios profesionales. Contratar a un NPC es una alternativa, no un requisito universal.
+- La calidad del resultado debe derivarse de factores explícitos: competencia profesional, receta/técnica, materiales, herramientas, instalaciones y condiciones de trabajo.
+- El jugador puede desarrollar una actividad profesional como vía económica y vender productos o servicios; la remuneración en almas ocurre en la transacción o prestación remunerada, no al recolectar o fabricar.
+
+### 25.5 Alquimia y cargas de curación
+
+- Las pociones curativas se fabrican o adquieren mediante el sistema económico y profesional de alquimia, con recetas, conocimientos e ingredientes adecuados.
+- El personaje tiene una capacidad máxima limitada de cargas curativas disponibles durante la exploración y el combate. La capacidad máxima y su progresión cuantitativa quedan pendientes de balance.
+- Cada uso consume una carga. Fabricar o almacenar más pociones no aumenta por sí solo la capacidad de cargas que el personaje puede llevar disponibles.
+- Las cargas solo se reponen al descansar en un punto de subida de nivel. No se reponen automáticamente al descansar en otros lugares ni mediante el simple paso del tiempo.
+- La reposición consume del inventario del jugador las pociones previamente fabricadas o adquiridas, hasta llenar la capacidad disponible. Si no dispone de suficientes pociones, solo repone las cargas que su reserva permita; no se crean pociones ni cargas gratuitas.
+- El descanso no fabrica pociones, no genera ingredientes y no reemplaza la profesión de alquimista. El jugador debe preparar o abastecer sus consumibles antes de necesitarlos.
+- La regla de reposición se inspira en la capacidad limitada de la Calabaza de Sekiro, mientras que la preparación y fabricación de consumibles toma como referencia conceptual la alquimia de The Witcher. No se copian automáticamente los números ni todas las reglas de esos juegos.
+- La cantidad máxima de cargas, la potencia curativa, recetas, ingredientes, calidades, costes y posibles mejoras de alquimia deben equilibrarse conjuntamente. Aumentar la capacidad no debe volver irrelevante la preparación, y aumentar la potencia no debe invalidar la presión de supervivencia.
