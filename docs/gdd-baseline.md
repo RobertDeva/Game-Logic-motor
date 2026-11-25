@@ -309,3 +309,11 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - Los ataques compartidos podrán reutilizar una mecánica o patrón base entre jefes compatibles, sin exigir que sus ejecuciones sean idénticas.
 - Cada jefe podrá contar además con ataques de transición propios que reflejen su identidad y estilo de combate.
 - La selección de qué jefes comparten ataques y cuáles son sus ataques exclusivos se definirá individualmente durante el diseño de cada jefe.
+
+### Confirmación del creador: adaptación defensiva de los jefes a las estrategias del jugador
+
+- Además de cambiar de comportamiento al perder cada barra de vitalidad, los jefes podrán adaptar sus respuestas defensivas durante el combate según las estrategias que observen utilizar al jugador.
+- La adaptación se basará en acciones y patrones de combate observados durante el enfrentamiento; no se permitirá que la IA consulte entradas futuras ni información interna sobre decisiones que el jugador todavía no haya ejecutado.
+- Las respuestas defensivas adaptativas podrán incluir cambios en la selección o frecuencia de bloqueos, desvíos perfectos, esquivas, contraataques y otras respuestas que estén dentro del repertorio configurado para ese jefe.
+- La adaptación no otorgará inmunidad permanente frente a una estrategia ni modificará arbitrariamente las estadísticas del jefe para contrarrestar al jugador.
+- Cada jefe tendrá una capacidad y un grado de adaptación definidos por su diseño individual. La intensidad, velocidad, memoria y condiciones para modificar sus respuestas quedan pendientes de especificación.
