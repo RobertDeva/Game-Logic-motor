@@ -606,3 +606,21 @@ El mundo de Mythical Exodus debe reaccionar a los acontecimientos de forma persi
 Este sistema complementa la alerta de facciones: la alerta representa la percepción y preparación de una organización, mientras que la reacción territorial representa cómo los acontecimientos y las respuestas de sus habitantes, autoridades y servicios transforman la vida cotidiana. Ambos sistemas podrán influirse mutuamente, pero no son equivalentes.
 
 El objetivo es construir un mundo reactivo y persistente, en el que las acciones del jugador y los acontecimientos entre facciones tengan consecuencias visibles y funcionales más allá del encuentro inmediato. El nivel de detalle de la simulación social, los estados regionales, los canales de información, las escalas temporales y las reglas de recuperación quedan pendientes de diseño.
+
+
+## Rutinas autónomas y continuidad de vida de los NPC
+
+Los NPC, especialmente los personajes importantes, podrán tener rutinas y actividades propias que continúen aunque el jugador no esté presente. El mundo no debe limitar la existencia y actividad de sus habitantes a los momentos en que el jugador los observa.
+
+- Los NPC podrán desarrollar actividades cotidianas según su ocupación, responsabilidades, personalidad, necesidades y circunstancias: trabajar, descansar, desplazarse, visitar lugares, comerciar, entrenar, cumplir obligaciones o relacionarse con otros personajes.
+- Las rutinas serán configurables y podrán variar según horarios, días, acontecimientos, condiciones del territorio, relaciones y otros factores relevantes.
+- Los NPC podrán interrumpir, modificar o abandonar sus actividades cuando surjan acontecimientos que conozcan y que afecten a su seguridad, responsabilidades o intereses.
+- Los cambios de seguridad y las alteraciones territoriales ya definidas podrán repercutir en sus rutinas: un comerciante puede cerrar, un guardia cambiar de puesto, un habitante buscar refugio o un trabajador dejar de acudir a una instalación inaccesible.
+- Los personajes importantes podrán tener rutinas, objetivos, relaciones y reacciones individuales más elaboradas que los NPC secundarios. El nivel de detalle dependerá de su relevancia y de las necesidades de diseño.
+- Los NPC solo reaccionarán a sucesos que hayan percibido o conocido mediante canales plausibles. No tendrán conocimiento omnisciente de acontecimientos ocurridos lejos de ellos.
+- Las actividades y desplazamientos deberán respetar las condiciones del mundo: lugares accesibles, rutas disponibles, horarios, recursos, peligros y capacidades del personaje.
+- La ausencia del jugador no debe detener conceptualmente la vida del mundo. Los NPC podrán avanzar en sus actividades y los acontecimientos podrán modificar sus circunstancias dentro de las reglas de simulación establecidas.
+- La simulación deberá permitir distintos niveles de detalle para gestionar el coste computacional sin cambiar arbitrariamente los resultados relevantes. La estrategia técnica para actualizar NPC fuera del área activa, resolver actividades no observadas y mantener continuidad entre sesiones queda pendiente de diseño.
+- No se presupone que cada NPC necesite una simulación completa y continua en todo momento. El núcleo lógico deberá representar estados, rutinas, decisiones y consecuencias de forma determinista y comprobable; la presentación y animación de sus actividades corresponderán a capas externas.
+
+El objetivo es que los NPC sean habitantes de un mundo que continúa evolucionando, y no simples elementos que aparecen para atender al jugador. Sus vidas y decisiones podrán generar acontecimientos y consecuencias que el jugador descubrirá al regresar, incluso si no estuvo presente cuando ocurrieron.
