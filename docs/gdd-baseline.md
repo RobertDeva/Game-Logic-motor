@@ -1306,3 +1306,21 @@ Si una criatura compañera permanece separada y no logra reunirse con el jugador
 - Los umbrales temporales, criterios para elegir refugio o territorio provisional, duración, riesgos y condiciones concretas de retorno quedan pendientes de diseño.
 
 El objetivo es que una separación prolongada no deje a la criatura suspendida ni la obligue a desaparecer arbitrariamente: deberá intentar sobrevivir de acuerdo con su naturaleza y las circunstancias del mundo.
+
+
+### Evolución de las criaturas compañeras durante separaciones prolongadas
+
+Una compañera podrá experimentar cambios significativos durante una separación prolongada del jugador, como consecuencia de los acontecimientos que realmente viva y de las condiciones a las que esté expuesta.
+
+- Podrá desarrollar o mejorar habilidades, adquirir experiencia y modificar estrategias de supervivencia dentro de sus capacidades y del sistema de progresión correspondiente.
+- Podrá sufrir heridas y conservar cicatrices u otras consecuencias persistentes cuando las reglas del mundo lo permitan.
+- Su temperamento, confianza, cautela, miedos, preferencias y otros aspectos de su comportamiento podrán cambiar gradualmente por sus experiencias.
+- Podrá establecer nuevos vínculos o modificar relaciones existentes con criaturas y NPC mediante interacciones plausibles.
+- También podrá sufrir pérdidas, deterioro o retrocesos; la evolución no será necesariamente positiva ni implicará mejoras garantizadas.
+- Los cambios dependerán de la especie, personalidad, capacidades, estado, duración de la separación, acontecimientos, recursos y entorno.
+- La criatura solo podrá adquirir habilidades, conocimientos y recuerdos mediante experiencias que haya vivido, observado o aprendido de forma plausible.
+- Los cambios conservarán continuidad con su identidad e historial individual y podrán reflejarse en su comportamiento cuando el jugador vuelva a encontrarla.
+- La separación no será una concesión automática de progresión: los resultados deberán derivarse de la simulación y sus riesgos, sin recompensas o transformaciones arbitrarias.
+- Los criterios de progresión, persistencia de lesiones y cicatrices, evolución de personalidad, adquisición de vínculos y comunicación de cambios quedan pendientes de diseño.
+
+El objetivo es que las compañeras tengan una trayectoria propia durante la ausencia del jugador y que un reencuentro tardío pueda revelar una evolución auténtica, con consecuencias tanto positivas como negativas.
