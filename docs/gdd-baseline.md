@@ -1813,7 +1813,9 @@ Se ha establecido una primera especificación matemática versionada para las oc
 
 - Las almas funcionan como moneda general y como recurso utilizado para subir los atributos del personaje.
 - El jugador puede acumular almas y decidir si las utiliza para progresar o para adquirir bienes, equipamiento, servicios y otras oportunidades económicas.
-- El coste de subir atributos aumenta progresivamente y se definirá mediante curvas o tablas configurables, todavía pendientes de calibración.
+- El coste de subir un punto de atributo depende exclusivamente del nivel general actual del personaje, nunca del atributo elegido ni de su valor individual. Todos los atributos cuestan lo mismo desde un mismo nivel general.
+- Cada punto comprado aumenta el nivel general en uno y encarece la siguiente mejora según una curva no lineal de referencia inspirada en Dark Souls III, con costes que alcanzan millones de almas en niveles elevados.
+- La curva matemática inicial, su fórmula, tabla de valores e invariantes están documentados en la sección 24.2 del [modelo matemático del combate](combat-mathematical-model.md#242-almas-recurso-económico-y-coste-de-progresión). Sus parámetros se validarán junto con los ingresos y gastos de la economía completa.
 - Las almas se obtienen mediante combate, exploración, logros, prestación de servicios y comercio.
 - La recolección de materias primas y la creación, transformación o fabricación de productos no generan almas directamente.
 - La recolección y la fabricación producen recursos, materiales y bienes que pueden venderse posteriormente o utilizarse para prestar servicios remunerados.
