@@ -405,3 +405,18 @@ El escenario puede sufrir cambios que persistan durante el resto del enfrentamie
 - La persistencia entre fases, la restauración al reiniciar el encuentro y la persistencia entre visitas o sesiones quedan pendientes de definición.
 
 El escenario evoluciona a medida que avanza el enfrentamiento y sus cambios acumulados forman parte del contexto táctico de las fases posteriores.
+
+
+## Ataques de jefes que alteran directamente la arena
+
+Los jefes pueden ejecutar ataques y habilidades que modifiquen directamente las condiciones del escenario, creando peligros, restricciones u oportunidades tácticas.
+
+- Según su identidad y repertorio, pueden incendiar superficies o zonas, congelar el suelo, abrir grietas, provocar derrumbes o modificar temporalmente partes del terreno.
+- Estas alteraciones pueden ser temporales o persistentes durante el combate, según la naturaleza de la habilidad y las reglas del encuentro.
+- Los efectos pueden cambiar la movilidad, las rutas disponibles, el posicionamiento y las condiciones para atacar o defenderse.
+- Las alteraciones deben tener señales observables y reglas consistentes para que el jugador pueda comprender el peligro y responder.
+- El jugador puede aprovechar las consecuencias de estas modificaciones cuando las reglas del escenario lo permitan; no se presupone que todos los efectos sean manipulables.
+- Cada jefe solo puede producir alteraciones compatibles con sus capacidades y temática. No se trata de una habilidad universal compartida por todos.
+- Duración, extensión, acumulación, interacción entre efectos y consecuencias específicas quedan pendientes de diseño y balance.
+
+Estas habilidades forman parte del repertorio de combate del jefe y hacen que la arena pueda cambiar activamente durante el enfrentamiento, en lugar de limitarse a recibir daños colaterales.
