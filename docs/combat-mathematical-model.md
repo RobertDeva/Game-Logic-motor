@@ -932,3 +932,138 @@ El resultado no fuerza una superioridad universal de una construcción: la espec
 
 La siguiente fase técnica consiste en convertir estas fórmulas en funciones puras del dominio C#, acompañadas por pruebas unitarias que reproduzcan el barrido 1–99. Después se conectarán a escenarios de combate y se calibrarán mediante resultados de encuentros completos.
 
+## 24. Progresión del personaje, economía de almas y escalado dinámico de enemigos
+
+Esta sección integra las reglas funcionales de progresión y economía con el modelo de estadísticas y dificultad. No sustituye las reglas de combate anteriores: establece cómo la progresión del mundo alimenta sus parámetros.
+
+### 24.1 Nivel del personaje y atributos
+
+El personaje posee ocho atributos: Vitalidad, Fuerza, Agilidad, Resistencia, Voluntad, Ruptura, Destreza y Armonía. Cada atributo tiene un valor inicial propio y un máximo de 99.
+
+El nivel no está limitado a 99. Se define como la suma de los incrementos permanentes obtenidos sobre los valores iniciales:
+
+\[
+Nivel_{personaje}=\sum_{i=1}^{8}(A_i-A_{i,inicial})
+\]
+
+El nivel máximo teórico es:
+
+\[
+Nivel_{máximo}=\sum_{i=1}^{8}(99-A_{i,inicial})
+\]
+
+Esta definición presupone que cada incremento de un atributo cuesta un punto de nivel y que no existen puntos negativos respecto al estado inicial. Los valores iniciales concretos de los ocho atributos determinan el máximo numérico definitivo. El nivel representa puntos invertidos, no la suma bruta de los valores de atributo.
+
+Dos personajes con el mismo nivel pueden tener distribuciones distintas; por ello, el nivel total nunca será una medida suficiente del poder de combate. El análisis de poder deberá considerar también los atributos individuales, el equipo, las Artes, los recursos, las resistencias y la configuración de combate.
+
+### 24.2 Almas: recurso económico y coste de progresión
+
+Las almas constituyen la moneda general y, simultáneamente, el recurso que se entrega para incrementar atributos. El jugador decide cuándo reservarlas para subir atributos y cuándo gastarlas en bienes, equipamiento, servicios u otras oportunidades económicas.
+
+El coste de la siguiente mejora se calcula por atributo y por valor actual:
+
+\[
+Coste_{siguiente}(i)=C_i(A_i)
+\]
+
+La función de coste deberá crecer de forma progresiva y configurable. No se fija aquí una tabla ni una fórmula numérica definitiva: debe calibrarse junto con las fuentes de ingresos, los precios y la duración esperada de la progresión. El coste puede variar por atributo si las pruebas justifican diferencias, pero no debe introducir diferencias ocultas entre personajes de la misma configuración.
+
+Las almas acumuladas no conceden niveles automáticamente. Solo se produce un incremento cuando el jugador decide invertirlas y la operación se completa.
+
+### 24.3 Fuentes válidas de obtención de almas
+
+Las almas se obtienen mediante:
+- combate: recompensas por derrotar enemigos y jefes, y otras recompensas de combate definidas por el contenido;
+- exploración: tesoros, hallazgos, descubrimientos y recompensas de exploración;
+- logros: recompensas asociadas a objetivos y logros;
+- prestación de servicios: remuneración por trabajos o servicios profesionales realizados;
+- comercio: ingresos derivados de operaciones comerciales y ventas.
+
+La recolección de materias primas y la creación, transformación o fabricación de productos **no generan almas directamente**. Estas actividades producen recursos, materiales y bienes. Esos bienes pueden convertirse en ingresos posteriormente mediante comercio o pueden utilizarse para prestar servicios remunerados cuando la actividad lo permita.
+
+El sistema debe impedir que una misma operación genere almas simultáneamente como recompensa de producción y como pago comercial. Las almas se reconocen en el punto económico válido —por ejemplo, al completar una venta o cobrar un servicio— y no al recolectar o fabricar.
+
+El balance económico deberá contemplar costes de materiales, herramientas, transporte, mantenimiento, tarifas, oferta, demanda, calidad y otros gastos pertinentes. Las operaciones de compra y venta no deben crear riqueza neta artificial mediante ciclos repetibles sin riesgo, coste o límite económico.
+
+### 24.4 Relación entre riqueza y progresión
+
+Como las almas sirven para comerciar y subir atributos, la riqueza sí puede acelerar la progresión de combate. Un personaje que obtiene ingresos elevados mediante servicios o comercio podrá financiar mejoras de atributos con mayor rapidez que otro que no lo haga.
+
+Esto es una consecuencia deliberada de la economía compartida, no un comportamiento que deba neutralizarse mediante penalizaciones ocultas. Las profesiones de recolección y fabricación contribuyen indirectamente a esa progresión al proporcionar los recursos y productos que hacen posible el comercio y los servicios, pero no entregan almas por sí mismas.
+
+La riqueza no aumenta directamente las estadísticas ni el nivel: proporciona capacidad de pago. La subida solo ocurre al invertir almas en una mejora de atributo.
+
+### 24.5 Rangos de progresión por zona
+
+Cada zona define un perfil propio de dificultad y progresión, que incluye como mínimo:
+- rango de nivel de personaje previsto;
+- nivel de referencia de sus enemigos;
+- ritmo de escalado dinámico;
+- límites inferior y superior de escalado;
+- modificadores o perfiles propios de sus categorías de enemigos;
+- diferencias de dificultad respecto a otras zonas.
+
+Los rangos de zonas pueden solaparse para permitir rutas alternativas y exploración no lineal. No se establece un único rango universal ni se asignan cifras definitivas en esta sección: se derivarán del mapa, los encuentros y las pruebas de balance.
+
+Las zonas no escalan todas de la misma manera. Una región inicial puede acompañar parcialmente el crecimiento del jugador, pero tendrá un ritmo menor y un techo inferior al de una región avanzada. Una región avanzada tendrá referencias y límites superiores. Esta diferenciación debe permanecer perceptible incluso cuando el jugador regrese a regiones anteriores.
+
+### 24.6 Escalado dinámico de niveles de enemigos
+
+Los enemigos progresan con el jugador, incluso cuando el jugador ha financiado sus atributos mediante actividades económicas en lugar de combate. El origen de las almas no afecta al cálculo: el sistema evalúa el nivel y las capacidades actuales del personaje, no el historial de cómo consiguió su riqueza.
+
+El nivel dinámico de un enemigo se deriva de:
+- nivel actual del personaje;
+- perfil de escalado de la zona;
+- nivel de referencia y límites del enemigo;
+- categoría del enemigo (común, fuerte, élite, jefe u otra categoría configurada);
+- cuando sea necesario, contexto de encuentro y progresión del mundo.
+
+Modelo conceptual:
+
+\[
+Nivel_{enemigo}=clamp\left(
+Nivel_{referencia}+F_{zona}(Nivel_{personaje}-Nivel_{referenciaJugador}),
+Nivel_{mínimo},Nivel_{máximo}
+\right)
+\]
+
+La función de zona determina cuánto y cómo acompaña el enemigo al jugador. Su pendiente, forma y límites son datos de configuración; no se presupone una proporción idéntica para todas las regiones. El nivel del enemigo es una referencia de progresión, no una instrucción para multiplicar todas sus estadísticas por un único factor.
+
+### 24.7 Escalado de capacidades y preservación de identidad
+
+Las estadísticas efectivas de un enemigo se derivan de su arquetipo, atributos propios, nivel, equipo/capacidades, fase y perfil de zona. El nivel dinámico no debe borrar las diferencias de diseño entre enemigos.
+
+- Los enemigos comunes progresan dentro de límites más contenidos.
+- Los enemigos fuertes y élites tienen perfiles y límites propios.
+- Los jefes conservan sus atributos, mecánicas, barras de Vitalidad, fases y patrones distintivos; su ajuste dinámico no puede invalidar esas reglas.
+- Enemigos del mismo nivel pueden tener capacidades muy diferentes por sus arquetipos y configuraciones.
+- Vitalidad, daño, Postura, defensas, resistencias y comportamiento no tienen por qué escalar todos con el mismo factor.
+
+El cálculo de dificultad debe considerar la distribución de los ocho atributos del jugador, su equipamiento, Artes y capacidades relevantes. Dos personajes del mismo nivel pueden presentar perfiles de amenaza distintos. El sistema puede usar perfiles de combate para seleccionar parámetros de encuentro, pero no debe convertir el escalado en una respuesta perfecta que anule cualquier especialización o debilidad del enemigo.
+
+### 24.8 Reglas para que el escalado no elimine la sensación de progreso
+
+1. Los enemigos acompañan el crecimiento del jugador, pero no igualan automáticamente su poder.
+2. Cada zona tiene una curva y límites independientes.
+3. Los límites de zonas anteriores son inferiores a los de zonas posteriores, salvo excepciones de contenido expresamente diseñadas.
+4. Al regresar a una zona anterior, el jugador debe conservar una ventaja perceptible cuando su progresión supere la referencia de esa zona.
+5. Entrar prematuramente en una zona avanzada debe seguir siendo peligroso.
+6. El nivel dinámico no modifica retroactivamente recompensas ya obtenidas ni concede almas por el mero hecho de escalar.
+7. La riqueza no es una variable directa del escalado enemigo; solo influye indirectamente cuando se convierte en atributos mediante una mejora comprada.
+8. Los parámetros se validarán mediante pruebas de personajes con igual nivel y distribuciones distintas, personajes enriquecidos por comercio, progresión centrada en combate y regresos a zonas anteriores.
+
+### 24.9 Datos y pruebas requeridos
+
+Cada zona y arquetipo enemigo deberá exponer datos configurables, no constantes dispersas en el código. Como mínimo se probarán:
+- monotonicidad del escalado dentro del rango configurado;
+- respeto de límites mínimos y máximos;
+- diferencias de crecimiento entre zonas;
+- conservación de ventaja al regresar a zonas anteriores;
+- dificultad de zonas avanzadas para personajes por debajo de su rango previsto;
+- personajes de igual nivel con distribuciones de atributos diferentes;
+- personajes que progresan mediante comercio/servicios frente a personajes que progresan mediante combate;
+- ausencia de generación directa de almas por recolección o fabricación;
+- ausencia de creación neta artificial de almas mediante ciclos comerciales;
+- preservación de mecánicas particulares de élites y jefes.
+
+Los rangos, pendientes, límites, costes de mejora y precios quedan pendientes de calibración con datos del mundo y simulaciones. Las reglas de obtención de almas, cálculo de nivel, separación entre riqueza y atributos y escalado diferenciado por zona constituyen las reglas funcionales que deben respetar las futuras implementaciones.
