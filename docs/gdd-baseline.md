@@ -1640,3 +1640,12 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - El ritmo y la forma del deterioro podrán variar entre armas, armaduras, accesorios y otros equipos; no se asumirá que todos los objetos se desgastan de manera idéntica.
 - El equipamiento deteriorado podrá requerir reparación para recuperar su condición funcional.
 - Las reglas concretas de durabilidad, umbrales de deterioro, efectos sobre estadísticas y rendimiento, materiales y costes de reparación, herramientas necesarias, reparadores disponibles y posibles límites de reparación quedan pendientes de definición.
+
+
+### Aclaración: efectos progresivos del desgaste y reparación especializada
+
+- El deterioro del equipamiento afectará progresivamente a su rendimiento a medida que disminuya su durabilidad; no se limitará a una penalización que aparezca únicamente al cruzar un umbral único.
+- La forma concreta de esa pérdida de rendimiento dependerá del tipo de equipo y de sus propiedades. Por ejemplo, el desgaste de un arma podrá afectar su desempeño ofensivo, mientras que el de una pieza defensiva podrá reducir su protección.
+- La reparación se integrará con las disciplinas de herrería y armería ya contempladas en el sistema de profesiones, en lugar de constituir un sistema profesional independiente.
+- La capacidad de reparar, la calidad del resultado y los recursos o herramientas necesarios dependerán de los conocimientos y capacidades pertinentes, así como del tipo de pieza y de su estado.
+- Los umbrales, fórmulas, efectos específicos por categoría de equipo, costes, materiales y límites de reparación quedan pendientes de definición.
