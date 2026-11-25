@@ -1067,3 +1067,18 @@ El jugador podrá depositar objetos en cofres vinculados a las zonas de descanso
 - El sistema deberá evitar duplicaciones o pérdidas de objetos durante transferencias y mantener consistencia entre inventario del jugador y almacenamiento.
 
 El objetivo es permitir que el jugador prepare su equipamiento y gestione sus recursos entre expediciones sin cargar permanentemente con todos los objetos que ha obtenido.
+
+
+### Independencia del inventario de las criaturas compañeras
+
+El inventario de cada criatura compañera será independiente tanto del inventario del jugador como del almacenamiento compartido de las zonas de descanso.
+
+- Depositar o retirar objetos del almacenamiento compartido no modificará automáticamente el inventario de ninguna criatura compañera.
+- Los objetos que transporte una criatura permanecerán bajo su inventario mientras no ocurra una transferencia válida.
+- El intercambio entre el jugador y una criatura requerirá una interacción permitida por las capacidades, el estado y las circunstancias de ambos.
+- La transferencia deberá actualizar de forma consistente el inventario de origen y el de destino, respetando sus límites de capacidad, compatibilidad y restricciones.
+- Guardar objetos en el almacenamiento compartido no permitirá retirar indirectamente objetos del inventario de una criatura; primero deberá realizarse una transferencia válida al jugador u otro medio expresamente permitido.
+- La separación física entre jugador y criatura no fusionará sus inventarios ni hará que los objetos aparezcan automáticamente en el almacenamiento.
+- La identidad, cantidad, estado y propiedades de cada objeto deberán conservarse durante las transferencias, evitando duplicaciones o pérdidas.
+
+El objetivo es mantener una gestión de recursos coherente: el jugador, cada criatura compañera y el almacenamiento de las zonas de descanso constituyen contenedores distintos, conectados únicamente mediante operaciones explícitas y válidas.
