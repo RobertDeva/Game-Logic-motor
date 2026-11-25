@@ -217,3 +217,15 @@ Quedan pendientes los valores de experiencia concedidos por enemigo, el umbral i
 - Los enemigos resistentes a Muertebendita conservan varias barras de vitalidad y una única barra de postura. Cada Muertebendita consume una barra completa de vitalidad y la postura se reinicia después de cada ejecución.
 
 Los valores numéricos de recuperación, la relación matemática entre vitalidad y recuperación, y las ventanas de oportunidad de la ejecución siguen pendientes de especificación.
+
+### Confirmaciones del creador: ejecuciones y ataques enemigos
+
+- Una Muertebendita elimina inmediatamente a un enemigo normal, independientemente de la vitalidad que le quedara.
+- Los enemigos resistentes a Muertebendita pueden tener distinta cantidad de barras de vitalidad según el enemigo, con un máximo de tres barras.
+- Cada Muertebendita contra un enemigo resistente consume exactamente una barra completa de vitalidad; después de la ejecución, su única barra de postura se restablece. Al consumir la última barra, el enemigo es derrotado.
+- El combate tomará como referencia la filosofía de Sekiro, adaptada a las mecánicas propias de Mythical Exodus. No se asumirá una copia literal de los sistemas del juego de referencia.
+- Algunos ataques enemigos exigirán respuestas concretas en lugar de poder neutralizarse mediante bloqueo genérico. Las respuestas podrán incluir bloqueo, desvío, esquiva, salto, contraataque u otra acción definida para ese ataque.
+- Cada ataque enemigo definirá sus respuestas válidas y las consecuencias de fallar o responder incorrectamente. Estas consecuencias podrán variar por ataque e incluir daño, acumulación de postura, estados alterados, derribo, aturdimiento, vulnerabilidad o ejecución especial, según corresponda.
+- El daño, el impacto sobre la postura y los efectos de cada ataque/respuesta serán configurables por ataque y enemigo; no se fijan valores numéricos ni consecuencias universales en esta etapa.
+
+Esta especificación describe el comportamiento lógico. La detección de entradas, animaciones, ventanas de reacción y presentación audiovisual se integrarán posteriormente mediante adaptadores, sin acoplar el dominio a un motor gráfico.
