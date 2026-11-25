@@ -272,3 +272,10 @@ Esta especificación describe el comportamiento lógico. La detección de entrad
 - El cambio de comportamiento no implica necesariamente aumentar daño, velocidad o estadísticas; la transición debe expresarse principalmente mediante comportamiento y patrones nuevos o modificados.
 - La configuración concreta de cada fase será individual por jefe. No se establece que todos deban cambiar de la misma manera ni incorporar el mismo número o tipo de ataques.
 - Las reglas de transición, los patrones específicos y cualquier cambio numérico asociado quedan pendientes de diseño.
+
+### Confirmación del creador: postura de los jefes al cambiar de fase
+
+- Cuando un jefe pierde una barra completa de vitalidad y comienza su siguiente fase, se reduce en un 60 % la postura que tenga acumulada en ese instante.
+- Por tanto, el jefe conserva el 40 % de la postura acumulada antes de la transición. No se restaura la postura hasta el 60 % de su capacidad máxima.
+- Ejemplo ilustrativo: si el jefe tenía acumulado un 80 % de postura, tras la transición conservará un 32 % de postura acumulada (el 40 % de 80 %).
+- Esta regla se aplica a todos los jefes que cambian de fase al perder una barra de vitalidad.
