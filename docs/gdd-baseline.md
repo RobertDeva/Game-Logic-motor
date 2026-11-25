@@ -1472,3 +1472,14 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - El sistema deberá distinguir entre recetas ya conocidas, variantes de recetas existentes y descubrimientos realmente nuevos.
 - Una receta inédita deberá validarse antes de registrarse como reproducible y utilizarse en fabricación real.
 - Las pistas, criterios de novedad, validación, límites de combinaciones y protección frente a resultados incoherentes quedan pendientes de definición.
+
+
+## Descubrimiento progresivo y perfeccionamiento de recetas
+
+- Las recetas originales podrán atravesar distintos grados de descubrimiento y perfeccionamiento.
+- Una primera versión validada de una receta podrá ser funcional sin representar todavía su forma óptima.
+- El jugador podrá volver a experimentar sobre recetas registradas para descubrir mejoras en materiales, proporciones, técnicas, herramientas, secuencias o parámetros de fabricación.
+- Las mejoras descubiertas podrán perfeccionar el resultado del objeto, optimizar el proceso o modificar propiedades, siempre dentro de límites coherentes del sistema.
+- Las variantes y revisiones deberán conservar su relación con la receta de origen, permitiendo reconocer su evolución y recuperar versiones anteriores cuando corresponda.
+- La experimentación virtual permitirá investigar mejoras sin consumir materiales; la fabricación real seguirá requiriendo los recursos y condiciones correspondientes.
+- Los grados de descubrimiento, criterios de perfeccionamiento, control de versiones, límites de mejora y efectos concretos quedan pendientes de definición.
