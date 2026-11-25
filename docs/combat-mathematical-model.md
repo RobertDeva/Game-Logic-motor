@@ -1119,10 +1119,10 @@ Valores ilustrativos antes del bono por exceso de daño y de modificadores espec
 
 | Nivel económico \(r\) | Enemigo común ×1 | Fuerte ×2,5 | Élite ×6 | Jefe ×15 |
 |---:|---:|---:|---:|---:|
-| 2 | 20 | 51 | 121 | 303 |
+| 2 | 20 | 50 | 121 | 303 |
 | 13 | 31 | 78 | 187 | 468 |
 | 50 | 436 | 1.090 | 2.616 | 6.541 |
-| 100 | 1.808 | 5.424 | 10.848 | 27.119 |
+| 100 | 1.808 | 4.520 | 10.848 | 27.119 |
 | 200 | 9.079 | 22.697 | 54.473 | 136.181 |
 
 Los valores se redondean al alma más cercana. La tabla es una base para simulación, no una promesa de recompensa universal por nivel. El nivel económico del enemigo y su categoría deben corresponder al contenido real de la zona y a su peligrosidad.
