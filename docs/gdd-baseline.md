@@ -880,3 +880,17 @@ La domesticación y el compañerismo estarán restringidos a un conjunto reducid
 - La compatibilidad de una especie no garantiza que su domesticación sea sencilla ni que pueda desempeñar cualquier función. Las condiciones del vínculo y las funciones posibles seguirán dependiendo de sus capacidades y características.
 
 La intención es que las criaturas compañeras sean excepcionales dentro de la fauna del mundo: el jugador no podrá domesticar indiscriminadamente a cualquier especie ni convertir la domesticación en un sistema universal.
+
+
+### Muerte permanente de criaturas compañeras
+
+Las criaturas compañeras podrán morir definitivamente durante la aventura.
+
+- La muerte de una criatura compañera será permanente: no podrá resucitarse ni recuperarse mediante sistemas ordinarios o habilidades.
+- La pérdida será una consecuencia real de los peligros de la aventura y de las decisiones tomadas durante el combate, la exploración y otras situaciones.
+- El sistema deberá representar correctamente la muerte y retirar a la criatura de los vínculos y funciones activos del jugador, evitando que siga participando en la simulación como si estuviera viva.
+- La muerte de una compañera tendrá consecuencias coherentes para el vínculo y para los personajes o sistemas que hayan conocido el acontecimiento. El alcance concreto de esas consecuencias queda pendiente de diseño.
+- La muerte permanente no implica que todas las criaturas compañeras deban ser vulnerables en cualquier circunstancia ni elimina la necesidad de reglas justas, señales legibles y oportunidades razonables de protegerlas.
+- Las reglas de lesión, incapacitación, retirada, recuperación de heridas y condiciones que pueden conducir a la muerte quedan pendientes de definición. No se debe confundir una criatura incapacitada o herida con una criatura muerta.
+
+El objetivo es que cada vínculo tenga un riesgo real y que la protección de una compañera forme parte de las decisiones significativas del jugador.
