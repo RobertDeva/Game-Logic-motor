@@ -572,3 +572,18 @@ Los enemigos supervivientes podrán transmitir a otros miembros de su facción i
 - Las condiciones de comunicación, alcance, fiabilidad, caducidad y consecuencias concretas quedan pendientes de diseño.
 
 La memoria individual de los supervivientes y la transmisión de información entre miembros de una facción son sistemas relacionados pero distintos: un enemigo puede recordar una experiencia sin haber podido comunicarla, y una facción solo puede prepararse con la información que realmente haya recibido. El objetivo es que las acciones del jugador puedan tener consecuencias en encuentros posteriores y mantengan una tensión constante, sin recurrir a conocimiento injustificado por parte de los enemigos.
+
+
+## Nivel de alerta de las facciones ante las acciones del jugador
+
+Las facciones podrán mantener un nivel de alerta que evolucione según las acciones del jugador y la información que hayan recibido sobre él. Este nivel puede influir en la seguridad, preparación y comportamiento de sus miembros y territorios.
+
+- Acciones como eliminar patrullas, atacar puestos estratégicos, sabotear instalaciones o convertirse en una amenaza recurrente pueden elevar la alerta de una facción.
+- La alerta puede provocar medidas como reforzar fortalezas, aumentar o modificar patrullas, mejorar la vigilancia, proteger objetivos importantes y preparar emboscadas.
+- Las respuestas dependerán de los recursos, organización, inteligencia, territorio y personalidad de cada facción; no todas reaccionarán de la misma manera.
+- La alerta debe basarse en acontecimientos conocidos por la facción, mediante observación directa, supervivientes, informes u otros medios de comunicación plausibles.
+- La facción no puede reaccionar a acciones que desconoce ni obtener información omnisciente sobre la ubicación, estado o planes del jugador.
+- La alerta puede variar con el tiempo y según nuevos acontecimientos. Sus condiciones de aumento, reducción, persistencia, alcance territorial y efectos concretos quedan pendientes de diseño.
+- El nivel de alerta de una facción debe distinguirse de la memoria individual de los enemigos y de los informes compartidos: estos sistemas pueden alimentarlo, pero no son equivalentes.
+
+El objetivo es que las acciones del jugador tengan consecuencias estratégicas a escala de facción y que el mundo responda de manera coherente, sin convertir cada territorio en un estado de hostilidad universal e invariable.
