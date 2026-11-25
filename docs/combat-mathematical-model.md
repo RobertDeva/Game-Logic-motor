@@ -1463,3 +1463,93 @@ Los rangos, pendientes, límites, costes de mejora y precios quedan pendientes d
 - El descanso no fabrica pociones, no genera ingredientes y no reemplaza la profesión de alquimista. El jugador debe preparar o abastecer sus consumibles antes de necesitarlos.
 - La regla de reposición se inspira en la capacidad limitada de la Calabaza de Sekiro, mientras que la preparación y fabricación de consumibles toma como referencia conceptual la alquimia de The Witcher. No se copian automáticamente los números ni todas las reglas de esos juegos.
 - La cantidad máxima de cargas, la potencia curativa, recetas, ingredientes, calidades, costes y posibles mejoras de alquimia deben equilibrarse conjuntamente. Aumentar la capacidad no debe volver irrelevante la preparación, y aumentar la potencia no debe invalidar la presión de supervivencia.
+
+
+## 26. Simulación económica integrada: armas, profesiones y curación
+
+### 26.1 Alcance y supuestos
+
+Se comparan la progresión por almas, recompensas de combate, compra de un arma común, refuerzo +0 a +10, materiales, servicio de herrería y reposición de cinco cargas curativas. No existen todavía tasas medidas de ingresos por hora de profesiones, comercio, exploración y logros, ni recetas definitivas de refuerzo. Por tanto, los coeficientes siguientes son hipótesis de estrés para evaluar proporciones, no costes aprobados.
+
+Para probar el refuerzo se propone una curva creciente de coste de materiales por nivel:
+
+| Refuerzo | Fracción de B(r) |
+|---:|---:|
+| +1 | 0,025 |
+| +2 | 0,035 |
+| +3 | 0,045 |
+| +4 | 0,055 |
+| +5 | 0,065 |
+| +6 | 0,075 |
+| +7 | 0,085 |
+| +8 | 0,095 |
+| +9 | 0,105 |
+| +10 | 0,115 |
+| **Total** | **0,700** |
+
+Se propone una tarifa NPC de 0,02 B(r) por refuerzo, 0,20 B(r) por los diez niveles. El coste completo del refuerzo con materiales comprados y servicio NPC es, por tanto, 0,90 B(r). Comprar el arma común +0 cuesta 0,75 B(r), por lo que comprarla y reforzarla hasta +10 cuesta 1,65 B(r), antes de reparación, transporte y modificadores.
+
+La suma de materiales es 0,700 B(r); esta cifra es la suma de los diez tramos y sustituye cualquier estimación preliminar distinta.
+
+### 26.2 Trabajo del jugador frente al NPC
+
+- **NPC:** el jugador compra los materiales y paga la tarifa de trabajo.
+- **Jugador artesano:** necesita los mismos materiales, conocimientos, herramientas e instalaciones, pero no paga la tarifa de servicio a un NPC.
+- La fabricación propia no es gratuita: implica tiempo, desgaste de herramientas, mantenimiento y coste de oportunidad, aún no cuantificados.
+- Recolectar materiales puede reducir la salida directa de almas, pero no genera almas por sí mismo. Su coste se expresa en tiempo, herramientas, riesgo y oportunidad.
+- Los costes de herramientas e instalaciones deberán añadirse cuando se diseñen las recetas y la progresión profesional.
+
+### 26.3 Curación
+
+Se usa una capacidad de cinco cargas únicamente como ejemplo, no como cifra aprobada. Cada carga consume una poción común de 0,015 B(r); reponer cinco cuesta 0,075 B(r). Las pociones deben existir previamente en el inventario y solo se consumen para reponer cargas al descansar en un punto de subida de nivel. No hay generación automática ni gratuita.
+
+Cinco pociones equivalen al 7,5 % de B(r), o a 2,5 recompensas base de enemigos comunes del mismo nivel económico. Es un gasto perceptible, pero no dominante en el escenario de referencia. La alquimia propia puede sustituir parte del gasto monetario por ingredientes, procesamiento, herramientas, conocimientos y tiempo.
+
+### 26.4 Escenario mixto de ingresos
+
+Se usa una composición comparativa de 10 enemigos comunes, 3 fuertes y 1 élite:
+- comunes: 10 × 0,03 B(r) = 0,30 B(r);
+- fuertes: 3 × 0,075 B(r) = 0,225 B(r);
+- élite: 1 × 0,18 B(r) = 0,18 B(r).
+
+Total bruto: **0,705 B(r)**, antes de bonos por exceso de daño, botín vendible y gastos.
+
+En esa unidad comparativa:
+- cinco pociones consumen aproximadamente el 10,64 % del ingreso bruto;
+- reforzar +0 a +10 con materiales comprados y servicio NPC cuesta 1,28 conjuntos mixtos;
+- comprar un arma común +0 y llevarla a +10 cuesta 2,34 conjuntos mixtos.
+
+Esto indica que el refuerzo completo exige inversión y varias actividades, pero no es matemáticamente inaccesible dentro de este escenario. No constituye una estimación de tiempo real ni de ritmo de progresión.
+
+### 26.5 Tabla de sensibilidad
+
+| r | B(r) | Arma común +0 (0,75 B) | Materiales +10 (0,70 B) | Servicio NPC +10 (0,20 B) | Refuerzo total (0,90 B) | Arma +0 y +10 (1,65 B) | Cinco pociones (0,075 B) | Ingreso mixto (0,705 B) |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 13 | 1.039 | 779 | 727 | 208 | 935 | 1.714 | 78 | 732 |
+| 50 | 14.535 | 10.901 | 10.175 | 2.907 | 13.082 | 23.983 | 1.090 | 10.247 |
+| 100 | 60.265 | 45.199 | 42.186 | 12.053 | 54.239 | 99.438 | 4.520 | 42.487 |
+| 200 | 302.625 | 226.969 | 211.838 | 60.525 | 272.363 | 499.331 | 22.697 | 213.351 |
+
+Los importes se redondean al alma más cercana; la implementación deberá decidir si redondea por concepto o al final de la factura.
+
+### 26.6 Pruebas de sostenibilidad y explotación
+
+1. Comprar materiales, procesarlos, fabricar y revender no puede garantizar beneficio neto. El precio de venta debe contemplar mercado, tarifas, desgaste, transporte, riesgo y estado.
+2. Recolectar puede ahorrar almas, pero exige tiempo, herramientas y riesgo; comprar ahorra tiempo a cambio de dinero.
+3. El jugador artesano no paga tarifa NPC, pero sí consume materiales y desgaste de herramientas/instalaciones.
+4. Las cargas solo se reponen en puntos de subida de nivel y consumen pociones existentes. El inventario almacenado no aumenta la capacidad activa.
+5. La calidad inicial del arma y el refuerzo +0 a +10 son ejes distintos. Deben compararse sus resultados sin declarar que una ruta siempre supera a la otra.
+6. Los últimos refuerzos cuestan más que los primeros, pero no deben volverse tan caros que el jugador abandone la progresión antes de poder probarla.
+7. Los consumibles no deben equilibrarse solo mediante precio: también cuentan eficacia, duración de expedición, disponibilidad de ingredientes y frecuencia de reposición.
+
+### 26.7 Dictamen y ajustes
+
+**La simulación de referencia no demuestra una insolvencia matemática inmediata.** No hay evidencia para modificar ahora la curva de almas, los multiplicadores de recompensa ni el precio unitario de consumibles comunes.
+
+Se recomienda conservar como hipótesis de prototipo:
+- materiales de refuerzo: 0,70 B(r) acumulado de +1 a +10;
+- tarifa de servicio NPC: 0,20 B(r) acumulado;
+- coste total de refuerzo con materiales comprados y NPC: 0,90 B(r);
+- reposición de cinco pociones comunes: 0,075 B(r), solo como escenario ilustrativo.
+
+Estos coeficientes **no son valores definitivos**. La simulación no certifica la economía completa: faltan ingresos netos por hora de profesiones, comercio, exploración y logros; recetas y tasas de recolección; costes de herramientas, instalaciones y reparación; tasas de venta; y duración real de expediciones. La siguiente prueba debe sustituir las hipótesis por datos medidos y comparar rutas de jugador centrado en combate, profesiones y progresión mixta.
