@@ -435,3 +435,18 @@ Los efectos ambientales pueden interactuar y combinarse entre sí cuando sus pro
 - Orden de resolución, prioridades, duración, acumulación y reglas de propagación quedan pendientes de especificación técnica y balance.
 
 El objetivo es que el escenario genere oportunidades y riesgos emergentes mediante reglas consistentes, en vez de depender exclusivamente de eventos guionizados.
+
+
+## Sistema general de propiedades y reglas ambientales combinables
+
+Las interacciones ambientales se resolverán mediante un sistema general de propiedades, condiciones y reglas combinables, en lugar de implementar cada combinación como un caso especial aislado.
+
+- Los elementos del escenario y los efectos ambientales podrán declarar propiedades relevantes para sus interacciones, como inflamabilidad, temperatura, fragilidad, conductividad u otras que se definan para el juego.
+- Las reglas determinarán qué condiciones permiten una interacción, qué efectos produce y cómo cambia el estado de los elementos implicados.
+- El sistema debe permitir incorporar nuevas propiedades, elementos y efectos mediante datos y reglas extensibles, minimizando la necesidad de modificar la lógica central.
+- Las interacciones deben resolverse de forma determinista y consistente para un mismo estado y conjunto de acciones.
+- Deben existir mecanismos para controlar prioridades, orden de resolución, duración, acumulación, propagación y prevención de ciclos o activaciones infinitas.
+- No se presupone que cualquier propiedad pueda combinarse con cualquier otra: las interacciones válidas deben estar definidas explícitamente.
+- La arquitectura técnica concreta, el formato de definición de reglas y el conjunto inicial de propiedades quedan pendientes de diseño e implementación.
+
+Este sistema debe ser independiente del motor gráfico y de la simulación física concreta. El núcleo lógico define estados, condiciones y consecuencias; las capas externas se encargan de representar visualmente los efectos y, cuando corresponda, simular su física.
