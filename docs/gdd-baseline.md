@@ -526,3 +526,18 @@ Los enemigos pueden modificar su comportamiento cuando sus aliados son derrotado
 - Los umbrales, tiempos de reacción y transiciones entre comportamientos quedan pendientes de diseño y balance.
 
 La composición del grupo debe importar durante todo el encuentro: derrotar, separar o hacer huir a determinados enemigos puede cambiar la dinámica y las opciones tácticas de los supervivientes.
+
+
+## Instinto de supervivencia, rendición y solicitud de refuerzos
+
+Determinados enemigos pueden mostrar instinto de supervivencia y reaccionar cuando consideran que la situación de combate se ha vuelto desfavorable o desesperada.
+
+- Según su personalidad, inteligencia, disciplina, lealtad y contexto, un enemigo puede intentar huir, rendirse o solicitar refuerzos.
+- La rendición y la huida son comportamientos distintos y sus consecuencias concretas deberán definirse para cada tipo de encuentro.
+- Solicitar refuerzos solo será posible cuando el contexto del encuentro lo permita: deben existir aliados disponibles y un medio plausible para alertarlos. No se crearán refuerzos arbitrariamente.
+- Las decisiones deben basarse en información observable y disponible para el enemigo, sin conocimiento de información privada del jugador ni de acciones futuras.
+- No todos los enemigos mostrarán estas conductas; algunos lucharán hasta morir por naturaleza, entrenamiento, fanatismo, órdenes u otras características justificadas.
+- La negociación está expresamente fuera del alcance del sistema y no forma parte de las mecánicas contempladas.
+- Las condiciones de activación, señales, tiempos, interrupciones y consecuencias de la huida, rendición y solicitud de refuerzos quedan pendientes de diseño.
+
+Estas conductas amplían las posibles respuestas de los enemigos sin convertir la negociación en una mecánica del juego.
