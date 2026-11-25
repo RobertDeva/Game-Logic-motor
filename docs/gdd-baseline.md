@@ -1535,3 +1535,23 @@ El objetivo es que la ejecución tenga riesgo y consecuencias reales, pero que u
 - El comercio podrá contemplar actividades y relaciones económicas más amplias que la simple compra y venta; la cocina podrá contemplar preparación y desarrollo de recetas; la pesca podrá contemplar técnicas y condiciones de captura; y el tratamiento de heridas podrá contemplar conocimientos y procedimientos de atención y recuperación.
 - Cada subsistema tendrá reglas y progresión propias, sin asumir que dominar uno concede automáticamente dominio sobre los demás.
 - El alcance, las mecánicas concretas, los requisitos, los riesgos, las recompensas, la progresión y las relaciones entre estos subsistemas quedan pendientes de diseño.
+
+
+## Arquitectura común para profesiones y actividades no centradas en el combate
+
+- Los subsistemas de artesanía, comercio, cocina, pesca y tratamiento de heridas compartirán una arquitectura conceptual común de aprendizaje, progresión, especialización, ejecución, calidad, reconocimiento y desarrollo de conocimientos.
+- Esta arquitectura común no impondrá una mecánica de interacción idéntica a todas las actividades. Cada disciplina tendrá procedimientos, decisiones, riesgos, recursos, condiciones y formas de ejecución adaptados a su naturaleza.
+- **Aprendizaje y desbloqueo:** cada disciplina podrá requerir capacitación con maestros, instructores, profesionales, misiones, descubrimientos u otros medios coherentes con la actividad. No se asumirá que todas deben desbloquearse exactamente del mismo modo.
+- **Progresión independiente:** cada disciplina y sus especializaciones tendrán desarrollo propio. El dominio de una no concederá automáticamente dominio de otra.
+- **Conocimientos y técnicas:** profesionales y maestros podrán poseer conocimientos diferenciados; el jugador podrá aprender técnicas específicas y combinarlas cuando sean compatibles.
+- **Experimentación y simulación:** cuando la naturaleza de la actividad lo permita, el jugador podrá probar hipótesis, procedimientos o combinaciones en un entorno simulado sin consumir recursos físicos. La simulación no concederá bienes, capturas, curaciones ni resultados reales.
+- **Ejecución interactiva:** las actividades no se resolverán necesariamente mediante una única orden automática. El jugador podrá participar en procesos y tomar decisiones significativas mediante mecánicas apropiadas a cada disciplina; no se impondrá el minijuego rítmico de fabricación a actividades donde no resulte adecuado.
+- **Calidad y consecuencias:** los resultados dependerán de conocimientos, dominio, preparación, herramientas, recursos, condiciones del entorno, decisiones y ejecución. Los errores y fallos tendrán consecuencias proporcionadas y específicas de cada actividad, sin copiar automáticamente las reglas de fallo de la fabricación.
+- **Innovación:** cuando sea coherente, el jugador podrá crear recetas, métodos, técnicas, procedimientos, estrategias comerciales u otras soluciones nuevas, respetando los límites y conocimientos necesarios de cada disciplina.
+- **Registro y perfeccionamiento:** los descubrimientos válidos podrán documentarse, revisarse y perfeccionarse. Se conservará la relación entre versiones y su procedencia cuando corresponda.
+- **Maestros y transmisión:** maestros, instructores y profesionales podrán enseñar conocimientos distintos. El jugador podrá compartir conocimientos y, si se establecen medios plausibles, otros personajes podrán aprenderlos, adaptarlos o desarrollar variantes.
+- **Reputación y difusión:** las actividades y creaciones podrán generar reconocimiento local o regional según resultados, calidad, difusión e información realmente conocida por cada comunidad.
+- **Organización y legado:** cuando la disciplina lo permita, el jugador podrá fundar y desarrollar negocios, talleres, instituciones o redes, incorporar personal y transmitir conocimientos para favorecer su continuidad durante su ausencia.
+- **Integración con el mundo:** cada subsistema deberá considerar recursos, economía, calendario, clima, geografía, personajes, comunidades, facciones y acontecimientos pertinentes, sin otorgar conocimiento omnisciente a sus participantes.
+- **Reglas propias y límites:** cada disciplina conservará sus requisitos, recursos, riesgos, resultados y restricciones específicos. La arquitectura común no debe borrar sus diferencias ni forzar funciones que no tengan sentido para ella.
+- Los detalles de implementación, interfaces, parámetros, fórmulas, simulación, persistencia, equilibrio y mecánicas específicas de cada disciplina quedan pendientes de diseño.
