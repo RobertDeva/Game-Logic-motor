@@ -534,3 +534,174 @@ El análisis técnico consultado distingue tipos y subtipos de daño, y establec
 - Activision Support, “Sekiro: Shadows Die Twice Game Mechanics”: https://support.activision.com/fi/sekiro/articles/sekiro-shadows-die-twice-game-mechanics
 - Elden Ring Infusion Calculator, documentación del modelo y fórmulas: https://github.com/kideuler/Elden-Ring-Calculator
 - Elden Ring Wiki, “Motion Value”: https://eldenring.wiki.gg/wiki/Motion_Value
+
+
+## 21. Comparación matemática de escalado y defensa
+
+Esta sección transforma las referencias externas en candidatos comprobables para Mythical Exodus. Los datos de otros juegos son referencias de comportamiento, no valores de balance aprobados para este proyecto.
+
+### 21.1 Escalado de atributos: tres capas separadas
+
+Se recomienda separar:
+
+1. **Curva del atributo:** cuánto aporta cada punto de una estadística.
+2. **Afinidad de escalado del equipo/acción:** cuánto aprovecha esa estadística concreta.
+3. **Potencia base y coeficiente del movimiento:** cuánto daño tiene el arma y cuánto modifica el ataque ejecutado.
+
+Para el componente k:
+
+\[
+AR_k = B_k\left(1+\sum_i C_{k,i}\,G_{k,i}(s_i)\right)
+\]
+
+- (B_k): ataque base del componente.
+- (C_{k,i}): coeficiente de escalado del componente con la estadística i.
+- (G_{k,i}): curva normalizada de la estadística para ese componente.
+- (s_i): valor de la estadística, entre 1 y 99.
+
+El coeficiente y la curva no son intercambiables: dos armas pueden compartir estadística y curva, pero aprovecharla en distinta proporción. También pueden tener perfiles distintos si una es física y otra energética.
+
+El movimiento se aplica después al componente:
+
+\[
+P_k=AR_k\cdot MV_k\cdot M_{arte,k}\cdot M_{condición,k}
+\]
+
+Así, la potencia base, el escalado y el multiplicador de movimiento no se mezclan ni se contabilizan dos veces.
+
+### 21.2 Curvas de referencia observadas
+
+La documentación comunitaria de Elden Ring registra, para determinadas afinidades físicas, esta progresión de valor de escalado interno:
+
+| Estadística | Valor de curva de referencia |
+|---:|---:|
+| 10 | 15 |
+| 20 | 35 |
+| 30 | 46.5 |
+| 40 | 57.5 |
+| 50 | 67.5 |
+| 60 | 75 |
+| 70 | 82.5 |
+| 80 | 90 |
+| 90 | 92.5 |
+| 99 | 96 |
+
+Para determinadas afinidades no físicas, la misma fuente presenta otro perfil: 19, 40, 53, 66.5, 80, 85, 90, 95, 97.5 y 100 en esos mismos puntos. La diferencia demuestra que el juego no utiliza una única curva universal para todos los componentes.
+
+Estos números **no se adoptan como valores de Mythical Exodus**. Se usarán como dos perfiles comparativos de referencia para probar:
+- crecimiento fuerte temprano y rendimientos decrecientes posteriores;
+- crecimiento más sostenido hasta la zona media;
+- utilidad marginal de invertir en una segunda estadística frente a concentrar puntos en una primera.
+
+La curva del proyecto debe ser una función de datos interpolada o definida por tramos, con dominio [1,99], monotonicidad no decreciente y límites validados. Los puntos de cambio se podrán definir por familia de estadística, arma y componente. No se impondrán automáticamente los mismos puntos de corte a Vitalidad, Resistencia, Fuerza, Agilidad, Voluntad, Ruptura, Destreza y Armonía.
+
+### 21.3 Perfiles de escalado recomendados para simulación
+
+Sin fijar todavía números definitivos, deben probarse al menos estos perfiles:
+
+- **Especializado:** una estadística principal aporta la mayor parte del crecimiento; las secundarias aportan poco.
+- **Híbrido:** dos estadísticas comparten el crecimiento de forma significativa.
+- **Distribuido:** tres o más estadísticas aportan incrementos menores.
+- **Sin escalado:** el componente depende principalmente de su potencia base y del movimiento.
+
+Los perfiles son datos de armas/Artes, no clases rígidas. Una clase puede usar distintos perfiles mediante equipo y progresión, respetando las reglas funcionales del GDD.
+
+### 21.4 Defensa no lineal basada en la relación ataque/defensa
+
+Dark Souls documenta una función por tramos según la razón (r = Ataque / Defensa). El porcentaje de ataque que atraviesa la defensa crece de forma no lineal: es bajo cuando el ataque es muy inferior a la defensa, aumenta alrededor de la igualdad y se aproxima a un techo cuando el ataque supera ampliamente la defensa.
+
+Como candidato comparativo se registra esta función:
+
+\[
+f(r)=
+\begin{cases}
+0.10 & r\le 0.125\\
+0.1+\frac{19.2}{49}(r-0.125)^2 & 0.125<r\le1\\
+0.7-\frac{0.4}{3}(r-2.5)^2 & 1<r\le2.5\\
+0.9-\frac{0.8}{121}(r-8)^2 & 2.5<r\le8\\
+0.90 & r>8
+\end{cases}
+\]
+
+\[
+D_{postdef}=P\cdot f(P/DEF)
+\]
+
+La fórmula es una reconstrucción documentada de Dark Souls y se debe validar en sus puntos de unión antes de reutilizarla. Para implementación, se protegerá el caso (DEF=0) con una rama explícita: sin defensa plana, el componente conserva toda su potencia antes de negaciones posteriores.
+
+Elden Ring documenta una estructura equivalente por tramos de la razón ataque/defensa: el daño previo a negación se mueve entre el 10 %, 40 %, 70 % y 90 % del ataque según los umbrales 1/8, 1, 2.5 y 8 veces la defensa. Después aplica la negación porcentual correspondiente al tipo de daño.
+
+### 21.5 Modelo de defensa que se recomienda probar en Mythical Exodus
+
+Se compararán dos modelos con idénticos encuentros y distribuciones de atributos:
+
+**Modelo A — resta plana actual**
+
+\[
+D_A=\max(0,P-DEF)\cdot(1-R)
+\]
+
+Ventaja: sencillo, transparente y fácil de calibrar. Riesgo: una defensa elevada puede anular completamente ataques débiles, mientras que el comportamiento alrededor de la igualdad ataque/defensa puede ser abrupto.
+
+**Modelo B — defensa relativa no lineal**
+
+\[
+D_B=P\cdot f(P/DEF)\cdot(1-R)
+\]
+
+Ventaja: mantiene daño residual frente a objetivos muy resistentes y permite que la eficacia defensiva dependa de la fuerza relativa del golpe. Riesgo: puede sentirse poco intuitivo y exige calibrar cuidadosamente la curva y los límites.
+
+**Candidato preferido para prototipo:** Modelo B como hipótesis de trabajo, no como decisión definitiva. La defensa plana puede seguir existiendo como estadística de entrada, pero su efecto se interpreta mediante la curva relativa. La negación porcentual (R) permanece como etapa separada y específica por componente. Inmunidades y reglas especiales se evalúan aparte.
+
+Para (DEF=0), definir (f=1). Para valores inválidos o negativos, la validación de datos debe fallar al cargar contenido, no corregirse silenciosamente durante el combate.
+
+### 21.6 Orden de resolución recomendado
+
+Por componente:
+
+1. Potencia base y contribuciones de estadísticas.
+2. Multiplicador del movimiento/ataque.
+3. Modificadores ofensivos válidos, incluidos los de Voluntad y Arte.
+4. Crítico, si el componente lo admite.
+5. Defensa plana convertida a mitigación mediante el modelo elegido.
+6. Negación porcentual por tipo.
+7. Afinidad energética aplicable (×1.50, ×0.75, ×1.25 o ×1.00), una sola vez.
+8. Vulnerabilidades adicionales e inmunidades explícitas, con precedencia configurada y sin duplicar afinidades.
+9. Suma de componentes y aplicación de daño efectivo.
+
+El orden de afinidad y negación debe quedar centralizado por regla y probarse; si el diseño decide que la afinidad multiplica el poder previo a defensa en vez del daño posterior, se cambiará en un único lugar y se comparará mediante pruebas. No se permitirá que cada arma decida arbitrariamente el orden.
+
+### 21.7 Matriz de simulación para atributos 1–99
+
+La calibración debe recorrer valores de atributos de 1 a 99, no solo niveles representativos. Para cada estadística y perfil de escalado se calcularán:
+
+- contribución absoluta al ataque;
+- incremento marginal de un punto al siguiente;
+- incremento porcentual respecto al valor anterior;
+- puntos donde cambian los rendimientos marginales;
+- comparación de inversión especializada e híbrida con presupuesto total equivalente;
+- impacto del movimiento ligero, pesado, cargado, salto, habilidad y crítico;
+- daño final contra defensas bajas, medias y altas.
+
+Los presupuestos de comparación deben mantener constante la suma de puntos invertidos. Ejemplos de perfiles a simular: 40/10, 25/25, 55/10, 35/30, 70/10 y 50/30. Son distribuciones de prueba, no límites ni recomendaciones de progresión.
+
+### 21.8 Criterios para elegir el modelo
+
+No se seleccionará una curva por parecerse más a un Souls. Se elegirá por resultados observables:
+
+- cada punto invertido produce una mejora predecible y no negativa;
+- especialización y construcción híbrida tienen ventajas y costes distintos;
+- ningún punto de corte vuelve inútil una estadística de forma abrupta;
+- armas rápidas no dominan por número de impactos sin considerar daño por ventana y exposición;
+- armas lentas pueden compensar su cadencia con impacto, presión de Postura y oportunidad;
+- la defensa no vuelve invulnerable al objetivo salvo inmunidad definida;
+- la negación porcentual conserva un papel útil sin producir reducciones ilimitadas;
+- los resultados se mantienen razonables a lo largo del rango 1–99 y frente a enemigos de distintos perfiles.
+
+### 21.9 Referencias específicas
+
+- Dark Souls Wiki, Damage Calculation: curva de defensa y multiplicadores de movimiento: https://darksouls.wikidot.com/damage-calculation
+- Elden Ring Wiki, Damage Negation: relación ataque/defensa y aplicación posterior de negación: https://eldenring.wiki.gg/wiki/Damage_Negation
+- Elden Ring Wiki, Weapon Scaling: curvas y valores de escalado por estadística: https://eldenring.wiki.gg/wiki/Scaling
+- Elden Ring Infusion Calculator: reconstrucción de AR a partir de daño base, escalado, curvas y mejoras: https://github.com/kideuler/Elden-Ring-Calculator
+- Dark Souls III Wiki, Scaling: correcciones de escalado y puntos de rendimientos decrecientes: https://darksouls3.wikidot.com/scaling
