@@ -1741,3 +1741,12 @@ Esta decisión cierra por ahora la profundización del sistema de profesiones, o
 - Distintas especies podrán competir por alimento, territorio y otros recursos.
 - La presencia, expansión, migración o desaparición de una especie podrá afectar a las poblaciones y comportamientos de otras, contribuyendo a la dinámica de cada ecosistema.
 - Las reglas particulares de territorialidad, guaridas, alimentación, reproducción y competencia quedan pendientes de especificación.
+
+
+## Amenazas de criaturas y respuesta de las poblaciones
+
+- Los monstruos podrán atacar asentamientos, caravanas y viajeros, convirtiéndose en amenazas activas para la población y las actividades del mundo.
+- Las poblaciones locales podrán organizar cacerías para reducir amenazas de criaturas.
+- También podrán organizar expediciones para enfrentarse a monstruos especialmente peligrosos.
+- La actividad de las criaturas y las respuestas organizadas de los habitantes podrán afectar a la seguridad de las regiones.
+- Los criterios de respuesta, la frecuencia, la composición y los resultados de estas expediciones y cacerías quedan pendientes de diseño.
