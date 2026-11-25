@@ -448,8 +448,8 @@ Como mínimo, las pruebas automatizadas deberán cubrir:
 ## 18. Decisiones pendientes de calibración o confirmación
 
 No se inventarán a partir de huecos documentales:
-- valores base y curvas exactas de HP, escalado, Voluntad, Resistencia, Ruptura y Destreza/Armonía;
-- puntos de rendimientos decrecientes y límites críticos;
+- calibración final de los valores base y topes de HP, daño universal, resistencia, crítico y escalados secundarios; el perfil inicial de curvas y efectos está definido en la sección 22;
+- calibración final de puntos de rendimientos marginales y límites críticos, a partir de simulaciones de encuentros;
 - calibración posterior de los multiplicadores de afinidad (valores iniciales confirmados: ×1.50, ×0.75 y ×1.25 para relaciones recíprocas);
 - defensa y resistencia por tipo, incluyendo qué parte de Resistencia es universal;
 - parámetros de postura, recuperación, presión por ataque y umbrales;
@@ -890,4 +890,45 @@ Las pruebas automáticas deben recorrer las 99 entradas posibles de cada curva y
 ### 22.7 Estado de aprobación
 
 Esta versión fija una arquitectura y un primer perfil numérico coherente para iniciar prototipos. Los pesos de las curvas y los topes de efecto son parámetros iniciales de balance, no verdades inmutables. La estructura, los dominios, la separación de responsabilidades, la ausencia de doble aplicación y los criterios de validación sí se consideran reglas del sistema. La calibración final deberá basarse en simulaciones de encuentros completos y pruebas de regresión.
+
+## 23. Primera auditoría matemática del sistema de escalado
+
+Se realizó un barrido determinista de los 99 valores posibles para cada una de las ocho curvas definidas en la sección 22. También se compararon construcciones especializadas e híbridas con el mismo presupuesto de puntos. Estos resultados validan propiedades matemáticas de la curva; todavía no equivalen a pruebas ejecutadas sobre el motor C# ni a balance de encuentros reales.
+
+### 23.1 Barrido de las ocho curvas
+
+Para las ocho estadísticas se verificó:
+- G(1)=0 y G(99)=1;
+- todas las salidas permanecen dentro de [0,1];
+- los 98 incrementos marginales son positivos;
+- no hay retrocesos entre valores consecutivos;
+- cada tramo mantiene su pendiente definida y los cambios de pendiente no producen saltos en el valor acumulado.
+
+Resultado: las ocho curvas cumplen estas propiedades en todo el dominio 1–99.
+
+### 23.2 Comparación especializada e híbrida
+
+Se utilizó un componente de prueba con coeficientes iguales de Fuerza y Destreza: C_fuerza = 0.375 y C_destreza = 0.375. La suma de coeficientes alcanza el presupuesto máximo inicial de 0.75. Se compararon parejas con presupuesto total de puntos equivalente:
+
+| Construcción | Puntos | G_Fuerza + G_Destreza | Factor de ataque |
+|---|---:|---:|---:|
+| Especializada 40/10 | 50 | 0.5525 | 1.2072 |
+| Híbrida 25/25 | 50 | 0.4830 | 1.1811 |
+| Especializada 55/10 | 65 | 0.7588 | 1.2846 |
+| Híbrida 35/30 | 65 | 0.7113 | 1.2667 |
+| Especializada 70/10 | 80 | 0.9239 | 1.3465 |
+| Híbrida 50/30 | 80 | 0.9383 | 1.3518 |
+
+El resultado no fuerza una superioridad universal de una construcción: la especialización gana en los dos primeros presupuestos, mientras que la híbrida supera ligeramente a la especializada en el presupuesto de 80 puntos. Esto produce una decisión interesante sin penalizar automáticamente la diversificación. La conclusión depende de las curvas y coeficientes del componente; no se debe generalizar a todas las armas o Artes.
+
+### 23.3 Interpretación y límites
+
+- El perfil normalizado es matemáticamente válido y monotónico en 1–99.
+- La distribución de rendimientos marginales es diferenciada por estadística.
+- Los coeficientes de contenido permiten que un arma favorezca especialización y otra recompense híbridos.
+- El límite de suma 0.75 impide que el escalado de atributos por sí solo multiplique sin control la potencia base.
+- Los topes de Vitalidad, movilidad, recuperación, resistencia, Voluntad y crítico son hipótesis iniciales de balance y deben probarse contra enemigos y tiempos de combate reales.
+- La auditoría no prueba todavía el tiempo para derrotar, el equilibrio entre clases, el impacto de armaduras, la interacción con defensa no lineal, afinidades ni presión de Postura.
+
+La siguiente fase técnica consiste en convertir estas fórmulas en funciones puras del dominio C#, acompañadas por pruebas unitarias que reproduzcan el barrido 1–99. Después se conectarán a escenarios de combate y se calibrarán mediante resultados de encuentros completos.
 
