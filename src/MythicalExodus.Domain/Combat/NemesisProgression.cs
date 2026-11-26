@@ -111,10 +111,11 @@ public sealed class NemesisProgressionState
             return new NemesisProgressionUpdate(
                 cappedState,
                 NemesisProgressionUpdateStatus.RankCapReached,
-                requiredGrowthMarks: 0);
+                RequiredGrowthMarks: 0);
         }
 
-        var requiredMarks = GetRequiredGrowthMarksForNextRank();
+        var requiredMarks = GetRequiredGrowthMarksForNextRank()
+            ?? throw new InvalidOperationException("A Nemesis below its rank ceiling must have a promotion threshold.");
         var updatedMarks = checked(GrowthMarks + 1);
 
         if (updatedMarks >= requiredMarks)
