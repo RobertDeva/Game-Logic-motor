@@ -48,6 +48,7 @@ dotnet test --no-build
 - [Fundamentos del personaje jugador](docs/player-character-foundation.md): clases permanentes, atributos iniciales, nivel derivado y límites de la primera implementación.
 - [Fundamentos del estado de recursos de combate](docs/combat-resource-state-foundation.md): Vitalidad segmentada y Postura separada, con transiciones inmutables validadas.
 - [Auditoría arquitectónica](docs/architecture-audit.md): estado comprobado del núcleo y secuencia de construcción pendiente.
+- [Fundamentos de acciones y condiciones](docs/actions-and-conditions-foundation.md): precondiciones puras, evaluación ordenada y validación sin efectos secundarios.
 - [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas, jefes colosos, reputación territorial, memoria histórica, eventos, facciones, entidades reactivas, misiones dinámicas y poblaciones simuladas de asentamientos, fauna y enemigos. Las ideas permanecen separadas del baseline hasta su aprobación.
 
 ## Documento rector
