@@ -16,7 +16,8 @@ public enum NemesisProgressionUpdateStatus
     DuplicateEncounter = 0,
     GrowthMarkRecorded = 1,
     RankPromoted = 2,
-    RankCapReached = 3
+    RankCapReached = 3,
+    NemesisCreated = 4
 }
 
 /// <summary>

@@ -84,6 +84,25 @@ public sealed class CombatResourceImpactApplierTests
     }
 
     [Fact]
+    public void Impact_source_is_preserved_in_the_resolved_result()
+    {
+        var sourceId = EntityId.New();
+        var initial = CreateState([10m], vitalityCurrent: 10m, postureCurrent: 0m);
+
+        var result = _applier.Apply(initial, new CombatResourceImpact(10m, 0m, sourceId));
+
+        Assert.True(result.IsSuccess);
+        Assert.True(result.Value.VitalityDepleted);
+        Assert.Equal(sourceId, result.Value.SourceEntityId);
+    }
+
+    [Fact]
+    public void Impact_rejects_an_empty_source_identifier()
+    {
+        Assert.Throws<ArgumentException>(() => new CombatResourceImpact(1m, 0m, default(EntityId)));
+    }
+
+    [Fact]
     public void Impact_constructor_rejects_negative_magnitudes()
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => new CombatResourceImpact(-1m, 0m));

@@ -58,6 +58,7 @@ public sealed class CombatResourceImpactApplier
             vitalityDamageApplied,
             remainingDamage,
             posturePressureApplied,
-            barsDepleted));
+            barsDepleted,
+            impact.SourceEntityId));
     }
 }

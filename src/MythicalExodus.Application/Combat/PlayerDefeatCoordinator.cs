@@ -64,7 +64,7 @@ public sealed class PlayerDefeatCoordinator
                 return Result<(NemesisProgressionUpdate, bool)>.Success((
                     new NemesisProgressionUpdate(
                         created,
-                        NemesisProgressionUpdateStatus.GrowthMarkRecorded,
+                        NemesisProgressionUpdateStatus.NemesisCreated,
                         created.GetRequiredGrowthMarksForNextRank()),
                     true));
             }

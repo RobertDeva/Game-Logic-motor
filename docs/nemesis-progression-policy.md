@@ -1,6 +1,6 @@
 # Nemesis progression policy
 
-**Status:** the rank-threshold schedule and immutable Domain progression state are implemented. Encounter attribution, event orchestration, and durable persistence remain Application/infrastructure responsibilities and are not implemented here.
+**Status:** rank progression is implemented in Domain. Application coordinates authoritative defeat outcomes before resurrection and persists through a repository contract. Combat impacts preserve optional causal source identity. A concrete durable adapter and encounter-side attribution policy remain pending.
 
 ## 1. Progression rules
 
@@ -63,12 +63,7 @@ The Domain progression method accepts a Nemesis and encounter identifier only af
 
 It does not infer responsibility from damage, participation, posture breaks, vitality-bar depletion, Muertebendita execution, boss phase transitions, or proximity to the player.
 
-The following remain outside this Domain implementation:
-- selecting a primary source when several enemies contribute to a lethal outcome;
-- preserving causal source identity for delayed damage or environmental chains;
-- ordering defeat recording against voluntary resurrection;
-- durable atomic persistence of encounter credit and rank transitions;
-- enemy retirement, respawn, and replacement lifecycle.
+Combat impact results preserve an optional source entity ID, allowing delayed damage and environmental chains to retain their initiating enemy when the host supplies that provenance. Application accepts at most one already-authoritative enemy credit; the encounter host must resolve attribution when multiple sources contribute. The coordinator records the credit before opening the resurrection decision and uses atomic repository contract operations. A concrete durable adapter and enemy retirement/respawn lifecycle remain pending.
 
 Application must supply a stable encounter identifier and persist credited identifiers with the Nemesis record. The encounter result must be processed before the resurrection choice can discard or alter the defeat consequence.
 
@@ -89,8 +84,7 @@ Implemented Domain types:
 - rank-cap behavior.
 
 Not yet implemented:
-- creation/advancement from the authoritative encounter outcome;
-- multi-enemy and environmental attribution;
-- persistence repository and transaction handling;
+- authoritative attribution policy for simultaneous lethal sources and environmental causes;
+- concrete durable persistence adapter and transaction handling;
 - world population, retirement, and respawn integration;
 - applying rank evolution definitions to enemy archetypes.

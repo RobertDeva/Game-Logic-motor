@@ -21,7 +21,7 @@ public sealed class PlayerDefeatCoordinatorTests
 
         Assert.True(result.IsSuccess);
         Assert.True(result.Value.NemesisCreated);
-        Assert.Equal(NemesisProgressionUpdateStatus.GrowthMarkRecorded, result.Value.NemesisUpdate!.Status);
+        Assert.Equal(NemesisProgressionUpdateStatus.NemesisCreated, result.Value.NemesisUpdate!.Status);
         Assert.Equal(1, result.Value.NemesisUpdate.State.Rank);
         Assert.Equal(PlayerResurrectionPhase.AwaitingDecision, result.Value.ResurrectionState.Phase);
         Assert.True(repository.WasWrittenBeforeResurrectionDecision);
