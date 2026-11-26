@@ -113,6 +113,21 @@ public sealed class OffensiveDamageCalculatorTests
     }
 
     [Fact]
+    public void Non_offensive_attributes_cannot_be_used_as_direct_damage_scaling_coefficients()
+    {
+        Assert.Throws<ArgumentException>(() =>
+            new OffensiveDamageComponentDefinition("invalid", 100m, new[]
+            {
+                new AttributeScalingCoefficient(CharacterAttribute.Willpower, 0.1m)
+            }));
+        Assert.Throws<ArgumentException>(() =>
+            new OffensiveDamageComponentDefinition("invalid", 100m, new[]
+            {
+                new AttributeScalingCoefficient(CharacterAttribute.Agility, 0.1m)
+            }));
+    }
+
+    [Fact]
     public void Component_cannot_declare_an_attribute_twice()
     {
         Assert.Throws<ArgumentException>(() =>
