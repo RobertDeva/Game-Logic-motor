@@ -76,7 +76,7 @@ public sealed class MuertebenditaExecutionResolverTests
         Assert.False(first.Value.EnemyDefeated);
         Assert.False(second.Value.EnemyDefeated);
         Assert.True(third.Value.EnemyDefeated);
-        Assert.Equal(0, third.Value.State.Vitality.Bars.Count);
+        Assert.Empty(third.Value.State.Vitality.Bars);
         Assert.Equal(0m, third.Value.State.Posture.Current);
     }
 
