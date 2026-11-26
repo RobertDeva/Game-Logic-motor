@@ -21,10 +21,11 @@ La existencia de tipos de dominio no debe confundirse con la implementación de 
 | Clases permanentes y nivel derivado del jugador | Implementados |
 | Contratos de estadísticas y modificadores | Implementados; cálculo efectivo pendiente |
 | Recursos acotados | Implementados |
-| Vitalidad segmentada y Postura independiente | Implementadas; transiciones inmutables básicas disponibles |
+| Vitalidad segmentada y Postura independiente | Implementadas; transiciones inmutables y aplicación de impactos precomputados disponibles |
 | Reloj lógico y aleatoriedad determinista | Implementados en sus respectivos proyectos |
 | Acciones y condiciones | Contratos genéricos, solicitudes y validación de combate implementados; resolución de consecuencias pendiente |
-| Resolución de daño, presión, desvío y ejecución | Pendiente; la validación de solicitudes ya está implementada |
+| Aplicación de daño a Vitalidad y presión a Postura | Aplicación de magnitudes precomputadas implementada; fórmulas ofensivas/defensivas pendientes |
+| Resolución de desvíos, recuperación, ruptura y ejecución | Pendiente |
 | Efectos y postacciones | Pendientes |
 | Eventos y reacciones | Pendientes |
 | Economía y progresión por almas | Pendientes en código |
@@ -79,7 +80,7 @@ No introducir ECS, event sourcing, un Event Bus global, framework DI complejo ni
 
 1. Contratos fundamentales.
 2. Estado de dominio.
-3. Completar acciones concretas y resolución de consecuencias sobre las solicitudes y condiciones ya implementadas.
+3. Completar el pipeline de resolución: cálculo ofensivo/defensivo, defensas, presión, recuperación, respuestas y ejecuciones sobre la aplicación de impactos ya implementada.
 4. Efectos, eventos y postacciones.
 5. Simulación temporal.
 6. Casos de uso de Application.

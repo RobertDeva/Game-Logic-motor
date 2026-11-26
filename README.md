@@ -50,6 +50,7 @@ dotnet test --no-build
 - [Auditoría arquitectónica](docs/architecture-audit.md): estado comprobado del núcleo y secuencia de construcción pendiente.
 - [Fundamentos de acciones y condiciones](docs/actions-and-conditions-foundation.md): precondiciones puras, evaluación ordenada y validación sin efectos secundarios.
 - [Validación de solicitudes de combate](docs/combat-action-validation.md): snapshots explícitos, identidad de actor/objetivo y validación de solicitudes sin aplicar consecuencias.
+- [Aplicación de impactos de combate](docs/combat-impact-application.md): transición inmutable de daño de Vitalidad y presión de Postura, overflow entre barras y límites de recursos.
 - [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas, jefes colosos, reputación territorial, memoria histórica, eventos, facciones, entidades reactivas, misiones dinámicas y poblaciones simuladas de asentamientos, fauna y enemigos. Las ideas permanecen separadas del baseline hasta su aprobación.
 
 ## Documento rector
