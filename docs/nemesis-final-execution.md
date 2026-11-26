@@ -24,6 +24,7 @@ These outcomes must remain distinct:
 
 - **Normal encounter defeat:** the Nemesis has lost the encounter. This alone does not erase its persistent identity.
 - **Kneeling / final-finisher opportunity:** a temporary post-execution state in which the special action can be performed.
+- **Recovery without final execution:** if the player does not perform the final action, the Nemesis survives, recovers from the kneeling/defeated state, and may appear again in a later encounter. Its identity, rank, and accumulated history remain intact.
 - **Permanent Nemesis execution:** the final action succeeds and the persistent identity is irreversibly retired.
 
 The normal Muertebendita resolver remains responsible for ordinary execution eligibility and resistance behavior. It must not silently perform the final finisher or retire a Nemesis record. The Nemesis lifecycle/application layer coordinates the chained state and persistent retirement.
@@ -34,6 +35,7 @@ The normal Muertebendita resolver remains responsible for ordinary execution eli
 - The kneeling state is required to enable the final action.
 - The final action cannot be invoked against an active, merely vulnerable, or unrelated enemy.
 - A normal execution without the final action does not count as permanent Nemesis elimination.
+- Declining or missing the final-finisher opportunity is not an automatic kill: the Nemesis can recover and return in a later encounter as the same individual.
 - Permanent retirement is idempotent and persisted; replaying the same finalization event cannot create duplicate rewards or restore the Nemesis.
 - Once permanently executed, the same Nemesis identity cannot respawn or re-enter the active world population.
 - Nemesis rank, original enemy category, and the ordinary Muertebendita resistance rules are not changed by this mechanic.
@@ -50,9 +52,9 @@ The Domain/Application contract should represent the kneeling opportunity and pe
 The following details are not established by the approved rule and must not be guessed during implementation:
 
 - how long the kneeling opportunity remains available;
-- what happens if the player walks away, is interrupted, or the encounter unloads;
+- the exact timing and presentation of recovery if the player walks away, is interrupted, or the encounter unloads;
 - whether every Nemesis supports a final finisher or only configured individuals;
 - whether any special contextual positioning or input is required beyond the kneeling state;
 - exact animation, camera, audio, loot, and narrative treatment.
 
-Until those are decided, the implementation must not invent a timeout, automatic death, escape behavior, or universal eligibility policy. It may model the approved states and action contract while keeping these policies configurable or explicitly unresolved.
+The survival outcome is now established: without the final execution, the Nemesis recovers and may return later. The precise recovery timing, interruption handling, and encounter-unload behavior remain open. Until those are decided, the implementation must not invent a timeout, automatic death, or universal eligibility policy. It may model the approved states and action contract while keeping these policies configurable or explicitly unresolved.

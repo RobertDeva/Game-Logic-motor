@@ -76,7 +76,7 @@ The Nemesis system must coordinate with enemy lifecycle and world population sys
 
 ## 8. Nemesis final execution
 
-A Nemesis may be permanently eliminated through a special second finisher chained to a normal Muertebendita execution. The normal execution is followed by a distinct kneeling state that enables an optional contextual final finisher, such as a decapitation. The first execution defeats the Nemesis in the encounter but does not by itself retire its persistent identity; only successful completion of the second action permanently retires that identity. This lifecycle is separate from ordinary Muertebendita resolution and is specified in [Nemesis final execution](nemesis-final-execution.md). The opportunity's duration, interruption behavior, and per-Nemesis eligibility policy remain unresolved.
+A Nemesis may be permanently eliminated through a special second finisher chained to a normal Muertebendita execution. The normal execution is followed by a distinct kneeling state that enables an optional contextual final finisher, such as a decapitation. The first execution defeats the Nemesis in the encounter but does not by itself retire its persistent identity; if the player does not perform the second action, the Nemesis recovers and may return in a later encounter as the same individual. Only successful completion of the second action permanently retires that identity. This lifecycle is separate from ordinary Muertebendita resolution and is specified in [Nemesis final execution](nemesis-final-execution.md). The opportunity's duration, interruption behavior, and per-Nemesis eligibility policy remain unresolved.
 
 ## 9. Architectural boundaries
 
