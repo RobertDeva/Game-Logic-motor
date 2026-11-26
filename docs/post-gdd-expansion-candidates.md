@@ -502,3 +502,196 @@ Antes de convertir esta propuesta en código deben definirse, como mínimo:
 12. Pruebas de integración que demuestren que una consecuencia no se duplica ni se propaga a actores desinformados.
 
 **Relación con el roadmap técnico:** estos conceptos no alteran el orden inmediato de construir estado de personaje y combate sobre los contratos existentes. Los acontecimientos pueden surgir primero como resultados explícitos de dominio; la arquitectura de publicación se refinará cuando haya más de un consumidor real. Reputación, IA y misiones se implementarán después de definir sus contratos y reglas. No se añade código por registrar esta propuesta.
+
+## 13. Población de asentamientos y poblaciones de criaturas/enemigos
+
+**Estado: PROPUESTA DE DISEÑO Y ARQUITECTURA EN EVALUACIÓN.** Esta sección registra la idea de representar asentamientos poblados y territorios con fauna, monstruos y grupos hostiles sin convertir a cada individuo del mundo en una entidad compleja y permanentemente activa. Los rangos numéricos incluidos son estimaciones de planificación, no cuotas, requisitos ni contenido aprobado.
+
+### 13.1 Principio general: población no equivale a NPC o enemigos únicos
+
+El mundo puede contener una población histórica o simulada mucho mayor que el número de individuos que necesitan existir como entidades detalladas en cada instante.
+
+Conviene distinguir:
+- **Población agregada:** cantidades y distribución por categorías, asentamiento, región o hábitat. Puede incluir estados colectivos como población disponible, trabajadores, viajeros, fauna o grupos hostiles.
+- **Agentes simulados ligeros:** individuos o grupos temporales que representan actividades y desplazamientos sin disponer de toda la identidad, memoria, inventario y lógica de un personaje completo.
+- **Entidades individuales persistentes:** personajes o criaturas cuya identidad, estado y consecuencias particulares deben conservarse.
+- **Representación visual:** modelos y animaciones que el cliente gráfico muestra. La cantidad visible no tiene por qué coincidir con el número total de habitantes o criaturas que representa la simulación abstracta.
+
+La materialización de un individuo para presentarlo cerca del jugador no debe crear automáticamente una identidad persistente nueva cada vez que se carga una región. Deben existir reglas explícitas de identidad, creación, desaparición, retorno y persistencia cuando esos individuos tengan consecuencias relevantes.
+
+### 13.2 Población de asentamientos
+
+Se propone separar cuatro categorías funcionales:
+
+1. **NPC vitales:** personajes con importancia narrativa, consecuencias persistentes o responsabilidades centrales en sistemas del juego. Normalmente requieren identidad, estado individual y comportamiento específico.
+2. **NPC secundarios:** comerciantes, maestros, artesanos, responsables de servicios, personajes de misiones y miembros relevantes de organizaciones. Pueden necesitar inventario, profesión, relaciones o conocimiento, según su función.
+3. **NPC ambientales interactivos:** habitantes con los que el jugador puede mantener interacciones sencillas, obtener información contextual o realizar acciones limitadas. No todos necesitan misiones ni sistemas profundos.
+4. **Población simulada no interactiva:** habitantes que contribuyen a la actividad y densidad visual/social del asentamiento, pero no ofrecen conversación ni interacción directa con el jugador. Pueden representar trabajadores, familias, transeúntes o grupos de actividad.
+
+La cuarta categoría no debe confundirse con NPC ambientales: su función principal es representar población y actividad cotidiana, no ofrecer contenido interactivo. Puede ser suficiente simular grupos o flujos de población y materializar individuos visuales temporales cuando el jugador se encuentre cerca.
+
+**Actividades candidatas para población simulada:**
+- Circular por calles, plazas y caminos internos.
+- Representar trabajo en campos, talleres, mercados y almacenes.
+- Transportar mercancías o desplazarse entre puntos de actividad.
+- Reunirse en espacios públicos, participar en celebraciones o acudir a lugares de culto si existen.
+- Entrar y salir de edificios, descansar o retirarse durante la noche.
+- Cambiar su actividad o abandonar temporalmente un lugar ante amenazas, incendios, conflictos u otros acontecimientos.
+- Representar flujos de llegada, salida o desplazamiento entre asentamientos sin exigir que cada viajero sea una entidad persistente.
+
+No se exige que todos los asentamientos tengan todas estas actividades. Deben derivarse de su tamaño, economía, cultura, geografía, seguridad y contenido diseñado.
+
+### 13.3 Estimaciones iniciales de población y escala de asentamientos
+
+Para un mundo propuesto de aproximadamente 37 km² se discutió el siguiente presupuesto orientativo de personajes individualizados:
+
+| Categoría | Rango exploratorio |
+|---|---:|
+| NPC vitales | 30–40 |
+| NPC secundarios | 100–140 |
+| NPC ambientales interactivos | 250–350 |
+| Total de NPC individualizados de referencia | 380–530 |
+
+El valor central de aproximadamente 450 NPC es una referencia de planificación, no una cantidad que deba alcanzarse artificialmente. La cifra no incluye necesariamente toda la población simulada no interactiva. Tampoco implica que todos esos NPC estén cargados o activos simultáneamente.
+
+Se plantearon estos rangos ilustrativos de población visible por tipo de asentamiento:
+
+| Tipo de asentamiento | Habitantes visibles orientativos |
+|---|---:|
+| Aldea pequeña | 15–30 |
+| Aldea grande | 30–60 |
+| Pueblo | 60–100 |
+| Ciudad pequeña | 100–180 |
+| Ciudad importante | 180–300 |
+
+La población histórica total puede ser mayor que la visible en un momento dado. Por ejemplo, un asentamiento podría representar cientos de habitantes en sus datos agregados y mostrar solo una fracción de ellos, determinada por hora, actividad, capacidad de presentación, situación y proximidad del jugador.
+
+Estos rangos no deben sumarse directamente a los NPC únicos: una misma persona persistente puede aparecer en diferentes lugares y momentos, mientras que la población agregada puede representarse mediante individuos visuales temporales.
+
+### 13.4 Poblaciones de fauna, criaturas y enemigos
+
+Se propone aplicar el mismo principio general a las poblaciones no humanas, adaptando sus reglas a cada especie, facción y tipo de amenaza. No se debe tratar toda criatura como una unidad hostil homogénea.
+
+Niveles conceptuales:
+
+1. **Población abstracta:** cantidades, distribución territorial, hábitat, disponibilidad de recursos y tendencias relevantes de una especie o grupo. No requiere simular cada individuo.
+2. **Grupos y manadas:** unidades regionales como manadas, enjambres, patrullas, partidas de bandidos o escuadrones. Pueden desplazarse, competir, cazar, investigar o disputar un territorio según sus reglas.
+3. **Enemigos individuales:** entidades materializadas para encuentros y simulación cercana, con estado de combate, percepción y comportamiento individual cuando sea necesario.
+4. **Entidades especiales:** jefes, colosos, criaturas únicas y guardianes cuyo estado y consecuencias deben persistir de acuerdo con reglas específicas.
+
+La abstracción no debe ocultar resultados importantes. Si un grupo lejano ataca una aldea, una manada migra o una facción pierde un puesto, el resultado relevante debe poder persistir aunque no se hayan simulado animaciones ni cada movimiento individual.
+
+### 13.5 Diferenciar fauna, monstruos y grupos organizados
+
+Los sistemas pueden compartir infraestructura técnica, pero necesitan reglas de comportamiento distintas:
+
+| Tipo de población | Comportamientos candidatos |
+|---|---|
+| Fauna | Alimentación, huida, caza, reproducción o migración, si se diseñan |
+| Criaturas territoriales | Defensa de territorio, desplazamiento y respuesta a intrusos |
+| Monstruos | Comportamientos específicos de especie, hábitat y capacidades |
+| Bandidos y grupos hostiles | Patrullas, campamentos, saqueos, retirada y búsqueda de recursos |
+| Facciones organizadas | Órdenes, refuerzos, ocupación, control territorial y relaciones políticas |
+| Guardianes de lugares | Permanencia, vigilancia y reglas ligadas a una ubicación o encuentro |
+
+No todas las especies necesitan reproducción, migración o simulación ecológica completa. Cada comportamiento debe justificarse por su valor jugable y por los datos necesarios para sostenerlo.
+
+### 13.6 Ecosistemas e interacciones entre poblaciones
+
+Una posibilidad importante es permitir que las poblaciones se influyan mutuamente y que el jugador pueda alterar esas relaciones:
+
+- La disponibilidad de presas y recursos puede afectar la distribución de fauna.
+- La presión de depredadores puede influir en el comportamiento o abundancia de otras poblaciones.
+- La presencia de monstruos territoriales puede desplazar fauna o impedir el uso de determinadas rutas.
+- Campamentos y facciones pueden cazar, recolectar, comerciar o competir por recursos.
+- La desaparición de una amenaza puede permitir que otras poblaciones ocupen el territorio.
+- La destrucción de un campamento puede reducir patrullas o modificar el control de una ruta.
+- Un acontecimiento importante —por ejemplo, la derrota de un jefe o coloso— podría cambiar la seguridad, los movimientos o las relaciones ecológicas de una región.
+
+Estas relaciones no deben convertirse en una simulación ecológica exhaustiva por defecto. Deben seleccionarse las variables y consecuencias que tengan impacto perceptible y comprobable en el juego. No asumir que eliminar una especie provoca automáticamente una cascada ecológica concreta sin reglas que la respalden.
+
+### 13.7 Niveles de fidelidad de simulación
+
+La propuesta encaja con la simulación abstracta por distancia e importancia ya recogida en la sección 1. Como orientación:
+
+- **Nivel agregado/lejos:** actualizar datos colectivos y consecuencias relevantes a escala regional, sin agentes individuales ni animaciones.
+- **Nivel de grupo/regional:** representar grupos, rutas, actividades y conflictos mediante estados y transiciones simplificadas.
+- **Nivel local/cercano:** materializar agentes ligeros o entidades individuales cuando la proximidad, interacción o importancia lo requiera.
+- **Nivel detallado/especial:** ejecutar la lógica específica de NPC relevantes, enemigos activos, jefes y encuentros extraordinarios.
+
+La distancia al jugador no debe ser el único criterio. Un acontecimiento relevante, una misión activa, una entidad única o una consecuencia que deba persistir pueden requerir seguimiento aunque ocurran lejos.
+
+La transición entre niveles debe preservar continuidad: cantidades, identidad cuando corresponda, estado, ubicación aproximada, tiempo lógico y consecuencias ya producidas. No debe duplicar individuos al materializarlos ni regenerar poblaciones por el mero hecho de descargar y volver a cargar una región.
+
+### 13.8 Reposición, muerte y persistencia
+
+No se propone un temporizador universal de reaparición para NPC o enemigos.
+
+Deben diferenciarse al menos:
+- Habitantes persistentes con identidad y consecuencias narrativas.
+- Población agregada que puede crecer, reducirse o desplazarse mediante reglas todavía por definir.
+- Agentes ambientales temporales que pueden representarse de nuevo sin afirmar que una persona persistente ha resucitado.
+- Fauna y criaturas cuya población puede recuperarse, migrar o extinguirse localmente si se aprueban reglas para ello.
+- Patrullas y fuerzas de facción que pueden recibir reemplazos de acuerdo con recursos, organización y control territorial.
+- Guardianes, jefes y entidades únicas, cuyo retorno depende de las reglas específicas de encuentro y ciclo del mundo.
+
+La muerte de un individuo único no debe ocultarse mediante la generación de otro individuo con la misma identidad. La reposición abstracta de una población tampoco debe borrar consecuencias de misiones, reputación, memoria histórica o economía.
+
+### 13.9 Interacción con reputación, facciones, economía y acontecimientos
+
+La población puede conectar varios sistemas ya propuestos:
+
+- La seguridad de un asentamiento puede afectar llegada de viajeros, actividad comercial y rutinas.
+- Los conflictos entre facciones pueden alterar patrullas, desplazamientos y acceso a lugares.
+- La reputación y notoriedad pueden influir en cómo reaccionan habitantes individualizados, pero la población no debe conocer automáticamente las hazañas del jugador.
+- Los acontecimientos históricos pueden modificar estados agregados y rutinas cuando las comunidades reciban información suficiente.
+- La derrota de una criatura territorial o coloso puede modificar la actividad de una zona si el diseño del encuentro establece esa consecuencia.
+- Las actividades de población pueden representar producción y transporte, pero no deben generar riqueza o materiales de forma ilimitada ni eludir las reglas económicas existentes.
+
+Las consecuencias deben ser coherentes con el conocimiento disponible, los canales de comunicación, el tiempo lógico y las reglas económicas. No se introducen fórmulas, tasas de crecimiento, rendimientos ni cantidades de recursos en esta propuesta.
+
+### 13.10 Infraestructura compartida sin fusionar las reglas de dominio
+
+Se propone estudiar una infraestructura común de simulación para aspectos realmente compartidos, como:
+- Registro y selección de entidades o grupos relevantes para una región.
+- Tiempo lógico y avance de simulación.
+- Transición entre niveles de fidelidad.
+- Persistencia de estados y acontecimientos.
+- Identidad y materialización controlada de agentes, cuando sea necesaria.
+
+Los sistemas de población de asentamientos y poblaciones de criaturas/enemigos deben conservar modelos y reglas propios. Compartir infraestructura no significa imponer una clase base universal ni un único algoritmo de comportamiento.
+
+El núcleo lógico debe decidir estados y consecuencias. El futuro cliente gráfico decide cómo representar visualmente multitudes, individuos, animaciones, LOD visual y agrupaciones. La cantidad de modelos renderizados no debe convertirse en la fuente de verdad de la población del mundo.
+
+No se prescribe todavía ECS, un sistema de multitudes concreto, un motor de navegación, un Event Bus global ni una tecnología de streaming. Esas decisiones dependen de perfiles de rendimiento y prototipos posteriores.
+
+### 13.11 Preguntas pendientes y validación
+
+Antes de convertir esta propuesta en requisitos deben resolverse, entre otras, estas cuestiones:
+
+1. ¿Qué datos colectivos necesita cada tipo de asentamiento y cada población de criaturas?
+2. ¿Qué individuos requieren identidad persistente y cuáles pueden ser agentes temporales?
+3. ¿Qué interacciones mínimas puede realizar el jugador con NPC ambientales?
+4. ¿Qué actividades de la población simulada tienen consecuencias económicas o solo visuales?
+5. ¿Cómo se calculan y conservan población histórica, población presente y población visible?
+6. ¿Qué reglas de tiempo, desplazamiento y actividad se aplican a cada nivel de fidelidad?
+7. ¿Qué acontecimientos obligan a actualizar una región distante?
+8. ¿Qué especies tienen relaciones ecológicas relevantes y qué variables las gobiernan?
+9. ¿Cómo se evita que la población se regenere de forma explotable o contradiga acontecimientos persistentes?
+10. ¿Cómo se integran patrullas, campamentos y facciones con el control territorial y la reputación?
+11. ¿Qué límites de agentes y grupos simultáneos soportan los escenarios objetivo? Esto requiere medición, no una cifra supuesta.
+12. ¿Cómo se valida que la transición entre simulación abstracta e individual no duplica, pierde ni reinicia estados?
+
+Los rangos de población y cantidades de NPC de esta sección deben probarse mediante prototipos de asentamientos de distintos tamaños y regiones con diferentes densidades de fauna y amenazas. La aceptación debe basarse en legibilidad, sensación de actividad, variedad, rendimiento y coherencia sistémica, no solo en alcanzar un número.
+
+### 13.12 Relación con el baseline y el roadmap
+
+- Esta propuesta amplía la simulación por niveles de detalle y la vida social/ecológica del mundo descritas anteriormente.
+- No modifica el GDD baseline ni convierte las cifras de 37 km², NPC o población visible en requisitos definitivos.
+- No cambia el catálogo, las recompensas ni las reglas de reaparición de jefes.
+- No aprueba automáticamente reproducción, extinción, economía simulada, migración, multitudes persistentes ni muerte permanente de NPC.
+- No añade código de dominio, infraestructura de simulación ni dependencias del motor gráfico.
+- No altera el siguiente paso técnico acordado: continuar construyendo el estado de personajes y entidades de combate sobre los contratos existentes antes de implementar sistemas de mundo más amplios.
+
+**Principio rector:** representar un mundo poblado y reactivo sin exigir que cada habitante o criatura sea una entidad compleja y activa todo el tiempo; conservar las consecuencias importantes y simplificar lo que no necesita detalle.
+
