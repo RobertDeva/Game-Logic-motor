@@ -75,6 +75,17 @@ public sealed record PlayerResurrectionState
         Phase == PlayerResurrectionPhase.AwaitingDecision &&
         (Charges.InitialChargeAvailable || Charges.AdditionalUsableCharges > 0);
 
+    /// <summary>Connects resolved player damage to the voluntary resurrection decision.</summary>
+    public Result<PlayerResurrectionState> TryProcessCombatImpact(CombatImpactResult impact)
+    {
+        ArgumentNullException.ThrowIfNull(impact);
+        if (Phase != PlayerResurrectionPhase.Alive)
+            return Failure("resurrection.invalid_phase", "Combat impacts can only be processed while the player is alive.");
+        return impact.VitalityDepleted
+            ? TryBeginLethalEvent()
+            : Result<PlayerResurrectionState>.Success(this);
+    }
+
     public Result<PlayerResurrectionState> TryBeginLethalEvent()
     {
         if (Phase != PlayerResurrectionPhase.Alive)
