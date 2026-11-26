@@ -74,7 +74,11 @@ A Nemesis needs a stable identity and persistent record independent of a single 
 
 The Nemesis system must coordinate with enemy lifecycle and world population systems. Defeating a Nemesis permanently should retire its record according to an explicit rule; it must not silently respawn as the same rival unless a narrative or gameplay rule explicitly permits it.
 
-## 8. Architectural boundaries
+## 8. Nemesis final execution
+
+A Nemesis may be permanently eliminated through a special second finisher chained to a normal Muertebendita execution. The normal execution is followed by a distinct kneeling state that enables an optional contextual final finisher, such as a decapitation. The first execution defeats the Nemesis in the encounter but does not by itself retire its persistent identity; only successful completion of the second action permanently retires that identity. This lifecycle is separate from ordinary Muertebendita resolution and is specified in [Nemesis final execution](nemesis-final-execution.md). The opportunity's duration, interruption behavior, and per-Nemesis eligibility policy remain unresolved.
+
+## 9. Architectural boundaries
 
 1. **Nemesis progression state (Domain):** owns category, rank, growth marks, category ceiling, and idempotent encounter credits.
 2. **Encounter integration (Application):** reports authoritative player defeat and identifies the responsible Nemesis.
@@ -85,11 +89,12 @@ The Nemesis system must coordinate with enemy lifecycle and world population sys
 
 The domain expresses deterministic rules and immutable state transitions. Application coordinates encounter outcomes, world spawning, and persistence; presentation handles dialogue, animation, and visual rendering.
 
-## 9. Remaining work
+## 10. Remaining work
 
 - authoritative encounter-to-Nemesis attribution, including simultaneous sources and environmental causality;
 - a concrete durable implementation of the Nemesis progression repository contract;
 - persistence of credited encounter IDs and progression state across process restarts;
-- active Nemesis limits, retreat, permanent-death, replacement, and respawn rules;
+- active Nemesis limits, retreat, non-execution defeat, and replacement rules;
+- implementation of the approved chained final-execution lifecycle and persistent retirement;
 - applying rank evolution definitions to actual enemy archetypes;
 - playtesting the promotion curve and adjusting it through explicit balance configuration if needed.

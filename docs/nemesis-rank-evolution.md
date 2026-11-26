@@ -90,26 +90,33 @@ Boss Nemeses evolve through mastery of their existing identity, arena, and phase
 - A resistant Nemesis continues to follow the established execution rule: each valid execution consumes its active vitality bar and resets its single posture bar, unless vitality was already fully depleted.
 - Bosses continue to follow their boss-phase and defeat rules. Nemesis rank cannot add vitality bars or override phase transitions unless a separate boss-design decision explicitly authorizes it.
 
-### 5.2 Posture and recovery
+### 5.2 Nemesis final execution
+
+- Nemesis rank does not automatically unlock or disable the special final finisher.
+- The approved sequence is normal Muertebendita execution, a kneeling state that enables a contextual final action, and optional permanent execution of that same Nemesis identity.
+- The final action is not a second ordinary Muertebendita execution and must not consume another vitality bar or duplicate ordinary defeat rewards.
+- Eligibility, timing, interruption, and presentation are lifecycle/content policies, not rank bonuses. See [Nemesis final execution](nemesis-final-execution.md).
+
+### 5.3 Posture and recovery
 
 - Rank evolutions may introduce new posture-pressure actions or defensive behaviors, but must use the established posture-pressure and recovery pipeline.
 - An evolution cannot silently disable posture recovery, posture break, or the player's ability to pressure an enemy.
 - Enemy posture recovery remains governed by the existing vitality-dependent recovery curve and encounter timing.
 
-### 5.3 Adaptive combat
+### 5.4 Adaptive combat
 
 - Rank can unlock or configure additional tactical options, but does not automatically increase AdaptiveCombatLevel.
 - The content profile must explicitly declare which adaptive capabilities a Nemesis receives.
 - Persistent Nemesis history may inform the encounter's adaptive memory; the two records retain separate lifecycles.
 
-### 5.4 Boss phases
+### 5.5 Boss phases
 
 - Boss Nemesis evolution must preserve the configured phase count and transition contract.
 - Existing vulnerability and invulnerability durations remain authoritative.
 - Special transition attacks remain restricted to phases explicitly declared by the boss profile.
 - One impact must not skip multiple boss bars/phases as a side effect of Nemesis evolution.
 
-### 5.5 Player counterplay
+### 5.6 Player counterplay
 
 Every combat-affecting evolution must define:
 - what player behavior or situation triggers it;
