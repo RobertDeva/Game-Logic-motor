@@ -105,7 +105,7 @@ public sealed class NemesisProgressionState
             if (growthMarks != 0)
                 throw new ArgumentException("A Nemesis at its rank ceiling cannot retain growth marks.", nameof(growthMarks));
         }
-        else if (growthMarks >= GetRequiredMarksForRank(category, rank))
+        else if (growthMarks >= GetRequiredMarksForRank(rank))
         {
             throw new ArgumentException("Persisted growth marks must be below the next promotion threshold.", nameof(growthMarks));
         }
@@ -113,7 +113,7 @@ public sealed class NemesisProgressionState
         return new NemesisProgressionState(nemesisId, category, rank, growthMarks, ids.ToHashSet());
     }
 
-    private static int GetRequiredMarksForRank(NemesisEnemyCategory category, int rank)
+    private static int GetRequiredMarksForRank(int rank)
     {
         var state = Create(EntityId.New(), category, EntityId.New());
         for (var currentRank = 1; currentRank < rank; currentRank++)
