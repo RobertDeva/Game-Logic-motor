@@ -23,8 +23,8 @@ La existencia de tipos de dominio no debe confundirse con la implementación de 
 | Recursos acotados | Implementados |
 | Vitalidad segmentada y Postura independiente | Implementadas; transiciones inmutables básicas disponibles |
 | Reloj lógico y aleatoriedad determinista | Implementados en sus respectivos proyectos |
-| Acciones y condiciones | Contratos genéricos implementados; acciones concretas y resolución pendientes |
-| Resolución de daño, presión, desvío y ejecución | Pendiente |
+| Acciones y condiciones | Contratos genéricos, solicitudes y validación de combate implementados; resolución de consecuencias pendiente |
+| Resolución de daño, presión, desvío y ejecución | Pendiente; la validación de solicitudes ya está implementada |
 | Efectos y postacciones | Pendientes |
 | Eventos y reacciones | Pendientes |
 | Economía y progresión por almas | Pendientes en código |
@@ -79,7 +79,7 @@ No introducir ECS, event sourcing, un Event Bus global, framework DI complejo ni
 
 1. Contratos fundamentales.
 2. Estado de dominio.
-3. Completar acciones concretas y resolución sobre los contratos de condiciones ya implementados.
+3. Completar acciones concretas y resolución de consecuencias sobre las solicitudes y condiciones ya implementadas.
 4. Efectos, eventos y postacciones.
 5. Simulación temporal.
 6. Casos de uso de Application.
