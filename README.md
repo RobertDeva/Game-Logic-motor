@@ -57,6 +57,7 @@ dotnet test --no-build
 - [Afinidades energéticas](docs/energy-affinity-system.md): matriz dirigida de seis energías, relaciones recíprocas y multiplicadores confirmados.
 - [Presión y recuperación de Postura](docs/posture-pressure-and-recovery.md): fórmula de presión, curva de recuperación configurable según Vitalidad y aplicación inmutable.
 - [Muertebendita](docs/muertebendita-execution.md): elegibilidad y ejecuciones manuales de enemigos normales y resistentes.
+- [Fases de jefes](docs/boss-phase-transitions.md): 3–5 barras/fases, retención del 40 % de Postura y ventanas vulnerables/invulnerables.
 - [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas, jefes colosos, reputación territorial, memoria histórica, eventos, facciones, entidades reactivas, misiones dinámicas y poblaciones simuladas de asentamientos, fauna y enemigos. Las ideas permanecen separadas del baseline hasta su aprobación.
 
 ## Documento rector
