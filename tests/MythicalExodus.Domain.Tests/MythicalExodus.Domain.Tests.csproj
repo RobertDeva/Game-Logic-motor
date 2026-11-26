@@ -15,5 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/MythicalExodus.Domain/MythicalExodus.Domain.csproj" />
+    <ProjectReference Include="../../src/MythicalExodus.Application/MythicalExodus.Application.csproj" />
   </ItemGroup>
 </Project>

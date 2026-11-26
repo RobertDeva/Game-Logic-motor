@@ -1,6 +1,6 @@
 # Nemesis system
 
-**Status:** universal eligibility, category-specific rank ceilings, and the escalating rank-promotion schedule are implemented in the Domain. The 45-rank evolution catalogue remains a content-design specification awaiting archetype-specific content integration. Encounter attribution, durable persistence, and world lifecycle integration remain unfinished.
+**Status:** universal eligibility, category-specific rank ceilings, and rank progression are implemented in the Domain. Application now coordinates authoritative defeat credits with the resurrection decision and uses a compare-and-swap persistence contract. A concrete durable repository, source attribution, and world lifecycle integration remain unfinished.
 
 ## 1. Core design decisions
 
@@ -49,7 +49,7 @@ Implemented rules:
 
 The rebased later-defeat totals from rank 1 to maximum are 32 for normal enemies, 19 for special enemies, and 9 for bosses. This is approximately 30% fewer victories than the previous totals of 46, 27, and 13; integer rounding accounts for the small category differences.
 
-The Domain receives an already-authoritative Nemesis/encounter attribution. It does not yet decide which enemy caused a defeat when several enemies contribute, preserve causal identity for environmental chains, or coordinate the defeat event with resurrection. Those responsibilities belong to Application.
+Application receives a `PlayerDefeatOutcome` containing the encounter, player, and at most one authoritative enemy credit. A missing credit represents an unattributed lethal cause and does not create or advance a Nemesis. Application validates the enemy's original category, creates rank 1 on the first credited defeat, advances existing Nemesis records on later defeats, and persists the update before opening the resurrection decision. Compare-and-swap repository operations prevent concurrent updates from silently overwriting one another; a conflict is returned for retry with the same encounter ID. The exact attribution of a lethal source when several enemies or environmental effects contribute remains the responsibility of the encounter/combat host.
 
 ## 5. Separate memory responsibilities
 
@@ -88,8 +88,8 @@ The domain expresses deterministic rules and immutable state transitions. Applic
 ## 9. Remaining work
 
 - authoritative encounter-to-Nemesis attribution, including simultaneous sources and environmental causality;
-- ordering defeat credit with voluntary resurrection;
-- durable persistence of credited encounter IDs and progression state;
+- a concrete durable implementation of the Nemesis progression repository contract;
+- persistence of credited encounter IDs and progression state across process restarts;
 - active Nemesis limits, retreat, permanent-death, replacement, and respawn rules;
 - applying rank evolution definitions to actual enemy archetypes;
 - playtesting the promotion curve and adjusting it through explicit balance configuration if needed.
