@@ -390,3 +390,115 @@ La traza representa resultados hipotéticos; no son comandos implementados ni va
 - No exige un grafo global complejo, event sourcing ni una infraestructura de mensajería antes de demostrar que son necesarios.
 - Las ideas permanecen separadas del GDD baseline y del código hasta que se aprueben sus reglas funcionales.
 
+## 12. Eventos del dominio, facciones, entidades reactivas y misiones
+
+**Estado: PROPUESTA ARQUITECTÓNICA EN EVALUACIÓN.** Esta sección recoge una posible organización de los sistemas descritos para conectar combate, reputación, NPC y misiones. No declara implementado un bus de eventos, un grafo de facciones, máquinas de estados ni un sistema de misiones.
+
+### 12.1 Acontecimientos y comunicación entre subsistemas
+
+Se propone que los sistemas publiquen acontecimientos de dominio que puedan interesar a otros subsistemas, evitando que el código de combate conozca directamente las implementaciones de reputación, misiones, diálogo o IA.
+
+Ejemplo conceptual: al resolverse definitivamente la derrota de un jefe, el dominio registra un acontecimiento con identidad del encuentro, participantes, lugar, instante lógico y resultado. Los consumidores que correspondan podrían reaccionar:
+
+- Misiones: comprobar si el acontecimiento satisface algún objetivo activo.
+- Reputación e historia: interpretar el hecho según las comunidades y facciones afectadas.
+- NPC y diálogo: actualizar reconocimiento, conocimiento o contexto conversacional cuando la información haya llegado hasta ellos.
+- Mundo y encuentros: actualizar consecuencias persistentes relacionadas con el jefe derrotado.
+
+El emisor no debe necesitar conocer quién consume el acontecimiento. Sin embargo, esto no obliga a introducir desde el primer momento un Event Bus global o una infraestructura compleja. La primera implementación podría usar contratos y publicación explícita dentro de un límite bien definido. La necesidad de colas, prioridades, reintentos o mensajería más elaborada debe demostrarse con casos reales.
+
+**Invariantes por diseñar:**
+- Distinguir comandos/intenciones de acontecimientos ya ocurridos.
+- Definir identidad, orden y momento de publicación de cada acontecimiento.
+- Evitar procesar dos veces consecuencias irreversibles por recarga, reingreso o repetición de una operación.
+- Controlar reentrancia, ciclos de reacciones y cadenas de acontecimientos.
+- Determinar qué sucede si un consumidor falla después de que el acontecimiento ya fue registrado.
+- Mantener el dominio independiente de infraestructura externa y del motor gráfico.
+
+No se adopta todavía un patrón Event Sourcing ni se prescribe una librería de Event Bus.
+
+### 12.2 Grafo de facciones, comunidades y hostilidad
+
+La propuesta amplía la sección 11: las relaciones entre facciones, comunidades, territorios y asentamientos podrían representarse mediante un grafo de relaciones explícitas, posiblemente dirigidas y asimétricas.
+
+El grafo no debe reducir toda relación social a una única cifra. Conviene mantener separados, cuando el diseño lo requiera:
+
+- Reputación o valoración del jugador por una comunidad/facción.
+- Hostilidad o disposición a actuar contra el jugador.
+- Notoriedad: cuánto se conoce su identidad o sus acciones.
+- Conocimiento: qué hechos concretos conoce cada actor y por qué medios.
+- Relaciones entre las propias organizaciones: alianza, rivalidad, subordinación, dependencia o comercio.
+
+Una facción podría considerar enemigo al jugador sin que todas las comunidades del mundo compartan esa valoración. Las reacciones deben depender de relaciones, información disponible, autoridad local y contexto.
+
+La entrada en una región podría provocar una evaluación de las relaciones pertinentes y desencadenar respuestas como vigilancia, advertencias, rechazo de servicios, cierre de comercios, diálogo contextual o combate. Estas respuestas son posibilidades, no consecuencias universales ni automáticas.
+
+**No están aprobados** un umbral fijo como reputación inferior a -50, un estado global binario de “zona hostil”, ni la propagación inmediata de hostilidad a todos los guardias y comerciantes. Los umbrales, alcance, excepciones, tiempos de reacción y condiciones de conocimiento requieren diseño y pruebas.
+
+### 12.3 Entidades y máquinas de estados
+
+Se propone modelar las entidades del mundo mediante contratos comunes solo cuando compartan invariantes reales, y especializar sus capacidades y comportamiento según el tipo de entidad.
+
+Posibles familias de comportamiento:
+
+- NPC: rutinas, necesidades, desplazamiento, interacción, conocimiento, diálogo y reacción social.
+- Enemigos comunes: patrulla, percepción, investigación, combate, retirada u otros comportamientos definidos por su diseño.
+- Jefes: patrones de combate, fases, transiciones, vulnerabilidades, adaptación y reglas particulares del encuentro.
+- Colosos: estados y capacidades específicos de su anatomía, regiones funcionales, agarre, desplazamiento y objetivos de fase, según el encuentro.
+
+Las máquinas de estados son una herramienta candidata, no una obligación de que toda entidad use una única State Machine. Algunos comportamientos podrían requerir estados jerárquicos, capacidades compuestas, decisiones basadas en utilidad o simples reglas explícitas. Se debe elegir la solución más sencilla que represente el comportamiento sin crear estados combinatorios inmanejables.
+
+Tampoco se decide que NPC, mobs y jefes deban heredar todos de una clase concreta como `Character`. La composición y los contratos pequeños deben evaluarse frente a la herencia, evitando una clase base que acumule responsabilidades incompatibles.
+
+Los estados concretos mencionados en la propuesta original —por ejemplo, patrulla, investigación, huida, transición de fase o vulnerabilidad anatómica— son ejemplos ilustrativos. Su vocabulario definitivo dependerá de los comportamientos aprobados.
+
+### 12.4 Misiones, objetivos y diario
+
+Se propone representar una misión mediante datos y reglas que permitan evaluar:
+
+- Requisitos de activación y progreso.
+- Objetivos y condiciones de cumplimiento.
+- Acontecimientos relevantes.
+- Recompensas y consecuencias.
+- Pistas, testimonios y conocimiento disponible para el jugador.
+- Rutas alternativas y condiciones de resolución, fracaso o cierre.
+
+El diario no debería ser una simple lista de textos estáticos ni conocer acontecimientos que el personaje todavía no ha descubierto. Debe presentar información derivada del estado de la misión y del conocimiento que el jugador posee.
+
+Los acontecimientos de NPC —muerte, desaparición, traslado o cambio de ocupación— podrían modificar una misión si existe una regla que relacione ese acontecimiento con sus objetivos. La misión podría continuar por una ruta alternativa, quedar bloqueada, resolverse de otra manera o fracasar. Ninguna de estas consecuencias debe aplicarse automáticamente a todas las misiones.
+
+La muerte persistente de un NPC no implica por sí sola que el jugador pueda encontrar siempre su cadáver ni que el cadáver revele información suficiente; eso depende de la persistencia, localización y reglas de conocimiento que se diseñen.
+
+### 12.5 Ejemplo de integración, no implementación
+
+Secuencia hipotética:
+
+1. El combate confirma la derrota definitiva de un jefe.
+2. Se registra un acontecimiento único.
+3. Las misiones interesadas evalúan si alguno de sus objetivos se ha cumplido.
+4. El sistema histórico conserva el hecho y su contexto.
+5. Reputación interpreta las consecuencias para las comunidades relacionadas.
+6. Los rumores transmiten la noticia por canales y tiempos plausibles.
+7. NPC y facciones reaccionan solo cuando disponen de información suficiente.
+8. El diario muestra las pistas y cambios que el personaje puede conocer.
+
+Esta secuencia ilustra la cooperación entre sistemas; no exige que todos se ejecuten de forma síncrona ni que exista un bus global.
+
+### 12.6 Decisiones pendientes y límites de implementación
+
+Antes de convertir esta propuesta en código deben definirse, como mínimo:
+
+1. Catálogo de acontecimientos de dominio y sus datos obligatorios.
+2. Límites de publicación y consumo, orden, reentrancia e idempotencia.
+3. Si basta una publicación local explícita o existe una necesidad real de Event Bus.
+4. Tipos de nodos y relaciones del grafo, direccionalidad y reglas de propagación.
+5. Diferencia funcional entre reputación, hostilidad, notoriedad y conocimiento.
+6. Umbrales y respuestas concretas de guardias, comerciantes, NPC y facciones.
+7. Capacidades compartidas por entidades y límites de especialización.
+8. Comportamientos que realmente necesitan máquinas de estados y su granularidad.
+9. Modelo de misión, objetivos, requisitos, recompensas, fracaso y alternativas.
+10. Reglas de conocimiento que determinan qué puede mostrar el diario.
+11. Persistencia y recuperación ante fallos para acontecimientos y consecuencias.
+12. Pruebas de integración que demuestren que una consecuencia no se duplica ni se propaga a actores desinformados.
+
+**Relación con el roadmap técnico:** estos conceptos no alteran el orden inmediato de construir estado de personaje y combate sobre los contratos existentes. Los acontecimientos pueden surgir primero como resultados explícitos de dominio; la arquitectura de publicación se refinará cuando haya más de un consumidor real. Reputación, IA y misiones se implementarán después de definir sus contratos y reglas. No se añade código por registrar esta propuesta.
