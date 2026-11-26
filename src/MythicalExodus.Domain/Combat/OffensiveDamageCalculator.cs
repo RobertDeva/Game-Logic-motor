@@ -45,6 +45,11 @@ public sealed class OffensiveDamageComponentDefinition
             throw new ArgumentException("Scaling entries cannot be null.", nameof(scaling));
         if (_scaling.Select(item => item.Attribute).Distinct().Count() != _scaling.Length)
             throw new ArgumentException("A component cannot declare the same attribute more than once.", nameof(scaling));
+        if (_scaling.Any(item => item.Attribute is not (
+            CharacterAttribute.Strength or CharacterAttribute.Dexterity or CharacterAttribute.Harmony)))
+            throw new ArgumentException(
+                "Only Strength, Dexterity, and Harmony can contribute to direct damage scaling in model v1.0. Willpower is applied separately.",
+                nameof(scaling));
         if (_scaling.Sum(item => item.Coefficient) > MaximumScalingCoefficientTotal)
             throw new ArgumentOutOfRangeException(nameof(scaling),
                 $"The total attribute scaling coefficient cannot exceed {MaximumScalingCoefficientTotal}.");
