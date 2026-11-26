@@ -78,6 +78,56 @@ public sealed class NemesisProgressionState
             new HashSet<EntityId> { firstDefeatEncounterId });
     }
 
+    /// <summary>Rehydrates a persisted progression snapshot after validating its invariants.</summary>
+    public static NemesisProgressionState Restore(
+        EntityId nemesisId,
+        NemesisEnemyCategory category,
+        int rank,
+        int growthMarks,
+        IEnumerable<EntityId> creditedEncounterIds)
+    {
+        if (nemesisId.IsEmpty)
+            throw new ArgumentException("A valid Nemesis identifier is required.", nameof(nemesisId));
+        if (!Enum.IsDefined(category))
+            throw new ArgumentOutOfRangeException(nameof(category));
+        if (rank < 1 || rank > GetMaximumRank(category))
+            throw new ArgumentOutOfRangeException(nameof(rank));
+        if (growthMarks < 0)
+            throw new ArgumentOutOfRangeException(nameof(growthMarks));
+        ArgumentNullException.ThrowIfNull(creditedEncounterIds);
+
+        var ids = creditedEncounterIds.ToArray();
+        if (ids.Length == 0 || ids.Any(id => id.IsEmpty) || ids.Distinct().Count() != ids.Length)
+            throw new ArgumentException("Persisted encounter identifiers must be non-empty and unique.", nameof(creditedEncounterIds));
+
+        if (rank == GetMaximumRank(category))
+        {
+            if (growthMarks != 0)
+                throw new ArgumentException("A Nemesis at its rank ceiling cannot retain growth marks.", nameof(growthMarks));
+        }
+        else if (growthMarks >= GetRequiredMarksForRank(category, rank))
+        {
+            throw new ArgumentException("Persisted growth marks must be below the next promotion threshold.", nameof(growthMarks));
+        }
+
+        return new NemesisProgressionState(nemesisId, category, rank, growthMarks, ids.ToHashSet());
+    }
+
+    private static int GetRequiredMarksForRank(NemesisEnemyCategory category, int rank)
+    {
+        var state = Create(EntityId.New(), category, EntityId.New());
+        for (var currentRank = 1; currentRank < rank; currentRank++)
+        {
+            var required = state.GetRequiredGrowthMarksForNextRank()
+                ?? throw new InvalidOperationException("Unexpected rank ceiling while validating persisted progression.");
+            state = Restore(state.NemesisId, category, currentRank + 1, 0, state.CreditedEncounterIds);
+            _ = required;
+        }
+
+        return state.GetRequiredGrowthMarksForNextRank()
+            ?? throw new InvalidOperationException("A non-maximum rank must have a promotion threshold.");
+    }
+
     /// <summary>
     /// Records one qualifying defeat from a distinct encounter. Reprocessing an
     /// encounter is idempotent. Each encounter can promote at most one rank.

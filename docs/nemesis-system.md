@@ -1,6 +1,6 @@
 # Nemesis system
 
-**Status:** universal eligibility, category-specific rank ceilings, and rank progression are implemented in the Domain. Application now coordinates authoritative defeat credits with the resurrection decision and uses a compare-and-swap persistence contract. A concrete durable repository, source attribution, and world lifecycle integration remain unfinished.
+**Status:** universal eligibility, category-specific rank ceilings, and rank progression are implemented in the Domain. Application now coordinates authoritative defeat credits with the resurrection decision and uses a compare-and-swap persistence contract. A JSON file-backed repository now persists progression snapshots with atomic replacement and in-process compare-and-swap. Encounter-host source attribution and world lifecycle integration remain unfinished.
 
 ## 1. Core design decisions
 
