@@ -1,6 +1,6 @@
 # Nemesis system
 
-**Status:** universal eligibility and rank ladders approved; promotion triggers, rank names, and detailed evolution rewards remain unspecified.
+**Status:** universal eligibility and category-specific rank ceilings are approved. A complete 45-rank evolution catalogue has been drafted in [Nemesis rank evolution catalogue](nemesis-rank-evolution.md); its detailed gameplay rewards are a design proposal pending review. Promotion thresholds and numerical tuning remain open.
 
 ## 1. Core design decisions
 
@@ -20,13 +20,25 @@ The maximum rank depends on the enemy's original category:
 | Special | 15 |
 | Boss | 10 |
 
-The first qualifying victory over the player creates the Nemesis identity at rank 1. Further qualifying victories can promote that Nemesis progressively, up to the maximum for its category.
+The first qualifying victory over the player creates the Nemesis identity at rank 1. Further qualifying victories by that same Nemesis allow progressive promotion, subject to its category ceiling.
 
 These are category-specific ceilings, not a claim that every Nemesis must reach its maximum. A Nemesis at its cap may continue to remember encounters and develop in ways allowed by its evolution profile, but it cannot exceed the category's rank limit.
 
-Rank numbers are canonical identifiers for progression. Rank names, presentation titles, promotion thresholds, and the exact effects of each rank are not defined yet. The enemy's category is retained when it becomes a Nemesis; rank progression does not by itself promote a normal enemy into the special or boss category.
+Rank numbers are canonical identifiers for progression. The enemy's category is retained when it becomes a Nemesis; rank progression does not by itself promote a normal enemy into the special or boss category.
 
-## 3. Separate memory responsibilities
+## 3. Evolution catalogue
+
+The companion [Nemesis rank evolution catalogue](nemesis-rank-evolution.md) defines a proposed distinct evolution for every rank across all three categories:
+
+- 20 ranks for normal enemies;
+- 15 ranks for special enemies;
+- 10 ranks for bosses.
+
+The catalogue intentionally mixes combat capabilities with equipment, tactical behavior, visual identity, coordination, and world recognition. It does not assume that every promotion increases raw statistics. It also defines constraints for Muertebendita, posture, adaptive combat, boss phases, and player counterplay.
+
+The catalogue is a content-design specification, not a universal moveset. Each enemy archetype must implement only compatible evolutions. Exact promotion thresholds, numerical values, action timings, cooldowns, and resource costs remain open and must not be inferred from rank descriptions.
+
+## 4. Separate memory responsibilities
 
 Nemesis progression is a persistent world-level system and must remain distinct from encounter-scoped adaptive combat memory.
 
@@ -35,29 +47,13 @@ Nemesis progression is a persistent world-level system and must remain distinct 
 
 The two systems may inform one another, but neither should own the other's lifecycle. Nemesis history must not be erased when an encounter ends or when adaptive combat memory is reset.
 
-## 4. Defeat and resurrection relationship
+## 5. Defeat and resurrection relationship
 
 A Nemesis candidate is created or advanced because it defeated the player, not because it merely participated in combat or dealt damage.
 
 The resurrection flow is voluntary. The Nemesis system must therefore be integrated with the authoritative lethal-event/defeat outcome so that the enemy's victory is recorded consistently even when the player chooses to resurrect. A resurrection does not retroactively erase the enemy's victory or its memory of the encounter.
 
 The exact encounter event contract and the handling of simultaneous/multiple enemy contributions remain implementation details to define in the application layer.
-
-## 5. Rank and evolution
-
-The first qualifying player defeat establishes the enemy as a rank-1 Nemesis. Later qualifying victories are progression opportunities and can increase its rank, subject to the category-specific cap.
-
-Evolution is content-driven and need not mean a uniform increase to every statistic. It may include new tactics, equipment, scars, visual identity, personality, or other configured changes. A promotion must remain valid for the enemy's archetype and available capabilities.
-
-The following are deliberately not fixed yet:
-- rank names and presentation titles;
-- exact promotion thresholds and whether every subsequent victory grants a rank;
-- exact changes to attributes, equipment, appearance, moves, and tactical capabilities at each rank;
-- whether a Nemesis at maximum rank can gain non-rank evolution;
-- rules for retreat, permanent death, replacement, and population limits;
-- how simultaneous or cooperative enemy contributions to a player defeat are attributed.
-
-No numeric bonuses, promotion formulas, or automatic stat multipliers may be inferred from the rank ladder.
 
 ## 6. Persistence and lifecycle
 
@@ -71,7 +67,7 @@ The intended responsibilities are:
 
 1. **Nemesis eligibility and promotion policy:** decides whether an enemy can enter or advance in the system after a qualifying player defeat.
 2. **Persistent Nemesis record:** owns identity, category, rank, encounter history, and evolution history.
-3. **Evolution policy:** applies configured, archetype-valid changes.
+3. **Evolution policy:** applies configured, archetype-valid changes from the rank evolution catalogue.
 4. **Encounter integration:** reports authoritative player defeat and connects the responsible enemy or enemies to the Nemesis policy.
 5. **Adaptive combat integration:** exposes persistent Nemesis knowledge to encounter AI without merging persistent and encounter-scoped memories.
 6. **Persistence:** saves and restores Nemesis records and world identity.
@@ -80,12 +76,12 @@ The domain should express deterministic rules and state transitions. Application
 
 ## 8. Remaining design decisions before implementation
 
-The following still need to be settled before implementing the complete progression policy:
-- rank names and presentation titles, if any;
-- the promotion threshold for each subsequent victory;
-- the evolution rewards and behavior changes associated with each rank;
-- whether active Nemeses or simultaneous claims on one defeat are limited;
+The following still need to be settled:
+- the number of repeat victories required for each promotion and whether thresholds escalate;
+- whether one defeat can promote several enemies or how responsibility is assigned when multiple enemies contribute;
+- exact numerical changes, action timings, cooldowns, and resource costs for archetype-specific evolutions;
+- limits on simultaneous active Nemeses;
 - retreat, permanent-death, replacement, and return rules;
-- how bosses' Nemesis evolution interacts with their phase system.
+- whether a Nemesis can lose rank or evolve through events other than defeating the player.
 
-The approved category ceilings are fixed at 20 for normal enemies, 15 for special enemies, and 10 for bosses. Until the remaining rules are agreed, implementation must not invent promotion thresholds, rank rewards, or population caps.
+The category ceilings and the 45-rank evolution catalogue are now documented. The remaining rules must be agreed before implementing the complete progression policy. No promotion formula, numerical stat scaling, or population cap should be invented.
