@@ -52,12 +52,12 @@ public sealed class NemesisProgressionTests
 
         var firstMark = state.RecordQualifyingDefeat(EntityId.New());
         Assert.Equal(NemesisProgressionUpdateStatus.GrowthMarkRecorded, firstMark.Status);
-        Assert.Equal(6, firstMark.State.Rank);
+        Assert.Equal(10, firstMark.State.Rank);
         Assert.Equal(1, firstMark.State.GrowthMarks);
 
         var secondMark = firstMark.State.RecordQualifyingDefeat(EntityId.New());
         Assert.Equal(NemesisProgressionUpdateStatus.RankPromoted, secondMark.Status);
-        Assert.Equal(7, secondMark.State.Rank);
+        Assert.Equal(11, secondMark.State.Rank);
         Assert.Equal(0, secondMark.State.GrowthMarks);
     }
 
@@ -66,15 +66,16 @@ public sealed class NemesisProgressionTests
     {
         var state = NemesisProgressionState.Create(EntityId.New(), NemesisEnemyCategory.Normal, EntityId.New());
 
-        for (var i = 0; i < 5; i++)
+        for (var i = 0; i < 9; i++)
             state = state.RecordQualifyingDefeat(EntityId.New()).State;
 
-        Assert.Equal(6, state.Rank);
+        Assert.Equal(10, state.Rank);
         Assert.Equal(0, state.GrowthMarks);
 
         var update = state.RecordQualifyingDefeat(EntityId.New());
 
-        Assert.Equal(6, update.State.Rank);
+        Assert.Equal(NemesisProgressionUpdateStatus.GrowthMarkRecorded, update.Status);
+        Assert.Equal(10, update.State.Rank);
         Assert.Equal(1, update.State.GrowthMarks);
     }
 
