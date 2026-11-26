@@ -12,6 +12,9 @@ public readonly record struct EntityId
     }
 
     public Guid Value { get; }
+    public bool IsEmpty => Value == Guid.Empty;
+
     public static EntityId New() => new(Guid.NewGuid());
+
     public override string ToString() => Value.ToString("N");
 }
