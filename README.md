@@ -52,6 +52,7 @@ dotnet test --no-build
 - [Validación de solicitudes de combate](docs/combat-action-validation.md): snapshots explícitos, identidad de actor/objetivo y validación de solicitudes sin aplicar consecuencias.
 - [Aplicación de impactos de combate](docs/combat-impact-application.md): transición inmutable de daño de Vitalidad y presión de Postura, overflow entre barras y límites de recursos.
 - [Sistema de resurrección](docs/player-resurrection-system.md): cargas, decisión voluntaria tras golpe mortal, debuff temporal configurable, Game Over y retorno al último punto de descanso.
+- [Cálculo ofensivo](docs/offensive-damage-calculation.md): curvas de atributos v1.0, escalado explícito por componente y bonificación universal de Voluntad.
 - [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas, jefes colosos, reputación territorial, memoria histórica, eventos, facciones, entidades reactivas, misiones dinámicas y poblaciones simuladas de asentamientos, fauna y enemigos. Las ideas permanecen separadas del baseline hasta su aprobación.
 
 ## Documento rector
