@@ -146,9 +146,38 @@ public sealed class NemesisProgressionState
             requiredMarks);
     }
 
-    /// <summary>Returns null when the Nemesis has reached its category ceiling.</summary>
-    public int? GetRequiredGrowthMarksForNextRank() =>
-        IsAtMaximumRank ? null : 1 + ((Rank - 1) / 5);
+    /// <summary>
+    /// Returns the marks required for the next rank. The original escalating
+    /// schedule is scaled cumulatively to 70%, with at least one mark per rank.
+    /// Cumulative scaling keeps the final victory targets close to a 30% reduction
+    /// despite integer-only encounter credits.
+    /// </summary>
+    public int? GetRequiredGrowthMarksForNextRank()
+    {
+        if (IsAtMaximumRank)
+            return null;
+
+        var cumulativeScaledMarks = 0;
+        for (var sourceRank = 1; sourceRank < Rank; sourceRank++)
+        {
+            cumulativeScaledMarks += GetScaledThreshold(sourceRank, cumulativeScaledMarks);
+        }
+
+        return GetScaledThreshold(Rank, cumulativeScaledMarks);
+    }
+
+    private int GetScaledThreshold(int sourceRank, int cumulativeMarksBeforePromotion)
+    {
+        var originalCumulativeMarks = 0;
+        for (var rank = 1; rank <= sourceRank; rank++)
+            originalCumulativeMarks += 1 + ((rank - 1) / 5);
+
+        var scaledCumulativeTarget = (int)Math.Round(
+            originalCumulativeMarks * 0.70m,
+            MidpointRounding.AwayFromZero);
+
+        return Math.Max(1, scaledCumulativeTarget - cumulativeMarksBeforePromotion);
+    }
 
     public static int GetMaximumRank(NemesisEnemyCategory category) =>
         category switch

@@ -79,9 +79,9 @@ public sealed class NemesisProgressionTests
     }
 
     [Theory]
-    [InlineData(NemesisEnemyCategory.Normal, 20, 46)]
-    [InlineData(NemesisEnemyCategory.Special, 15, 27)]
-    [InlineData(NemesisEnemyCategory.Boss, 10, 13)]
+    [InlineData(NemesisEnemyCategory.Normal, 20, 32)]
+    [InlineData(NemesisEnemyCategory.Special, 15, 19)]
+    [InlineData(NemesisEnemyCategory.Boss, 10, 9)]
     public void Escalating_schedule_reaches_each_category_ceiling(
         NemesisEnemyCategory category,
         int expectedRank,
@@ -99,9 +99,9 @@ public sealed class NemesisProgressionTests
     }
 
     [Theory]
-    [InlineData(NemesisEnemyCategory.Normal, 46)]
-    [InlineData(NemesisEnemyCategory.Special, 27)]
-    [InlineData(NemesisEnemyCategory.Boss, 13)]
+    [InlineData(NemesisEnemyCategory.Normal, 32)]
+    [InlineData(NemesisEnemyCategory.Special, 19)]
+    [InlineData(NemesisEnemyCategory.Boss, 9)]
     public void Defeats_after_rank_cap_do_not_accumulate_growth_marks(
         NemesisEnemyCategory category,
         int defeatsToCap)
@@ -116,6 +116,27 @@ public sealed class NemesisProgressionTests
         Assert.Equal(NemesisProgressionUpdateStatus.RankCapReached, capped.Status);
         Assert.Equal(state.Rank, capped.State.Rank);
         Assert.Equal(0, capped.State.GrowthMarks);
+    }
+
+    [Theory]
+    [InlineData(NemesisEnemyCategory.Normal, 32)]
+    [InlineData(NemesisEnemyCategory.Special, 19)]
+    [InlineData(NemesisEnemyCategory.Boss, 9)]
+    public void Cumulative_rebalance_reduces_total_victories_to_seventy_percent(
+        NemesisEnemyCategory category,
+        int expectedDefeats)
+    {
+        var state = NemesisProgressionState.Create(EntityId.New(), category, EntityId.New());
+        var defeats = 0;
+
+        while (!state.IsAtMaximumRank)
+        {
+            var update = state.RecordQualifyingDefeat(EntityId.New());
+            state = update.State;
+            defeats++;
+        }
+
+        Assert.Equal(expectedDefeats, defeats);
     }
 
     [Fact]

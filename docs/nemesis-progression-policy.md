@@ -25,24 +25,24 @@ Nemesis Growth Marks are not player souls, currency, enemy level, or encounter-s
 
 For a Nemesis currently at rank r, the required marks for its next rank are:
 
-T(r) = 1 + floor((r - 1) / 5)
+The previous schedule is retained as the baseline, but its cumulative cost is reduced to 70%:
 
-| Current rank | Marks required |
-|---:|---:|
-| 1–5 | 1 |
-| 6–10 | 2 |
-| 11–15 | 3 |
-| 16–20 | 4 |
+1. Calculate the baseline cumulative marks required to reach the next rank using the original schedule.
+2. Multiply that cumulative total by 0.70 and round to the nearest integer (midpoints away from zero).
+3. Subtract the marks already required by the rebased schedule to reach the current rank.
+4. Require at least one mark for every promotion.
 
-The threshold is evaluated from the current rank. Growth marks persist when the Nemesis loses an encounter; they are not reset by an ordinary defeat of the Nemesis.
+This cumulative method avoids fractional victories and ensures the total cost at each category ceiling is the rounded 70% target. The threshold can vary by category because each category has a different ceiling. Growth marks persist when the Nemesis loses an encounter; they are not reset by an ordinary defeat of the Nemesis.
 
 ### Total later qualifying defeats to reach the ceiling
 
 | Category | Maximum rank | Later qualifying defeats after creation |
 |---|---:|---:|
-| Normal | 20 | 46 |
-| Special | 15 | 27 |
-| Boss | 10 | 13 |
+| Normal | 20 | 46 | **32** |
+| Special | 15 | 27 | **19** |
+| Boss | 10 | 13 | **9** |
+
+The rebased totals are respectively 30.4%, 29.6%, and 30.8% lower than the baseline; the small differences from exactly 30% are caused by integer rounding.
 
 These totals are produced by the threshold schedule and are useful balance targets for later playtesting. They are not additional independent rules.
 
@@ -84,7 +84,7 @@ Application must supply a stable encounter identifier and persist credited ident
 Implemented Domain types:
 - Nemesis enemy category and category ceilings;
 - immutable Nemesis progression state;
-- growth marks and rank threshold evaluation;
+- growth marks and cumulative 70%-scaled rank threshold evaluation;
 - encounter-id idempotency;
 - rank-cap behavior.
 

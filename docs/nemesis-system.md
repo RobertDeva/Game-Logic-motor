@@ -41,13 +41,13 @@ The immutable Domain progression state is documented in [Nemesis promotion and v
 Implemented rules:
 - first qualifying player defeat creates rank 1 and records the creation encounter;
 - each later qualifying defeat in a distinct encounter grants one Nemesis Growth Mark;
-- next-rank threshold is 1 + floor((current rank - 1) / 5);
+- the original escalating threshold curve is rebased cumulatively to 70%, with at least one growth mark required for every promotion;
 - a promotion consumes the threshold and advances exactly one rank;
 - growth marks persist if the Nemesis is defeated by the player;
 - repeated processing of the same encounter is idempotent;
 - at the category cap, no further growth marks are accumulated.
 
-The resulting later-defeat totals from rank 1 to maximum are 46 for normal enemies, 27 for special enemies, and 13 for bosses. These values are consequences of the implemented threshold schedule and should be assessed through playtesting.
+The rebased later-defeat totals from rank 1 to maximum are 32 for normal enemies, 19 for special enemies, and 9 for bosses. This is approximately 30% fewer victories than the previous totals of 46, 27, and 13; integer rounding accounts for the small category differences.
 
 The Domain receives an already-authoritative Nemesis/encounter attribution. It does not yet decide which enemy caused a defeat when several enemies contribute, preserve causal identity for environmental chains, or coordinate the defeat event with resurrection. Those responsibilities belong to Application.
 
