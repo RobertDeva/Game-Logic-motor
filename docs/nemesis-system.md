@@ -1,6 +1,6 @@
 # Nemesis system
 
-**Status:** universal eligibility and category-specific rank ceilings are approved. A complete 45-rank evolution catalogue has been drafted in [Nemesis rank evolution catalogue](nemesis-rank-evolution.md); its detailed gameplay rewards are a design proposal pending review. Promotion thresholds and numerical tuning remain open.
+**Status:** universal eligibility and category-specific rank ceilings are approved. The 45-rank evolution catalogue is documented as a design proposal. A concrete escalating promotion and victory-credit policy is documented separately as a proposal pending approval. No promotion thresholds or numerical tuning are yet approved.
 
 ## 1. Core design decisions
 
@@ -28,17 +28,17 @@ Rank numbers are canonical identifiers for progression. The enemy's category is 
 
 ## 3. Evolution catalogue
 
-The companion [Nemesis rank evolution catalogue](nemesis-rank-evolution.md) defines a proposed distinct evolution for every rank across all three categories:
-
-- 20 ranks for normal enemies;
-- 15 ranks for special enemies;
-- 10 ranks for bosses.
+The companion [Nemesis rank evolution catalogue](nemesis-rank-evolution.md) defines a proposed distinct evolution for every rank across all three categories: 20 normal, 15 special, and 10 boss ranks.
 
 The catalogue intentionally mixes combat capabilities with equipment, tactical behavior, visual identity, coordination, and world recognition. It does not assume that every promotion increases raw statistics. It also defines constraints for Muertebendita, posture, adaptive combat, boss phases, and player counterplay.
 
-The catalogue is a content-design specification, not a universal moveset. Each enemy archetype must implement only compatible evolutions. Exact promotion thresholds, numerical values, action timings, cooldowns, and resource costs remain open and must not be inferred from rank descriptions.
+The catalogue is a content-design specification, not a universal moveset. Each enemy archetype must implement only compatible evolutions. Exact numerical values, action timings, cooldowns, and resource costs remain open and must not be inferred from rank descriptions.
 
-## 4. Separate memory responsibilities
+## 4. Promotion and victory credit
+
+The proposed [Nemesis promotion and victory-credit policy](nemesis-progression-policy.md) introduces escalating growth-mark thresholds, one primary lethal-source attribution, and idempotent encounter credit. Its threshold schedule and attribution rules remain proposals pending approval; they are not implemented or binding gameplay rules.
+
+## 5. Separate memory responsibilities
 
 Nemesis progression is a persistent world-level system and must remain distinct from encounter-scoped adaptive combat memory.
 
@@ -47,7 +47,7 @@ Nemesis progression is a persistent world-level system and must remain distinct 
 
 The two systems may inform one another, but neither should own the other's lifecycle. Nemesis history must not be erased when an encounter ends or when adaptive combat memory is reset.
 
-## 5. Defeat and resurrection relationship
+## 6. Defeat and resurrection relationship
 
 A Nemesis candidate is created or advanced because it defeated the player, not because it merely participated in combat or dealt damage.
 
@@ -55,16 +55,15 @@ The resurrection flow is voluntary. The Nemesis system must therefore be integra
 
 The exact encounter event contract and the handling of simultaneous/multiple enemy contributions remain implementation details to define in the application layer.
 
-## 6. Persistence and lifecycle
+## 7. Persistence and lifecycle
 
 A Nemesis needs a stable identity and persistent record independent of a single encounter. Its history should be available when the enemy reappears in a later encounter. The save system will eventually persist identity, category, rank, history, and evolution.
 
 The Nemesis system must coordinate with enemy lifecycle and world population systems. Defeating a Nemesis permanently should retire its record according to an explicit rule; it must not silently respawn as the same rival unless a narrative or gameplay rule explicitly permits it.
 
-## 7. Architectural boundaries
+## 8. Architectural boundaries
 
 The intended responsibilities are:
-
 1. **Nemesis eligibility and promotion policy:** decides whether an enemy can enter or advance in the system after a qualifying player defeat.
 2. **Persistent Nemesis record:** owns identity, category, rank, encounter history, and evolution history.
 3. **Evolution policy:** applies configured, archetype-valid changes from the rank evolution catalogue.
@@ -74,14 +73,13 @@ The intended responsibilities are:
 
 The domain should express deterministic rules and state transitions. Application coordinates encounter outcomes, world spawning, and persistence; presentation handles dialogue, animation, and visual rendering.
 
-## 8. Remaining design decisions before implementation
+## 9. Remaining design decisions before implementation
 
 The following still need to be settled:
-- the number of repeat victories required for each promotion and whether thresholds escalate;
-- whether one defeat can promote several enemies or how responsibility is assigned when multiple enemies contribute;
-- exact numerical changes, action timings, cooldowns, and resource costs for archetype-specific evolutions;
+- approval or revision of the proposed escalating promotion thresholds;
+- final attribution policy for simultaneous enemy contributions and environmental deaths;
 - limits on simultaneous active Nemeses;
 - retreat, permanent-death, replacement, and return rules;
 - whether a Nemesis can lose rank or evolve through events other than defeating the player.
 
-The category ceilings and the 45-rank evolution catalogue are now documented. The remaining rules must be agreed before implementing the complete progression policy. No promotion formula, numerical stat scaling, or population cap should be invented.
+The category ceilings and the 45-rank evolution catalogue are documented. The promotion model is specified as a reviewable proposal, not approved balance. No code should hard-code its thresholds or attribution assumptions before those decisions are accepted.
