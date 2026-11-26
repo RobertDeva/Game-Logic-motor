@@ -8,7 +8,7 @@
 - El jugador comienza con una oportunidad de resurrección.
 - Dos misiones específicas pueden desbloquear una oportunidad adicional cada una. La capacidad máxima es de tres.
 - La oportunidad inicial se consume al resucitar y se restaura al regresar a una zona de descanso.
-- Las oportunidades adicionales se consumen individualmente. Una oportunidad adicional gastada deja de estar disponible hasta que se recupere mediante progreso de enemigos y se regrese a una zona de descanso.
+- Las oportunidades adicionales se consumen individualmente. Cada carga gastada queda pendiente de recuperación; las cargas adicionales que no se hayan gastado permanecen utilizables. Una carga recuperada mediante progreso de enemigos queda bloqueada hasta regresar a una zona de descanso.
 - Cada enemigo eliminado aporta progreso de recuperación según su dificultad. La cantidad concreta aportada por cada dificultad y el umbral de recuperación son datos de balance configurables; no se fijan aquí.
 - El progreso se acumula incluso mientras las oportunidades adicionales recuperadas no pueden utilizarse.
 - Al alcanzar el umbral, una oportunidad adicional gastada pasa a estar recuperada, pero bloqueada. Al regresar a una zona de descanso, las oportunidades recuperadas y bloqueadas vuelven a estar utilizables.
