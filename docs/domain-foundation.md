@@ -64,7 +64,9 @@ Los valores iniciales de las clases todavía no están encapsulados aquí. Se a�
 
 Los atributos primarios no son las estadísticas derivadas. Por ejemplo, Vitality es un atributo; la Vitalidad máxima es una estadística calculada. No se deben guardar ambas como si fueran el mismo dato ni calcular su fórmula dentro de `CharacterAttributes`.
 
-El sistema de estadísticas derivadas y modificadores aún no se ha implementado. Antes de hacerlo se deben establecer contratos para:
+Los contratos iniciales de estadísticas y modificadores ya están implementados en `src/MythicalExodus.Domain/Statistics/`. Separan identificador, valor base/efectivo y descripción del modificador. No ejecutan fórmulas ni resuelven acumulación, orden, duración o expiración. El detalle está en `docs/statistics-and-modifiers-foundation.md`.
+
+Antes de implementar el evaluador se deben establecer reglas para:
 
 - Identidad estable de cada estadística.
 - Valor base frente a valor efectivo.
