@@ -1,6 +1,6 @@
 # Nemesis system
 
-**Status:** universal eligibility, category-specific rank ceilings, and rank progression are implemented in the Domain. Application now coordinates authoritative defeat credits with the resurrection decision and uses a compare-and-swap persistence contract. A JSON file-backed repository now persists progression snapshots with atomic replacement and in-process compare-and-swap. Encounter-host source attribution and world lifecycle integration remain unfinished.
+**Status:** universal eligibility, category-specific rank ceilings, rank progression, and the Nemesis final-execution lifecycle are implemented in the Domain. Application coordinates authoritative defeat credits and the optional final-execution transitions through compare-and-swap persistence. The JSON repository persists rank and final-execution lifecycle state together. Encounter-host source attribution and world spawn/recovery integration remain unfinished.
 
 ## 1. Core design decisions
 
@@ -72,11 +72,11 @@ The Domain progression state is idempotent for encounter identifiers, but Applic
 
 A Nemesis needs a stable identity and persistent record independent of a single encounter. Its history should be available when the enemy reappears in a later encounter. The save system will eventually persist identity, category, rank, growth marks, credited encounter identifiers, history, and evolution.
 
-The Nemesis system must coordinate with enemy lifecycle and world population systems. Defeating a Nemesis permanently should retire its record according to an explicit rule; it must not silently respawn as the same rival unless a narrative or gameplay rule explicitly permits it.
+The Nemesis system must coordinate with enemy lifecycle and world population systems. A Nemesis that receives the normal Muertebendita execution but not the optional final finisher recovers and may return later as the same individual. Only completion of the chained final action permanently retires its identity. The Domain stores the lifecycle state; the world host still decides when to restore the enemy to active world participation.
 
 ## 8. Nemesis final execution
 
-A Nemesis may be permanently eliminated through a special second finisher chained to a normal Muertebendita execution. The normal execution is followed by a distinct kneeling state that enables an optional contextual final finisher, such as a decapitation. The first execution defeats the Nemesis in the encounter but does not by itself retire its persistent identity; if the player does not perform the second action, the Nemesis recovers and may return in a later encounter as the same individual. Only successful completion of the second action permanently retires that identity. This lifecycle is separate from ordinary Muertebendita resolution and is specified in [Nemesis final execution](nemesis-final-execution.md). The opportunity's duration, interruption behavior, and per-Nemesis eligibility policy remain unresolved.
+A Nemesis may be permanently eliminated through a special second finisher chained to a normal Muertebendita execution. The normal execution is followed by a distinct kneeling state that enables an optional contextual final finisher, such as a decapitation. The first execution defeats the Nemesis in the encounter but does not by itself retire its persistent identity; if the player does not perform the second action, the Nemesis recovers and may return in a later encounter as the same individual. Only successful completion of the second action permanently retires that identity. The Domain stores the active, kneeling, and permanently retired states; recovery is an explicit host-triggered transition with no hard-coded timer. Application opens the opportunity only when the normal execution defeated the Nemesis and content explicitly marks that individual as supporting the final finisher. The JSON progression repository persists these transitions with compare-and-swap. World reactivation/spawn integration and the opportunity's duration/interruption triggers remain unresolved. See [Nemesis final execution](nemesis-final-execution.md).
 
 ## 9. Architectural boundaries
 

@@ -10,6 +10,23 @@ public enum NemesisEnemyCategory
     Boss = 2
 }
 
+/// <summary>Persistent lifecycle of one Nemesis identity.</summary>
+public enum NemesisLifecycleStatus
+{
+    Active = 0,
+    KneelingForFinalExecution = 1,
+    PermanentlyRetired = 2
+}
+
+/// <summary>Outcome of a Nemesis final-execution lifecycle transition.</summary>
+public enum NemesisFinalExecutionUpdateStatus
+{
+    OpportunityOpened = 0,
+    Recovered = 1,
+    PermanentlyRetired = 2,
+    Duplicate = 3
+}
+
 /// <summary>Outcome of applying one authoritative player-defeat credit to a Nemesis.</summary>
 public enum NemesisProgressionUpdateStatus
 {
@@ -35,12 +52,18 @@ public sealed class NemesisProgressionState
         NemesisEnemyCategory category,
         int rank,
         int growthMarks,
-        HashSet<EntityId> creditedEncounterIds)
+        HashSet<EntityId> creditedEncounterIds,
+        NemesisLifecycleStatus lifecycleStatus = NemesisLifecycleStatus.Active,
+        EntityId? finalExecutionEncounterId = null,
+        EntityId? finalExecutionId = null)
     {
         NemesisId = nemesisId;
         Category = category;
         Rank = rank;
         GrowthMarks = growthMarks;
+        LifecycleStatus = lifecycleStatus;
+        FinalExecutionEncounterId = finalExecutionEncounterId;
+        FinalExecutionId = finalExecutionId;
         _creditedEncounterIds = creditedEncounterIds;
         _readOnlyCreditedEncounterIds = Array.AsReadOnly(
             creditedEncounterIds.OrderBy(id => id.Value).ToArray());
@@ -50,6 +73,11 @@ public sealed class NemesisProgressionState
     public NemesisEnemyCategory Category { get; }
     public int Rank { get; }
     public int GrowthMarks { get; }
+    public NemesisLifecycleStatus LifecycleStatus { get; }
+    public EntityId? FinalExecutionEncounterId { get; }
+    public EntityId? FinalExecutionId { get; }
+    public bool IsPermanentlyRetired => LifecycleStatus == NemesisLifecycleStatus.PermanentlyRetired;
+    public bool HasFinalExecutionOpportunity => LifecycleStatus == NemesisLifecycleStatus.KneelingForFinalExecution;
     public int MaximumRank => GetMaximumRank(Category);
     public bool IsAtMaximumRank => Rank == MaximumRank;
     public IReadOnlyCollection<EntityId> CreditedEncounterIds => _readOnlyCreditedEncounterIds;
@@ -84,12 +112,17 @@ public sealed class NemesisProgressionState
         NemesisEnemyCategory category,
         int rank,
         int growthMarks,
-        IEnumerable<EntityId> creditedEncounterIds)
+        IEnumerable<EntityId> creditedEncounterIds,
+        NemesisLifecycleStatus lifecycleStatus = NemesisLifecycleStatus.Active,
+        EntityId? finalExecutionEncounterId = null,
+        EntityId? finalExecutionId = null)
     {
         if (nemesisId.IsEmpty)
             throw new ArgumentException("A valid Nemesis identifier is required.", nameof(nemesisId));
         if (!Enum.IsDefined(category))
             throw new ArgumentOutOfRangeException(nameof(category));
+        if (!Enum.IsDefined(lifecycleStatus))
+            throw new ArgumentOutOfRangeException(nameof(lifecycleStatus));
         if (rank < 1 || rank > GetMaximumRank(category))
             throw new ArgumentOutOfRangeException(nameof(rank));
         if (growthMarks < 0)
@@ -110,8 +143,116 @@ public sealed class NemesisProgressionState
             throw new ArgumentException("Persisted growth marks must be below the next promotion threshold.", nameof(growthMarks));
         }
 
-        return new NemesisProgressionState(nemesisId, category, rank, growthMarks, ids.ToHashSet());
+        if (finalExecutionEncounterId.HasValue != finalExecutionId.HasValue ||
+            (finalExecutionEncounterId.HasValue &&
+             (finalExecutionEncounterId.Value.IsEmpty || finalExecutionId!.Value.IsEmpty)))
+            throw new ArgumentException("Final-execution identifiers must either both be valid or both be absent.");
+        if (lifecycleStatus != NemesisLifecycleStatus.Active &&
+            (!finalExecutionEncounterId.HasValue || !finalExecutionId.HasValue))
+            throw new ArgumentException("A Nemesis outside the active state must retain its final-execution identifiers.");
+
+        return new NemesisProgressionState(
+            nemesisId, category, rank, growthMarks, ids.ToHashSet(),
+            lifecycleStatus, finalExecutionEncounterId, finalExecutionId);
     }
+
+
+    /// <summary>
+    /// Opens the optional kneeling opportunity after a completed normal execution.
+    /// Eligibility and the authoritative execution result are checked by Application.
+    /// </summary>
+    public Result<NemesisFinalExecutionUpdate> OpenFinalExecutionOpportunity(
+        EntityId encounterId,
+        EntityId executionId)
+    {
+        ValidateFinalExecutionIdentifiers(encounterId, executionId);
+
+        if (IsPermanentlyRetired)
+            return FinalExecutionFailure("nemesis.final_execution.retired",
+                "A permanently executed Nemesis cannot enter another final-execution opportunity.");
+
+        if (LifecycleStatus == NemesisLifecycleStatus.KneelingForFinalExecution)
+        {
+            if (FinalExecutionEncounterId == encounterId && FinalExecutionId == executionId)
+                return Result<NemesisFinalExecutionUpdate>.Success(
+                    new NemesisFinalExecutionUpdate(this, NemesisFinalExecutionUpdateStatus.Duplicate));
+            return FinalExecutionFailure("nemesis.final_execution.opportunity_already_open",
+                "This Nemesis already has an unresolved final-execution opportunity.");
+        }
+
+        if (FinalExecutionEncounterId == encounterId && FinalExecutionId == executionId)
+            return Result<NemesisFinalExecutionUpdate>.Success(
+                new NemesisFinalExecutionUpdate(this, NemesisFinalExecutionUpdateStatus.Duplicate));
+
+        var updated = CopyWithLifecycle(
+            NemesisLifecycleStatus.KneelingForFinalExecution, encounterId, executionId);
+        return Result<NemesisFinalExecutionUpdate>.Success(
+            new NemesisFinalExecutionUpdate(updated, NemesisFinalExecutionUpdateStatus.OpportunityOpened));
+    }
+
+    /// <summary>
+    /// Recovers the Nemesis after the player leaves or declines the optional finisher.
+    /// The host decides when recovery occurs; this transition has no built-in timer.
+    /// </summary>
+    public Result<NemesisFinalExecutionUpdate> RecoverFromFinalExecutionOpportunity(EntityId executionId)
+    {
+        if (executionId.IsEmpty)
+            throw new ArgumentException("A valid execution identifier is required.", nameof(executionId));
+
+        if (LifecycleStatus == NemesisLifecycleStatus.Active && FinalExecutionId == executionId)
+            return Result<NemesisFinalExecutionUpdate>.Success(
+                new NemesisFinalExecutionUpdate(this, NemesisFinalExecutionUpdateStatus.Duplicate));
+
+        if (LifecycleStatus != NemesisLifecycleStatus.KneelingForFinalExecution || FinalExecutionId != executionId)
+            return FinalExecutionFailure("nemesis.final_execution.opportunity_not_active",
+                "The requested final-execution opportunity is not active for this Nemesis.");
+
+        var updated = CopyWithLifecycle(
+            NemesisLifecycleStatus.Active, FinalExecutionEncounterId, FinalExecutionId);
+        return Result<NemesisFinalExecutionUpdate>.Success(
+            new NemesisFinalExecutionUpdate(updated, NemesisFinalExecutionUpdateStatus.Recovered));
+    }
+
+    /// <summary>
+    /// Permanently retires this Nemesis after the host confirms the contextual final action.
+    /// Replaying the same completion is idempotent.
+    /// </summary>
+    public Result<NemesisFinalExecutionUpdate> CompleteFinalExecution(EntityId executionId)
+    {
+        if (executionId.IsEmpty)
+            throw new ArgumentException("A valid execution identifier is required.", nameof(executionId));
+
+        if (IsPermanentlyRetired && FinalExecutionId == executionId)
+            return Result<NemesisFinalExecutionUpdate>.Success(
+                new NemesisFinalExecutionUpdate(this, NemesisFinalExecutionUpdateStatus.Duplicate));
+
+        if (LifecycleStatus != NemesisLifecycleStatus.KneelingForFinalExecution || FinalExecutionId != executionId)
+            return FinalExecutionFailure("nemesis.final_execution.opportunity_not_active",
+                "The final action can only complete for the Nemesis currently kneeling for this execution.");
+
+        var updated = CopyWithLifecycle(
+            NemesisLifecycleStatus.PermanentlyRetired, FinalExecutionEncounterId, FinalExecutionId);
+        return Result<NemesisFinalExecutionUpdate>.Success(
+            new NemesisFinalExecutionUpdate(updated, NemesisFinalExecutionUpdateStatus.PermanentlyRetired));
+    }
+
+    private NemesisProgressionState CopyWithLifecycle(
+        NemesisLifecycleStatus lifecycleStatus,
+        EntityId? finalExecutionEncounterId,
+        EntityId? finalExecutionId) =>
+        new(NemesisId, Category, Rank, GrowthMarks, new HashSet<EntityId>(_creditedEncounterIds),
+            lifecycleStatus, finalExecutionEncounterId, finalExecutionId);
+
+    private static void ValidateFinalExecutionIdentifiers(EntityId encounterId, EntityId executionId)
+    {
+        if (encounterId.IsEmpty)
+            throw new ArgumentException("A valid encounter identifier is required.", nameof(encounterId));
+        if (executionId.IsEmpty)
+            throw new ArgumentException("A valid execution identifier is required.", nameof(executionId));
+    }
+
+    private static Result<NemesisFinalExecutionUpdate> FinalExecutionFailure(string code, string message) =>
+        Result<NemesisFinalExecutionUpdate>.Failure(new GameError(code, message));
 
     private static int GetRequiredMarksForRank(int rank)
     {
@@ -138,6 +279,8 @@ public sealed class NemesisProgressionState
     /// </summary>
     public NemesisProgressionUpdate RecordQualifyingDefeat(EntityId encounterId)
     {
+        if (LifecycleStatus != NemesisLifecycleStatus.Active)
+            throw new InvalidOperationException("A Nemesis must be active to receive further progression.");
         if (encounterId.IsEmpty)
             throw new ArgumentException("A valid encounter identifier is required.", nameof(encounterId));
 
@@ -161,7 +304,10 @@ public sealed class NemesisProgressionState
                 Category,
                 Rank,
                 GrowthMarks,
-                updatedEncounterIds);
+                updatedEncounterIds,
+                LifecycleStatus,
+                FinalExecutionEncounterId,
+                FinalExecutionId);
 
             return new NemesisProgressionUpdate(
                 cappedState,
@@ -180,7 +326,10 @@ public sealed class NemesisProgressionState
                 Category,
                 Rank + 1,
                 updatedMarks - requiredMarks,
-                updatedEncounterIds);
+                updatedEncounterIds,
+                LifecycleStatus,
+                FinalExecutionEncounterId,
+                FinalExecutionId);
 
             return new NemesisProgressionUpdate(
                 promotedState,
@@ -193,7 +342,10 @@ public sealed class NemesisProgressionState
             Category,
             Rank,
             updatedMarks,
-            updatedEncounterIds);
+            updatedEncounterIds,
+            LifecycleStatus,
+            FinalExecutionEncounterId,
+            FinalExecutionId);
 
         return new NemesisProgressionUpdate(
             progressedState,
@@ -249,3 +401,8 @@ public sealed record NemesisProgressionUpdate(
     NemesisProgressionState State,
     NemesisProgressionUpdateStatus Status,
     int? RequiredGrowthMarks);
+
+/// <summary>Immutable result of a Nemesis final-execution lifecycle transition.</summary>
+public sealed record NemesisFinalExecutionUpdate(
+    NemesisProgressionState State,
+    NemesisFinalExecutionUpdateStatus Status);

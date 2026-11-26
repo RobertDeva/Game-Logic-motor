@@ -81,10 +81,15 @@ Implemented Domain types:
 - immutable Nemesis progression state;
 - growth marks and cumulative 70%-scaled rank threshold evaluation;
 - encounter-id idempotency;
-- rank-cap behavior.
+- rank-cap behavior;
+- Nemesis lifecycle states for active, kneeling for a final execution, and permanently retired;
+- explicit recovery transition that preserves the same Nemesis identity and remembers the previous execution identifier for replay protection;
+- final-action completion that is idempotent and blocks further rank progression after permanent retirement.
+
+Application and persistence also coordinate and store these lifecycle transitions in the same Nemesis progression snapshot. Opening the opportunity requires both an actual `EnemyDefeated` result from normal Muertebendita and explicit per-content opt-in. Recovery timing remains owned by the encounter/world host; no timeout is hard-coded.
 
 Not yet implemented:
 - authoritative attribution policy for simultaneous lethal sources and environmental causes;
 - concrete durable persistence adapter and transaction handling;
-- world population, retirement, and respawn integration;
+- world population, spawn/reactivation after recovery, and removal of permanently retired Nemeses from future encounters;
 - applying rank evolution definitions to enemy archetypes.

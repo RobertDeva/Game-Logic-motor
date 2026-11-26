@@ -62,4 +62,54 @@ public sealed class JsonNemesisProgressionRepositoryTests
                 Directory.Delete(directory, recursive: true);
         }
     }
+
+    [Fact]
+    public void Final_execution_recovery_and_permanent_retirement_survive_repository_reloads()
+    {
+        var path = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N"), "nemesis.json");
+        try
+        {
+            var nemesisId = EntityId.New();
+            var repository = new JsonNemesisProgressionRepository(path);
+            var initial = NemesisProgressionState.Create(
+                nemesisId, NemesisEnemyCategory.Normal, EntityId.New());
+            Assert.True(repository.TryAdd(initial));
+
+            var firstExecutionId = EntityId.New();
+            var kneeling = initial.OpenFinalExecutionOpportunity(EntityId.New(), firstExecutionId);
+            Assert.True(kneeling.IsSuccess);
+            Assert.True(repository.TryUpdate(initial, kneeling.Value.State));
+
+            var recovered = kneeling.Value.State.RecoverFromFinalExecutionOpportunity(firstExecutionId);
+            Assert.True(recovered.IsSuccess);
+            Assert.True(repository.TryUpdate(kneeling.Value.State, recovered.Value.State));
+
+            var reloadedRepository = new JsonNemesisProgressionRepository(path);
+            var afterRecoveryReload = reloadedRepository.Find(nemesisId)!;
+            Assert.Equal(NemesisLifecycleStatus.Active, afterRecoveryReload.LifecycleStatus);
+            Assert.Equal(firstExecutionId, afterRecoveryReload.FinalExecutionId);
+
+            var secondExecutionId = EntityId.New();
+            var secondOpportunity = afterRecoveryReload.OpenFinalExecutionOpportunity(
+                EntityId.New(), secondExecutionId);
+            Assert.True(secondOpportunity.IsSuccess);
+            Assert.True(reloadedRepository.TryUpdate(afterRecoveryReload, secondOpportunity.Value.State));
+
+            var retired = secondOpportunity.Value.State.CompleteFinalExecution(secondExecutionId);
+            Assert.True(retired.IsSuccess);
+            Assert.True(reloadedRepository.TryUpdate(secondOpportunity.Value.State, retired.Value.State));
+
+            var afterRetirementReload = new JsonNemesisProgressionRepository(path).Find(nemesisId)!;
+            Assert.Equal(NemesisLifecycleStatus.PermanentlyRetired, afterRetirementReload.LifecycleStatus);
+            Assert.Equal(secondExecutionId, afterRetirementReload.FinalExecutionId);
+            Assert.True(afterRetirementReload.IsPermanentlyRetired);
+        }
+        finally
+        {
+            var directory = Path.GetDirectoryName(path)!;
+            if (Directory.Exists(directory))
+                Directory.Delete(directory, recursive: true);
+        }
+    }
+
 }

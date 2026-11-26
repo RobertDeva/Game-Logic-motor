@@ -88,7 +88,10 @@ public sealed class JsonNemesisProgressionRepository : INemesisProgressionReposi
                 item.Category,
                 item.Rank,
                 item.GrowthMarks,
-                item.CreditedEncounterIds.Select(value => new EntityId(value)));
+                item.CreditedEncounterIds.Select(value => new EntityId(value)),
+                item.LifecycleStatus,
+                item.FinalExecutionEncounterId is Guid encounterId ? new EntityId(encounterId) : null,
+                item.FinalExecutionId is Guid executionId ? new EntityId(executionId) : null);
             if (!states.TryAdd(id, state))
                 throw new InvalidDataException($"Duplicate Nemesis identifier '{id}' in persistence document.");
         }
@@ -107,7 +110,10 @@ public sealed class JsonNemesisProgressionRepository : INemesisProgressionReposi
                 state.Category,
                 state.Rank,
                 state.GrowthMarks,
-                state.CreditedEncounterIds.Select(id => id.Value).ToArray()))
+                state.CreditedEncounterIds.Select(id => id.Value).ToArray(),
+                state.LifecycleStatus,
+                state.FinalExecutionEncounterId?.Value,
+                state.FinalExecutionId?.Value))
             .ToArray());
 
         var temporaryPath = _filePath + "." + Guid.NewGuid().ToString("N") + ".tmp";
@@ -129,5 +135,8 @@ public sealed class JsonNemesisProgressionRepository : INemesisProgressionReposi
         NemesisEnemyCategory Category,
         int Rank,
         int GrowthMarks,
-        Guid[] CreditedEncounterIds);
+        Guid[] CreditedEncounterIds,
+        NemesisLifecycleStatus LifecycleStatus = NemesisLifecycleStatus.Active,
+        Guid? FinalExecutionEncounterId = null,
+        Guid? FinalExecutionId = null);
 }
