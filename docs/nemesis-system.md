@@ -1,6 +1,6 @@
 # Nemesis system
 
-**Status:** universal Nemesis creation eligibility, category-specific rank ceilings, rank progression, final-execution lifecycle, and a world-spawn eligibility query are implemented. Application coordinates defeat credits, lifecycle transitions, and world spawn candidate selection through repository contracts. The JSON repository persists rank and lifecycle state together. Actual actor instantiation, location selection, encounter source attribution, and host-owned presence/recovery scheduling remain unfinished.
+**Status:** universal Nemesis creation eligibility, category-specific rank ceilings, rank progression, final-execution lifecycle, spawn-candidate selection, and process-local actor-presence exclusion are implemented. Application coordinates defeat credits, lifecycle transitions, and world population queries through repository contracts. The JSON repository persists rank and lifecycle state. Actual actor instantiation, location selection, host lifecycle hooks, and recovery scheduling remain host responsibilities.
 
 ## 1. Core design decisions
 
@@ -72,11 +72,17 @@ The Domain progression state is idempotent for encounter identifiers, but Applic
 
 A Nemesis needs a stable identity and persistent record independent of a single encounter. Its history should be available when the enemy reappears in a later encounter. The save system will eventually persist identity, category, rank, growth marks, credited encounter identifiers, history, and evolution.
 
-The Nemesis system must coordinate with enemy lifecycle and world population systems. A Nemesis that receives the normal Muertebendita execution but not the optional final finisher recovers and may return later as the same individual. Only completion of the chained final action permanently retires its identity. The Domain stores the lifecycle state; after the host records recovery, `NemesisWorldPopulationCoordinator` can return the same identity as a spawn candidate. It excludes kneeling and permanently retired Nemeses and filters identities already present in the host's world population. The host still chooses a valid spawn location and instantiates the actor.
+The Nemesis system coordinates persistent identity with runtime world presence through `INemesisWorldPresenceRegistry`. Each instantiated host actor must be registered with its persistent `NemesisId`, its own `ActorEntityId`, a `WorldInstanceId`, and a `ZoneId`. The registry rejects a second actor for the same Nemesis and rejects reuse of one actor ID for another Nemesis. Exact registration replay is idempotent.
+
+The registry is process-local runtime state, deliberately separate from the JSON progression save. It starts empty after process restart and must be reconstructed as the host loads actors. When unloading an actor, the host unregisters the exact pair of Nemesis and actor IDs. An old actor cannot unregister a replacement instance. Unloading only removes runtime presence: it does not recover, retire, or otherwise change the Nemesis lifecycle. After unregistering, an active Nemesis can become a spawn candidate again.
+
+`NemesisWorldPopulationCoordinator.FindSpawnCandidates()` reads the persistent progression snapshot and excludes Nemeses that are kneeling, permanently retired, or already registered as present. The host remains responsible for choosing a location, creating the actor with the original Nemesis identity, registering it, and cleaning up presence on unload/removal. Candidate lookup and registration are separate operations; the host must treat registration failure as a duplicate/conflict and must not leave the newly created actor active.
+
+The in-memory registry guarantees exclusion only within one process and one shared registry instance. A multi-process or distributed world deployment will require a shared atomic registry or lease mechanism; this implementation does not claim global exclusion.
 
 ## 8. Nemesis final execution
 
-A Nemesis may be permanently eliminated through a special second finisher chained to a normal Muertebendita execution. The normal execution is followed by a distinct kneeling state that enables an optional contextual final finisher, such as a decapitation. The first execution defeats the Nemesis in the encounter but does not by itself retire its persistent identity; if the player does not perform the second action, the Nemesis recovers and may return in a later encounter as the same individual. Only successful completion of the second action permanently retires that identity. The Domain stores the active, kneeling, and permanently retired states; recovery is an explicit host-triggered transition with no hard-coded timer. Application opens the opportunity only when the normal execution defeated the Nemesis and content explicitly marks that individual as supporting the final finisher. The JSON progression repository persists these transitions with compare-and-swap. Spawn-candidate selection is implemented; actor instantiation, spawn location selection, and the opportunity's duration/interruption triggers remain unresolved. See [Nemesis final execution](nemesis-final-execution.md).
+A Nemesis may be permanently eliminated through a special second finisher chained to a normal Muertebendita execution. The normal execution is followed by a distinct kneeling state that enables an optional contextual final finisher, such as a decapitation. The first execution defeats the Nemesis in the encounter but does not by itself retire its persistent identity; if the player does not perform the second action, the Nemesis recovers and may return in a later encounter as the same individual. Only successful completion of the second action permanently retires that identity. The Domain stores the active, kneeling, and permanently retired states; recovery is an explicit host-triggered transition with no hard-coded timer. Application opens the opportunity only when the normal execution defeated the Nemesis and content explicitly marks that individual as supporting the final finisher. The JSON progression repository persists these transitions with compare-and-swap. See [Nemesis final execution](nemesis-final-execution.md).
 
 ## 9. Architectural boundaries
 
@@ -85,16 +91,19 @@ A Nemesis may be permanently eliminated through a special second finisher chaine
 3. **Persistent Nemesis record:** owns identity, encounter history, and evolution history.
 4. **Evolution policy:** applies configured, archetype-valid changes from the rank evolution catalogue.
 5. **Adaptive combat integration:** exposes persistent Nemesis knowledge to encounter AI without merging persistent and encounter-scoped memories.
-6. **Persistence:** saves and restores Nemesis records and world identity.
+6. **Persistence:** saves and restores Nemesis records and world identity; runtime actor presence is intentionally not persisted.
+7. **World host integration:** creates actors, assigns the stored Nemesis identity, registers/unregisters presence, and handles locations and zone lifecycle.
 
 The domain expresses deterministic rules and immutable state transitions. Application coordinates encounter outcomes, world spawning, and persistence; presentation handles dialogue, animation, and visual rendering.
 
 ## 10. Remaining work
 
+- host integration that instantiates actors with the stored Nemesis ID and registers/unregisters their presence on load, unload, and removal;
 - authoritative encounter-to-Nemesis attribution, including simultaneous sources and environmental causality;
-- a concrete durable implementation of the Nemesis progression repository contract;
-- persistence of credited encounter IDs and progression state across process restarts;
+- recovery scheduling and the unresolved duration/interruption policy for the final-execution opportunity;
 - active Nemesis limits, retreat, non-execution defeat, and replacement rules;
-- implementation of the approved chained final-execution lifecycle and persistent retirement;
 - applying rank evolution definitions to actual enemy archetypes;
+- a shared atomic presence registry/lease if the world is deployed across multiple processes or servers;
 - playtesting the promotion curve and adjusting it through explicit balance configuration if needed.
+
+Spawn locations, cooldowns, population caps, and recovery timing are not specified by this implementation.

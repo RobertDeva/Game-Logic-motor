@@ -32,8 +32,9 @@ public sealed class NemesisWorldPopulationCoordinatorTests
         Assert.True(completed.IsSuccess);
         repository.Add(completed.Value.State);
 
-        var coordinator = new NemesisWorldPopulationCoordinator(repository);
-        var candidates = coordinator.FindSpawnCandidates(new HashSet<EntityId>());
+        var coordinator = CreateCoordinator(repository);
+
+        var candidates = coordinator.FindSpawnCandidates();
 
         Assert.Single(candidates);
         Assert.Equal(activeId, candidates[0].NemesisId);
@@ -52,14 +53,14 @@ public sealed class NemesisWorldPopulationCoordinatorTests
         var kneelingState = opened.Value.State;
         repository.Add(kneelingState);
 
-        var coordinator = new NemesisWorldPopulationCoordinator(repository);
-        Assert.Empty(coordinator.FindSpawnCandidates(new HashSet<EntityId>()));
+        var coordinator = CreateCoordinator(repository);
+        Assert.Empty(coordinator.FindSpawnCandidates());
 
         var recovered = kneelingState.RecoverFromFinalExecutionOpportunity(executionId);
         Assert.True(recovered.IsSuccess);
         Assert.True(repository.TryUpdate(kneelingState, recovered.Value.State));
 
-        var candidates = coordinator.FindSpawnCandidates(new HashSet<EntityId>());
+        var candidates = coordinator.FindSpawnCandidates();
 
         Assert.Single(candidates);
         Assert.Equal(nemesisId, candidates[0].NemesisId);
@@ -67,18 +68,44 @@ public sealed class NemesisWorldPopulationCoordinatorTests
     }
 
     [Fact]
-    public void Already_present_nemeses_are_not_returned_as_duplicate_spawn_candidates()
+    public void Registered_nemesis_is_not_returned_as_a_spawn_candidate()
     {
         var repository = new InMemoryNemesisProgressionRepository();
         var nemesisId = EntityId.New();
         repository.Add(NemesisProgressionState.Create(
             nemesisId, NemesisEnemyCategory.Boss, EntityId.New()));
-        var coordinator = new NemesisWorldPopulationCoordinator(repository);
+        var registry = new InMemoryNemesisWorldPresenceRegistry();
+        var presence = new NemesisWorldPresence(
+            nemesisId, EntityId.New(), EntityId.New(), EntityId.New());
+        Assert.True(registry.TryRegister(presence));
+        var coordinator = new NemesisWorldPopulationCoordinator(repository, registry);
 
-        var candidates = coordinator.FindSpawnCandidates(new HashSet<EntityId> { nemesisId });
-
-        Assert.Empty(candidates);
+        Assert.Empty(coordinator.FindSpawnCandidates());
     }
+
+    [Fact]
+    public void Unregistering_a_world_actor_makes_its_active_nemesis_a_candidate_again()
+    {
+        var repository = new InMemoryNemesisProgressionRepository();
+        var nemesisId = EntityId.New();
+        repository.Add(NemesisProgressionState.Create(
+            nemesisId, NemesisEnemyCategory.Normal, EntityId.New()));
+        var registry = new InMemoryNemesisWorldPresenceRegistry();
+        var presence = new NemesisWorldPresence(
+            nemesisId, EntityId.New(), EntityId.New(), EntityId.New());
+        Assert.True(registry.TryRegister(presence));
+        var coordinator = new NemesisWorldPopulationCoordinator(repository, registry);
+
+        Assert.True(registry.TryUnregister(nemesisId, presence.ActorEntityId));
+
+        var candidates = coordinator.FindSpawnCandidates();
+        Assert.Single(candidates);
+        Assert.Equal(nemesisId, candidates[0].NemesisId);
+    }
+
+    private static NemesisWorldPopulationCoordinator CreateCoordinator(
+        InMemoryNemesisProgressionRepository repository) =>
+        new(repository, new InMemoryNemesisWorldPresenceRegistry());
 
     private sealed class InMemoryNemesisProgressionRepository : INemesisProgressionRepository
     {

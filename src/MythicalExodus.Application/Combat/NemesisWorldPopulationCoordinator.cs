@@ -1,37 +1,36 @@
 using MythicalExodus.Domain.Combat;
-using MythicalExodus.Domain.Primitives;
 
 namespace MythicalExodus.Application.Combat;
 
 /// <summary>
 /// Selects persistent Nemesis identities that may be considered for world spawning.
-/// It does not choose locations, instantiate enemy actors, or track host-owned world presence.
+/// It does not choose locations or instantiate enemy actors.
 /// </summary>
 public sealed class NemesisWorldPopulationCoordinator
 {
-    private readonly INemesisProgressionRepository _repository;
+    private readonly INemesisProgressionRepository _progressionRepository;
+    private readonly INemesisWorldPresenceRegistry _presenceRegistry;
 
-    public NemesisWorldPopulationCoordinator(INemesisProgressionRepository repository)
+    public NemesisWorldPopulationCoordinator(
+        INemesisProgressionRepository progressionRepository,
+        INemesisWorldPresenceRegistry presenceRegistry)
     {
-        ArgumentNullException.ThrowIfNull(repository);
-        _repository = repository;
+        ArgumentNullException.ThrowIfNull(progressionRepository);
+        ArgumentNullException.ThrowIfNull(presenceRegistry);
+        _progressionRepository = progressionRepository;
+        _presenceRegistry = presenceRegistry;
     }
 
     /// <summary>
-    /// Returns active Nemeses absent from the host's current world population.
-    /// A recovered Nemesis becomes eligible again with its original persistent identity.
+    /// Returns active Nemeses not currently bound to an actor in this registry.
+    /// A recovered Nemesis becomes eligible again with its original identity.
     /// Kneeling and permanently retired Nemeses are never returned.
     /// </summary>
-    public IReadOnlyList<NemesisProgressionState> FindSpawnCandidates(
-        IReadOnlySet<EntityId> currentlyPresentNemesisIds)
-    {
-        ArgumentNullException.ThrowIfNull(currentlyPresentNemesisIds);
-
-        return _repository.FindAll()
+    public IReadOnlyList<NemesisProgressionState> FindSpawnCandidates() =>
+        _progressionRepository.FindAll()
             .Where(state =>
                 state.LifecycleStatus == NemesisLifecycleStatus.Active &&
-                !currentlyPresentNemesisIds.Contains(state.NemesisId))
+                _presenceRegistry.Find(state.NemesisId) is null)
             .OrderBy(state => state.NemesisId.Value)
             .ToArray();
-    }
 }
