@@ -97,6 +97,47 @@ public sealed class VitalityTrackTests
         Assert.True(result.Value.IsDepleted);
     }
 
+    [Fact]
+    public void Setting_active_bar_value_returns_new_track_without_mutating_original()
+    {
+        var original = new VitalityTrack([
+            Bar("vitality-1", 80m, 100m),
+            Bar("vitality-2", 100m, 100m)
+        ]);
+
+        var result = original.TrySetCurrentBarValue(35m);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal(35m, result.Value.CurrentBar!.Current);
+        Assert.Equal(80m, original.CurrentBar!.Current);
+        Assert.Equal(100m, result.Value.Bars[1].Current);
+    }
+
+    [Theory]
+    [InlineData(-1)]
+    [InlineData(101)]
+    public void Setting_active_bar_outside_range_is_rejected(decimal value)
+    {
+        var track = new VitalityTrack([Bar("vitality-1", 80m, 100m)]);
+
+        var result = track.TrySetCurrentBarValue(value);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("combat.vitality.value_out_of_range", result.Error!.Code);
+        Assert.Equal(80m, track.CurrentBar!.Current);
+    }
+
+    [Fact]
+    public void Setting_value_on_empty_track_is_rejected()
+    {
+        var track = new VitalityTrack([]);
+
+        var result = track.TrySetCurrentBarValue(0m);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("combat.vitality.no_remaining_bars", result.Error!.Code);
+    }
+
     private static ResourcePool Bar(string id, decimal current, decimal maximum) =>
         new(new ResourceId(id), current, maximum);
 }

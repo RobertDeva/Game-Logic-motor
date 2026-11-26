@@ -21,14 +21,15 @@ Invariantes implementados:
 - Los identificadores de las barras son únicos.
 - Solo la barra activa (la primera) puede estar parcialmente consumida.
 - Las barras posteriores permanecen completas hasta que pasan a ser la barra activa.
+- La barra activa puede actualizarse mediante una transición inmutable que valida su rango.
 - Una barra solo puede retirarse de la secuencia cuando su valor actual es cero.
 - Retirar la última barra produce una pista vacía, que representa Vitalidad agotada.
 
-No se fija un máximo universal de barras en el contrato. Las cantidades concretas dependen del tipo de enemigo y del diseño del encuentro.
+No se fija un máximo universal de barras. Las cantidades concretas dependen del tipo de enemigo y del diseño del encuentro.
 
 ## 3. Postura
 
-Postura se representa mediante un ResourcePool independiente y debe tener un identificador distinto al de cualquier barra de Vitalidad.
+Postura se representa mediante un ResourcePool independiente y debe tener un identificador distinto al de cualquier barra de Vitalidad. Su valor puede actualizarse mediante una transición inmutable validada.
 
 Todavía no se implementan:
 - daño y presión de Postura;
@@ -48,4 +49,4 @@ La eliminación de una barra es una transición explícita y comprobable; no se 
 
 ## 5. Pruebas
 
-Las pruebas cubren secuencia de barras, unicidad de identificadores, máximos positivos, activación ordenada, retirada de barras agotadas, agotamiento total y separación entre Vitalidad y Postura.
+Las pruebas cubren secuencia de barras, unicidad de identificadores, máximos positivos, activación ordenada, actualización inmutable de Vitalidad y Postura, retirada de barras agotadas, agotamiento total y separación entre ambos recursos.

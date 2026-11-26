@@ -2,84 +2,68 @@
 
 **Proyecto:** Mythical Exodus  
 **Repositorio:** RobertDeva/Game-Logic-motor  
-**Alcance:** auditoría de la estructura y de la infraestructura arquitectónica existente. No constituye una auditoría de mecánicas implementadas, porque el código de dominio aún no existe.
+**Alcance:** estado real de la solución y próximos sistemas internos requeridos. Esta auditoría distingue contratos implementados de reglas de juego todavía pendientes.
 
 ## 1. Resultado ejecutivo
 
-La solución tiene una separación inicial correcta en cuatro proyectos: Domain, Application, Infrastructure y Headless, además de un proyecto de pruebas. La dirección de dependencias documentada mantiene el dominio aislado de infraestructura y presentación.
+La solución mantiene cuatro proyectos: Domain, Application, Infrastructure y Headless, además del proyecto de pruebas. El dominio ya contiene contratos fundamentales y una primera parte del estado de personaje y recursos de combate. Todavía no existe un flujo completo de acciones, condiciones, resolución de combate, efectos, simulación, economía o mundo.
 
-Sin embargo, la estructura actual es principalmente esqueleto. Los proyectos Domain, Application e Infrastructure no contienen todavía implementaciones de sistemas lógicos. Headless solo imprime mensajes y Domain.Tests no contiene pruebas.
-
-**Conclusión:** la arquitectura por capas está iniciada, pero todavía no existe un núcleo lógico funcional. No debe confundirse la existencia de los proyectos con la implementación de los sistemas.
+La existencia de tipos de dominio no debe confundirse con la implementación de un sistema jugable completo.
 
 ## 2. Estado comprobado
 
-| Área | Estado observado |
+| Área | Estado |
 |---|---|
-| Solución .NET 8 / C# 12 | Configurada |
-| Domain | Proyecto vacío |
-| Application | Proyecto vacío |
-| Infrastructure | Proyecto vacío |
-| Headless | Host mínimo, sin composición real |
-| Domain.Tests | Proyecto xUnit sin pruebas |
-| Separación de dependencias | Documentada y coherente |
-| Tiempo determinista | Principio documentado; no implementado |
-| Carga de contenido JSON | Decisión documentada; no implementada |
-| Persistencia | Responsabilidad prevista; no implementada |
-| CI | No comprobada como operativa en esta auditoría |
-| Mecánicas de juego | No implementadas en código |
+| Solución .NET 8 / C# 12 y CI | Configurados; CI ejecutada en commits recientes |
+| Identidad, errores y resultados tipados | Implementados |
+| Ciclo de vida de entidades | Implementado |
+| Atributos primarios 1–99 | Implementados |
+| Clases permanentes y nivel derivado del jugador | Implementados |
+| Contratos de estadísticas y modificadores | Implementados; cálculo efectivo pendiente |
+| Recursos acotados | Implementados |
+| Vitalidad segmentada y Postura independiente | Implementadas; transiciones inmutables básicas disponibles |
+| Reloj lógico y aleatoriedad determinista | Implementados en sus respectivos proyectos |
+| Acciones y condiciones | Pendientes |
+| Resolución de daño, presión, desvío y ejecución | Pendiente |
+| Efectos y postacciones | Pendientes |
+| Eventos y reacciones | Pendientes |
+| Economía y progresión por almas | Pendientes en código |
+| Ecosistemas, NPC, facciones y misiones | Pendientes en código |
+| Persistencia y carga de contenido | Pendientes |
+| Host Headless integrado | Pendiente |
 
-## 3. Sistemas internos que el motor necesita
+## 3. Sistemas internos requeridos
 
-Estos son sistemas de arquitectura y ejecución, no sistemas de contenido del mundo.
+### 3.1 Estado de dominio
+Mantener identidad estable, ciclo de vida y objetos de valor inmutables. Las entidades de gameplay deben distinguir retirada de simulación, derrota, muerte narrativa y destrucción.
 
-### 3.1 Modelo de dominio y ciclo de vida de entidades
-Definir identidad estable, estado, ciclo de vida y límites de las entidades. Evitar introducir un ECS completo sin necesidad demostrada. Empezar con composición y objetos de dominio explícitos.
+### 3.2 Estadísticas y recursos
+Separar atributos base, estadísticas derivadas, modificadores y recursos actuales. Las políticas de cálculo, orden de modificadores, redondeo y límites deben ser explícitas y probadas.
 
-### 3.2 Modelo de atributos y estadísticas
-Separar atributos base, valores derivados, modificadores y valores efectivos. Definir orden determinista de aplicación, origen, duración, acumulación y eliminación de modificadores. Evitar que cada mecánica calcule estadísticas por su cuenta.
+### 3.3 Acciones y resolución
+Diseñar un flujo común para solicitar, validar y resolver acciones. Debe producir rechazos tipados y resultados ordenados. Ataques, defensas, habilidades e interacciones pueden compartir infraestructura sin compartir reglas específicas.
 
-### 3.3 Recursos y invariantes
-Representar recursos como vitalidad, postura, maná, aura y prana con reglas explícitas: valor actual, máximo, consumo, recuperación, límites y eventos de cambio. Las reglas específicas de cada recurso pueden variar sin duplicar infraestructura.
+### 3.4 Condiciones y requisitos
+Las condiciones deben ser evaluadores explícitos y puros. No deben mutar el estado ni esconder costes. Una acción puede requerir varias condiciones y devolver todos los motivos de rechazo relevantes en orden determinista.
 
-### 3.4 Acciones y resolución
-Diseñar un flujo común para solicitar, validar, ejecutar y resolver acciones. Debe admitir resultados rechazados con razones explícitas y efectos de resolución ordenados. Ataques, defensas, habilidades e interacciones podrán usar el mismo mecanismo sin compartir reglas que no les correspondan.
+### 3.5 Efectos y postacciones
+Gestionar efectos instantáneos y persistentes, duración, acumulación, fuente, objetivo, activación, expiración y eliminación. Las cadenas y múltiples postacciones anidadas requieren límites explícitos y protección contra ciclos.
 
-### 3.5 Condiciones y requisitos
-Proporcionar evaluación explícita y comprobable de condiciones: requisitos de recursos, estados, objetivos, alcance lógico y otras restricciones. Las condiciones no deben esconder mutaciones.
+### 3.6 Eventos y reacciones
+Separar comandos (intenciones) de eventos (hechos ocurridos). Establecer orden, identidad, idempotencia, reentrancia y política de errores antes de adoptar un bus global.
 
-### 3.6 Efectos y modificadores
-Gestionar efectos instantáneos y persistentes, duración, acumulación, fuente, objetivo, activación, expiración, eliminación y efectos encadenados. Debe soportar múltiples postacciones anidadas con límites y protección contra ciclos infinitos.
+### 3.7 Tiempo y simulación
+Usar el reloj lógico inyectado y ticks explícitos. Ninguna regla de dominio debe depender de DateTime.Now ni de temporizadores de máquina.
 
-### 3.7 Eventos y reacciones
-Definir eventos de dominio para comunicar hechos que ya ocurrieron. Separar eventos de dominio de comandos/solicitudes. Establecer orden de procesamiento, política ante errores, reentrancia y prevención de duplicados.
+### 3.8 Aplicación e infraestructura
+Application coordina casos de uso y límites transaccionales. Infrastructure implementa puertos de persistencia y carga validada. Headless compone y ejecuta escenarios reproducibles.
 
-### 3.8 Tiempo y simulación
-Implementar reloj de simulación inyectado y ticks explícitos. Las reglas no consultan DateTime.Now ni temporizadores del sistema. Determinar cómo se procesan duraciones, enfriamientos, regeneración y eventos programados.
+## 4. Arquitectura objetivo
 
-### 3.9 Aleatoriedad determinista
-Centralizar generación aleatoria detrás de una abstracción con semilla reproducible. Las pruebas deben poder repetir exactamente una secuencia de resultados.
-
-### 3.10 Orquestación de casos de uso
-Application coordina operaciones y transacciones lógicas sin absorber las reglas del dominio. Debe definir límites de cada operación y garantizar que una acción no deje el estado parcialmente actualizado.
-
-### 3.11 Contenido y configuración
-Infrastructure carga datos externos, valida esquema, referencias, rangos y compatibilidad de versiones. Los datos configurables no deben poder invalidar invariantes esenciales del dominio.
-
-### 3.12 Persistencia y reconstrucción
-Definir snapshots, versión de esquema, migraciones, identidad y reconstrucción consistente del estado. No serializar directamente objetos internos sin un contrato estable.
-
-### 3.13 Diagnóstico y validación
-Proporcionar errores tipados, trazas de resolución y herramientas para inspeccionar por qué una acción fue aceptada, rechazada o produjo determinado resultado. No depender de Console dentro del dominio.
-
-## 4. Arquitectura objetivo propuesta
-
-Mantener las cuatro capas existentes:
-
-- **Domain:** entidades, objetos de valor, invariantes, cálculos y reglas puras.
-- **Application:** casos de uso, coordinación, puertos y límites de operación.
-- **Infrastructure:** adaptadores de persistencia, contenido, reloj externo y otras integraciones.
-- **Headless:** composición, ejecución de simulaciones y diagnóstico.
+- **Domain:** entidades, objetos de valor, invariantes y reglas.
+- **Application:** casos de uso, coordinación y puertos.
+- **Infrastructure:** adaptadores de persistencia, contenido y servicios externos.
+- **Headless:** composición, simulación y diagnóstico.
 
 Dirección de dependencias:
 
@@ -89,50 +73,21 @@ Headless ─────► Application ─────► Domain
     └────► Infrastructure ───────► Domain
 ```
 
-Domain no debe depender de ninguna otra capa. Infrastructure implementa interfaces definidas hacia el interior. La interfaz gráfica futura será otro adaptador externo, no una dependencia del núcleo.
+No introducir ECS, event sourcing, un Event Bus global, framework DI complejo ni scripting antes de que las pruebas y necesidades reales lo justifiquen.
 
-No introducir por adelantado ECS, event sourcing, plugins, un framework de DI complejo ni un motor de scripting. Incorporarlos únicamente si los requisitos y pruebas justifican su coste.
+## 5. Orden de construcción
 
-## 5. Orden recomendado de construcción
+1. Contratos fundamentales.
+2. Estado de dominio.
+3. Condiciones, acciones y resolución.
+4. Efectos, eventos y postacciones.
+5. Simulación temporal.
+6. Casos de uso de Application.
+7. Persistencia y contenido validado.
+8. Host Headless y pruebas de integración.
 
-1. **Contratos fundamentales:** identificadores, resultados, errores, invariantes, reloj y aleatoriedad.
-2. **Estado de dominio:** entidades, atributos, estadísticas, modificadores y recursos.
-3. **Resolución:** condiciones, acciones y flujo de resolución.
-4. **Reactividad:** eventos, efectos, duraciones, postacciones y orden de ejecución.
-5. **Simulación:** tick determinista y procesamiento temporal.
-6. **Aplicación:** casos de uso y coordinación transaccional.
-7. **Infraestructura:** carga validada de contenido y persistencia versionada.
-8. **Headless y pruebas de integración:** composición real, escenarios reproducibles y diagnósticos.
+Cada bloque debe aportar pruebas unitarias y, cuando corresponda, pruebas de integración antes de que el siguiente dependa de él.
 
-Cada etapa debe incluir pruebas unitarias y de integración antes de depender de ella en la siguiente.
+## 6. Criterio de finalización
 
-## 6. Riesgos que deben evitarse
-
-- Una clase central que conozca y ejecute todas las mecánicas.
-- Efectos que muten estado sin dejar claro su origen y duración.
-- Eventos que desencadenen ciclos recursivos ilimitados.
-- Orden de resolución dependiente del orden accidental de colecciones.
-- Lecturas directas del reloj o aleatoriedad global.
-- Datos JSON capaces de saltarse invariantes.
-- Guardar referencias internas o tipos de implementación como formato de persistencia.
-- Duplicar cálculos de estadísticas entre combate, habilidades y equipo.
-- Confundir eventos (hechos ocurridos) con comandos (intenciones).
-- Declarar una mecánica implementada porque exista su documento o proyecto.
-
-## 7. Criterio de finalización del núcleo
-
-El núcleo podrá considerarse arquitectónicamente funcional cuando:
-
-- Se pueda crear y modificar un estado de juego sin motor gráfico.
-- Las acciones se validen y resuelvan de forma determinista.
-- Los efectos y eventos tengan orden y ciclo de vida definidos.
-- El tiempo y la aleatoriedad sean controlables en pruebas.
-- Los datos externos se validen antes de entrar al dominio.
-- El estado pueda guardarse y reconstruirse con versión explícita.
-- Los casos de uso se ejecuten desde Headless.
-- Las reglas críticas estén cubiertas por pruebas automatizadas.
-- Ningún proyecto de dominio dependa de consola, archivos o motor gráfico.
-
-## 8. Límite de esta auditoría
-
-Esta auditoría describe lo que se pudo comprobar en el árbol y los archivos actuales del repositorio. No afirma que todas las decisiones propuestas estén aprobadas como reglas definitivas del juego. Tampoco modifica ni redefine las mecánicas funcionales del GDD. Su propósito es establecer qué infraestructura lógica falta para implementarlas de forma coherente.
+El núcleo será funcional cuando permita crear estado de juego sin motor gráfico, validar y resolver acciones determinísticamente, procesar efectos y eventos con orden definido, controlar tiempo y aleatoriedad, cargar datos validados, guardar y reconstruir estado versionado, y ejecutar escenarios completos desde Headless.

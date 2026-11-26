@@ -38,6 +38,28 @@ public sealed class VitalityTrack
     public bool IsDepleted => _bars.Length == 0;
     public ResourcePool? CurrentBar => IsDepleted ? null : _bars[0];
 
+    /// <summary>Returns a new track with the active bar set to a validated value.</summary>
+    public Result<VitalityTrack> TrySetCurrentBarValue(decimal value)
+    {
+        if (IsDepleted)
+        {
+            return Result<VitalityTrack>.Failure(new GameError(
+                "combat.vitality.no_remaining_bars",
+                "The vitality track has no remaining bars."));
+        }
+
+        if (value < 0m || value > _bars[0].Maximum)
+        {
+            return Result<VitalityTrack>.Failure(new GameError(
+                "combat.vitality.value_out_of_range",
+                "The active vitality value must be between zero and its maximum."));
+        }
+
+        var updatedBars = (ResourcePool[])_bars.Clone();
+        updatedBars[0] = _bars[0].WithCurrent(value);
+        return Result<VitalityTrack>.Success(new VitalityTrack(updatedBars));
+    }
+
     /// <summary>Removes the active bar after it reaches zero.</summary>
     public Result<VitalityTrack> TryRemoveDepletedCurrentBar()
     {

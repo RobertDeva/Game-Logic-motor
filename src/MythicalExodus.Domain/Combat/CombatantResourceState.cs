@@ -1,3 +1,4 @@
+using MythicalExodus.Domain.Primitives;
 using MythicalExodus.Domain.Resources;
 
 namespace MythicalExodus.Domain.Combat;
@@ -26,4 +27,37 @@ public sealed record CombatantResourceState
 
     public VitalityTrack Vitality { get; }
     public ResourcePool Posture { get; }
+
+    public Result<CombatantResourceState> TrySetPostureValue(decimal value)
+    {
+        if (value < 0m || value > Posture.Maximum)
+        {
+            return Result<CombatantResourceState>.Failure(new GameError(
+                "combat.posture.value_out_of_range",
+                "The posture value must be between zero and its maximum."));
+        }
+
+        return Result<CombatantResourceState>.Success(
+            new CombatantResourceState(Vitality, Posture.WithCurrent(value)));
+    }
+
+    public Result<CombatantResourceState> TrySetActiveVitalityValue(decimal value)
+    {
+        var result = Vitality.TrySetCurrentBarValue(value);
+        if (result.IsFailure)
+            return Result<CombatantResourceState>.Failure(result.Error!);
+
+        return Result<CombatantResourceState>.Success(
+            new CombatantResourceState(result.Value, Posture));
+    }
+
+    public Result<CombatantResourceState> TryRemoveDepletedVitalityBar()
+    {
+        var result = Vitality.TryRemoveDepletedCurrentBar();
+        if (result.IsFailure)
+            return Result<CombatantResourceState>.Failure(result.Error!);
+
+        return Result<CombatantResourceState>.Success(
+            new CombatantResourceState(result.Value, Posture));
+    }
 }
