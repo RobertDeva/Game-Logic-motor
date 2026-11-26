@@ -1,6 +1,7 @@
 namespace MythicalExodus.Domain.Combat;
 
 using MythicalExodus.Domain.Primitives;
+using MythicalExodus.Domain.Characters;
 using MythicalExodus.Domain.Statistics;
 
 public readonly record struct DamageTypeId
@@ -157,7 +158,7 @@ public sealed class DefensiveDamageCalculator
 
         var results = new List<DefensiveDamageComponentResult>(incoming.Length);
         var resistanceCurve = _curves.Evaluate(
-            Characters.CharacterAttribute.Endurance,
+            CharacterAttribute.Endurance,
             defenderAttributes.Endurance);
 
         foreach (var component in incoming)
