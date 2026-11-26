@@ -27,6 +27,7 @@ La existencia de tipos de dominio no debe confundirse con la implementación de 
 | Cálculo ofensivo | Implementado: curvas normalizadas v1.0, coeficientes explícitos por componente, multiplicadores de movimiento/habilidad/condición y Voluntad; afinidades y críticos pendientes |
 | Cálculo defensivo | Implementado: defensa plana, Resistencia derivada de atributo, resistencias de equipo/estado, límites configurables, vulnerabilidad e inmunidad; críticos pendientes |
 | Afinidades energéticas | Implementadas: matriz dirigida de seis energías, pares recíprocos y multiplicadores ×1.50/×0.75/×1.25/×1.00; integración automática al pipeline de componentes pendiente |
+| Presión y recuperación de Postura | Implementadas fórmulas configurables, curva de recuperación monótona según proporción de Vitalidad y aplicación inmutable; valores de contenido y coordinación temporal pendientes |
 | Aplicación de daño a Vitalidad y presión a Postura | Aplicación de magnitudes precomputadas implementada; fórmulas defensivas y cálculo de presión de Postura pendientes |
 | Sistema de resurrección del jugador | Flujo de dominio implementado: decisión voluntaria tras golpe mortal, consumo explícito de carga, debuff temporal configurable y expiración por reloj lógico, Game Over y retorno al último punto de descanso; aplicación de modificadores al cálculo efectivo y reubicación/carga del mundo corresponden a Application/host |
 | Resolución de desvíos, recuperación, ruptura y ejecución | Pendiente |

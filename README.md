@@ -55,6 +55,7 @@ dotnet test --no-build
 - [Cálculo ofensivo](docs/offensive-damage-calculation.md): curvas de atributos v1.0, escalado explícito por componente y bonificación universal de Voluntad.
 - [Cálculo defensivo](docs/defensive-damage-calculation.md): defensa plana, resistencia por tipo derivada de Resistencia, límites configurables, vulnerabilidades e inmunidades.
 - [Afinidades energéticas](docs/energy-affinity-system.md): matriz dirigida de seis energías, relaciones recíprocas y multiplicadores confirmados.
+- [Presión y recuperación de Postura](docs/posture-pressure-and-recovery.md): fórmula de presión, curva de recuperación configurable según Vitalidad y aplicación inmutable.
 - [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas, jefes colosos, reputación territorial, memoria histórica, eventos, facciones, entidades reactivas, misiones dinámicas y poblaciones simuladas de asentamientos, fauna y enemigos. Las ideas permanecen separadas del baseline hasta su aprobación.
 
 ## Documento rector
