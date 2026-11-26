@@ -25,6 +25,7 @@ La existencia de tipos de dominio no debe confundirse con la implementación de 
 | Reloj lógico y aleatoriedad determinista | Implementados en sus respectivos proyectos |
 | Acciones y condiciones | Contratos genéricos, solicitudes y validación de combate implementados; resolución de consecuencias pendiente |
 | Aplicación de daño a Vitalidad y presión a Postura | Aplicación de magnitudes precomputadas implementada; fórmulas ofensivas/defensivas pendientes |
+| Estado de cargas de resurrección del jugador | Implementado como estado inmutable: capacidad 1–3, desbloqueo, progreso por enemigos, cargas recuperadas bloqueadas hasta descanso; integración con golpe mortal, debuff y Game Over pendiente |
 | Resolución de desvíos, recuperación, ruptura y ejecución | Pendiente |
 | Efectos y postacciones | Pendientes |
 | Eventos y reacciones | Pendientes |
