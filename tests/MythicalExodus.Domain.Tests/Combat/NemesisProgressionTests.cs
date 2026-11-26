@@ -43,11 +43,11 @@ public sealed class NemesisProgressionTests
     {
         var state = NemesisProgressionState.Create(EntityId.New(), NemesisEnemyCategory.Normal, EntityId.New());
 
-        // Reach rank 6; the threshold from rank 6 to 7 is two marks.
-        for (var i = 0; i < 5; i++)
+        // Reach rank 10; the rebased threshold from rank 10 to 11 is two marks.
+        for (var i = 0; i < 9; i++)
             state = state.RecordQualifyingDefeat(EntityId.New()).State;
 
-        Assert.Equal(6, state.Rank);
+        Assert.Equal(10, state.Rank);
         Assert.Equal(2, state.GetRequiredGrowthMarksForNextRank());
 
         var firstMark = state.RecordQualifyingDefeat(EntityId.New());
