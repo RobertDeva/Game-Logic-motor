@@ -14,7 +14,7 @@ Para cada componente ofensivo se calcula:
 5. Multiplicador universal de Voluntad: 1 + 0.15 × curva de Voluntad.
 6. Potencia final del componente y suma de los componentes.
 
-La suma de coeficientes de escalado por componente está limitada a 0.75, como establece la sección 22.3 del modelo. Cada componente declara explícitamente qué atributos participan. Agilidad, Vitalidad, Resistencia, Ruptura y otras estadísticas no escalan daño por defecto; solo lo hacen si el contenido lo declara y la regla funcional lo permite.
+La suma de coeficientes de escalado por componente está limitada a 0.75, como establece la sección 22.3 del modelo. Cada componente declara explícitamente qué atributos participan. En el perfil v1.0 solo Fuerza, Destreza y Armonía pueden ser coeficientes de escalado directo de daño. Voluntad se aplica exclusivamente como multiplicador universal separado. Vitalidad, Agilidad, Resistencia y Ruptura no se admiten como coeficientes directos de daño en este modelo.
 
 ## Curvas v1.0
 
