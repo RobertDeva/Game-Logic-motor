@@ -1,6 +1,7 @@
 using MythicalExodus.Domain.Combat;
 using MythicalExodus.Domain.Primitives;
 using MythicalExodus.Domain.Statistics;
+using MythicalExodus.Domain.Resources;
 
 namespace MythicalExodus.Domain.Tests.Combat;
 
@@ -152,4 +153,36 @@ public sealed class PlayerResurrectionStateTests
         Assert.True(result.IsFailure);
         Assert.Equal("resurrection.rest_requires_alive_player", result.Error!.Code);
     }
+
+    [Fact]
+    public void Lethal_combat_impact_opens_resurrection_decision_or_game_over()
+    {
+        var player = new PlayerResurrectionState(new ResurrectionState(1, 100m), Checkpoint);
+        var depletedResources = new CombatantResourceState(
+            new VitalityTrack(Array.Empty<ResourcePool>()),
+            new ResourcePool(new ResourceId("posture"), 0m, 50m));
+        var lethalImpact = new CombatImpactResult(depletedResources, 10m, 0m, 0m, 1);
+
+        var result = player.TryProcessCombatImpact(lethalImpact);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal(PlayerResurrectionPhase.AwaitingDecision, result.Value.Phase);
+    }
+
+    [Fact]
+    public void Nonlethal_combat_impact_does_not_open_resurrection_decision()
+    {
+        var player = new PlayerResurrectionState(new ResurrectionState(1, 100m), Checkpoint);
+        var resources = new CombatantResourceState(
+            new VitalityTrack(new[] { new ResourcePool(new ResourceId("vitality"), 40m, 100m) }),
+            new ResourcePool(new ResourceId("posture"), 0m, 50m));
+        var impact = new CombatImpactResult(resources, 10m, 0m, 0m, 0);
+
+        var result = player.TryProcessCombatImpact(impact);
+
+        Assert.True(result.IsSuccess);
+        Assert.Same(player, result.Value);
+        Assert.Equal(PlayerResurrectionPhase.Alive, result.Value.Phase);
+    }
+
 }
