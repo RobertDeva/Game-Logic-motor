@@ -36,3 +36,4 @@ No observation decay, time windows, forgetting behavior, or exact pattern-detect
 - The adaptive resolver selects a tendency.
 - Enemy-specific AI executes the tendency using available moves and movement options.
 - Boss phase restrictions, invulnerability, transition windows and special attacks remain authoritative and cannot be bypassed by adaptation.
+- Persistent Nemesis identity, rank, history and evolution are a separate system; see [Nemesis system](nemesis-system.md). Nemesis knowledge may inform encounter AI, but it must not be merged into encounter-scoped adaptive memory.
