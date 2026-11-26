@@ -45,7 +45,7 @@ dotnet test --no-build
 ## Documentos de diseño
 
 - [GDD baseline](docs/gdd-baseline.md): referencia funcional inicial.
-- [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas y jefes colosos. Las ideas permanecen separadas del baseline hasta su aprobación.
+- [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas, jefes colosos, reputación territorial y memoria histórica. Las ideas permanecen separadas del baseline hasta su aprobación.
 
 ## Documento rector
 

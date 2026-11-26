@@ -228,3 +228,165 @@ En esta versión, las propuestas nuevas de este documento se consideran **EN EVA
 7. Solo después, convertir decisiones estables en contratos del núcleo y pruebas automatizadas.
 
 **Principio rector:** conservar la ambición sistémica del mundo sin anticipar abstracciones, fórmulas o infraestructura antes de que las reglas de juego estén suficientemente definidas.
+
+
+## 11. Reputación territorial, memoria histórica y efecto leyenda
+
+**Estado: AMPLIACIÓN DE UN SISTEMA PREVISTO; reglas y magnitudes concretas EN EVALUACIÓN.**
+
+Esta propuesta desarrolla el Sistema de Reputación Territorial y la Memoria Histórica de las comunidades contemplados en el diseño de Mythical Exodus. La intención es que las acciones del jugador dejen consecuencias sociales persistentes: el mundo no solo registra que un jefe fue derrotado, sino que distintas comunidades interpretan ese acontecimiento, lo recuerdan y reaccionan de acuerdo con sus intereses, valores y relaciones.
+
+El objetivo de diseño es el **efecto leyenda**: las hazañas deben seguir teniendo significado después de terminar el combate, cuando el jugador regresa a asentamientos, visita talleres, conversa con NPC o se encuentra con miembros de facciones afectadas.
+
+### 11.1 El mundo recuerda las hazañas
+
+Una victoria importante puede producir consecuencias que se manifiesten de distintas formas:
+
+- **Reconocimiento de NPC:** habitantes y personajes que conozcan la hazaña pueden reconocer al jugador, cambiar su trato, mostrar gratitud, respeto, temor, resentimiento o desconfianza.
+- **Reacciones de comerciantes y profesionales:** algunos podrían ofrecer mejores condiciones, acceso a servicios, encargos o mercancías; otros podrían negarse a comerciar o exigir precios más altos. Los descuentos no deben ser automáticos ni universales: dependerán de la relación, la cultura, el interés y la política de cada comerciante.
+- **Rumores, relatos y trovadores:** tabernas, viajeros y comunidades pueden transmitir versiones de acontecimientos importantes. La historia puede deformarse, exagerarse, fragmentarse o tardar en llegar a regiones lejanas.
+- **Diálogos evolutivos:** un NPC que antes subestimaba al jugador podría pedirle consejo, disculparse o tratarlo con deferencia. Otro podría sentir envidia, miedo o rechazo.
+- **Ceremonias y cambios visibles:** una comunidad agradecida podría decorar calles, organizar una celebración, ofrecer escolta o convocar al jugador ante sus autoridades. Son ejemplos de respuestas posibles, no recompensas garantizadas por cada jefe.
+- **Memoria personal y comunitaria:** el diario podría registrar títulos, acontecimientos y consecuencias relevantes, diferenciando lo que el jugador presenció de lo que otros cuentan.
+
+La reacción debe guardar proporción con la importancia del acontecimiento y con el conocimiento real que cada personaje o comunidad tenga de él. No todo NPC debería reconocer instantáneamente al jugador en cualquier lugar.
+
+### 11.2 Reputación, notoriedad y alerta son dimensiones distintas
+
+No conviene reducir todas las reacciones a una sola puntuación global. Como modelo conceptual, separar:
+
+1. **Reputación:** valoración que una comunidad, territorio o facción tiene del jugador. Puede ser positiva, negativa o neutral.
+2. **Notoriedad:** cuánto se conoce la identidad o las hazañas del jugador dentro de una red de comunicación. Una persona puede ser famosa sin ser querida.
+3. **Alerta o amenaza percibida:** cuánto considera una facción que el jugador representa un peligro activo. Puede aumentar por acciones hostiles, aunque la reputación con otras comunidades sea positiva.
+
+Estas dimensiones permitirían situaciones como:
+- Una aldea considera héroe al jugador por liberar a sus habitantes.
+- La facción del tirano derrotado lo considera enemigo y ofrece una recompensa por capturarlo.
+- Una comunidad distante todavía no sabe quién es, aunque la reputación local sea muy alta.
+- Un grupo enemigo conoce su identidad y sus tácticas, pero no necesariamente comparte información perfecta con todos sus miembros.
+
+Los nombres, escalas, límites, umbrales y fórmulas de estas dimensiones quedan pendientes.
+
+### 11.3 Relaciones entre territorios y facciones como grafo
+
+Se propone representar las relaciones sociales y políticas mediante un **grafo de relaciones**, en lugar de asumir que cada facción existe de forma aislada.
+
+- Los nodos pueden representar comunidades, territorios, organizaciones, facciones, asentamientos o instituciones, según el modelo que se defina.
+- Las conexiones expresan relaciones como alianza, rivalidad, subordinación, dependencia, conflicto, comercio o afinidad cultural.
+- Una acción puede afectar directamente a varios nodos y, dependiendo de las reglas de transmisión, producir consecuencias indirectas en otros.
+- Las relaciones pueden ser dirigidas y asimétricas: que A considere aliado a B no obliga a que B tenga la misma valoración de A.
+- El grafo no debe propagar automáticamente cada cambio a todo el mundo. La información, la influencia y las consecuencias políticas necesitan reglas explícitas de alcance, tiempo, confianza y canales de comunicación.
+
+Ejemplo conceptual: derrotar a un jefe que oprimía una región podría mejorar la reputación con la comunidad liberada, empeorarla con la facción a la que pertenecía el jefe y modificar la posición de organizaciones aliadas o rivales. Los valores numéricos concretos no están fijados.
+
+### 11.4 Acciones históricas y consecuencias de doble filo
+
+Los acontecimientos importantes deben interpretarse según el contexto y los intereses de cada grupo.
+
+- Derrotar a un tirano puede ser celebrado por sus víctimas y considerado un asesinato o una amenaza por sus seguidores.
+- Destruir una criatura que aterrorizaba una región puede generar gratitud, pero también preocupación si esa criatura mantenía bajo control otra amenaza.
+- Ayudar a una facción puede perjudicar las relaciones con sus rivales.
+- Actuar con crueldad, saquear, atacar civiles o incumplir acuerdos podría deteriorar reputación y aumentar la alerta.
+- Una misma hazaña puede generar consecuencias positivas y negativas simultáneamente.
+
+El sistema debe registrar el acontecimiento y aplicar reglas de interpretación configurables por comunidad/facción. No debe codificar una moral universal que convierta automáticamente toda victoria en una recompensa positiva.
+
+### 11.5 Reacción de NPC y enemigos
+
+La reputación y la alerta pueden influir en el comportamiento, siempre dentro de lo que cada entidad sabe:
+
+- NPC amistosos pueden ofrecer diálogos, servicios, encargos o acceso a espacios antes restringidos.
+- Comerciantes pueden modificar sus condiciones comerciales según su relación, sus recursos y sus intereses.
+- Guardias pueden saludar, escoltar, vigilar, interrogar o impedir el acceso.
+- Enemigos de una facción hostil pueden reconocer al jugador, prepararse, pedir refuerzos, organizar emboscadas o intentar evitar el enfrentamiento.
+- Algunos enemigos pueden huir por miedo o por una evaluación táctica desfavorable; otros pueden buscar gloria enfrentándose al jugador.
+- El conocimiento de las tácticas del jugador puede influir en la preparación enemiga, pero no debe convertirse en omnisciencia ni en adaptación injusta. La transmisión de información y la capacidad de aprender requieren límites.
+
+La reacción concreta dependerá de personalidad, rol, facción, situación, fuerza relativa, contexto y conocimiento disponible. Una reputación alta no obliga a que todos los miembros de una facción se comporten igual.
+
+### 11.6 Arquitectura lógica orientada a acontecimientos
+
+Se propone estudiar una arquitectura basada en acontecimientos del dominio para conectar combate, reputación, memoria, NPC, diálogos, comercio y mundo.
+
+Flujo conceptual:
+
+1. El sistema de combate resuelve la derrota definitiva de un jefe.
+2. Se registra un acontecimiento con identidad del jefe, participantes, lugar, momento lógico y resultado.
+3. Los sistemas interesados reciben el acontecimiento mediante un mecanismo explícito de publicación/consumo.
+4. El sistema de reputación determina qué comunidades y facciones resultan afectadas y aplica las reglas correspondientes.
+5. La memoria histórica registra el hecho y las interpretaciones conocidas.
+6. Los sistemas de NPC, diálogo, comercio, guardias y encuentros consultan el estado social pertinente cuando toman decisiones.
+7. La propagación de rumores puede ocurrir posteriormente, según rutas, testigos, viajeros u otros canales definidos.
+
+Un nombre como BossDefeated puede servir para identificar el tipo de acontecimiento, pero no se debe asumir que basta con emitir un evento genérico OnBossDefeated(BossId). Para que el sistema sea fiable, el contrato probablemente necesitará contexto suficiente y una identidad única del acontecimiento.
+
+**Separación de responsabilidades:**
+- Combate determina y registra el resultado definitivo del encuentro.
+- Reputación interpreta las consecuencias sociales.
+- Memoria histórica conserva hechos y versiones conocidas.
+- Comunicación/rumores determina quién llega a conocerlos y cuándo.
+- NPC y facciones reaccionan a su propio estado, conocimiento y contexto.
+- Diálogo y presentación muestran esas consecuencias sin ser dueños de las reglas sociales.
+
+No se propone introducir event sourcing ni un bus de eventos complejo por adelantado. Primero deben definirse los contratos y garantías necesarios; una publicación sencilla de eventos de dominio puede ser suficiente.
+
+### 11.7 Consistencia, persistencia y prevención de explotación
+
+- La derrota definitiva de un jefe debe producir una sola consecuencia histórica y una sola aplicación de reputación por acontecimiento.
+- Recargar una partida, abandonar y volver a entrar en una región o repetir una transición no debe duplicar el cambio.
+- El acontecimiento y su procesamiento deben poder persistirse o reconstruirse de forma consistente.
+- Si una consecuencia afecta a varios nodos del grafo, debe evitarse que una interrupción deje el mundo en un estado parcialmente actualizado sin posibilidad de recuperación.
+- Los rumores no deben otorgar conocimiento instantáneo: se debe registrar quién sabe qué, desde cuándo y por qué canal, cuando ese nivel de detalle sea necesario.
+- Las consecuencias económicas derivadas de reputación deben integrarse con la economía ya diseñada y evitar descuentos infinitos, precios explotables o generación indirecta de riqueza sin control.
+- Los cambios de reputación no deben conceder automáticamente equipo legendario, objetos gratuitos o títulos; esas recompensas requieren condiciones y contenido explícitos.
+
+### 11.8 Ejemplo ilustrativo de una secuencia
+
+El siguiente ejemplo es narrativo y no define valores oficiales:
+
+- El jugador derrota a un coloso que amenazaba un bosque y a una aldea cercana.
+- La comunidad afectada registra el acontecimiento y mejora su valoración del jugador.
+- La facción que veneraba o controlaba al coloso interpreta la derrota como una agresión y aumenta su hostilidad.
+- Los habitantes que presenciaron el combate comienzan a contar lo ocurrido.
+- Con el paso del tiempo, un viajero lleva la noticia a otro asentamiento.
+- Al regresar, el jugador puede encontrar reconocimiento, nuevas opciones de diálogo y una celebración local.
+- En territorio de la facción enemiga, sus patrullas podrían reconocerlo, vigilarlo o preparar una emboscada si han recibido información suficiente.
+
+La consola headless podría mostrar una traza de diagnóstico semejante a esta:
+
+~~~text
+> resolve boss_encounter colossus_forest
+[COMBAT] Encounter resolved: victory
+[HISTORY] Event recorded: BossDefeated / colossus_forest
+[REPUTATION] Forest village: improved
+[REPUTATION] Colossus cult: worsened
+[ALERT] Colossus cult: threat assessment increased
+> enter settlement forest_village
+[NPC] Blacksmith recognizes the player
+[DIALOGUE] Contextual dialogue set selected
+~~~
+
+La traza representa resultados hipotéticos; no son comandos implementados ni valores acordados.
+
+### 11.9 Preguntas pendientes
+
+1. ¿La reputación se calcula por asentamiento, territorio, comunidad, facción o una combinación jerárquica?
+2. ¿Qué relaciones forman el grafo y cuáles son sus reglas de dirección, intensidad y actualización?
+3. ¿Cómo se distinguen reputación, notoriedad, alerta y conocimiento individual?
+4. ¿Qué acontecimientos generan cambios y cuáles requieren testigos, pruebas o confirmación?
+5. ¿Cómo viajan los rumores y qué alcance tienen según distancia, rutas y relaciones?
+6. ¿Qué umbrales habilitan diálogos, servicios, acceso, recompensas o respuestas hostiles?
+7. ¿Cómo se equilibran precios, descuentos, impuestos, recompensas y sanciones?
+8. ¿Qué información táctica puede aprender una facción sobre el jugador y cuánto tarda en transmitirla?
+9. ¿Cómo se comportan facciones fragmentadas o NPC que discrepan de la postura oficial?
+10. ¿Cómo se persisten y procesan acontecimientos para evitar duplicados y estados inconsistentes?
+
+### 11.10 Relación con sistemas existentes
+
+- Esta sección amplía las ideas de reputación territorial, memoria histórica, NPC dinámicos, economía y simulación social.
+- No establece todavía valores como +50 o -30; cualquier cifra del ejemplo original debe tratarse como ilustrativa.
+- No convierte todos los acontecimientos de combate en cambios de reputación. Cada tipo de acontecimiento necesita reglas de interpretación.
+- No cambia las fórmulas de almas, recompensas de jefes, precios base ni progresión. Los efectos económicos de la reputación deberán diseñarse junto con el sistema económico.
+- No exige un grafo global complejo, event sourcing ni una infraestructura de mensajería antes de demostrar que son necesarios.
+- Las ideas permanecen separadas del GDD baseline y del código hasta que se aprueben sus reglas funcionales.
+
