@@ -115,17 +115,21 @@ public sealed class NemesisProgressionState
 
     private static int GetRequiredMarksForRank(int rank)
     {
-        var state = Create(EntityId.New(), category, EntityId.New());
-        for (var currentRank = 1; currentRank < rank; currentRank++)
+        var cumulativeOriginalMarks = 0;
+        var cumulativeScaledMarks = 0;
+        var requiredMarks = 0;
+
+        for (var sourceRank = 1; sourceRank <= rank; sourceRank++)
         {
-            var required = state.GetRequiredGrowthMarksForNextRank()
-                ?? throw new InvalidOperationException("Unexpected rank ceiling while validating persisted progression.");
-            state = Restore(state.NemesisId, category, currentRank + 1, 0, state.CreditedEncounterIds);
-            _ = required;
+            cumulativeOriginalMarks += 1 + ((sourceRank - 1) / 5);
+            var scaledCumulativeTarget = (int)Math.Round(
+                cumulativeOriginalMarks * 0.70m,
+                MidpointRounding.AwayFromZero);
+            requiredMarks = Math.Max(1, scaledCumulativeTarget - cumulativeScaledMarks);
+            cumulativeScaledMarks += requiredMarks;
         }
 
-        return state.GetRequiredGrowthMarksForNextRank()
-            ?? throw new InvalidOperationException("A non-maximum rank must have a promotion threshold.");
+        return requiredMarks;
     }
 
     /// <summary>
