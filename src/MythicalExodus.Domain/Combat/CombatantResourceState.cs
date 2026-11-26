@@ -51,6 +51,19 @@ public sealed record CombatantResourceState
             new CombatantResourceState(result.Value, Posture));
     }
 
+    public Result<CombatantResourceState> TryConsumeCurrentVitalityBar()
+    {
+        var result = Vitality.TryConsumeCurrentBar();
+        if (result.IsFailure)
+            return Result<CombatantResourceState>.Failure(result.Error!);
+
+        return Result<CombatantResourceState>.Success(
+            new CombatantResourceState(result.Value, Posture));
+    }
+
+    public Result<CombatantResourceState> TryResetPosture() =>
+        TrySetPostureValue(0m);
+
     public Result<CombatantResourceState> TryRemoveDepletedVitalityBar()
     {
         var result = Vitality.TryRemoveDepletedCurrentBar();
