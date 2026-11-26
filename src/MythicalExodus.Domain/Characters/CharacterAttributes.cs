@@ -4,7 +4,7 @@ namespace MythicalExodus.Domain.Characters;
 /// Immutable set of primary character attributes. Each attribute is constrained to 1..99.
 /// Derived combat statistics are intentionally calculated by separate domain policies.
 /// </summary>
-public readonly record struct CharacterAttributes
+public sealed record CharacterAttributes
 {
     public const int MinimumValue = 1;
     public const int MaximumValue = 99;
