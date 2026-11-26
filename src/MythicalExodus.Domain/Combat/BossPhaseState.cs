@@ -14,23 +14,23 @@ public enum BossPhaseTransitionStatus
 public sealed class BossPhaseProfile
 {
     private readonly HashSet<int> _specialTransitionAttackPhases;
-    private readonly IReadOnlySet<int> _readOnlySpecialTransitionAttackPhases;
+    private readonly IReadOnlyList<int> _readOnlySpecialTransitionAttackPhases;
 
     public BossPhaseProfile(int totalPhases, IEnumerable<int>? specialTransitionAttackPhases = null)
     {
         if (totalPhases is < 3 or > 5)
             throw new ArgumentOutOfRangeException(nameof(totalPhases), "Bosses must have between three and five phases.");
 
-        _specialTransitionAttackPhases = specialTransitionAttackPhases?.ToHashSet() ?? [];
+        _specialTransitionAttackPhases = specialTransitionAttackPhases?.ToHashSet() ?? new HashSet<int>();
         if (_specialTransitionAttackPhases.Any(phase => phase < 1 || phase > totalPhases))
             throw new ArgumentException("Special transition attack phases must belong to this boss profile.", nameof(specialTransitionAttackPhases));
 
-        _readOnlySpecialTransitionAttackPhases = new System.Collections.ObjectModel.ReadOnlySet<int>(_specialTransitionAttackPhases);
+        _readOnlySpecialTransitionAttackPhases = Array.AsReadOnly(_specialTransitionAttackPhases.OrderBy(phase => phase).ToArray());
         TotalPhases = totalPhases;
     }
 
     public int TotalPhases { get; }
-    public IReadOnlySet<int> SpecialTransitionAttackPhases => _readOnlySpecialTransitionAttackPhases;
+    public IReadOnlyList<int> SpecialTransitionAttackPhases => _readOnlySpecialTransitionAttackPhases;
     public bool HasSpecialTransitionAttack(int phase) => _specialTransitionAttackPhases.Contains(phase);
 }
 
