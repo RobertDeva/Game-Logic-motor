@@ -8,7 +8,7 @@ Construir en C# un núcleo de reglas de juego independiente de cualquier motor g
 
 ## Estado
 
-El repositorio inicia con la fase de arquitectura y estructura de la solución. Las mecánicas del GDD se implementarán progresivamente y se documentarán mediante decisiones de arquitectura y pruebas.
+El núcleo ya contiene contratos fundamentales para identidad, ciclo de vida de entidades, atributos primarios, estadísticas, modificadores, recursos, reloj lógico y aleatoriedad determinista. La primera entidad de jugador implementa clase permanente, atributos iniciales y cálculo de nivel. Los sistemas de combate y demás mecánicas del GDD se incorporarán progresivamente, sin convertir hipótesis de balance en reglas definitivas.
 
 ## Requisitos
 
@@ -45,6 +45,7 @@ dotnet test --no-build
 ## Documentos de diseño
 
 - [GDD baseline](docs/gdd-baseline.md): referencia funcional inicial.
+- [Fundamentos del personaje jugador](docs/player-character-foundation.md): clases permanentes, atributos iniciales, nivel derivado y límites de la primera implementación.
 - [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas, jefes colosos, reputación territorial, memoria histórica, eventos, facciones, entidades reactivas, misiones dinámicas y poblaciones simuladas de asentamientos, fauna y enemigos. Las ideas permanecen separadas del baseline hasta su aprobación.
 
 ## Documento rector
