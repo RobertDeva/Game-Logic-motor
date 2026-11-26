@@ -42,6 +42,11 @@ dotnet test --no-build
 - Las reglas importantes se cubren con pruebas automatizadas.
 - Se priorizan cohesión alta, acoplamiento bajo, contratos explícitos y cambios pequeños.
 
+## Documentos de diseño
+
+- [GDD baseline](docs/gdd-baseline.md): referencia funcional inicial.
+- [Expansión de conceptos y sistemas](docs/post-gdd-expansion-candidates.md): propuestas posteriores al GDD, incluidas exploración, misiones adaptativas, monturas y jefes colosos. Las ideas permanecen separadas del baseline hasta su aprobación.
+
 ## Documento rector
 
 El GDD de Mythical Exodus compartido durante el diseño del proyecto es la referencia funcional inicial. Las decisiones técnicas detalladas se registrarán en `docs/`.
