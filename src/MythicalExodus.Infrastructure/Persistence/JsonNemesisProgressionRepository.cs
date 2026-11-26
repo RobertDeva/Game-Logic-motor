@@ -29,6 +29,14 @@ public sealed class JsonNemesisProgressionRepository : INemesisProgressionReposi
             return _states.GetValueOrDefault(nemesisId);
     }
 
+    public IReadOnlyCollection<NemesisProgressionState> FindAll()
+    {
+        lock (_gate)
+            return Array.AsReadOnly(_states.Values
+                .OrderBy(state => state.NemesisId.Value)
+                .ToArray());
+    }
+
     public bool TryAdd(NemesisProgressionState state)
     {
         ArgumentNullException.ThrowIfNull(state);

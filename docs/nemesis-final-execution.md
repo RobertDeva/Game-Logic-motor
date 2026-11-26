@@ -1,6 +1,6 @@
 # Nemesis final execution
 
-**Status:** approved gameplay rule; Domain lifecycle transitions, Application coordination, and JSON persistence are implemented. Encounter-host recovery timing, world reactivation, and presentation integration remain pending.
+**Status:** approved gameplay rule; Domain lifecycle transitions, Application coordination, JSON persistence, and world spawn-candidate filtering are implemented. Encounter-host recovery timing, actor instantiation, spawn-point selection, and presentation integration remain pending.
 
 ## 1. Purpose
 

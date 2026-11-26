@@ -11,6 +11,9 @@ public interface INemesisProgressionRepository
 {
     NemesisProgressionState? Find(EntityId nemesisId);
 
+    /// <summary>Returns a stable snapshot of all persistent Nemesis identities.</summary>
+    IReadOnlyCollection<NemesisProgressionState> FindAll();
+
     bool TryAdd(NemesisProgressionState state);
 
     bool TryUpdate(NemesisProgressionState expectedState, NemesisProgressionState updatedState);

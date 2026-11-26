@@ -136,6 +136,8 @@ public sealed class NemesisFinalExecutionCoordinatorTests
         public NemesisProgressionState? Find(EntityId nemesisId) =>
             _states.GetValueOrDefault(nemesisId);
 
+        public IReadOnlyCollection<NemesisProgressionState> FindAll() => _states.Values.ToArray();
+
         public bool TryAdd(NemesisProgressionState state) =>
             _states.TryAdd(state.NemesisId, state);
 

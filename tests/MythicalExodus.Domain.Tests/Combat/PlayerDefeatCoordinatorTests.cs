@@ -114,6 +114,8 @@ public sealed class PlayerDefeatCoordinatorTests
             return _states.GetValueOrDefault(nemesisId);
         }
 
+        public IReadOnlyCollection<NemesisProgressionState> FindAll() => _states.Values.ToArray();
+
         public bool TryAdd(NemesisProgressionState state)
         {
             if (_states.ContainsKey(state.NemesisId))

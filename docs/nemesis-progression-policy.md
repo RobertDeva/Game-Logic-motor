@@ -86,10 +86,10 @@ Implemented Domain types:
 - explicit recovery transition that preserves the same Nemesis identity and remembers the previous execution identifier for replay protection;
 - final-action completion that is idempotent and blocks further rank progression after permanent retirement.
 
-Application and persistence also coordinate and store these lifecycle transitions in the same Nemesis progression snapshot. Opening the opportunity requires both an actual `EnemyDefeated` result from normal Muertebendita and explicit per-content opt-in. Recovery timing remains owned by the encounter/world host; no timeout is hard-coded.
+Application and persistence also coordinate and store these lifecycle transitions in the same Nemesis progression snapshot. Opening the opportunity requires both an actual `EnemyDefeated` result from normal Muertebendita and explicit per-content opt-in. Recovery timing remains owned by the encounter/world host; no timeout is hard-coded. The world-population coordinator returns active identities that are not currently present, excluding kneeling and permanently retired Nemeses. After the host records recovery, the same identity becomes eligible for a later spawn query.
 
 Not yet implemented:
 - authoritative attribution policy for simultaneous lethal sources and environmental causes;
 - concrete durable persistence adapter and transaction handling;
-- world population, spawn/reactivation after recovery, and removal of permanently retired Nemeses from future encounters;
+- actual actor creation, world spawn-point selection, encounter placement, and host-side world presence tracking;
 - applying rank evolution definitions to enemy archetypes.
