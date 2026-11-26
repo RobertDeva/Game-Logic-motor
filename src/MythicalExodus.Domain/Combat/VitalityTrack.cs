@@ -60,6 +60,19 @@ public sealed class VitalityTrack
         return Result<VitalityTrack>.Success(new VitalityTrack(updatedBars));
     }
 
+    /// <summary>Consumes the active bar in full, independently of its remaining value.</summary>
+    public Result<VitalityTrack> TryConsumeCurrentBar()
+    {
+        if (IsDepleted)
+        {
+            return Result<VitalityTrack>.Failure(new GameError(
+                "combat.vitality.no_remaining_bars",
+                "The vitality track has no remaining bars."));
+        }
+
+        return Result<VitalityTrack>.Success(new VitalityTrack(_bars.Skip(1)));
+    }
+
     /// <summary>Removes the active bar after it reaches zero.</summary>
     public Result<VitalityTrack> TryRemoveDepletedCurrentBar()
     {
