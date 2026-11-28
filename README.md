@@ -44,6 +44,7 @@ dotnet test --no-build
 
 ## Documentos de diseño
 
+- [Modelo de crecimiento de atributos y estadísticas derivadas](docs/derived-statistics-growth-model.md): decisiones recuperadas sobre las tres fases de crecimiento, contribuciones principales y secundarias, Vitalidad máxima, auditoría y parámetros pendientes de balance.
 - [GDD baseline](docs/gdd-baseline.md): referencia funcional inicial.
 - [Fundamentos del personaje jugador](docs/player-character-foundation.md): clases permanentes, atributos iniciales, nivel derivado y límites de la primera implementación.
 - [Fundamentos del estado de recursos de combate](docs/combat-resource-state-foundation.md): Vitalidad segmentada y Postura separada, con transiciones inmutables validadas.
