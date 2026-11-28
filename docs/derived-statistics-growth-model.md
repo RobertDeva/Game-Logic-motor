@@ -1,109 +1,179 @@
 # Modelo de crecimiento de atributos y estadísticas derivadas
 
 **Proyecto:** Mythical Exodus  
-**Estado:** especificación de diseño en consolidación; no todas las fórmulas ni los parámetros están cerrados.  
-**Propósito:** registrar las decisiones y propuestas matemáticas recuperadas de las conversaciones de diseño, distinguiendo lo establecido de lo que todavía requiere aprobación o calibración.
+**Estado:** especificación en evolución. Contiene valores base establecidos, una curva matemática definida en una etapa anterior y una arquitectura posterior de soft caps propuesta que todavía requiere fórmula y simulación.  
+**Fuentes de diseño:** documentos conversacionales «Diseño del núcleo lógico» actualizados el 27 de noviembre de 2026.  
+**Propósito:** consolidar las decisiones recuperadas sin convertir propuestas de balance en reglas aprobadas ni completar con suposiciones los datos que las fuentes no muestran.
 
-## 1. Alcance y criterio rector
+## 1. Principios del modelo
 
-Este documento recoge el modelo de crecimiento de los atributos primarios y su influencia sobre las estadísticas derivadas del personaje.
+1. El personaje tiene ocho atributos primarios: **Vitalidad, Fuerza, Agilidad, Resistencia, Voluntad, Ruptura, Destreza y Armonía**.
+2. Cada atributo se desarrolla dentro del intervalo **0–99**.
+3. Las estadísticas derivadas se calculan a partir de un punto de partida universal y de las contribuciones de los atributos que las afectan.
+4. Las clases no necesitan fórmulas independientes: utilizan el mismo sistema y comienzan con distribuciones iniciales de atributos diferentes.
+5. Cada atributo y cada estadística deben poder tener curvas y parámetros propios. No se presupone que una única curva idéntica represente correctamente todos los sectores.
+6. La matriz de influencias definida durante el diseño es la autoridad funcional. Este documento no sustituye ni reconstruye las relaciones que no aparecen completas en las fuentes consultadas.
+7. La progresión del jugador y la escala de los enemigos son sistemas separados.
 
-La matriz de relaciones entre atributos y estadísticas entregada durante el diseño es la referencia funcional. Las fórmulas deben adaptarse a esa matriz: no se eliminarán relaciones principales o secundarias para simplificar los cálculos.
+## 2. Punto de partida universal y valores base
 
-La nueva distribución de influencias de **Aura, Maná y Prana** sustituye la ponderación igualitaria anterior. El modelo matemático debe respetar esa distribución. Los valores concretos de la matriz deben consultarse en su fuente original; no se reproducen aquí porque no aparecen completos en los fragmentos recuperados.
+El origen matemático es un personaje hipotético con los ocho atributos en cero:
 
-## 2. Reglas y criterios establecidos
+\[
+A_1=A_2=\cdots=A_8=0
+\]
 
-- Cada atributo tiene un intervalo de 0 a 99 y un máximo de **99**.
-- El crecimiento de la contribución de un atributo se divide en **tres fases**:
-  1. Primer ritmo constante, desde el valor inicial hasta un punto de transición.
-  2. Segundo ritmo constante, desde ese punto de transición hasta 30. Puede tener una pendiente distinta de la primera.
-  3. Rendimiento parabólico decreciente desde 30 hasta 99.
-- La disminución del rendimiento comienza exactamente después de 30.
-- En la tercera fase la contribución acumulada continúa aumentando, pero cada punto adicional aporta menos que el anterior.
-- En 99 se alcanza el máximo de contribución potencial de esa relación atributo-estadística.
-- Las influencias principales y secundarias conservan límites de contribución diferentes.
-- Una estadística puede recibir contribuciones de varios atributos.
-- Cada estadística debe tener un límite global que impida que la acumulación de contribuciones produzca valores descontrolados.
-- Las diferencias entre los atributos iniciales de las clases deben considerarse en el cálculo.
-- No se deben fijar valores absolutos de estadísticas sin contrastarlos con el balance de combate correspondiente.
+Este personaje no tiene por qué corresponder a una clase jugable. Permite definir valores base independientes de las distribuciones iniciales de cada clase.
 
-## 3. Función de crecimiento vigente
+La forma general propuesta para una estadística aditiva es:
 
-La arquitectura vigente es la curva de tres fases registrada en la última revisión recuperada:
+\[
+S=S_0+\sum_{i=1}^{8}C_i(A_i)
+\]
+
+Donde:
+
+- \(S_0\): valor base de la estadística cuando todos los atributos están en cero.
+- \(C_i(A_i)\): contribución del atributo correspondiente.
+- \(S\): valor final de la estadística.
+
+Las estadísticas porcentuales y multiplicativas deben utilizar operaciones adecuadas a su naturaleza; no se sumarán indiscriminadamente como si todas fueran valores planos.
+
+### 2.1 Valores base establecidos en la revisión más reciente
+
+| Estadística | Valor base |
+|---|---:|
+| Vitalidad máxima | **500 PV** |
+| Poder de ataque físico básico | **25** |
+| Postura máxima | **100** |
+| Recuperación de Postura | **5 % por segundo** |
+| Capacidad máxima de carga | **60 unidades** |
+| Aura máxima | 0 |
+| Maná máximo | 0 |
+| Prana máximo | 0 |
+| Defensas | 0 |
+| Absorciones | 0 % |
+| Velocidades y multiplicadores | 1,00 |
+| Potencias ofensivas restantes | 0 |
+| Bonificaciones de exploración | 0 % |
+
+La fuente indica que los demás valores base aceptados se conservan. Las estadísticas que no aparecen con una cifra en esta tabla no deben recibir valores inventados: necesitan una referencia y calibración propias.
+
+### 2.2 Valores anteriores sustituidos
+
+Una fuente anterior había planteado Vitalidad máxima de 100 PV como referencia inicial. La revisión posterior la sustituyó por **500 PV**.
+
+Por tanto, 100 PV no es el valor base vigente.
+
+## 3. Curva de crecimiento definida en la etapa anterior
+
+Una revisión anterior concretó una función normalizada de tres tramos y fijó el punto de transición entre los dos segmentos lineales en **10**:
 
 \[
 F(A)=
 \begin{cases}
-r_1 A, & A\leq b\\[4pt]
-r_1b+r_2(A-b), & b<A\leq30\\[4pt]
-F(30)+r_2(A-30)-\dfrac{r_2}{138}(A-30)^2, & A>30
+\dfrac{3A}{139}, & 0\leq A\leq10\\[6pt]
+\dfrac{2A+10}{139}, & 10<A\leq30\\[6pt]
+1-\dfrac{(99-A)^2}{9591}, & 30<A\leq99
 \end{cases}
 \]
 
-Donde:
+Donde \(A\) es el valor del atributo y \(F(A)\) representa la fracción normalizada de la contribución máxima alcanzada.
 
-- \(A\): valor actual del atributo.
-- \(b\): punto de transición entre los dos primeros ritmos constantes.
-- \(r_1\): primer ritmo de crecimiento.
-- \(r_2\): segundo ritmo de crecimiento.
-- \(F(30)\): valor acumulado de la función al alcanzar 30.
+### 3.1 Comportamiento y puntos de referencia
 
-### Comportamiento esperado
+- **0–10:** crecimiento lineal inicial.
+- **10–30:** segundo crecimiento lineal, más moderado.
+- **30–99:** crecimiento parabólico decreciente.
+- La función alcanza 100 % en 99.
+- El crecimiento acumulado no retrocede; lo que disminuye es la ganancia marginal.
 
-- **Fase 1:** crecimiento lineal a ritmo constante.
-- **Fase 2:** crecimiento lineal a un segundo ritmo constante, que puede diferir del primero.
-- **Fase 3:** crecimiento parabólico con rendimiento marginal decreciente.
-- La función conserva continuidad en los puntos de unión.
-- En 30 comienza la disminución progresiva de la pendiente.
-- La derivada de la tercera fase llega a cero en 99; por tanto, el último punto alcanza el máximo de contribución sin que la curva retroceda.
+| Atributo | Contribución alcanzada |
+|---:|---:|
+| 0 | 0 % |
+| 10 | 21,58 % |
+| 20 | 35,97 % |
+| 30 | 50,36 % |
+| 40 | 63,71 % |
+| 50 | 74,97 % |
+| 60 | 84,14 % |
+| 70 | 91,23 % |
+| 80 | 96,24 % |
+| 90 | 99,16 % |
+| 99 | 100 % |
 
-Los parámetros \(b\), \(r_1\) y \(r_2\) todavía deben calibrarse. No se han fijado valores numéricos definitivos para ellos.
+Esta fórmula es una definición matemática concreta de la etapa anterior. La revisión posterior propone una arquitectura más elaborada de soft caps (sección 5); por ello, la fórmula de esta sección debe conservarse como referencia y no declararse automáticamente la curva final vigente para todas las estadísticas.
 
-## 4. Contribuciones de atributos a estadísticas
+## 4. Influencias principales y secundarias: propuestas previas
 
-Cada relación entre un atributo y una estadística tendrá su propio máximo de contribución. Se utilizará una notación general:
+En una etapa anterior se propuso una ponderación de **10:1** entre influencia principal y secundaria:
+
+- Influencia principal: peso 10.
+- Influencia secundaria: peso 1.
+
+Para las estadísticas tratadas entonces se propuso:
 
 \[
-C_{ij}(A_i)=M_{ij}\cdot G_i(A_i)
+G=\frac{\sum_i w_iF(A_i)}{\sum_i w_i}
 \]
 
-Donde:
-
-- \(C_{ij}\): contribución del atributo \(i\) a la estadística \(j\).
-- \(M_{ij}\): contribución máxima de esa relación.
-- \(G_i\): función de crecimiento normalizada para la relación, basada en la curva de tres fases.
-- \(A_i\): valor actual del atributo.
-
-La normalización debe tener en cuenta el valor inicial de atributo de cada clase para evitar contar dos veces los beneficios de partida. En una revisión anterior se propuso:
+y:
 
 \[
-G_i(A_i)=
-\frac{F(A_i)-F(A_{i,0})}
-{F(99)-F(A_{i,0})}
+S=S_0+B\cdot G
 \]
 
-con \(A_{i,0}\) como valor inicial del atributo para la clase. Esta expresión representa el criterio de normalización por clase; debe verificarse en la implementación matemática final, especialmente cuando se definan los valores iniciales y los límites de cada relación.
+Donde \(B\) era un presupuesto máximo de crecimiento de la estadística.
 
-La suma de contribuciones debe respetar el límite global propio de cada estadística. La fórmula concreta de combinación y la política de saturación todavía deben definirse y simularse.
+La revisión posterior modificó este enfoque: las influencias principales y secundarias deben tener contribuciones independientes y **no están obligadas a compartir un presupuesto máximo común**. Por tanto:
 
-## 5. Influencias principales y secundarias
+- La ponderación 10:1 queda como propuesta previa pendiente de confirmación, no como regla definitiva.
+- El presupuesto de crecimiento igual al valor base queda descartado como restricción general.
+- No debe limitarse cada estadística a duplicar su valor base.
+- Los máximos de contribución deben definirse por estadística y relación, con curvas y escalas adecuadas.
 
-Las influencias principales deben tener un límite de contribución superior al de las secundarias. Las contribuciones secundarias deben seguir siendo significativas, sin que la acumulación de muchas de ellas convierta una estadística en una estrategia dominante.
+## 5. Arquitectura posterior propuesta: soft caps inspirados en Elden Ring
 
-En la revisión de Vitalidad máxima se presentó como **propuesta**, no como parámetro definitivamente aprobado, una relación de peso 10:1 entre influencia principal y secundaria. Bajo esa hipótesis:
+La revisión más reciente cambia el objetivo de balance: el crecimiento no debe quedar restringido a que cada estadística alcance como máximo el doble de su valor base.
 
-- Vitalidad, como influencia principal, aportaría el 58,82 % del crecimiento adicional distribuido.
-- Cada uno de los siete atributos secundarios aportaría el 5,88 %.
-- Los siete secundarios sumarían el 41,18 % restante.
+Se adopta como referencia de diseño la filosofía de *soft caps* de Elden Ring: una estadística puede seguir aumentando hasta el atributo 99, pero la ganancia por punto invertido cambia según el tramo. No se copiarán literalmente los valores de Elden Ring; se adaptará el comportamiento a los ocho atributos y a la matriz de influencias del proyecto.
 
-Estos porcentajes no deben tratarse como valores definitivos hasta que se confirme la proporción y se pruebe con simulaciones.
+### 5.1 Tramos propuestos
 
-## 6. Vitalidad máxima: relaciones recuperadas
+| Tramo del atributo | Comportamiento propuesto |
+|---|---|
+| 0–10 | Crecimiento lineal inicial |
+| 10–30 | Crecimiento lineal con un ritmo diferente |
+| 30–60 | Crecimiento decreciente moderado |
+| 60–80 | Crecimiento decreciente pronunciado |
+| 80–99 | Crecimiento muy reducido |
 
-La matriz descrita en la revisión disponible asigna las siguientes influencias a Vitalidad máxima:
+Se conserva el inicio del rendimiento decreciente en 30, pero se proponen varios grados de reducción después de ese punto. Esta arquitectura todavía necesita una función matemática concreta, parámetros y simulaciones. No se deben inventar pendientes ni valores intermedios para presentarlos como aprobados.
 
-| Atributo | Tipo de influencia |
+### 5.2 Curvas especializadas
+
+La revisión indica que cada estadística tendrá su propia curva y sus propios puntos de rendimiento decreciente. También se había establecido que cada uno de los ocho atributos tendría parámetros propios.
+
+Características que deben orientar las curvas de los atributos:
+
+| Atributo | Sectores que debe priorizar |
+|---|---|
+| Vitalidad | Supervivencia, resistencia física y Postura |
+| Fuerza | Ataque físico, carga y potencia |
+| Agilidad | Movilidad y velocidad de ejecución |
+| Resistencia | Absorción y resistencia a estados |
+| Voluntad | Poder ofensivo y efectos especiales |
+| Ruptura | Críticos, esquivas y ruptura |
+| Destreza | Precisión, eficacia y ejecución |
+| Armonía | Maná, poderes elementales y efectos |
+
+Estas prioridades no sustituyen la matriz completa de influencias. Las curvas deben preservar las relaciones principales y secundarias que se definieron en la encuesta original.
+
+## 6. Vitalidad máxima: escala y estado
+
+La relación registrada para Vitalidad máxima incluye los ocho atributos:
+
+| Atributo | Influencia registrada |
 |---|---|
 | Vitalidad | Principal |
 | Fuerza | Secundaria |
@@ -114,75 +184,153 @@ La matriz descrita en la revisión disponible asigna las siguientes influencias 
 | Destreza | Secundaria |
 | Armonía | Secundaria |
 
-La forma general propuesta para combinar las contribuciones es:
+La forma general aditiva se había expresado así:
 
 \[
-PV_{\max}=PV_{\text{base}}+\sum_{i=1}^{8}C_i(A_i)
+PV_{\max}=500+\sum_{i=1}^{8}C_i(A_i)
 \]
 
-El valor absoluto de Vitalidad máxima, sus límites globales y los máximos individuales de cada contribución siguen pendientes. Deben equilibrarse frente al daño de armas, enemigos, jefes y ataques especiales. No se debe escoger un máximo arbitrario sin esa comprobación.
+### 6.1 Objetivo provisional de escala
 
-## 7. Auditoría y riesgos de balance identificados
+La revisión más reciente propone como objetivo inicial:
 
-La auditoría debe comprobar, como mínimo:
+- Todos los atributos en 0: **500 PV**.
+- Vitalidad en 99 y el resto de atributos en 0: **2.500 PV**.
 
-1. Que todas las relaciones de la matriz estén representadas y que no existan contradicciones.
-2. Que las influencias principales sean perceptiblemente superiores a las secundarias.
-3. Que la acumulación de influencias no haga que una estadística con muchas relaciones crezca de forma desproporcionada.
-4. Que invertir en cualquier atributo no se convierta automáticamente en la mejor estrategia para obtener recursos.
-5. Que las diferencias de atributos iniciales entre clases se reflejen correctamente.
-6. Que especializarse tenga ventajas reales y que las distribuciones equilibradas también sean viables.
+Los **2.500 PV no son un máximo aprobado**. Son un objetivo provisional de diseño para comenzar el cálculo. Las contribuciones secundarias de los demás atributos se añadirán respetando la matriz y los límites que se definan. No se debe concluir que 2.500 PV sea el máximo total del personaje.
+
+La propuesta anterior de 1.000 PV como máximo matemático queda expresamente descartada por ser demasiado restrictiva para la escala buscada.
+
+## 7. Otras estadísticas con cálculos preliminares
+
+La revisión previa presentó cálculos iniciales que sirven como antecedentes, no como límites definitivos:
+
+### 7.1 Capacidad máxima de carga
+
+- Valor base establecido: **60 unidades**.
+- Influencias principales registradas en el cálculo preliminar: Fuerza y Voluntad.
+- La propuesta anterior calculaba 120 unidades como máximo al duplicar la base. Ese límite no debe conservarse como regla: el modelo posterior rechaza la duplicación obligatoria de los valores base.
+
+El peso real de armas, armaduras y accesorios no cambia por aumentar la capacidad; cambia la carga que el personaje puede soportar.
+
+### 7.2 Poder de ataque físico básico
+
+- Valor base establecido: **25**.
+- Influencias principales registradas en el cálculo preliminar: Fuerza, Voluntad y Destreza.
+- El valor 50 propuesto anteriormente como máximo por duplicación de la base no es un límite definitivo.
+- Este poder representa el poder ofensivo básico antes de considerar arma, mejoras y movimiento utilizado.
+
+### 7.3 Recuperación de Postura
+
+- Valor base establecido: **5 % por segundo**.
+- Influencia principal registrada: Vitalidad.
+- Influencia secundaria registrada: Agilidad.
+- La propuesta anterior de 10 % por segundo como máximo no es un límite definitivo.
+- La recuperación sigue dependiendo de que el personaje no esté recibiendo presión.
+
+Los valores de contribución finales para estas estadísticas deben definirse con el nuevo modelo de curvas y comprobarse mediante simulación.
+
+## 8. Escala independiente de enemigos
+
+La progresión del jugador y las estadísticas de los enemigos deben mantenerse separadas.
+
+- **Jugador:** estadísticas calculadas mediante atributos, equipamiento, efectos y progresión.
+- **Enemigos:** estadísticas determinadas por su diseño, categoría, región, dificultad y características particulares.
+- **Jefes:** pueden tener valores de Vitalidad, ataque, defensa y Postura muy superiores a los del jugador.
+- **Enemigos especiales:** pueden superar incluso los parámetros habituales de los jefes normales.
+
+El límite de 99 de los atributos del jugador no debe convertirse en un techo para las estadísticas de enemigos. Un enemigo podrá tener 10.000, 50.000 o más PV cuando su función de diseño lo justifique. Esos números son ejemplos de escala posible, no valores asignados a enemigos concretos.
+
+## 9. Clases y aplicación de las curvas
+
+Las clases comparten el mismo sistema matemático. Cada clase comienza con una distribución inicial diferente de los ocho atributos; sus estadísticas se calculan aplicando las curvas a esos valores iniciales.
+
+Una expresión general de la etapa inicial era:
+
+\[
+S_{\text{clase}}=S_0+\sum_{i=1}^{8}C_i(A_{i,\text{inicial}})
+\]
+
+La fórmula final deberá incorporar la arquitectura especializada y los soft caps definidos para cada estadística. No se deben crear fórmulas particulares por clase para compensar curvas generales mal calibradas.
+
+Los valores base no se modificarán para compensar una curva mal diseñada: primero se construye el sistema de crecimiento y después se evalúan sus resultados.
+
+## 10. Auditoría y simulaciones obligatorias
+
+Antes de cerrar el balance, comprobar:
+
+1. Que todas las relaciones de la matriz de influencias estén representadas.
+2. Que las influencias principales y secundarias mantengan la jerarquía prevista.
+3. Que la suma de muchas influencias secundarias no produzca una estadística desproporcionada.
+4. Que invertir en un atributo no se convierta automáticamente en la mejor estrategia para obtener recursos.
+5. Que las diferencias entre atributos iniciales de las clases se reflejen correctamente.
+6. Que las especializaciones tengan identidad y que las distribuciones equilibradas sigan siendo viables.
 7. Que alcanzar 99 en un atributo no vuelva irrelevantes a los demás.
-8. Que los límites globales se respeten incluso con distribuciones extremas.
+8. Que las curvas tengan continuidad y un comportamiento marginal coherente en sus puntos de transición.
+9. Que las estadísticas del jugador y las de los enemigos puedan balancearse independientemente.
+10. Que los valores de Vitalidad, daño, Postura y carga sean viables frente a armas, enemigos, jefes y ataques especiales.
 
-Se identificó expresamente que **Vitalidad máxima** recibe influencias de los ocho atributos y, por tanto, necesita una combinación y un límite global cuidadosamente calibrados. También se señaló que **Descubrimiento, obtención de materiales y recolección** reciben influencias secundarias de todos los atributos; se debe evitar que esa acumulación convierta cualquier inversión de puntos en una estrategia dominante para conseguir recursos.
+La revisión señaló especialmente el riesgo de que **Descubrimiento, obtención de materiales y recolección** reciban tantas influencias secundarias que cualquier inversión de atributos se convierta en una estrategia dominante para conseguir recursos.
 
-## 8. Orden de trabajo matemático
+## 11. Orden de trabajo
 
-El trabajo de definición y balance seguirá este orden:
+El orden de desarrollo establecido en las fuentes es:
 
-1. Auditar la matriz completa de relaciones entre atributos y estadísticas.
-2. Revisar y establecer los límites de las estadísticas, comenzando por Vitalidad máxima, cuyos valores absolutos quedaron pendientes.
-3. Definir los máximos de contribución de cada relación, distinguiendo influencias principales y secundarias.
-4. Calibrar los parámetros de las curvas de crecimiento.
-5. Construir las fórmulas de combinación y sus restricciones globales.
-6. Simular distribuciones especializadas, equilibradas y extremas, teniendo en cuenta las clases y sus atributos iniciales.
-7. Ajustar el modelo y documentar las fórmulas definitivas una vez superadas las pruebas de balance.
+1. Completar y validar los valores base de todas las estadísticas.
+2. Definir las curvas especializadas de los ocho atributos.
+3. Establecer los límites de influencia principal y secundaria.
+4. Construir las fórmulas de cada estadística.
+5. Aplicar las distribuciones iniciales de las clases.
+6. Simular personajes especializados y equilibrados.
+7. Revisar especialmente Vitalidad máxima y su relación con el daño recibido.
 
-Las familias de estadísticas que se deben cubrir incluyen Aura, Maná y Prana; capacidades ofensivas y críticas; defensas y absorciones; Postura y equilibrio; estados alterados; movilidad y capacidad de carga; rendimiento de combate y Artes; y descubrimiento y exploración.
+La revisión más reciente añade que las simulaciones deben considerar también escalas independientes para enemigos y que no se fijarán máximos arbitrarios antes de validar las curvas.
 
-## 9. Reglas del sistema que deben respetarse
-
-Este modelo de estadísticas no debe contradecir las reglas de recursos ya establecidas:
+## 12. Reglas del sistema que este modelo debe respetar
 
 - No hay regeneración automática de Vitalidad.
 - No hay regeneración automática de energías.
 - No existe una barra de resistencia física.
 - Postura es un sistema independiente.
 
-## 10. Historial de evolución de la curva
+## 13. Historial de decisiones y estado de vigencia
 
-Las fuentes recuperadas contienen varias formulaciones sucesivas. Para evitar que una versión anterior se confunda con la vigente:
+| Tema | Estado actual |
+|---|---|
+| Ocho atributos primarios y rango 0–99 | Establecido en las fuentes |
+| Origen matemático con atributos en 0 | Establecido como método de cálculo |
+| Vitalidad base 500 PV | Establecido; sustituye la propuesta anterior de 100 |
+| Ataque físico básico base 25 | Establecido |
+| Postura máxima base 100 | Establecido |
+| Recuperación de Postura base 5 %/s | Establecido |
+| Capacidad de carga base 60 unidades | Establecido |
+| Aura, Maná y Prana base 0 | Establecido |
+| Curva exacta con tramos 0–10, 10–30 y 30–99 | Definida en la etapa anterior |
+| Soft caps adicionales 30–60, 60–80 y 80–99 | Propuesta posterior; requiere función matemática |
+| Curvas propias por atributo y estadística | Dirección de diseño establecida; parámetros pendientes |
+| Ponderación principal/secundaria 10:1 | Propuesta anterior; no definitiva |
+| Presupuesto máximo igual al valor base | Enfoque anterior descartado como restricción general |
+| Vitalidad en 99 y demás atributos en 0: objetivo 2.500 PV | Objetivo provisional, no máximo aprobado |
+| Máximo anterior de Vitalidad 1.000 PV | Descartado |
+| Capacidad máxima de carga 120 | Resultado preliminar descartado como límite |
+| Ataque físico máximo 50 | Resultado preliminar descartado como límite |
+| Recuperación de Postura máxima 10 %/s | Resultado preliminar descartado como límite |
+| Escala de estadísticas de enemigos independiente | Dirección de diseño establecida |
 
-1. Se planteó inicialmente una curva parabólica cóncava de dos tramos.
-2. Después se estableció que el crecimiento debía ser lineal hasta 30 y decreciente a partir de ese punto.
-3. Se corrigió una discontinuidad de pendiente de aquella formulación mediante una parábola que se unía suavemente al tramo lineal.
-4. Finalmente, se precisó la estructura de **tres fases**: dos ritmos constantes antes de 30 y una fase parabólica decreciente desde 30 hasta 99.
+## 14. Pendientes explícitos
 
-Por tanto, las formulaciones anteriores son antecedentes del diseño. La función de la sección 3 es la arquitectura más reciente encontrada en las fuentes consultadas y es la que debe utilizarse como referencia de trabajo, sin considerar cerrados sus parámetros.
+No implementar como reglas definitivas hasta resolver:
 
-## 11. Pendiente de definición o confirmación
+- La fórmula matemática concreta de las nuevas curvas con soft caps.
+- Los parámetros y puntos de transición de cada atributo y estadística.
+- Los máximos de contribución de cada relación principal y secundaria.
+- La confirmación o sustitución de la ponderación 10:1.
+- Los valores base aún no cuantificados, incluidas las estadísticas de carga por categoría.
+- Los límites y escalas de Aura, Maná y Prana.
+- Los límites de estadísticas ofensivas, defensivas, Postura, estados alterados, movilidad, Artes y exploración.
+- La fórmula de combinación de contribuciones, incluyendo operaciones aditivas, porcentuales y multiplicativas.
+- La normalización y el tratamiento de atributos iniciales de clase.
+- Los parámetros y escalas propios de enemigos y jefes.
+- Las simulaciones de balance para distribuciones especializadas, equilibradas y extremas.
 
-Los siguientes elementos no deben darse por aprobados ni inventarse al implementar:
-
-- La matriz completa y sus pesos concretos para todas las estadísticas, si no se dispone de la fuente íntegra.
-- El punto de transición \(b\) entre los dos primeros ritmos.
-- Los valores de \(r_1\) y \(r_2\), por atributo o familia de estadísticas.
-- Los máximos absolutos de contribución de cada relación.
-- La confirmación de la proporción 10:1 entre influencia principal y secundaria.
-- Los límites globales de cada estadística.
-- Los valores absolutos de Vitalidad máxima y su valor base.
-- La fórmula definitiva de combinación, saturación y redondeo.
-- Los resultados de simulaciones que validen las distribuciones de atributos y clases.
-
-**Criterio de cierre:** una fórmula solo podrá considerarse definitiva después de comprobar su coherencia con la matriz, sus límites y las simulaciones de balance. Las propuestas numéricas anteriores no se convertirán en reglas por el mero hecho de aparecer en una formulación preliminar.
+**Criterio de cierre:** las decisiones expresamente establecidas se conservan; las fórmulas y cifras identificadas como propuestas permanecen provisionales. Ningún ejemplo de escala ni máximo preliminar debe convertirse en regla de juego sin validación y aprobación.
